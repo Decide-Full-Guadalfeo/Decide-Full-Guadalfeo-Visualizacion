@@ -20,3 +20,9 @@ class VisualizerView(TemplateView):
             raise Http404
 
         return context
+
+class Prueba(TemplateView):
+    try:
+        template_name = 'visualizer/prueba.html'
+    except:
+        raise Http404
