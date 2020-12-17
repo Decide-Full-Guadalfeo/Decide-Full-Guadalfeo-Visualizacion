@@ -40,6 +40,7 @@
                         </tr>
                     </tbody>
                 </table>
+                <canvas id="myChart" width="200" height="200"></canvas>
             </div>
 
         </div>
@@ -51,6 +52,7 @@
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
     <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
 
     <script>
         var voting = {{voting|safe}};
@@ -61,6 +63,36 @@
                 voting: voting
             }
         })
+    </script>
+    <script>
+        var ctx= document.getElementById("myChart").getContext("2d");
+        var myChart= new Chart(ctx,{
+            type:"bar",
+            data:{
+                labels:['Cand.1','Cand.2','Cand.3','Cand.4','Cand.5','Cand.6'],
+                datasets:[{
+                        label:['Col 1'],
+                        data:[10,9,15,3,8,6],
+                        backgroundColor:[
+                            'rgb(0, 47, 255)',
+                            'rgb(32, 194, 0)',
+                            'rgb(252, 5, 5)', 
+                            'rgb(158, 5, 252)',
+                            'rgb(252, 170, 5)',
+                            'rgb(5, 244, 252)'
+                        ]
+                }]
+            },
+            options:{
+                scales:{
+                    yAxes:[{
+                            ticks:{
+                                beginAtZero:true
+                            }
+                    }]
+                }
+            }
+        });
     </script>
 </body>
 {% endblock %}
