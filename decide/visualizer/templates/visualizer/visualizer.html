@@ -23,7 +23,6 @@
             <h2 v-else-if="!voting.end_date">Votación en curso</h2>
             <div v-else>
                 <h2 class="heading">Resultados:</h2>
-
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
@@ -40,7 +39,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <canvas id="myChart" width="200" height="200"></canvas>
+                <canvas id="myChart" width="200px" height="200px"></canvas>
             </div>
 
         </div>
@@ -67,28 +66,63 @@
     <script>
         var ctx= document.getElementById("myChart").getContext("2d");
         var myChart= new Chart(ctx,{
-            type:"bar",
-            data:{
-                labels:['Cand.1','Cand.2','Cand.3','Cand.4','Cand.5','Cand.6'],
-                datasets:[{
-                        label:['Col 1'],
-                        data:[10,9,15,3,8,6],
-                        backgroundColor:[
-                            'rgb(0, 47, 255)',
-                            'rgb(32, 194, 0)',
-                            'rgb(252, 5, 5)', 
-                            'rgb(158, 5, 252)',
-                            'rgb(252, 170, 5)',
-                            'rgb(5, 244, 252)'
-                        ]
-                }]
+            type:'bar',
+            data: {
+                labels: ['Candidatos'],
+                datasets: [{
+                        label: 'Candidato1',
+                        data: [10],
+                        backgroundColor: "rgb(0, 47, 255)",
+                    }, {
+                        label: 'Candidato2',
+                        data: [7],
+                        backgroundColor: "rgb(32, 194, 0)",
+                    }, {
+                        label: 'Candidato3',
+                        data: [13],
+                        backgroundColor: "rgb(252, 5, 5)",
+                    }, {
+                        label: 'Candidato4',
+                        data: [5],
+                        backgroundColor: "rgb(158, 5, 252)",
+                    }, {
+                        label: 'Candidato5',
+                        data: [18],
+                        backgroundColor: "rgb(71, 119, 209)",
+                    }, {
+                        label: 'Candidato6',
+                        data: [1],
+                        backgroundColor: "rgb(80, 199, 99)",
+                    }, {
+                        label: 'Candidato7',
+                        data: [9],
+                        backgroundColor: "rgb(217, 86, 30)",
+                    }, {
+                        label: 'Candidato8',
+                        data: [3],
+                        backgroundColor: "rgb(63, 59, 64)",
+                    }, {
+                        label: 'Candidato9',
+                        data: [11],
+                        backgroundColor: "rgb(232, 12, 100)",
+                    }, {
+                        label: 'Candidato10',
+                        data: [13],
+                        backgroundColor: "rgb(27, 161, 158)",
+                    }]
             },
             options:{
+                responsive: true,
+                title :{
+                    display: true,
+                    text: "Recuento de votos general"
+                },
                 scales:{
                     yAxes:[{
                             ticks:{
                                 beginAtZero:true
-                            }
+                            },
+                            stacked: false
                     }]
                 }
             }
@@ -96,3 +130,5 @@
     </script>
 </body>
 {% endblock %}
+
+
