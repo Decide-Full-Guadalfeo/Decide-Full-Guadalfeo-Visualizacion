@@ -39,7 +39,10 @@
                         </tr>
                     </tbody>
                 </table>
-                <canvas id="myChart" width="200px" height="200px"></canvas>
+                <br>
+                <canvas id="myChart" width="100" height="35"></canvas>
+                <br>
+                <canvas id="myChart2" width="100" height="27"></canvas>
             </div>
 
         </div>
@@ -68,49 +71,37 @@
         var myChart= new Chart(ctx,{
             type:'bar',
             data: {
-                labels: ['Candidatos'],
+                labels: ['Cand.1','Cand.2','Cand.3','Cand.4','Cand.5','Cand.6','Cand.7','Cand.8','Cand.9','Cand.10'],
                 datasets: [{
-                        label: 'Candidato1',
-                        data: [10],
-                        backgroundColor: "rgb(0, 47, 255)",
-                    }, {
-                        label: 'Candidato2',
-                        data: [7],
-                        backgroundColor: "rgb(32, 194, 0)",
-                    }, {
-                        label: 'Candidato3',
-                        data: [13],
-                        backgroundColor: "rgb(252, 5, 5)",
-                    }, {
-                        label: 'Candidato4',
-                        data: [5],
-                        backgroundColor: "rgb(158, 5, 252)",
-                    }, {
-                        label: 'Candidato5',
-                        data: [18],
-                        backgroundColor: "rgb(71, 119, 209)",
-                    }, {
-                        label: 'Candidato6',
-                        data: [1],
-                        backgroundColor: "rgb(80, 199, 99)",
-                    }, {
-                        label: 'Candidato7',
-                        data: [9],
-                        backgroundColor: "rgb(217, 86, 30)",
-                    }, {
-                        label: 'Candidato8',
-                        data: [3],
-                        backgroundColor: "rgb(63, 59, 64)",
-                    }, {
-                        label: 'Candidato9',
-                        data: [11],
-                        backgroundColor: "rgb(232, 12, 100)",
-                    }, {
-                        label: 'Candidato10',
-                        data: [13],
-                        backgroundColor: "rgb(27, 161, 158)",
-                    }]
-            },
+                        label: 'Votos',
+                        data: [10,7,13,5,18,1,9,3,11,13], 
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(233, 34, 240, 0.2)',
+                            'rgba(34, 82, 240, 0.2)',
+                            'rgba(5, 5, 5, 0.2)',
+                            'rgba(247, 129, 2, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(233, 34, 240, 1)', 
+                            'rgba(34, 82, 240, 1)',
+                            'rgba(5, 5, 5, 1)',
+                            'rgba(247, 129, 2, 1)'
+                        ],
+                        borderWidth: 1
+                        }]
+                },
             options:{
                 responsive: true,
                 title :{
@@ -119,10 +110,57 @@
                 },
                 scales:{
                     yAxes:[{
-                            ticks:{
-                                beginAtZero:true
-                            },
-                            stacked: false
+                        scaleLabel: {
+                            display: true,
+                            labelString: "Votos"
+                        },
+                        ticks:{
+                            beginAtZero:true
+                        },
+                        stacked: false
+                    }]
+                }
+            }
+        });
+
+        var ctx= document.getElementById("myChart2").getContext("2d");
+        var myChart= new Chart(ctx,{
+            type:'pie',
+            data: {
+                labels: ['Hombres','Mujeres'],
+                datasets: [{
+                        label: 'Votos',
+                        data: [6,12], 
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 1
+                        }]
+                },
+            options:{
+                responsive: true,
+                title :{
+                    display: true,
+                    text: "Recuento de votos femenino/masculino"
+                },
+                legend :{
+                    display: false
+                },
+                scales:{
+                    yAxes:[{
+                        ticks:{
+                            beginAtZero:true
+                        },
+                        display: false,
+                        stacked: false
+                    }],
+                    xAxes:[{
+                        display: false
                     }]
                 }
             }
