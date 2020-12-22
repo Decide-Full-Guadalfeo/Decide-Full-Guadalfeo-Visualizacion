@@ -40,14 +40,16 @@
                     </tbody>
                 </table>
                 <br>
-                <div id="VotosCandidatosBarras" style="width: 68%; height: 49%;">
+                <div id="VotosCandidatosBarras" class="col-md-6">
                     <input type="button" class="btn btn-outline-dark" value="Votos generales" onclick="mostrarBarras();">
-                    <canvas id="myChart" width="100" height="35"></canvas>
+                    <br><br>
+                    <canvas id="myChart" width="75" height="35"></canvas>
                 </div>
                 <br>
-                <div id="VotosSexoSectores">
+                <div id="VotosSexoSectores" class="col-md-6">
                     <input type="button" class="btn btn-outline-dark" value="Votos por sexo" onclick="mostrarSectores();">
-                    <canvas id="myChart2" width="100" height="27"></canvas>
+                    <canvas id="myChart2" width="107" height="27"></canvas>
+                    <canvas id="myChart3" width="107" height="27"></canvas>
                 </div>
             </div>
 
@@ -85,11 +87,14 @@
         }
 
         function mostrarSectores() {
-            var sec = document.getElementById("myChart2");
-            if (sec.style.display === "none") {
-                sec.style.display = "block";
-            } else {
-                sec.style.display = "none";
+            var sec1 = document.getElementById("myChart2");
+            var sec2 = document.getElementById("myChart3");
+            if (sec1.style.display === "none" && sec2.style.display === "none") {
+                sec1.style.display = "block";
+                sec2.style.display = "block";
+            } else if (sec1.style.display === "block" && sec2.style.display === "block"){
+                sec1.style.display = "none";
+                sec2.style.display = "none";
             }
         }
 
@@ -133,10 +138,6 @@
                 },
             options:{
                 responsive: true,
-                title :{
-                    display: true,
-                    text: "Recuento de votos general"
-                },
                 legend :{
                     display: false
                 },
@@ -178,7 +179,51 @@
                 responsive: true,
                 title :{
                     display: true,
-                    text: "Recuento de votos femenino/masculino"
+                    text: "Candidato 5"
+                },
+                legend :{
+                    display: false
+                },
+                scales:{
+                    yAxes:[{
+                        ticks:{
+                            beginAtZero:true
+                        },
+                        display: false,
+                        stacked: false
+                    }],
+                    xAxes:[{
+                        display: false
+                    }]
+                }
+            }
+        });
+
+
+        var ctx= document.getElementById("myChart3").getContext("2d");
+        var myChart= new Chart(ctx,{
+            type:'pie',
+            data: {
+                labels: ['Hombres','Mujeres'],
+                datasets: [{
+                        label: 'Votos',
+                        data: [6,5], 
+                        backgroundColor: [
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(153, 102, 255, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(153, 102, 255, 1)'
+                        ],
+                        borderWidth: 1
+                        }]
+                },
+            options:{
+                responsive: true,
+                title :{
+                    display: true,
+                    text: "Candidato 9"
                 },
                 legend :{
                     display: false
