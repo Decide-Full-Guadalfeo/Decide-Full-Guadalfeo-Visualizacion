@@ -40,9 +40,15 @@
                     </tbody>
                 </table>
                 <br>
-                <canvas id="myChart" width="100" height="35"></canvas>
+                <div id="VotosCandidatosBarras" style="width: 68%; height: 49%;">
+                    <input type="button" class="btn btn-outline-dark" value="Votos generales" onclick="mostrarBarras();">
+                    <canvas id="myChart" width="100" height="35"></canvas>
+                </div>
                 <br>
-                <canvas id="myChart2" width="100" height="27"></canvas>
+                <div id="VotosSexoSectores">
+                    <input type="button" class="btn btn-outline-dark" value="Votos por sexo" onclick="mostrarSectores();">
+                    <canvas id="myChart2" width="100" height="27"></canvas>
+                </div>
             </div>
 
         </div>
@@ -66,6 +72,29 @@
             }
         })
     </script>
+
+    <script>
+
+        function mostrarBarras() {
+            var bar = document.getElementById("myChart");
+            if (bar.style.display === "none") {
+                bar.style.display = "block";
+            } else {
+                bar.style.display = "none";
+            }
+        }
+
+        function mostrarSectores() {
+            var sec = document.getElementById("myChart2");
+            if (sec.style.display === "none") {
+                sec.style.display = "block";
+            } else {
+                sec.style.display = "none";
+            }
+        }
+
+    </script>
+
     <script>
         var ctx= document.getElementById("myChart").getContext("2d");
         var myChart= new Chart(ctx,{
@@ -107,6 +136,9 @@
                 title :{
                     display: true,
                     text: "Recuento de votos general"
+                },
+                legend :{
+                    display: false
                 },
                 scales:{
                     yAxes:[{
