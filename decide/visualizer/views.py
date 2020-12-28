@@ -5,6 +5,24 @@ from django.http import Http404
 
 from base import mods
 
+import telegram
+import requests
+from django.shortcuts import render
+
+
+BOT_TOKEN="1458371772:AAHu7wPpi_gZNSIvwQfUeMndzffycghAVaw"
+BOT_CHAT_ID="-406008177"
+BOT_URL="https://api.telegram.org/bot"+BOT_TOKEN+"/sendMessage?chat_id="+BOT_CHAT_ID+"&text=Hello+world"
+
+
+def bot(request,msg,chat_id=BOT_CHAT_ID, token=BOT_TOKEN):
+    bot=telegram.Bot(token=token)
+    bot.sendMessage(chat_id=chat_id, text=msg)
+
+def botResponse(request):
+    bot(request,"Hola")
+    return render(request,"visualizer/botResponse.html")
+
 
 class VisualizerView(TemplateView):
     template_name = 'visualizer/visualizer.html'
