@@ -12,9 +12,20 @@ BOT_CHAT_ID="-406008177"
 BOT_URL="https://api.telegram.org/bot"+BOT_TOKEN+"/sendMessage?chat_id="+BOT_CHAT_ID+"&text=Hello+world"
 
 
-def bot(msg,chat_id=BOT_CHAT_ID, token=BOT_TOKEN):
+def bot(voting_id, msg,chat_id=BOT_CHAT_ID, token=BOT_TOKEN):
     bot=telegram.Bot(token=token)
-    bot.sendMessage(chat_id=chat_id, text=msg, parse_mode='HTML')
+    telegram_keyboard = telegram.InlineKeyboardButton(text="Share Link in Telegram", switch_inline_query="Puedes ver los resultados de la votación en el siguiente enlace: http://localhost:8000/visualizer/botResults/"+voting_id)
+
+    twitterMessage="https://twitter.com/intent/tweet?text=Puedes%20ver%20los%20resultados%20de%20la%20votación%20en%20el%20siguiente%20enlace:%20http://localhost:8000/visualizer/botResults/"+voting_id
+    twitter_keyboard = telegram.InlineKeyboardButton(text="Share Link in Twitter", url=twitterMessage)
+
+    whatsappMessage="https://api.whatsapp.com/send?text=Puedes%20ver%20los%20resultados%20de%20la%20votación%20en%20el%20siguiente%20enlace:%20http://localhost:8000/visualizer/botResults/"+voting_id
+    whatsapp_keyboard = telegram.InlineKeyboardButton(text="Share Link in Whatsapp", url=whatsappMessage)
+
+    custom_keyboard = [[telegram_keyboard,twitter_keyboard],[whatsapp_keyboard]]
+    reply_markup = telegram.InlineKeyboardMarkup(custom_keyboard)
+
+    bot.sendMessage(chat_id=chat_id, text=msg, parse_mode='HTML',reply_markup=reply_markup)
 
 class BotResponse(TemplateView):
 
@@ -28,6 +39,7 @@ class BotResponse(TemplateView):
             r = mods.get('voting', params={'id': vid})
             context['voting'] = json.dumps(r[0])
             r[0]={
+                "id":"2",
                 "titulo":"Votación primaria dentro de una candidatura",
                 "desc":"Votación primaria dentro de una candidatura",
                 "fecha_inicio":"23/12/2020",
@@ -74,6 +86,7 @@ class BotResponse(TemplateView):
                     }
                 ]
             }
+            voting_id=str(r[0]['id'])
             message="<b>Votación: "+ r[0]['titulo']+"</b>  " + r[0]['fecha_inicio']+" - "+ r[0]['fecha_fin']+"\n"+"Descripción: "+r[0]['desc']+"\n"+"Personas censadas: "+r[0]['n_personas_censo']+"\n"
             preguntas=r[0]['preguntas']
             for pregunta in preguntas:
@@ -82,7 +95,7 @@ class BotResponse(TemplateView):
                 for candidato in candidatos:
                     votos=int(candidato["voto_F"])+int(candidato["voto_M"])
                     message=message+"-"+candidato['nombre']+":"+str(votos)+"\n"
-            bot(message)
+            bot(voting_id,message)
         except:
             raise Http404
 
