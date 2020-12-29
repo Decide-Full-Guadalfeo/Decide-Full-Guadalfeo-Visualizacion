@@ -7,7 +7,6 @@ from base import mods
 
 import telegram
 
-
 BOT_TOKEN="1458371772:AAHu7wPpi_gZNSIvwQfUeMndzffycghAVaw"
 BOT_CHAT_ID="-406008177"
 BOT_URL="https://api.telegram.org/bot"+BOT_TOKEN+"/sendMessage?chat_id="+BOT_CHAT_ID+"&text=Hello+world"
@@ -112,6 +111,7 @@ class VisualizerView(TemplateView):
         try:
             r = mods.get('voting', params={'id': vid})
             context['voting'] = json.dumps(r[0])
+            context['botUrl']="http://localhost:8000/visualizer/botResults/"+str(r[0]['id'])
         except:
             raise Http404
 

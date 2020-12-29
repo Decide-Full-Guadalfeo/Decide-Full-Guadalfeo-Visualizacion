@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-    {% comment %} <div id="app-visualizer">
+    <div id="app-visualizer">
         <!-- Navbar -->
         <b-navbar type="dark" variant="secondary">
             <b-navbar-brand tag="h1">Decide</b-navbar-brand>
@@ -19,6 +19,7 @@
         <div class="voting container">
             <h1>[[ voting.id ]] - [[ voting.name ]]</h1>
 
+            <a href={{botUrl}} style="float:right;" class="btn btn-outline-dark" target="_blank">Enviar resultados por Telegram </a>
             <h2 v-if="!voting.start_date">Votación no comenzada</h2>
             <h2 v-else-if="!voting.end_date">Votación en curso</h2>
             <div v-else>
@@ -54,7 +55,7 @@
             </div>
 
         </div>
-    </div> {% endcomment %}
+    </div>
 {% endblock %}
 
 {% block extrabody %}
