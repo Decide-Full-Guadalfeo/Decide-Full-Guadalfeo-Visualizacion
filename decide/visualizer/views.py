@@ -11,7 +11,6 @@ BOT_TOKEN="1458371772:AAHu7wPpi_gZNSIvwQfUeMndzffycghAVaw"
 BOT_CHAT_ID="-406008177"
 BOT_URL="https://api.telegram.org/bot"+BOT_TOKEN+"/sendMessage?chat_id="+BOT_CHAT_ID+"&text=Hello+world"
 
-
 def bot(voting_id, msg,chat_id=BOT_CHAT_ID, token=BOT_TOKEN):
     bot=telegram.Bot(token=token)
     telegram_keyboard = telegram.InlineKeyboardButton(text="Share Link in Telegram", switch_inline_query="Puedes ver los resultados de la votación en el siguiente enlace: http://localhost:8000/visualizer/botResults/"+voting_id)
@@ -102,7 +101,7 @@ class BotResponse(TemplateView):
             bot(voting_id,message)
         except:
             raise Http404
-
+            
         return context
 
 class VisualizerView(TemplateView):

@@ -16,30 +16,48 @@
             <b-navbar-brand tag="h1">Decide</b-navbar-brand>
         </b-navbar>
 
-        <div class="voting container">
-            <h1>[[ voting.id ]] - [[ voting.name ]]</h1>
-
-            <a href={{botUrl}} style="float:right;" class="btn btn-outline-dark" target="_blank">Enviar resultados por Telegram </a>
-            <h2 v-if="!voting.start_date">Votación no comenzada</h2>
-            <h2 v-else-if="!voting.end_date">Votación en curso</h2>
+        <div class="voting-container">
+            <h1>[[ voting.id ]] - [[ voting.titulo ]]</h1>
+            <h2 v-if="!voting.fecha_inicio">Votación no comenzada</h2>
+            <h2 v-else-if="!voting.fecha_fin">Votación en curso</h2>
             <div v-else>
-                <h2 class="heading">Resultados:</h2>
-                <table class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th>Opción</th>
-                            <th>Puntuación</th>
-                            <th>Votos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="opt in voting.postproc" :key="opt.number">
-                            <th>[[opt.option]]</th>
-                            <td>[[opt.postproc]]</td>
-                            <td class="text-muted">[[opt.votes]]</td>
-                        </tr>
-                    </tbody>
-                </table>
+
+                <div id="results">
+                    <h2 class="heading">Resultados:</h2>
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Opción</th>
+                                    <th>Puntuación</th>
+                                    <th>Votos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="opt in voting.postproc" :key="opt.number">
+                                    <th>[[opt.option]]</th>
+                                    <td>[[opt.postproc]]</td>
+                                    <td class="text-muted">[[opt.votes]]</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    
+                    <div v-if="voting.tipo='VP'">
+
+                    </div>
+                    <div v-else>
+                        
+                    </div>
+                </div>
+                
+                <div id="statistics">
+                                        
+                    <div v-if="voting.tipo='VP'">
+
+                    </div>
+                    <div v-else>
+                        
+                    </div>
+                </div>
 
                 <br>
                 <h2>Votación General</h2>
