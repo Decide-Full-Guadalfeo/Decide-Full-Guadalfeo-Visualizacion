@@ -6,9 +6,6 @@ from django.http import Http404
 from base import mods
 
 import telegram
-import requests
-from django.shortcuts import render
-
 
 BOT_TOKEN="1458371772:AAHu7wPpi_gZNSIvwQfUeMndzffycghAVaw"
 BOT_CHAT_ID="-406008177"
@@ -101,6 +98,7 @@ class VisualizerView(TemplateView):
         try:
             r = mods.get('voting', params={'id': vid})
             context['voting'] = json.dumps(r[0])
+            context['botUrl']="http://localhost:8000/visualizer/botResults/"+str(r[0]['id'])
         except:
             raise Http404
 
