@@ -41,7 +41,8 @@
                 </table>
                 <br>
                 <h2>Votación General</h2>
-                <br>
+                <input type="button" class="btn btn-outline-dark" value="Gráficas votación general" onclick="mostrarGraficas();">
+                <br><br>
                 <div id="VotacionGeneral">
                     <div id="VotosCandidatosBarras" class="col-md-6">
                         <input type="button" class="btn btn-outline-dark" value="Votos generales" onclick="mostrarBarras();">
@@ -80,6 +81,15 @@
     </script>
 
     <script>
+
+        function mostrarGraficas() {
+            var graficas = document.getElementById("VotacionGeneral");
+            if (graficas.style.display === "none") {
+                graficas.style.display = "block";
+            } else {
+                graficas.style.display = "none";
+            }
+        }
 
         function mostrarBarras() {
             var bar = document.getElementById("myChart");
