@@ -10,35 +10,56 @@
 {% endblock %}
 
 {% block content %}
-    {% comment %} <div id="app-visualizer">
+    <div id="app-visualizer">
         <!-- Navbar -->
         <b-navbar type="dark" variant="secondary">
             <b-navbar-brand tag="h1">Decide</b-navbar-brand>
         </b-navbar>
 
-        <div class="voting container">
-            <h1>[[ voting.id ]] - [[ voting.name ]]</h1>
-
-            <h2 v-if="!voting.start_date">Votación no comenzada</h2>
-            <h2 v-else-if="!voting.end_date">Votación en curso</h2>
+        <div class="voting-container">
+            <h1>[[ voting.id ]] - [[ voting.titulo ]]</h1>
+            <h2 v-if="!voting.fecha_inicio">Votación no comenzada</h2>
+            <h2 v-else-if="!voting.fecha_fin">Votación en curso</h2>
             <div v-else>
-                <h2 class="heading">Resultados:</h2>
-                <table class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th>Opción</th>
-                            <th>Puntuación</th>
-                            <th>Votos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="opt in voting.postproc" :key="opt.number">
-                            <th>[[opt.option]]</th>
-                            <td>[[opt.postproc]]</td>
-                            <td class="text-muted">[[opt.votes]]</td>
-                        </tr>
-                    </tbody>
-                </table>
+
+                <div id="results">
+                    <h2 class="heading">Resultados:</h2>
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Opción</th>
+                                    <th>Puntuación</th>
+                                    <th>Votos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="opt in voting.postproc" :key="opt.number">
+                                    <th>[[opt.option]]</th>
+                                    <td>[[opt.postproc]]</td>
+                                    <td class="text-muted">[[opt.votes]]</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    
+                    <div v-if="voting.tipo='VP'">
+
+                    </div>
+                    <div v-else>
+                        
+                    </div>
+                </div>
+                
+                <div id="statistics">
+                                        
+                    <div v-if="voting.tipo='VP'">
+
+                    </div>
+                    <div v-else>
+                        
+                    </div>
+                </div>
+
+
                 <br>
                 <div id="VotosCandidatosBarras" class="col-md-6">
                     <input type="button" class="btn btn-outline-dark" value="Votos generales" onclick="mostrarBarras();">
@@ -54,7 +75,7 @@
             </div>
 
         </div>
-    </div> {% endcomment %}
+    </div>
 {% endblock %}
 
 {% block extrabody %}
