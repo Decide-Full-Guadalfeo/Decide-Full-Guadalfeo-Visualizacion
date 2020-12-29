@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-    {% comment %} <div id="app-visualizer">
+    <div id="app-visualizer">
         <!-- Navbar -->
         <b-navbar type="dark" variant="secondary">
             <b-navbar-brand tag="h1">Decide</b-navbar-brand>
@@ -40,21 +40,25 @@
                     </tbody>
                 </table>
                 <br>
-                <div id="VotosCandidatosBarras" class="col-md-6">
-                    <input type="button" class="btn btn-outline-dark" value="Votos generales" onclick="mostrarBarras();">
-                    <br><br>
-                    <canvas id="myChart" width="75" height="35"></canvas>
-                </div>
+                <h2>Votación General</h2>
                 <br>
-                <div id="VotosSexoSectores" class="col-md-6">
-                    <input type="button" class="btn btn-outline-dark" value="Votos por sexo" onclick="mostrarSectores();">
-                    <canvas id="myChart2" width="107" height="27"></canvas>
-                    <canvas id="myChart3" width="107" height="27"></canvas>
+                <div id="VotacionGeneral">
+                    <div id="VotosCandidatosBarras" class="col-md-6">
+                        <input type="button" class="btn btn-outline-dark" value="Votos generales" onclick="mostrarBarras();">
+                        <br><br>
+                        <canvas id="myChart" width="75" height="35"></canvas>
+                    </div>
+                    <br>
+                    <div id="VotosSexoSectores" class="col-md-6">
+                        <input type="button" class="btn btn-outline-dark" value="Votos por sexo" onclick="mostrarSectores();">
+                        <canvas id="myChart2" width="107" height="27"></canvas>
+                        <canvas id="myChart3" width="107" height="27"></canvas>
+                    </div>
                 </div>
             </div>
 
         </div>
-    </div> {% endcomment %}
+    </div> 
 {% endblock %}
 
 {% block extrabody %}
