@@ -40,17 +40,31 @@
                         </tr>
                     </tbody>
                 </table>
+
                 <br>
-                <div id="VotosCandidatosBarras" class="col-md-6">
-                    <input type="button" class="btn btn-outline-dark" value="Votos generales" onclick="mostrarBarras();">
-                    <br><br>
-                    <canvas id="myChart" width="75" height="35"></canvas>
-                </div>
-                <br>
-                <div id="VotosSexoSectores" class="col-md-6">
-                    <input type="button" class="btn btn-outline-dark" value="Votos por sexo" onclick="mostrarSectores();">
-                    <canvas id="myChart2" width="107" height="27"></canvas>
-                    <canvas id="myChart3" width="107" height="27"></canvas>
+                <h2>Votación General</h2>
+                <input type="button" class="btn btn-outline-dark" value="Gráficas votación general" onclick="mostrarGraficas();">
+                <br><br>
+
+                <div id="VotacionGeneral">
+                    <div id="VotosCandidatosBarras" class="col-md-6">
+                        <input type="button" class="btn btn-outline-dark" value="Votos generales" onclick="mostrarBarras();">
+                        <br><br>
+                        <canvas id="myChart" width="75" height="35"></canvas>
+                    </div>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;<input type="button" class="btn btn-outline-dark" value="Votos por sexo" onclick="mostrarSectores();">
+
+                    <div id="VotosSexoSectores" class="col-md-6">
+                        <canvas id="myChart2" width="107" height="27"></canvas>
+                        <canvas id="myChart3" width="107" height="27"></canvas>
+                        <canvas id="myChart4" width="107" height="27"></canvas>
+                        <canvas id="myChart5" width="107" height="27"></canvas>
+                        <canvas id="myChart6" width="107" height="27"></canvas>
+                        <canvas id="myChart7" width="107" height="27"></canvas>
+                        <canvas id="myChart8" width="107" height="27"></canvas>
+                        <canvas id="myChart9" width="107" height="27"></canvas>
+                    </div>
                 </div>
             </div>
 
@@ -78,6 +92,15 @@
 
     <script>
 
+        function mostrarGraficas() {
+            var graficas = document.getElementById("VotacionGeneral");
+            if (graficas.style.display === "none") {
+                graficas.style.display = "block";
+            } else {
+                graficas.style.display = "none";
+            }
+        }
+
         function mostrarBarras() {
             var bar = document.getElementById("myChart");
             if (bar.style.display === "none") {
@@ -88,14 +111,11 @@
         }
 
         function mostrarSectores() {
-            var sec1 = document.getElementById("myChart2");
-            var sec2 = document.getElementById("myChart3");
-            if (sec1.style.display === "none" && sec2.style.display === "none") {
-                sec1.style.display = "block";
-                sec2.style.display = "block";
-            } else if (sec1.style.display === "block" && sec2.style.display === "block"){
-                sec1.style.display = "none";
-                sec2.style.display = "none";
+            var sec = document.getElementById("VotosSexoSectores");
+            if (sec.style.display === "none") {
+                sec.style.display = "block";
+            } else {
+                sec.style.display = "none";
             }
         }
 
@@ -164,7 +184,7 @@
                 labels: ['Hombres','Mujeres'],
                 datasets: [{
                         label: 'Votos',
-                        data: [6,12], 
+                        data: [4,9], 
                         backgroundColor: [
                             'rgba(54, 162, 235, 0.2)',
                             'rgba(255, 99, 132, 0.2)'
@@ -172,6 +192,93 @@
                         borderColor: [
                             'rgba(54, 162, 235, 1)',
                             'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 1
+                        }]
+                },
+            options:{
+                responsive: true,
+                title :{
+                    display: true,
+                    text: "Candidato 3"
+                },
+                legend :{
+                    display: false
+                },
+                scales:{
+                    yAxes:[{
+                        ticks:{
+                            beginAtZero:true
+                        },
+                        display: false,
+                        stacked: false
+                    }],
+                    xAxes:[{
+                        display: false
+                    }]
+                }
+            }
+        });
+
+
+        var ctx= document.getElementById("myChart3").getContext("2d");
+        var myChart= new Chart(ctx,{
+            type:'pie',
+            data: {
+                labels: ['Hombres','Mujeres'],
+                datasets: [{
+                        label: 'Votos',
+                        data: [3,2], 
+                        backgroundColor: [
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(153, 102, 255, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(153, 102, 255, 1)'
+                        ],
+                        borderWidth: 1
+                        }]
+                },
+            options:{
+                responsive: true,
+                title :{
+                    display: true,
+                    text: "Candidato 4"
+                },
+                legend :{
+                    display: false
+                },
+                scales:{
+                    yAxes:[{
+                        ticks:{
+                            beginAtZero:true
+                        },
+                        display: false,
+                        stacked: false
+                    }],
+                    xAxes:[{
+                        display: false
+                    }]
+                }
+            }
+        });
+
+        var ctx= document.getElementById("myChart4").getContext("2d");
+        var myChart= new Chart(ctx,{
+            type:'pie',
+            data: {
+                labels: ['Hombres','Mujeres'],
+                datasets: [{
+                        label: 'Votos',
+                        data: [9,9], 
+                        backgroundColor: [
+                            'rgba(32, 247, 176, 0.2)',
+                            'rgba(237, 124, 19, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(32, 247, 176, 1)',
+                            'rgba(237, 124, 19, 1)'
                         ],
                         borderWidth: 1
                         }]
@@ -200,22 +307,148 @@
             }
         });
 
-
-        var ctx= document.getElementById("myChart3").getContext("2d");
+        var ctx= document.getElementById("myChart5").getContext("2d");
         var myChart= new Chart(ctx,{
             type:'pie',
             data: {
                 labels: ['Hombres','Mujeres'],
                 datasets: [{
                         label: 'Votos',
-                        data: [6,5], 
+                        data: [1,0], 
                         backgroundColor: [
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(153, 102, 255, 0.2)'
+                            'rgba(0, 0, 0, 0.2)'
                         ],
                         borderColor: [
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(153, 102, 255, 1)'
+                            'rgba(0, 0, 0, 1)'
+                        ],
+                        borderWidth: 1
+                        }]
+                },
+            options:{
+                responsive: true,
+                title :{
+                    display: true,
+                    text: "Candidato 6"
+                },
+                legend :{
+                    display: false
+                },
+                scales:{
+                    yAxes:[{
+                        ticks:{
+                            beginAtZero:true
+                        },
+                        display: false,
+                        stacked: false
+                    }],
+                    xAxes:[{
+                        display: false
+                    }]
+                }
+            }
+        });
+
+        var ctx= document.getElementById("myChart6").getContext("2d");
+        var myChart= new Chart(ctx,{
+            type:'pie',
+            data: {
+                labels: ['Hombres','Mujeres'],
+                datasets: [{
+                        label: 'Votos',
+                        data: [2,7], 
+                        backgroundColor: [
+                            'rgba(47, 30, 232, 0.2)',
+                            'rgba(250, 15, 125, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(47, 30, 232, 1)',
+                            'rgba(250, 15, 125, 1)'
+                        ],
+                        borderWidth: 1
+                        }]
+                },
+            options:{
+                responsive: true,
+                title :{
+                    display: true,
+                    text: "Candidato 7"
+                },
+                legend :{
+                    display: false
+                },
+                scales:{
+                    yAxes:[{
+                        ticks:{
+                            beginAtZero:true
+                        },
+                        display: false,
+                        stacked: false
+                    }],
+                    xAxes:[{
+                        display: false
+                    }]
+                }
+            }
+        });
+
+        var ctx= document.getElementById("myChart7").getContext("2d");
+        var myChart= new Chart(ctx,{
+            type:'pie',
+            data: {
+                labels: ['Hombres','Mujeres'],
+                datasets: [{
+                        label: 'Votos',
+                        data: [2,1], 
+                        backgroundColor: [
+                            'rgba(191, 250, 15, 0.2)',
+                            'rgba(255, 42, 0, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(191, 250, 15, 1)',
+                            'rgba(255, 42, 0, 1)'
+                        ],
+                        borderWidth: 1
+                        }]
+                },
+            options:{
+                responsive: true,
+                title :{
+                    display: true,
+                    text: "Candidato 8"
+                },
+                legend :{
+                    display: false
+                },
+                scales:{
+                    yAxes:[{
+                        ticks:{
+                            beginAtZero:true
+                        },
+                        display: false,
+                        stacked: false
+                    }],
+                    xAxes:[{
+                        display: false
+                    }]
+                }
+            }
+        });
+
+        var ctx= document.getElementById("myChart8").getContext("2d");
+        var myChart= new Chart(ctx,{
+            type:'pie',
+            data: {
+                labels: ['Hombres','Mujeres'],
+                datasets: [{
+                        label: 'Votos',
+                        data: [10,1], 
+                        backgroundColor: [
+                            'rgba(44, 113, 201, 0.2)',
+                            'rgba(94, 255, 0, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(44, 113, 201, 1)',
+                            'rgba(94, 255, 0, 1)'
                         ],
                         borderWidth: 1
                         }]
@@ -243,6 +476,50 @@
                 }
             }
         });
+
+        var ctx= document.getElementById("myChart9").getContext("2d");
+        var myChart= new Chart(ctx,{
+            type:'pie',
+            data: {
+                labels: ['Hombres','Mujeres'],
+                datasets: [{
+                        label: 'Votos',
+                        data: [6,8], 
+                        backgroundColor: [
+                            'rgba(186, 134, 235, 0.2)',
+                            'rgba(227, 247, 146, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(186, 134, 235, 1)',
+                            'rgba(227, 247, 146, 1)'
+                        ],
+                        borderWidth: 1
+                        }]
+                },
+            options:{
+                responsive: true,
+                title :{
+                    display: true,
+                    text: "Candidato 10"
+                },
+                legend :{
+                    display: false
+                },
+                scales:{
+                    yAxes:[{
+                        ticks:{
+                            beginAtZero:true
+                        },
+                        display: false,
+                        stacked: false
+                    }],
+                    xAxes:[{
+                        display: false
+                    }]
+                }
+            }
+        });
+
     </script>
 </body>
 {% endblock %}
