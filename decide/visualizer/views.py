@@ -8,7 +8,7 @@ from base import mods
 import telegram
 
 BOT_TOKEN="1458371772:AAHu7wPpi_gZNSIvwQfUeMndzffycghAVaw"
-BOT_CHAT_ID="-406008177"
+BOT_CHAT_ID="@guadalfeo_visualizacion"
 BOT_URL="https://api.telegram.org/bot"+BOT_TOKEN+"/sendMessage?chat_id="+BOT_CHAT_ID+"&text=Hello+world"
 
 def bot(voting_id, msg,chat_id=BOT_CHAT_ID, token=BOT_TOKEN):
