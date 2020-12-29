@@ -6,90 +6,34 @@
          href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet"
          href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
-    <link type="text/css" rel="stylesheet" href="{% static "booth/style.css" %}" />
-    
-    <style type="text/css">
-        *{
-            margin:0px;
-            padding:0px;
-        }
-
-        #header {
-            margin:auto;
-            width:500px;
-            font-family:Arial, Helvetica, sans-serif;
-        }
-
-        ul, ol {
-            list-style:none;
-        }
-
-        .nav > li {
-            float:left;
-        }
-
-        .nav li a {
-            background-color:#000;
-            color:#fff;
-            text-decoration:none;
-            padding:10px 12px;
-            display:block;
-        }
-
-        .nav li a:hover {
-            background-color:#434343;
-        }
-
-        .nav li ul {
-            display:none;
-            position:absolute;
-            min-width:140px;
-        }
-
-        .nav li:hover > ul {
-            display:block;
-        }
-
-        .nav li ul li {
-            position:relative;
-        }
-
-        .nav li ul li ul {
-            right:-140px;
-            top:0px;
-        }
-    </style>
+    <link type="text/css" rel="stylesheet" href="{% static "visualizer/style.css" %}" />
 
 {% endblock %}
 
 {% block extrabody %}
     <div id="header">
         <ul class="nav">
-            <li><a href="">Inicio</a></li>
-            <li><a href="">Servicios</a>
+            <li><a href=""> ▼ Compartir</a>
                 <ul>
-                    <li><a href="">Submenu1</a></li>
-                    <li><a href="">Submenu2</a></li>
-                    <li><a href="">Submenu3</a></li>
-                    <li><a href="">Submenu4</a>
-                        <ul>
-                            <li><a href="">Submenu1</a></li>
-                            <li><a href="">Submenu2</a></li>
-                            <li><a href="">Submenu3</a></li>
-                            <li><a href="">Submenu4</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="">Whatsapp</a></li>
+                    <li><a href="">Telegram</a></li>
+                    <li><a href="">Facebook</a></li>
                 </ul>
             </li>
-            <li><a href="">Acerca de</a>
+            <li><a href=""> ▼ Exportar</a>
                 <ul>
-                    <li><a href="">Submenu1</a></li>
-                    <li><a href="">Submenu2</a></li>
-                    <li><a href="">Submenu3</a></li>
-                    <li><a href="">Submenu4</a></li>
+                    <li><a href="">PDF</a></li>
+                    <li><a href="">Excel</a></li>
                 </ul>
             </li>
-            <li><a href="">Contacto</a></li>
+            <li>
+                <p>Tema oscuro/claro &nbsp
+                    <label class="switch">
+                        <input id="checkbox_nocturno" type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </p>
+            </li>
         </ul>
     </div>
 
