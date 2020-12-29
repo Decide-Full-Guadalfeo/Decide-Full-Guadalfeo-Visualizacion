@@ -15,14 +15,18 @@ BOT_URL="https://api.telegram.org/bot"+BOT_TOKEN+"/sendMessage?chat_id="+BOT_CHA
 def bot(voting_id, msg,chat_id=BOT_CHAT_ID, token=BOT_TOKEN):
     bot=telegram.Bot(token=token)
     telegram_keyboard = telegram.InlineKeyboardButton(text="Share Link in Telegram", switch_inline_query="Puedes ver los resultados de la votación en el siguiente enlace: http://localhost:8000/visualizer/botResults/"+voting_id)
+    telegram_results_keyboard = telegram.InlineKeyboardButton(text="Share Results in Telegram", switch_inline_query=msg.replace("<b>","").replace("</b>",""))
 
     twitterMessage="https://twitter.com/intent/tweet?text=Puedes%20ver%20los%20resultados%20de%20la%20votación%20en%20el%20siguiente%20enlace:%20http://localhost:8000/visualizer/botResults/"+voting_id
     twitter_keyboard = telegram.InlineKeyboardButton(text="Share Link in Twitter", url=twitterMessage)
 
     whatsappMessage="https://api.whatsapp.com/send?text=Puedes%20ver%20los%20resultados%20de%20la%20votación%20en%20el%20siguiente%20enlace:%20http://localhost:8000/visualizer/botResults/"+voting_id
-    whatsapp_keyboard = telegram.InlineKeyboardButton(text="Share Link in Whatsapp", url=whatsappMessage)
+    whatsapp_keyboard = telegram.InlineKeyboardButton(text="Share Link in WhatsApp", url=whatsappMessage)
 
-    custom_keyboard = [[telegram_keyboard,twitter_keyboard],[whatsapp_keyboard]]
+    whatsappResultsMessage="https://api.whatsapp.com/send?text="+msg.replace("<b>","").replace("</b>","")
+    whatsapp_results_keyboard = telegram.InlineKeyboardButton(text="Share Results in WhatsApp", url=whatsappResultsMessage)
+
+    custom_keyboard = [[telegram_keyboard,twitter_keyboard],[whatsapp_keyboard,telegram_results_keyboard],[whatsapp_results_keyboard]]
     reply_markup = telegram.InlineKeyboardMarkup(custom_keyboard)
 
     bot.sendMessage(chat_id=chat_id, text=msg, parse_mode='HTML',reply_markup=reply_markup)
