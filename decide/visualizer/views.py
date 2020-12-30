@@ -2,6 +2,7 @@ import json
 from django.views.generic import TemplateView
 from django.conf import settings
 from django.http import Http404
+from pathlib import Path
 
 from base import mods
 
@@ -112,8 +113,12 @@ class VisualizerView(TemplateView):
         vid = kwargs.get('voting_id', 0)
 
         try:
+            script_location = Path(__file__).absolute().parent
+            file_location = script_location / 'API_vPrimaria.json'
+            with file_location.open() as json_file:
+                context['voting'] = json.load(json_file)
             r = mods.get('voting', params={'id': vid})
-            context['voting'] = json.dumps(r[0])
+            # context['voting'] = json.dumps(r[0])
             context['botUrl']="http://localhost:8000/visualizer/botResults/"+str(r[0]['id'])
         except:
             raise Http404
