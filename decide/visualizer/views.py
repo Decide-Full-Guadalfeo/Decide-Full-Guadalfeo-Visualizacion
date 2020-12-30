@@ -114,7 +114,7 @@ class VisualizerView(TemplateView):
 
         try:
             script_location = Path(__file__).absolute().parent
-            file_location = script_location / 'API_vPrimaria.json'
+            file_location = script_location / 'API_vGeneral.json'
             with file_location.open() as json_file:
                 context['voting'] = json.load(json_file)
             r = mods.get('voting', params={'id': vid})
