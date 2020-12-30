@@ -631,7 +631,7 @@
                 labels: ['Cand.1','Cand.2','Cand.3','Cand.4','Cand.5','Cand.6','Cand.7','Cand.8','Cand.9','Cand.10'],
                 datasets: [{
                         label: 'Edad',
-                        data: [10,7,13,5,18,1,9,3,11,13], 
+                        data: [22,35,57,29,31,66,20,18,43,38], 
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
@@ -671,7 +671,9 @@
                             labelString: "Edad"
                         },
                         ticks:{
-                            beginAtZero:true
+                            min: 10,
+                            max: 70,
+                            beginAtZero: false,
                         },
                         stacked: false
                     }]
