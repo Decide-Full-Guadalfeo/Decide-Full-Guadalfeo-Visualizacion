@@ -226,6 +226,12 @@
                                 <br><br>
                                 <h6 style="text-align: center;">Media de edad de los votantes</h6>
                                 <canvas id="myChartPrim6" width="75" height="35"></canvas>
+                                <br><br>
+                                <h6 style="text-align: center;">Votos por curso de cada candidato</h6>
+                                <canvas id="myChartPrim7" width="107" height="27"></canvas>
+                                <canvas id="myChartPrim8" width="107" height="27"></canvas>
+                                <canvas id="myChartPrim9" width="107" height="27"></canvas>
+                                <canvas id="myChartPrim10" width="107" height="27"></canvas>
                             </div>
                         </div>
                     </div>
@@ -1433,7 +1439,127 @@
             }
         });
 
+        var ctx= document.getElementById("myChartPrim7").getContext("2d");
+        var myChart= new Chart(ctx,{
+            type:'pie',
+            data: {
+                labels: ['Votos Primero','Votos Segundo','Votos Tercero','Votos Cuarto'],
+                datasets: [{}]
+                },
+            options:{
+                responsive: true,
+                title :{
+                    display: true,
+                    text: "Candidato 1"
+                },
+                legend :{
+                    display: false
+                },
+                scales:{
+                    yAxes:[{
+                        ticks:{
+                            beginAtZero:true
+                        },
+                        display: false,
+                        stacked: false
+                    }],
+                    xAxes:[{
+                        display: false
+                    }]
+                }
+            }
+        });
 
+        var ctx= document.getElementById("myChartPrim8").getContext("2d");
+        var myChart= new Chart(ctx,{
+            type:'pie',
+            data: {
+                labels: ['Votos Primero','Votos Segundo','Votos Tercero','Votos Cuarto'],
+                datasets: [{}]
+                },
+            options:{
+                responsive: true,
+                title :{
+                    display: true,
+                    text: "Candidato 2"
+                },
+                legend :{
+                    display: false
+                },
+                scales:{
+                    yAxes:[{
+                        ticks:{
+                            beginAtZero:true
+                        },
+                        display: false,
+                        stacked: false
+                    }],
+                    xAxes:[{
+                        display: false
+                    }]
+                }
+            }
+        });
+        var ctx= document.getElementById("myChartPrim9").getContext("2d");
+        var myChart= new Chart(ctx,{
+            type:'pie',
+            data: {
+                labels: ['Votos Primero','Votos Segundo','Votos Tercero','Votos Cuarto'],
+                datasets: [{}]
+                },
+            options:{
+                responsive: true,
+                title :{
+                    display: true,
+                    text: "Candidato 3"
+                },
+                legend :{
+                    display: false
+                },
+                scales:{
+                    yAxes:[{
+                        ticks:{
+                            beginAtZero:true
+                        },
+                        display: false,
+                        stacked: false
+                    }],
+                    xAxes:[{
+                        display: false
+                    }]
+                }
+            }
+        });
+        var ctx= document.getElementById("myChartPrim10").getContext("2d");
+        var myChart= new Chart(ctx,{
+            type:'pie',
+            data: {
+                labels: ['Votos Primero','Votos Segundo','Votos Tercero','Votos Cuarto'],
+                datasets: [{}]
+                },
+            options:{
+                responsive: true,
+                title :{
+                    display: true,
+                    text: "Candidato 4"
+                },
+                legend :{
+                    display: false
+                },
+                scales:{
+                    yAxes:[{
+                        ticks:{
+                            beginAtZero:true
+                        },
+                        display: false,
+                        stacked: false
+                    }],
+                    xAxes:[{
+                        display: false
+                    }]
+                }
+            }
+        });
         
     </script>
 </body>
