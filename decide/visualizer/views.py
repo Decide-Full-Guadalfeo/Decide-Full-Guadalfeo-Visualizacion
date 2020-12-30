@@ -116,7 +116,18 @@ class VisualizerView(TemplateView):
             script_location = Path(__file__).absolute().parent
             file_location = script_location / 'API_vGeneral.json'
             with file_location.open() as json_file:
-                context['voting'] = json.load(json_file)
+                json_file = json.load(json_file)
+                
+            # Sorting the results
+            lista = []
+            if (json_file['tipo'] == 'VG'):
+                lista = [0,1,2,3,4,5,6]
+            else:
+                lista = [0,1,2,3,4,5]
+            for i in lista:
+                json_file['preguntas'][i]['opts'] = sorted(json_file['preguntas'][i]['opts'], key=lambda x : x['voto_M']+x['voto_F'], reverse=True)
+
+            context['voting'] = json_file
             r = mods.get('voting', params={'id': vid})
             # context['voting'] = json.dumps(r[0])
             context['botUrl']="http://localhost:8000/visualizer/botResults/"+str(r[0]['id'])
