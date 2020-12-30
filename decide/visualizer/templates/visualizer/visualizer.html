@@ -15,6 +15,7 @@
         <b-navbar type="dark" variant="secondary">
             <b-navbar-brand tag="h1">Decide</b-navbar-brand>
         </b-navbar>
+      
         <div class="voting container">
             <h1>[[ voting.titulo ]]</h1>
             <h2 v-if="!voting.fecha_inicio">Votación no comenzada</h2>
@@ -39,7 +40,6 @@
                                 </tr>
                             </tbody>
                         </table>
-                    
                     <div v-if="voting.tipo='VP'">
 
                     </div>
@@ -48,8 +48,7 @@
                     </div>
                 </div>
                 
-                <div id="statistics">
-                                        
+                <div id="statistics">                 
                     <div v-if="voting.tipo='VP'">
 
                     </div>
@@ -58,30 +57,68 @@
                     </div>
                 </div>
 
-                <br>
-                <h2>Votación General</h2>
-                <input type="button" class="btn btn-outline-dark" value="Gráficas votación general" onclick="mostrarGraficas();">
-                <br><br>
-
-                <div id="VotacionGeneral">
-                    <div id="VotosCandidatosBarras" class="col-md-6">
-                        <input type="button" class="btn btn-outline-dark" value="Votos generales" onclick="mostrarBarras();">
+                <div id="graphics">
+                    <div id="votacionGeneral" v-if="voting.tipo='VG'">
+                        <h2>Votación General</h2>
+                        <input type="button" class="btn btn-outline-dark" value="Mostrar gráficas votación general" onclick="mostrarGraficas();">
                         <br><br>
-                        <canvas id="myChart" width="75" height="35"></canvas>
+                        <div id="allGraphics" class="col-md-6">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Centro" onclick="mostrarDelegadoCentro();">
+                            <br><br>
+                            <div id="delegadoCentro">
+                                <canvas id="myChart" width="75" height="35"></canvas>
+                                <canvas id="myChart2" width="107" height="27"></canvas>
+                                <canvas id="myChart3" width="107" height="27"></canvas>
+                                <canvas id="myChart4" width="107" height="27"></canvas>
+                                <canvas id="myChart5" width="107" height="27"></canvas>
+                                <canvas id="myChart6" width="107" height="27"></canvas>
+                                <canvas id="myChart7" width="107" height="27"></canvas>
+                                <canvas id="myChart8" width="107" height="27"></canvas>
+                                <canvas id="myChart9" width="107" height="27"></canvas>
+                            </div>
+
+                            <input type="button" class="btn btn-outline-dark" value="Votos Primero" onclick="mostrarPrimero();">
+                            <br><br>
+                            <div id="primero">
+
+                            </div>
+
+                            <input type="button" class="btn btn-outline-dark" value="Votos Segundo" onclick="mostrarSegundo();">
+                            <br><br>
+                            <div id="segundo">
+                                
+                            </div>
+
+                            <input type="button" class="btn btn-outline-dark" value="Votos Tercero" onclick="mostrarTercero();">
+                            <br><br>
+                            <div id="tercero">
+                                
+                            </div>
+
+                            <input type="button" class="btn btn-outline-dark" value="Votos Cuarto" onclick="mostrarCuarto();">
+                            <br><br>
+                            <div id="cuarto">
+                                
+                            </div>
+
+                            <input type="button" class="btn btn-outline-dark" value="Votos Master" onclick="mostrarMaster();">
+                            <br><br>
+                            <div id="master">
+                                
+                            </div>
+
+                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Alumnos" onclick="mostrarDelegadoAlumnos();">
+                            <br><br>
+                            <div id="delegadoAlumnos">
+                                
+                            </div>
+                        </div> 
                     </div>
 
-                    &nbsp;&nbsp;&nbsp;&nbsp;<input type="button" class="btn btn-outline-dark" value="Votos por sexo" onclick="mostrarSectores();">
+                    <div id="votacionPrimaria" v-else>
 
-                    <div id="VotosSexoSectores" class="col-md-6">
-                        <canvas id="myChart2" width="107" height="27"></canvas>
-                        <canvas id="myChart3" width="107" height="27"></canvas>
-                        <canvas id="myChart4" width="107" height="27"></canvas>
-                        <canvas id="myChart5" width="107" height="27"></canvas>
-                        <canvas id="myChart6" width="107" height="27"></canvas>
-                        <canvas id="myChart7" width="107" height="27"></canvas>
-                        <canvas id="myChart8" width="107" height="27"></canvas>
-                        <canvas id="myChart9" width="107" height="27"></canvas>
                     </div>
+
                 </div>
             </div>
 
@@ -110,7 +147,7 @@
     <script>
 
         function mostrarGraficas() {
-            var graficas = document.getElementById("VotacionGeneral");
+            var graficas = document.getElementById("allGraphics");
             if (graficas.style.display === "none") {
                 graficas.style.display = "block";
             } else {
@@ -118,21 +155,66 @@
             }
         }
 
-        function mostrarBarras() {
-            var bar = document.getElementById("myChart");
-            if (bar.style.display === "none") {
-                bar.style.display = "block";
+        function mostrarDelegadoCentro() {
+            var delCen = document.getElementById("delegadoCentro");
+            if (delCen.style.display === "none") {
+                delCen.style.display = "block";
             } else {
-                bar.style.display = "none";
+                delCen.style.display = "none";
             }
         }
 
-        function mostrarSectores() {
-            var sec = document.getElementById("VotosSexoSectores");
-            if (sec.style.display === "none") {
-                sec.style.display = "block";
+        function mostrarPrimero() {
+            var first = document.getElementById("primero");
+            if (first.style.display === "none") {
+                first.style.display = "block";
             } else {
-                sec.style.display = "none";
+                first.style.display = "none";
+            }
+        }
+
+        function mostrarSegundo() {
+            var second = document.getElementById("segundo");
+            if (second.style.display === "none") {
+                second.style.display = "block";
+            } else {
+                second.style.display = "none";
+            }
+        }
+
+        function mostrarTercero() {
+            var third = document.getElementById("tercero");
+            if (third.style.display === "none") {
+                third.style.display = "block";
+            } else {
+                third.style.display = "none";
+            }
+        }
+
+        function mostrarCuarto() {
+            var fourth = document.getElementById("cuarto");
+            if (fourth.style.display === "none") {
+                fourth.style.display = "block";
+            } else {
+                fourth.style.display = "none";
+            }
+        }
+
+        function mostrarMaster() {
+            var ms = document.getElementById("master");
+            if (ms.style.display === "none") {
+                ms.style.display = "block";
+            } else {
+                ms.style.display = "none";
+            }
+        }
+
+        function mostrarDelegadoAlumnos() {
+            var delAlum = document.getElementById("delegadoAlumnos");
+            if (delAlum.style.display === "none") {
+                delAlum.style.display = "block";
+            } else {
+                delAlum.style.display = "none";
             }
         }
 
