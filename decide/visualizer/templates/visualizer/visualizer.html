@@ -129,12 +129,18 @@
                         </div> 
                     </div>
 
-                    <div id="votacionPrimaria" v-else>
+                    <div id="votacionPrimaria">
                         <h2>Votación Primaria</h2>
                         <div id="allGraphicsPrimaria" class="col-md-6">
                             <div id="delegadoCentroPrimaria">
                                 <h6 style="text-align: center;">Votos de todos los candidatos</h6>
                                 <canvas id="myChartPrim1" width="75" height="35"></canvas>
+                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
+                                <canvas id="myChartPrim2" width="107" height="27"></canvas>
+                                <canvas id="myChartPrim3" width="107" height="27"></canvas>
+                                <canvas id="myChartPrim4" width="107" height="27"></canvas>
+                                <canvas id="myChartPrim5" width="107" height="27"></canvas>
+                                <br>
                             </div>
                         </div>
                     </div>
@@ -1114,6 +1120,180 @@
                 }
             }
         });
+
+        var ctx= document.getElementById("myChartPrim2").getContext("2d");
+        var myChart= new Chart(ctx,{
+            type:'pie',
+            data: {
+                labels: ['Hombres','Mujeres'],
+                datasets: [{
+                        label: 'Votos',
+                        data: [7,7], 
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 1
+                        }]
+                },
+            options:{
+                responsive: true,
+                title :{
+                    display: true,
+                    text: "Candidato 1"
+                },
+                legend :{
+                    display: false
+                },
+                scales:{
+                    yAxes:[{
+                        ticks:{
+                            beginAtZero:true
+                        },
+                        display: false,
+                        stacked: false
+                    }],
+                    xAxes:[{
+                        display: false
+                    }]
+                }
+            }
+        });
+
+
+        var ctx= document.getElementById("myChartPrim3").getContext("2d");
+        var myChart= new Chart(ctx,{
+            type:'pie',
+            data: {
+                labels: ['Hombres','Mujeres'],
+                datasets: [{
+                        label: 'Votos',
+                        data: [4,9], 
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 1
+                        }]
+                },
+            options:{
+                responsive: true,
+                title :{
+                    display: true,
+                    text: "Candidato 2"
+                },
+                legend :{
+                    display: false
+                },
+                scales:{
+                    yAxes:[{
+                        ticks:{
+                            beginAtZero:true
+                        },
+                        display: false,
+                        stacked: false
+                    }],
+                    xAxes:[{
+                        display: false
+                    }]
+                }
+            }
+        });
+
+        var ctx= document.getElementById("myChartPrim4").getContext("2d");
+        var myChart= new Chart(ctx,{
+            type:'pie',
+            data: {
+                labels: ['Hombres','Mujeres'],
+                datasets: [{
+                        label: 'Votos',
+                        data: [10,1], 
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 1
+                        }]
+                },
+            options:{
+                responsive: true,
+                title :{
+                    display: true,
+                    text: "Candidato 3"
+                },
+                legend :{
+                    display: false
+                },
+                scales:{
+                    yAxes:[{
+                        ticks:{
+                            beginAtZero:true
+                        },
+                        display: false,
+                        stacked: false
+                    }],
+                    xAxes:[{
+                        display: false
+                    }]
+                }
+            }
+        });
+
+        var ctx= document.getElementById("myChartPrim5").getContext("2d");
+        var myChart= new Chart(ctx,{
+            type:'pie',
+            data: {
+                labels: ['Hombres','Mujeres'],
+                datasets: [{
+                        label: 'Votos',
+                        data: [4,5], 
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 1
+                        }]
+                },
+            options:{
+                responsive: true,
+                title :{
+                    display: true,
+                    text: "Candidato 4"
+                },
+                legend :{
+                    display: false
+                },
+                scales:{
+                    yAxes:[{
+                        ticks:{
+                            beginAtZero:true
+                        },
+                        display: false,
+                        stacked: false
+                    }],
+                    xAxes:[{
+                        display: false
+                    }]
+                }
+            }
+        });
+
         
     </script>
 </body>
