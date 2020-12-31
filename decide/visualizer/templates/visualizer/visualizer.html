@@ -18,6 +18,7 @@
       
         <div class="voting mr-5">
             <h1>[[ voting.titulo ]]</h1>
+            <button class="btn btn-outline-dark" style="float:right;" data-html2canvas-ignore="true" onclick="exportarExcel('results')">Exportar a Excel</button>            
             <input type="button" class="btn btn-outline-dark" style="float:right;" data-html2canvas-ignore="true" value="Exportar a PDF" onclick="exportarPDF();">
             <h2 v-if="!voting.fecha_inicio">Votación no comenzada</h2>
             <h2 v-else-if="!voting.fecha_fin">Votación en curso</h2>
@@ -343,6 +344,46 @@
 
             html2pdf().from(elementHTML).set(opt).save();
 
+        }
+
+    </script>
+
+    <script>
+
+        function exportarExcel(tableID, filename = ''){
+            var downloadLink;
+            var dataType = 'data:application/vnd.ms-excel;charset=UTF-8';
+            var tableSelect = document.getElementById(tableID);
+            var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+
+            while (tableHTML.indexOf('á') != -1) tableHTML = tableHTML.replace('á', '&aacute;');
+            while (tableHTML.indexOf('Á') != -1) tableHTML = tableHTML.replace('Á', '&Aacute;');
+            while (tableHTML.indexOf('é') != -1) tableHTML = tableHTML.replace('é', '&eacute;');
+            while (tableHTML.indexOf('É') != -1) tableHTML = tableHTML.replace('É', '&Eacute;');
+            while (tableHTML.indexOf('í') != -1) tableHTML = tableHTML.replace('í', '&iacute;');
+            while (tableHTML.indexOf('Í') != -1) tableHTML = tableHTML.replace('Í', '&Iacute;');
+            while (tableHTML.indexOf('ó') != -1) tableHTML = tableHTML.replace('ó', '&oacute;');
+            while (tableHTML.indexOf('Ó') != -1) tableHTML = tableHTML.replace('Ó', '&Oacute;');
+            while (tableHTML.indexOf('ú') != -1) tableHTML = tableHTML.replace('ú', '&uacute;');
+            while (tableHTML.indexOf('Ú') != -1) tableHTML = tableHTML.replace('Ú', '&Uacute;');
+            while (tableHTML.indexOf('ñ') != -1) tableHTML = tableHTML.replace('ñ', '&ntilde;');
+            while (tableHTML.indexOf('Ñ') != -1) tableHTML = tableHTML.replace('Ñ', '&Ntilde;');
+            while (tableHTML.indexOf('º') != -1) tableHTML = tableHTML.replace('º', '&ordm;');
+            
+            filename = filename?filename+'.xls':'resultados.xls';
+            downloadLink = document.createElement("a");
+            document.body.appendChild(downloadLink);
+            
+            if(navigator.msSaveOrOpenBlob){
+                var blob = new Blob(['ufeff', tableHTML], {
+                    type: dataType
+                });
+                navigator.msSaveOrOpenBlob( blob, filename);
+            }else{
+                downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+                downloadLink.download = filename;
+                downloadLink.click();
+            }
         }
 
     </script>
