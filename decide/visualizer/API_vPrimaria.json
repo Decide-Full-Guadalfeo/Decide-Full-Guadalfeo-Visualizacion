@@ -84,21 +84,21 @@
                 {
                 "nombre": "Rogelio Alcalá Olivero",
                 "numero": 11,
-                "voto_F": 3,
-                "voto_M": 7,
+                "voto_F": 4,
+                "voto_M": 8,
                 "media_Edad": 19.1
                 },
                 {
                 "nombre": "Yolanda Piñero Pradas",
                 "numero": 12,
                 "voto_F": 4,
-                "voto_M": 6,
+                "voto_M": 5,
                 "media_Edad": 19.7
                 },
                 {
                 "nombre": "Ana Moro Casanova",
                 "numero": 13,
-                "voto_F": 8,
+                "voto_F": 7,
                 "voto_M": 2,
                 "media_Edad": 19.4
                 }
@@ -111,14 +111,14 @@
                 "nombre": "Natalia Hueso Murillo",
                 "numero": 14,
                 "voto_F": 8,
-                "voto_M": 7,
+                "voto_M": 6,
                 "media_Edad": 21.1
                 },
                 {
                 "nombre": "Cristian Villalón Cornejo",
                 "numero": 15,
                 "voto_F": 11,
-                "voto_M": 4,
+                "voto_M": 5,
                 "media_Edad": 20.5
                 }
             ]
@@ -129,7 +129,7 @@
                 {
                 "nombre": "Gabriel Armero Potro",
                 "numero": 17,
-                "voto_F": 3,
+                "voto_F": 4,
                 "voto_M": 7,
                 "media_Edad": 21.6
                 },
@@ -143,7 +143,7 @@
                 {
                 "nombre": "Joaquín Miguel Andújar",
                 "numero": 19,
-                "voto_F": 8,
+                "voto_F": 7,
                 "voto_M": 2,
                 "media_Edad": 21.3
                 },
