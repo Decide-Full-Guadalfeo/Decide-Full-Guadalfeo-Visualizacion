@@ -142,10 +142,10 @@
                 <div id="graphics">
                     <div id="votacionGeneral" v-if="voting.tipo='VG'">
                         <h2>Votación General</h2>
-                        <input type="button" class="btn btn-outline-dark" value="Mostrar gráficas votación general" onclick="mostrarGraficas();">
+                        <input type="button" class="btn btn-outline-dark" value="Mostrar gráficas votación general" onclick="mostrarGraficas('allGraphics');">
                         <br><br>
                         <div id="allGraphics" class="col-md-6">
-                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Centro" onclick="mostrarDelegadoCentro();">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Centro" onclick="mostrarGraficas('delegadoCentro');">
                             <br><br>
                             <div id="delegadoCentro">
                                 <h6 style="text-align: center;">Votos de todos los candidatos</h6>
@@ -173,37 +173,37 @@
                                 <canvas id="myChart18" width="107" height="27"></canvas>
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Primero" onclick="mostrarPrimero();">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Primero" onclick="mostrarGraficas('primero');">
                             <br><br>
                             <div id="primero">
-
+                                
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Segundo" onclick="mostrarSegundo();">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Segundo" onclick="mostrarGraficas('segundo');">
                             <br><br>
                             <div id="segundo">
                                 
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Tercero" onclick="mostrarTercero();">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Tercero" onclick="mostrarGraficas('tercero');">
                             <br><br>
                             <div id="tercero">
                                 
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Cuarto" onclick="mostrarCuarto();">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Cuarto" onclick="mostrarGraficas('cuarto');">
                             <br><br>
                             <div id="cuarto">
                                 
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Master" onclick="mostrarMaster();">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Master" onclick="mostrarGraficas('master');">
                             <br><br>
                             <div id="master">
                                 
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Alumnos" onclick="mostrarDelegadoAlumnos();">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Alumnos" onclick="mostrarGraficas('delegadoAlumnos');">
                             <br><br>
                             <div id="delegadoAlumnos">
                                 
@@ -263,84 +263,12 @@
 
     <script>
 
-        function mostrarResultados() {
-            var resultados = document.getElementById("results");
-            if (resultados.style.display === "none") {
-                resultados.style.display = "block";
-            } else {
-                resultados.style.display = "none";
-            }
-        }
-
-        function mostrarGraficas() {
-            var graficas = document.getElementById("allGraphics");
+        function mostrarGraficas(id) {
+            var graficas = document.getElementById(id);
             if (graficas.style.display === "none") {
-                graficas.style.display = "block";
+               graficas.style.display = "block";
             } else {
                 graficas.style.display = "none";
-            }
-        }
-
-        function mostrarDelegadoCentro() {
-            var delCen = document.getElementById("delegadoCentro");
-            if (delCen.style.display === "none") {
-                delCen.style.display = "block";
-            } else {
-                delCen.style.display = "none";
-            }
-        }
-
-        function mostrarPrimero() {
-            var first = document.getElementById("primero");
-            if (first.style.display === "none") {
-                first.style.display = "block";
-            } else {
-                first.style.display = "none";
-            }
-        }
-
-        function mostrarSegundo() {
-            var second = document.getElementById("segundo");
-            if (second.style.display === "none") {
-                second.style.display = "block";
-            } else {
-                second.style.display = "none";
-            }
-        }
-
-        function mostrarTercero() {
-            var third = document.getElementById("tercero");
-            if (third.style.display === "none") {
-                third.style.display = "block";
-            } else {
-                third.style.display = "none";
-            }
-        }
-
-        function mostrarCuarto() {
-            var fourth = document.getElementById("cuarto");
-            if (fourth.style.display === "none") {
-                fourth.style.display = "block";
-            } else {
-                fourth.style.display = "none";
-            }
-        }
-
-        function mostrarMaster() {
-            var ms = document.getElementById("master");
-            if (ms.style.display === "none") {
-                ms.style.display = "block";
-            } else {
-                ms.style.display = "none";
-            }
-        }
-
-        function mostrarDelegadoAlumnos() {
-            var delAlum = document.getElementById("delegadoAlumnos");
-            if (delAlum.style.display === "none") {
-                delAlum.style.display = "block";
-            } else {
-                delAlum.style.display = "none";
             }
         }
 
