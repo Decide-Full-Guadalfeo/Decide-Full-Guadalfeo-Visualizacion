@@ -22,7 +22,8 @@
             <h2 v-else-if="!voting.fecha_fin">Votación en curso</h2>
             <div v-else>
                 <br>
-                <input type="button" class="btn btn-outline-dark" value="Mostrar/ocultar resultados de la votación" onclick="mostrarResultados();">
+                <input type="button" class="btn btn-outline-dark" value="Mostrar/ocultar resultados de la votación" onclick="mostrarContenido('results');">
+                <br><br>
 
                 <div id="results">
 
@@ -142,10 +143,10 @@
                 <div id="graphics">
                     <div id="votacionGeneral" v-if="voting.tipo='VG'">
                         <h2>Votación General</h2>
-                        <input type="button" class="btn btn-outline-dark" value="Mostrar gráficas votación general" onclick="mostrarGraficas('allGraphics');">
+                        <input type="button" class="btn btn-outline-dark" value="Mostrar gráficas votación general" onclick="mostrarContenido('allGraphics');">
                         <br><br>
                         <div id="allGraphics" class="col-md-6">
-                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Centro" onclick="mostrarGraficas('delegadoCentro');">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Centro" onclick="mostrarContenido('delegadoCentro');">
                             <br><br>
                             <div id="delegadoCentro">
                                 <h6 style="text-align: center;">Votos de todos los candidatos</h6>
@@ -173,37 +174,37 @@
                                 <canvas id="myChart18" width="107" height="27"></canvas>
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Primero" onclick="mostrarGraficas('primero');">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Primero" onclick="mostrarContenido('primero');">
                             <br><br>
                             <div id="primero">
                                 
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Segundo" onclick="mostrarGraficas('segundo');">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Segundo" onclick="mostrarContenido('segundo');">
                             <br><br>
                             <div id="segundo">
                                 
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Tercero" onclick="mostrarGraficas('tercero');">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Tercero" onclick="mostrarContenido('tercero');">
                             <br><br>
                             <div id="tercero">
                                 
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Cuarto" onclick="mostrarGraficas('cuarto');">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Cuarto" onclick="mostrarContenido('cuarto');">
                             <br><br>
                             <div id="cuarto">
                                 
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Master" onclick="mostrarGraficas('master');">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Master" onclick="mostrarContenido('master');">
                             <br><br>
                             <div id="master">
                                 
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Alumnos" onclick="mostrarGraficas('delegadoAlumnos');">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Alumnos" onclick="mostrarContenido('delegadoAlumnos');">
                             <br><br>
                             <div id="delegadoAlumnos">
                                 
@@ -263,7 +264,7 @@
 
     <script>
 
-        function mostrarGraficas(id) {
+        function mostrarContenido(id) {
             var graficas = document.getElementById(id);
             if (graficas.style.display === "none") {
                graficas.style.display = "block";
