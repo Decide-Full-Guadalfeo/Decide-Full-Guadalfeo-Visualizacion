@@ -23,7 +23,8 @@
             <h2 v-else-if="!voting.fecha_fin">Votación en curso</h2>
             <div v-else>
                 <br>
-                <input type="button" class="btn btn-outline-dark" value="Mostrar/ocultar resultados de la votación" data-html2canvas-ignore="true" onclick="mostrarResultados();">
+                <input type="button" class="btn btn-outline-dark" value="Mostrar/ocultar resultados de la votación" data-html2canvas-ignore="true" onclick="mostrarContenido('results');">
+                <br><br>
 
                 <div id="results">
 
@@ -143,10 +144,10 @@
                 <div id="graphics">
                     <div id="votacionGeneral" v-if="voting.tipo='VG'">
                         <h2>Votación General</h2>
-                        <input type="button" class="btn btn-outline-dark" value="Mostrar gráficas votación general" data-html2canvas-ignore="true" onclick="mostrarGraficas();">
+                        <input type="button" class="btn btn-outline-dark" value="Mostrar gráficas votación general" data-html2canvas-ignore="true" onclick="mostrarContenido('allGraphics');">
                         <br><br>
                         <div id="allGraphics" class="col-md-6">
-                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Centro" data-html2canvas-ignore="true" onclick="mostrarDelegadoCentro();">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Centro" data-html2canvas-ignore="true" onclick="mostrarContenido('delegadoCentro');">
                             <br><br>
                             <div id="delegadoCentro">
                                 <h6 style="text-align: center;">Votos de todos los candidatos</h6>
@@ -174,37 +175,37 @@
                                 <canvas id="myChart18" width="107" height="27"></canvas>
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Primero" data-html2canvas-ignore="true" onclick="mostrarPrimero();">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Primero" data-html2canvas-ignore="true" onclick="mostrarContenido('primero');">
                             <br><br>
                             <div id="primero">
-
+                                
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Segundo" data-html2canvas-ignore="true" onclick="mostrarSegundo();">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Segundo" data-html2canvas-ignore="true" onclick="mostrarContenido('segundo');">
                             <br><br>
                             <div id="segundo">
                                 
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Tercero" data-html2canvas-ignore="true" onclick="mostrarTercero();">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Tercero" data-html2canvas-ignore="true" onclick="mostrarContenido('tercero');">
                             <br><br>
                             <div id="tercero">
                                 
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Cuarto" data-html2canvas-ignore="true" onclick="mostrarCuarto();">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Cuarto" data-html2canvas-ignore="true" onclick="mostrarContenido('cuarto');">
                             <br><br>
                             <div id="cuarto">
                                 
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Master" data-html2canvas-ignore="true" onclick="mostrarMaster();">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Master" data-html2canvas-ignore="true" onclick="mostrarContenido('master');">
                             <br><br>
                             <div id="master">
                                 
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Alumnos" data-html2canvas-ignore="true" onclick="mostrarDelegadoAlumnos();">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Alumnos" data-html2canvas-ignore="true" onclick="mostrarContenido('delegadoAlumnos');">
                             <br><br>
                             <div id="delegadoAlumnos">
                                 
@@ -266,132 +267,31 @@
 
     <script>
 
-        function mostrarResultados() {
-            var resultados = document.getElementById("results");
-            if (resultados.style.display === "none") {
-                resultados.style.display = "block";
-            } else {
-                resultados.style.display = "none";
-            }
-        }
-
-        function mostrarGraficas() {
-            var graficas = document.getElementById("allGraphics");
+        function mostrarContenido(id) {
+            var graficas = document.getElementById(id);
             if (graficas.style.display === "none") {
-                graficas.style.display = "block";
+               graficas.style.display = "block";
             } else {
                 graficas.style.display = "none";
             }
         }
 
-        function mostrarDelegadoCentro() {
-            var delCen = document.getElementById("delegadoCentro");
-            if (delCen.style.display === "none") {
-                delCen.style.display = "block";
-            } else {
-                delCen.style.display = "none";
-            }
-        }
-
-        function mostrarPrimero() {
-            var first = document.getElementById("primero");
-            if (first.style.display === "none") {
-                first.style.display = "block";
-            } else {
-                first.style.display = "none";
-            }
-        }
-
-        function mostrarSegundo() {
-            var second = document.getElementById("segundo");
-            if (second.style.display === "none") {
-                second.style.display = "block";
-            } else {
-                second.style.display = "none";
-            }
-        }
-
-        function mostrarTercero() {
-            var third = document.getElementById("tercero");
-            if (third.style.display === "none") {
-                third.style.display = "block";
-            } else {
-                third.style.display = "none";
-            }
-        }
-
-        function mostrarCuarto() {
-            var fourth = document.getElementById("cuarto");
-            if (fourth.style.display === "none") {
-                fourth.style.display = "block";
-            } else {
-                fourth.style.display = "none";
-            }
-        }
-
-        function mostrarMaster() {
-            var ms = document.getElementById("master");
-            if (ms.style.display === "none") {
-                ms.style.display = "block";
-            } else {
-                ms.style.display = "none";
-            }
-        }
-
-        function mostrarDelegadoAlumnos() {
-            var delAlum = document.getElementById("delegadoAlumnos");
-            if (delAlum.style.display === "none") {
-                delAlum.style.display = "block";
-            } else {
-                delAlum.style.display = "none";
-            }
-        }
-
-        function exportarPDF(){           
-            var resultados = document.getElementById("results");
-             if (resultados.style.display === "none") {
-                resultados.style.display = "block";
+        function exportarPDF(){       
+            function mostrarResultados(id) {
+                var graficas = document.getElementById(id);
+                if (graficas.style.display === "none") {
+                    graficas.style.display = "block";
+                }
             }
 
-            var graficas = document.getElementById("allGraphics");
-            if (graficas.style.display === "none") {
-                graficas.style.display = "block";
-            }
-
-            var delCen = document.getElementById("delegadoCentro");
-            if (delCen.style.display === "none") {
-                delCen.style.display = "block";
-            }
-
-            var first = document.getElementById("primero");
-            if (first.style.display === "none") {
-                first.style.display = "block";
-            }
-
-            var second = document.getElementById("segundo");
-            if (second.style.display === "none") {
-                second.style.display = "block";
-            }
-
-            var third = document.getElementById("tercero");
-            if (third.style.display === "none") {
-                third.style.display = "block";
-            }
-
-            var fourth = document.getElementById("cuarto");
-            if (fourth.style.display === "none") {
-                fourth.style.display = "block";
-            }
-
-            var ms = document.getElementById("master");
-            if (ms.style.display === "none") {
-                ms.style.display = "block";
-            }
-
-            var delAlum = document.getElementById("delegadoAlumnos");
-            if (delAlum.style.display === "none") {
-                delAlum.style.display = "block";
-            }
+            mostrarResultados("results")   
+            mostrarResultados("allGraphics") 
+            mostrarResultados("delegadoCentro") 
+            mostrarResultados("primero") 
+            mostrarResultados("tercero") 
+            mostrarResultados("cuarto") 
+            mostrarResultados("master")
+            mostrarResultados("delegadoAlumnos")
 
             var elementHTML= document.getElementById('app-visualizer');
 
