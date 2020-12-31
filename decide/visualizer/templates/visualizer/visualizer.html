@@ -18,11 +18,12 @@
       
         <div class="voting mr-5">
             <h1>[[ voting.titulo ]]</h1>
+            <input type="button" class="btn btn-outline-dark" style="float:right;" data-html2canvas-ignore="true" value="Exportar a PDF" onclick="exportarPDF();">
             <h2 v-if="!voting.fecha_inicio">Votación no comenzada</h2>
             <h2 v-else-if="!voting.fecha_fin">Votación en curso</h2>
             <div v-else>
                 <br>
-                <input type="button" class="btn btn-outline-dark" value="Mostrar/ocultar resultados de la votación" onclick="mostrarResultados();">
+                <input type="button" class="btn btn-outline-dark" value="Mostrar/ocultar resultados de la votación" data-html2canvas-ignore="true" onclick="mostrarResultados();">
 
                 <div id="results">
 
@@ -142,10 +143,10 @@
                 <div id="graphics">
                     <div id="votacionGeneral" v-if="voting.tipo='VG'">
                         <h2>Votación General</h2>
-                        <input type="button" class="btn btn-outline-dark" value="Mostrar gráficas votación general" onclick="mostrarGraficas();">
+                        <input type="button" class="btn btn-outline-dark" value="Mostrar gráficas votación general" data-html2canvas-ignore="true" onclick="mostrarGraficas();">
                         <br><br>
                         <div id="allGraphics" class="col-md-6">
-                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Centro" onclick="mostrarDelegadoCentro();">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Centro" data-html2canvas-ignore="true" onclick="mostrarDelegadoCentro();">
                             <br><br>
                             <div id="delegadoCentro">
                                 <h6 style="text-align: center;">Votos de todos los candidatos</h6>
@@ -173,37 +174,37 @@
                                 <canvas id="myChart18" width="107" height="27"></canvas>
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Primero" onclick="mostrarPrimero();">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Primero" data-html2canvas-ignore="true" onclick="mostrarPrimero();">
                             <br><br>
                             <div id="primero">
 
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Segundo" onclick="mostrarSegundo();">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Segundo" data-html2canvas-ignore="true" onclick="mostrarSegundo();">
                             <br><br>
                             <div id="segundo">
                                 
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Tercero" onclick="mostrarTercero();">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Tercero" data-html2canvas-ignore="true" onclick="mostrarTercero();">
                             <br><br>
                             <div id="tercero">
                                 
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Cuarto" onclick="mostrarCuarto();">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Cuarto" data-html2canvas-ignore="true" onclick="mostrarCuarto();">
                             <br><br>
                             <div id="cuarto">
                                 
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Master" onclick="mostrarMaster();">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Master" data-html2canvas-ignore="true" onclick="mostrarMaster();">
                             <br><br>
                             <div id="master">
                                 
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Alumnos" onclick="mostrarDelegadoAlumnos();">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Alumnos" data-html2canvas-ignore="true" onclick="mostrarDelegadoAlumnos();">
                             <br><br>
                             <div id="delegadoAlumnos">
                                 
@@ -249,6 +250,8 @@
     <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
     <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 
     <script>
         var voting = {{voting|safe}};
@@ -342,6 +345,65 @@
             } else {
                 delAlum.style.display = "none";
             }
+        }
+
+        function exportarPDF(){           
+            var resultados = document.getElementById("results");
+             if (resultados.style.display === "none") {
+                resultados.style.display = "block";
+            }
+
+            var graficas = document.getElementById("allGraphics");
+            if (graficas.style.display === "none") {
+                graficas.style.display = "block";
+            }
+
+            var delCen = document.getElementById("delegadoCentro");
+            if (delCen.style.display === "none") {
+                delCen.style.display = "block";
+            }
+
+            var first = document.getElementById("primero");
+            if (first.style.display === "none") {
+                first.style.display = "block";
+            }
+
+            var second = document.getElementById("segundo");
+            if (second.style.display === "none") {
+                second.style.display = "block";
+            }
+
+            var third = document.getElementById("tercero");
+            if (third.style.display === "none") {
+                third.style.display = "block";
+            }
+
+            var fourth = document.getElementById("cuarto");
+            if (fourth.style.display === "none") {
+                fourth.style.display = "block";
+            }
+
+            var ms = document.getElementById("master");
+            if (ms.style.display === "none") {
+                ms.style.display = "block";
+            }
+
+            var delAlum = document.getElementById("delegadoAlumnos");
+            if (delAlum.style.display === "none") {
+                delAlum.style.display = "block";
+            }
+
+            var elementHTML= document.getElementById('app-visualizer');
+
+            var opt = {
+                filename:     'resultados.pdf',
+                image:        { type: 'png', quality: 0.98 },
+                html2canvas:  {dpi: 300, letterRendering: true, useCORS: true},
+                jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
+                };
+
+            html2pdf().from(elementHTML).set(opt).save();
+
         }
 
     </script>
