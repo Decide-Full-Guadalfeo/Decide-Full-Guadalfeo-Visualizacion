@@ -18,11 +18,12 @@
       
         <div class="voting mr-5">
             <h1>[[ voting.titulo ]]</h1>
+            <input type="button" class="btn btn-outline-dark" style="float:right;" data-html2canvas-ignore="true" value="Exportar a PDF" onclick="exportarPDF();">
             <h2 v-if="!voting.fecha_inicio">Votación no comenzada</h2>
             <h2 v-else-if="!voting.fecha_fin">Votación en curso</h2>
             <div v-else>
                 <br>
-                <input type="button" class="btn btn-outline-dark" value="Mostrar/ocultar resultados de la votación" onclick="mostrarContenido('results');">
+                <input type="button" class="btn btn-outline-dark" value="Mostrar/ocultar resultados de la votación" data-html2canvas-ignore="true" onclick="mostrarContenido('results');">
                 <br><br>
 
                 <div id="results">
@@ -143,10 +144,10 @@
                 <div id="graphics">
                     <div id="votacionGeneral" v-if="voting.tipo='VG'">
                         <h2>Votación General</h2>
-                        <input type="button" class="btn btn-outline-dark" value="Mostrar gráficas votación general" onclick="mostrarContenido('allGraphics');">
+                        <input type="button" class="btn btn-outline-dark" value="Mostrar gráficas votación general" data-html2canvas-ignore="true" onclick="mostrarContenido('allGraphics');">
                         <br><br>
                         <div id="allGraphics" class="col-md-6">
-                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Centro" onclick="mostrarContenido('delegadoCentro');">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Centro" data-html2canvas-ignore="true" onclick="mostrarContenido('delegadoCentro');">
                             <br><br>
                             <div id="delegadoCentro">
                                 <h6 style="text-align: center;">Votos de todos los candidatos</h6>
@@ -174,37 +175,37 @@
                                 <canvas id="myChart18" width="107" height="27"></canvas>
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Primero" onclick="mostrarContenido('primero');">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Primero" data-html2canvas-ignore="true" onclick="mostrarContenido('primero');">
                             <br><br>
                             <div id="primero">
                                 
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Segundo" onclick="mostrarContenido('segundo');">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Segundo" data-html2canvas-ignore="true" onclick="mostrarContenido('segundo');">
                             <br><br>
                             <div id="segundo">
                                 
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Tercero" onclick="mostrarContenido('tercero');">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Tercero" data-html2canvas-ignore="true" onclick="mostrarContenido('tercero');">
                             <br><br>
                             <div id="tercero">
                                 
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Cuarto" onclick="mostrarContenido('cuarto');">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Cuarto" data-html2canvas-ignore="true" onclick="mostrarContenido('cuarto');">
                             <br><br>
                             <div id="cuarto">
                                 
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Master" onclick="mostrarContenido('master');">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Master" data-html2canvas-ignore="true" onclick="mostrarContenido('master');">
                             <br><br>
                             <div id="master">
                                 
                             </div>
 
-                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Alumnos" onclick="mostrarContenido('delegadoAlumnos');">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Alumnos" data-html2canvas-ignore="true" onclick="mostrarContenido('delegadoAlumnos');">
                             <br><br>
                             <div id="delegadoAlumnos">
                                 
@@ -250,6 +251,8 @@
     <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
     <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 
     <script>
         var voting = {{voting|safe}};
@@ -271,6 +274,36 @@
             } else {
                 graficas.style.display = "none";
             }
+        }
+
+        function exportarPDF(){       
+            function mostrarResultados(id) {
+                var graficas = document.getElementById(id);
+                if (graficas.style.display === "none") {
+                    graficas.style.display = "block";
+                }
+            }
+
+            mostrarResultados("results")   
+            mostrarResultados("allGraphics") 
+            mostrarResultados("delegadoCentro") 
+            mostrarResultados("primero") 
+            mostrarResultados("tercero") 
+            mostrarResultados("cuarto") 
+            mostrarResultados("master")
+            mostrarResultados("delegadoAlumnos")
+
+            var elementHTML= document.getElementById('app-visualizer');
+
+            var opt = {
+                filename:     'resultados.pdf',
+                image:        { type: 'png', quality: 0.98 },
+                html2canvas:  {dpi: 300, letterRendering: true, useCORS: true},
+                jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
+                };
+
+            html2pdf().from(elementHTML).set(opt).save();
+
         }
 
     </script>
