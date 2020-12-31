@@ -215,11 +215,14 @@
 
                     <div id="votacionPrimaria">
                         <h2>Votación Primaria</h2>
+                        <input type="button" class="btn btn-outline-dark" value="Mostrar gráficas votación primaria" onclick="mostrarContenido('allGraphicsPrimaria');">
+                        <br><br>
                         <div id="allGraphicsPrimaria" class="col-md-6">
+                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Centro" onclick="mostrarContenido('delegadoCentroPrimaria');">
+                            <br><br>
                             <div id="delegadoCentroPrimaria">
                                 <h6 style="text-align: center;">Votos de todos los candidatos</h6>
                                 <canvas id="myChartPrim1" width="75" height="35"></canvas>
-                                <br><br>
                                 <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
                                 <canvas id="myChartPrim2" width="107" height="27"></canvas>
                                 <canvas id="myChartPrim3" width="107" height="27"></canvas>
@@ -234,6 +237,42 @@
                                 <canvas id="myChartPrim8" width="107" height="27"></canvas>
                                 <canvas id="myChartPrim9" width="107" height="27"></canvas>
                                 <canvas id="myChartPrim10" width="107" height="27"></canvas>
+                            </div>
+
+                            <input type="button" class="btn btn-outline-dark" value="Votos Primero" onclick="mostrarContenido('primeroPrim');">
+                            <br><br>
+                            <div id="primeroPrim">
+                                
+                            </div>
+
+                            <input type="button" class="btn btn-outline-dark" value="Votos Segundo" onclick="mostrarContenido('segundoPrim');">
+                            <br><br>
+                            <div id="segundoPrim">
+                                
+                            </div>
+
+                            <input type="button" class="btn btn-outline-dark" value="Votos Tercero" onclick="mostrarContenido('terceroPrim');">
+                            <br><br>
+                            <div id="terceroPrim">
+                                
+                            </div>
+
+                            <input type="button" class="btn btn-outline-dark" value="Votos Cuarto" onclick="mostrarContenido('cuartoPrim');">
+                            <br><br>
+                            <div id="cuartoPrim">
+                                
+                            </div>
+
+                            <input type="button" class="btn btn-outline-dark" value="Votos Master" onclick="mostrarContenido('masterPrim');">
+                            <br><br>
+                            <div id="masterPrim">
+                                
+                            </div>
+
+                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Alumnos" onclick="mostrarContenido('delegadoAlumnosPrim');">
+                            <br><br>
+                            <div id="delegadoAlumnosPrim">
+                                
                             </div>
                         </div>
                     </div>
