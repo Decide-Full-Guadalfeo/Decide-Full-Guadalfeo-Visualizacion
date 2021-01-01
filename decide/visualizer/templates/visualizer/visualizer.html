@@ -316,6 +316,52 @@
             }
         }
 
+        function graficoBarras(id, etiqueta, datos) {
+            var ctx= document.getElementById(id).getContext("2d");
+            var myChart= new Chart(ctx,{
+                type:'bar',
+                data: {
+                    labels: etiqueta,
+                    datasets: [{
+                        label: 'Votos',
+                            data: datos, 
+                            backgroundColor:  [                           
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                ],
+                            borderColor:  [                           
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                ],
+                            borderWidth: 1
+                    }]
+                    },
+                options:{
+                    responsive: true,
+                    legend :{
+                        display: false
+                    },
+                    scales:{
+                        yAxes:[{
+                            scaleLabel: {
+                                display: true,
+                                labelString: "Votos"
+                            },
+                            ticks:{
+                                beginAtZero:true
+                            },
+                            stacked: false
+                        }]
+                    }
+                }
+            });
+        }
+
+
         function exportarPDF(){       
             function mostrarResultados(id) {
                 var graficas = document.getElementById(id);
