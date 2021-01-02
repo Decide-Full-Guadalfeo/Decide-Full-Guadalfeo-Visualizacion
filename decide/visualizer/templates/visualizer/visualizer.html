@@ -316,6 +316,56 @@
             }
         }
 
+        function graficoBarras(id, etiquetas, datos, etY) {
+            var ctx= document.getElementById(id).getContext("2d");
+            var myChart= new Chart(ctx,{
+                type:'bar',
+                data: {
+                    labels: etiquetas,
+                    datasets: [{
+                        label: 'Votos',
+                            data: datos, 
+                            backgroundColor:  [                           
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                ],
+                            borderColor:  [                           
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                ],
+                            borderWidth: 1
+                    }]
+                    },
+                options:{
+                    responsive: true,
+                    legend :{
+                        display: false
+                    },
+                    scales:{
+                        yAxes:[{
+                            scaleLabel: {
+                                display: true,
+                                labelString: etY
+                            },
+                            ticks:{
+                                beginAtZero:true
+                            },
+                            stacked: false
+                        }]
+                    }
+                }
+            });
+        }
+
+        graficoBarras("myChart", ['Cand.1','Cand.2','Cand.3','Cand.4','Cand.5','Cand.6','Cand.7','Cand.8','Cand.9','Cand.10'], [10,7,13,5,18,1,9,3,11,13], "Votos");
+        graficoBarras("myChart10", ['Cand.1','Cand.2','Cand.3','Cand.4','Cand.5','Cand.6','Cand.7','Cand.8','Cand.9','Cand.10'], [10,7,13,5,18,1,9,3,11,13], "Edad");
+        graficoBarras("myChartPrim1", ['Cand.1','Cand.2','Cand.3','Cand.4'], [10,7,13,5], "Votos");
+        graficoBarras("myChartPrim6", ['Cand.1','Cand.2','Cand.3','Cand.4'], [9,3,11,13], "Edad");
+
         function exportarPDF(){       
             function mostrarResultados(id) {
                 var graficas = document.getElementById(id);
@@ -389,60 +439,6 @@
     </script>
 
     <script>
-        var ctx= document.getElementById("myChart").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'bar',
-            data: {
-                labels: ['Cand.1','Cand.2','Cand.3','Cand.4','Cand.5','Cand.6','Cand.7','Cand.8','Cand.9','Cand.10'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [10,7,13,5,18,1,9,3,11,13], 
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)',
-                            'rgba(233, 34, 240, 0.2)',
-                            'rgba(34, 82, 240, 0.2)',
-                            'rgba(5, 5, 5, 0.2)',
-                            'rgba(247, 129, 2, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)',
-                            'rgba(233, 34, 240, 1)', 
-                            'rgba(34, 82, 240, 1)',
-                            'rgba(5, 5, 5, 1)',
-                            'rgba(247, 129, 2, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        scaleLabel: {
-                            display: true,
-                            labelString: "Votos"
-                        },
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        stacked: false
-                    }]
-                }
-            }
-        });
 
         var ctx= document.getElementById("myChart2").getContext("2d");
         var myChart= new Chart(ctx,{
@@ -782,63 +778,6 @@
                     }],
                     xAxes:[{
                         display: false
-                    }]
-                }
-            }
-        });
-
-        var ctx= document.getElementById("myChart10").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'bar',
-            data: {
-                labels: ['Cand.1','Cand.2','Cand.3','Cand.4','Cand.5','Cand.6','Cand.7','Cand.8','Cand.9','Cand.10'],
-                datasets: [{
-                        label: 'Edad',
-                        data: [22,35,57,29,31,66,20,18,43,38], 
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)',
-                            'rgba(233, 34, 240, 0.2)',
-                            'rgba(34, 82, 240, 0.2)',
-                            'rgba(5, 5, 5, 0.2)',
-                            'rgba(247, 129, 2, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)',
-                            'rgba(233, 34, 240, 1)', 
-                            'rgba(34, 82, 240, 1)',
-                            'rgba(5, 5, 5, 1)',
-                            'rgba(247, 129, 2, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        scaleLabel: {
-                            display: true,
-                            labelString: "Edad"
-                        },
-                        ticks:{
-                            min: 10,
-                            max: 70,
-                            beginAtZero: false,
-                        },
-                        stacked: false
                     }]
                 }
             }
@@ -1219,50 +1158,6 @@
             }
         });
 
-
-        var ctx= document.getElementById("myChartPrim1").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'bar',
-            data: {
-                labels: ['Cand.1','Cand.2','Cand.3','Cand.4'],
-                datasets: [{
-                    label: 'Votos',
-                        data: [3,7,7,5], 
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                        ],
-                        borderWidth: 1
-                }]
-                },
-            options:{
-                responsive: true,
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        scaleLabel: {
-                            display: true,
-                            labelString: "Votos"
-                        },
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        stacked: false
-                    }]
-                }
-            }
-        });
-
         var ctx= document.getElementById("myChartPrim2").getContext("2d");
         var myChart= new Chart(ctx,{
             type:'pie',
@@ -1431,51 +1326,6 @@
                     }],
                     xAxes:[{
                         display: false
-                    }]
-                }
-            }
-        });
-
-        var ctx= document.getElementById("myChartPrim6").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'bar',
-            data: {
-                labels: ['Cand.1','Cand.2','Cand.3','Cand.4'],
-                datasets: [{
-                        label: 'Edad',
-                        data: [57,29,31,18], 
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        scaleLabel: {
-                            display: true,
-                            labelString: "Edad"
-                        },
-                        ticks:{
-                            min: 10,
-                            max: 70,
-                            beginAtZero: false,
-                        },
-                        stacked: false
                     }]
                 }
             }
