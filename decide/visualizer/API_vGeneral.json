@@ -5,9 +5,16 @@
     "fecha_fin":"2020-12-30T12:47:58.267945Z",
     "tipo":"VG",
     "n_personas_censo": 465,
+    "n_votantes": 400,
+    "n_hombres_censo": 200,
+    "n_votantes_m": 160,
+    "n_mujeres_censo": 265,
+    "n_votantes_f": 240,
+    "media_edad_votantes": 20.4,
 	"preguntas":[
 		{
-			"titulo": "Delegado de centro",
+            "titulo": "Delegado de centro",
+            "numero_candidatos": 4,
 			"opts":[
                     {
                     "nombre": "Antonio Pérez Reverte",
@@ -44,7 +51,15 @@
                 ]
             },
 		{
-			"titulo":"Delegado de primer curso",
+            "titulo":"Delegado de primer curso",
+            "numero_candidatos": 4,
+            "n_personas_censo": 100,
+            "n_votantes": 90,
+            "n_hombres_censo": 40,
+            "n_votantes_m": 35,
+            "n_mujeres_censo": 60,
+            "n_votantes_f": 55,
+            "media_edad_votantes": 18.4,
 			"opts":[
                     {
                     "nombre": "Francisco Hoyos Becerra",
@@ -77,7 +92,15 @@
             ]
         },
         {
-			"titulo":"Delegado de segundo curso",
+            "titulo":"Delegado de segundo curso",
+            "numero_candidatos": 4,
+            "n_personas_censo": 70,
+            "n_votantes": 65,
+            "n_hombres_censo": 30,
+            "n_votantes_m": 27,
+            "n_mujeres_censo": 40,
+            "n_votantes_f": 38,
+            "media_edad_votantes": 19.4,
 			"opts":[
                     {
                     "nombre": "Josep Caraballo Curto",
@@ -110,7 +133,15 @@
             ]
         },
         {
-			"titulo":"Delegado de tercer curso",
+            "titulo":"Delegado de tercer curso",
+            "numero_candidatos": 4,
+            "n_personas_censo": 100,
+            "n_votantes": 85,
+            "n_hombres_censo": 40,
+            "n_votantes_m": 30,
+            "n_mujeres_censo": 60,
+            "n_votantes_f": 55,
+            "media_edad_votantes": 20.5,
 			"opts":[
                     {
                     "nombre": "Juana Berna Aguirre",
@@ -143,7 +174,15 @@
             ]
         },
         {
-			"titulo":"Delegado de cuarto curso",
+            "titulo":"Delegado de cuarto curso",
+            "numero_candidatos": 4,
+            "n_personas_censo": 120,
+            "n_votantes": 105,
+            "n_hombres_censo": 60,
+            "n_votantes_m": 45,
+            "n_mujeres_censo": 60,
+            "n_votantes_f": 60,
+            "media_edad_votantes": 21.5,
 			"opts":[
                     {
                     "nombre": "Hugo Aguado Casero",
@@ -176,7 +215,15 @@
             ]
         },
         {
-			"titulo":"Delegado de master",
+            "titulo":"Delegado de master",
+            "numero_candidatos": 4,
+            "n_personas_censo": 75,
+            "n_votantes": 55,
+            "n_hombres_censo": 30,
+            "n_votantes_m": 25,
+            "n_mujeres_censo": 45,
+            "n_votantes_f": 30,
+            "media_edad_votantes": 23.5,
 			"opts":[
                 {
                     "nombre": "Miriam Vilches Donoso",
@@ -209,7 +256,8 @@
             ]
         },
         {
-			"titulo": "Delegación de alumnos",
+            "titulo": "Delegación de alumnos",
+            "numero_candidatos": 16,
 			"opts":[
                 {
                     "nombre": "Adrián Iglesias Guirado",
