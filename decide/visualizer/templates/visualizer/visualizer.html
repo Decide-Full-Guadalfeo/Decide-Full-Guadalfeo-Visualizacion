@@ -18,6 +18,7 @@
       
         <div class="voting mr-5">
             <h1>[[ voting.titulo ]]</h1>
+            <h5>Censo: [[voting.n_personas_censo]]</h5>
             <button class="btn btn-outline-dark" style="float:right;" data-html2canvas-ignore="true" onclick="exportarExcel('results')">Exportar a Excel</button>            
             <input type="button" class="btn btn-outline-dark" style="float:right;" data-html2canvas-ignore="true" value="Exportar a PDF" onclick="exportarPDF();">
             <h2 v-if="!voting.fecha_inicio">Votación no comenzada</h2>
@@ -31,8 +32,8 @@
 
                     <h2 class="heading">Resultados:</h2>
                         <br>
-
-                        <h3 class="heading">Delegado de centro</h3>
+                        
+                        <h3 class="heading">[[voting.preguntas[0].titulo]]</h3>
                         <table class="table table-bordered table-condensed table-striped table-hover">
                             <thead>
                                 <tr>
@@ -123,23 +124,142 @@
                                 </tbody>
                             </table>
                         </div>
-
-                        <div v-if="voting.tipo='VP'">
-
-                        </div>
-                        <div v-else>
-                            
-                        </div>
-
+                        
                 </div>
                 
-                <div id="statistics">                 
-                    <div v-if="voting.tipo='VP'">
+                <div id="statistics"><br>
+                    <h2 class="heading">Estadísticas:</h2><br>
+                    
+                        <table class="table table-bordered table-condensed table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Totales</th>
+                                    <th>Primero</th>
+                                    <th>Segundo</th>
+                                    <th>Tercero</th>
+                                    <th>Cuarto</th>
+                                    <th>Master</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>Porcentaje de abstención</th>
+                                    <td>[[(100 - (voting.n_votantes / voting.n_personas_censo * 100)).toFixed(2)]] %</td>
+                                    <td v-for="preg in [1,2,3,4,5]">
+                                        [[(100 - (voting.preguntas[preg].n_votantes / voting.preguntas[preg].n_personas_censo * 100)).toFixed(2)]] %
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Porcentaje de abstención masculina</th>
+                                    <td>[[(100 - (voting.n_votantes_m / voting.n_hombres_censo * 100)).toFixed(2)]] %</td>
+                                    <td v-for="preg in [1,2,3,4,5]">
+                                        [[(100 - (voting.preguntas[preg].n_votantes_m / voting.preguntas[preg].n_hombres_censo * 100)).toFixed(2)]] %
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Porcentaje de abstención femenina</th>
+                                    <td>[[(100 - (voting.n_votantes_f / voting.n_mujeres_censo * 100)).toFixed(2)]] %</td>
+                                    <td v-for="preg in [1,2,3,4,5]">
+                                        [[(100 - (voting.preguntas[preg].n_votantes_f / voting.preguntas[preg].n_mujeres_censo * 100)).toFixed(2)]] %
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Media de edad</th>
+                                    <td>[[voting.media_edad_votantes]]</td>
+                                    <td v-for="preg in [1,2,3,4,5]">
+                                        [[voting.preguntas[preg].media_edad_votantes]]
+                                    </td>
+                                </tr>
 
-                    </div>
-                    <div v-else>
-                        
-                    </div>
+                            </tbody>
+                        </table><br>
+
+                    <h3 class="heading">[[voting.preguntas[0].titulo]]</h3>
+                        <table class="table table-bordered table-condensed table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Candidato</th>
+                                    <th>Porcentaje de votos respecto al censo</th>
+                                    <th>Porcentaje de votantes masculinos</th>
+                                    <th>Porcentaje de votantes femeninos</th>
+                                    <th>Porcentaje de votantes primer curso</th>
+                                    <th>Porcentaje de votantes segundo curso</th>
+                                    <th>Porcentaje de votantes tercer curso</th>
+                                    <th>Porcentaje de votantes cuarto curso</th>
+                                    <th>Porcentaje de votantes master</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="opt in voting.preguntas[0].opts" :key="opt.numero">
+                                    <td>[[opt.nombre]]</td>
+                                    <td>[[((opt.voto_F + opt.voto_M) / voting.n_personas_censo * 100).toFixed(2)]] %</td>
+                                    <td>[[(opt.voto_M/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
+                                    <td>[[(opt.voto_F/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
+                                    <td>[[(opt.voto_curso.primero/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
+                                    <td>[[(opt.voto_curso.segundo/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
+                                    <td>[[(opt.voto_curso.tercero/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
+                                    <td>[[(opt.voto_curso.cuarto/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
+                                    <td>[[(opt.voto_curso.master/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    
+                        <div v-for="preg in [1,2,3,4,5]">
+                            <br>
+                            <h3 class="heading">[[voting.preguntas[preg].titulo]]</h3>
+                            <table class="table table-bordered table-condensed table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Candidato</th>
+                                        <th>Porcentaje de votos respecto al censo del curso</th>
+                                        <th>Porcentaje de votantes masculinos</th>
+                                        <th>Porcentaje de votantes femeninos</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="opt in voting.preguntas[preg].opts" :key="opt.numero">
+                                        <td>[[opt.nombre]]</td>
+                                        <td>[[((opt.voto_F + opt.voto_M) / voting.preguntas[preg].n_personas_censo * 100).toFixed(2)]] %</td>
+                                        <td>[[(opt.voto_M/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
+                                        <td>[[(opt.voto_F/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div v-if="voting.tipo=='VG'">
+                            <br>
+                            <h3 class="heading">[[voting.preguntas[6].titulo]]</h3>
+                            <table class="table table-bordered table-condensed table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Candidato</th>
+                                        <th>Porcentaje de votos respecto al censo</th>
+                                        <th>Porcentaje de votantes masculinos</th>
+                                        <th>Porcentaje de votantes femeninos</th>
+                                        <th>Porcentaje de votantes primer curso</th>
+                                        <th>Porcentaje de votantes segundo curso</th>
+                                        <th>Porcentaje de votantes tercer curso</th>
+                                        <th>Porcentaje de votantes cuarto curso</th>
+                                        <th>Porcentaje de votantes master</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="opt in voting.preguntas[6].opts" :key="opt.numero">
+                                        <td>[[opt.nombre]]</td>
+                                        <td>[[((opt.voto_F + opt.voto_M) / voting.n_personas_censo * 100).toFixed(2)]] %</td>
+                                        <td>[[(opt.voto_M/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
+                                        <td>[[(opt.voto_F/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
+                                        <td>[[(opt.voto_curso.primero/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
+                                        <td>[[(opt.voto_curso.segundo/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
+                                        <td>[[(opt.voto_curso.tercero/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
+                                        <td>[[(opt.voto_curso.cuarto/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
+                                        <td>[[(opt.voto_curso.master/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                 </div>
 
                 <div id="graphics">

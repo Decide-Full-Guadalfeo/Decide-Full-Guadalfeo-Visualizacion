@@ -5,9 +5,16 @@
     "fecha_fin":"2020-12-30T12:47:58.267945Z",
     "tipo":"VP",
     "n_personas_censo": 190,
+    "n_votantes": 150,
+    "n_hombres_censo": 100,
+    "n_votantes_m": 70,
+    "n_mujeres_censo": 90,
+    "n_votantes_f": 80,
+    "media_edad_votantes": 20.4,
 	"preguntas":[
 		{
-			"titulo": "Delegado de centro",
+            "titulo": "Delegado de centro",
+            "numero_candidatos": 6,
 			"opts":[
                     {
                     "nombre": "Antonio Pérez Reverte",
@@ -60,7 +67,15 @@
                 ]
             },
 		{
-			"titulo":"Primarias de primer curso",
+            "titulo":"Primarias de primer curso",
+            "numero_candidatos": 2,
+            "n_personas_censo": 35,
+            "n_votantes": 30,
+            "n_hombres_censo": 15,
+            "n_votantes_m": 13,
+            "n_mujeres_censo": 20,
+            "n_votantes_f": 17,
+            "media_edad_votantes": 18.4,
 			"opts":[
                 {
                 "nombre": "Francisco Hoyos Becerra",
@@ -79,7 +94,15 @@
             ]
         },
         {
-			"titulo":"Primarias de segundo curso",
+            "titulo":"Primarias de segundo curso",
+            "numero_candidatos": 3,
+            "n_personas_censo": 35,
+            "n_votantes": 30,
+            "n_hombres_censo": 20,
+            "n_votantes_m": 15,
+            "n_mujeres_censo": 15,
+            "n_votantes_f": 15,
+            "media_edad_votantes": 19.4,
 			"opts":[
                 {
                 "nombre": "Rogelio Alcalá Olivero",
@@ -105,7 +128,15 @@
             ]
         },
         {
-			"titulo":"Primarias de tercer curso",
+            "titulo":"Primarias de tercer curso",
+            "numero_candidatos": 2,
+            "n_personas_censo": 35,
+            "n_votantes": 30,
+            "n_hombres_censo": 15,
+            "n_votantes_m": 11,
+            "n_mujeres_censo": 20,
+            "n_votantes_f": 19,
+            "media_edad_votantes": 21.8,
 			"opts":[
                 {
                 "nombre": "Natalia Hueso Murillo",
@@ -124,7 +155,15 @@
             ]
         },
         {
-			"titulo":"Primarias de cuarto curso",
+            "titulo":"Primarias de cuarto curso",
+            "numero_candidatos": 4,
+            "n_personas_censo": 40,
+            "n_votantes": 30,
+            "n_hombres_censo": 20,
+            "n_votantes_m": 14,
+            "n_mujeres_censo": 20,
+            "n_votantes_f": 16,
+            "media_edad_votantes": 21.7,
 			"opts":[
                 {
                 "nombre": "Gabriel Armero Potro",
@@ -157,7 +196,15 @@
             ]
         },
         {
-			"titulo":"Primarias de master",
+            "titulo":"Primarias de master",
+            "numero_candidatos": 3,
+            "n_personas_censo": 45,
+            "n_votantes": 30,
+            "n_hombres_censo": 20,
+            "n_votantes_m": 19,
+            "n_mujeres_censo": 25,
+            "n_votantes_f": 24,
+            "media_edad_votantes": 23.2,
 			"opts":[
                 {
                 "nombre": "María Carmen Vilar Carranza",
