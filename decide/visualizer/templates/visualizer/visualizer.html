@@ -323,7 +323,7 @@
                 data: {
                     labels: etiquetas,
                     datasets: [{
-                        label: 'Votos',
+                        label: etY,
                             data: datos, 
                             backgroundColor:  [                           
                                 'rgba(255, 99, 132, 0.2)',
@@ -365,6 +365,124 @@
         graficoBarras("myChart10", ['Cand.1','Cand.2','Cand.3','Cand.4','Cand.5','Cand.6','Cand.7','Cand.8','Cand.9','Cand.10'], [10,7,13,5,18,1,9,3,11,13], "Edad");
         graficoBarras("myChartPrim1", ['Cand.1','Cand.2','Cand.3','Cand.4'], [10,7,13,5], "Votos");
         graficoBarras("myChartPrim6", ['Cand.1','Cand.2','Cand.3','Cand.4'], [9,3,11,13], "Edad");
+
+        function graficoSectoresSexo(id, datos, candidato) {
+            var ctx= document.getElementById(id).getContext("2d");
+            var myChart= new Chart(ctx,{
+                type:'pie',
+                data: {
+                    labels: ['Hombres','Mujeres'],
+                    datasets: [{
+                            label: 'Votos',
+                            data: datos, 
+                            backgroundColor: [
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                            }]
+                    },
+                options:{
+                    responsive: true,
+                    title :{
+                        display: true,
+                        text: candidato
+                    },
+                    legend :{
+                        display: false
+                    },
+                    scales:{
+                        yAxes:[{
+                            ticks:{
+                                beginAtZero:true
+                            },
+                            display: false,
+                            stacked: false
+                        }],
+                        xAxes:[{
+                            display: false
+                        }]
+                    }
+                }
+            });
+        }
+
+        graficoSectoresSexo("myChart2", [4,9], "Candidato 3")
+        graficoSectoresSexo("myChart3", [3,2], "Candidato 4")
+        graficoSectoresSexo("myChart4", [9,9], "Candidato 5")
+        graficoSectoresSexo("myChart5", [1,0], "Candidato 6")
+        graficoSectoresSexo("myChart6", [2,7], "Candidato 7")
+        graficoSectoresSexo("myChart7", [2,1], "Candidato 8")
+        graficoSectoresSexo("myChart8", [10,1], "Candidato 9")
+        graficoSectoresSexo("myChart9", [6,8], "Candidato 10")
+
+        graficoSectoresSexo("myChartPrim2", [7,7], "Candidato 1")
+        graficoSectoresSexo("myChartPrim3", [4,9], "Candidato 2")
+        graficoSectoresSexo("myChartPrim4", [10,1], "Candidato 3")
+        graficoSectoresSexo("myChartPrim5", [4,5], "Candidato 4")
+
+        function graficoSectoresCurso(id, datos, candidato) {
+            var ctx= document.getElementById(id).getContext("2d");
+            var myChart= new Chart(ctx,{
+                type:'pie',
+                data: {
+                    labels: ['Votos Primero','Votos Segundo','Votos Tercero','Votos Cuarto'],
+                    datasets: [{
+                            label: 'Votos',
+                            data: datos, 
+                            backgroundColor: [
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                            }]
+                    },
+                options:{
+                    responsive: true,
+                    title :{
+                        display: true,
+                        text: candidato
+                    },
+                    legend :{
+                        display: false
+                    },
+                    scales:{
+                        yAxes:[{
+                            ticks:{
+                                beginAtZero:true
+                            },
+                            display: false,
+                            stacked: false
+                        }],
+                        xAxes:[{
+                            display: false
+                        }]
+                    }
+                }
+            });
+        }
+
+        graficoSectoresCurso("myChart11", [4,4,2,3], "Candidato 3")
+        graficoSectoresCurso("myChart12", [3,1,1], "Candidato 4")
+        graficoSectoresCurso("myChart13", [2,2,9,5], "Candidato 5")
+        graficoSectoresCurso("myChart14", [0,1,0,0], "Candidato 6")
+        graficoSectoresCurso("myChart15", [0,3,3,3], "Candidato 7")
+        graficoSectoresCurso("myChart16", [1,0,1,1], "Candidato 8")
+        graficoSectoresCurso("myChart17", [4,1,2,4], "Candidato 9")
+        graficoSectoresCurso("myChart18", [1,3,7,2], "Candidato 10")
+
+        graficoSectoresCurso("myChartPrim7", [1,1,2,3], "Candidato 1")
+        graficoSectoresCurso("myChartPrim8", [2,1,2,3], "Candidato 2")
+        graficoSectoresCurso("myChartPrim9", [1,1,2,1], "Candidato 3")
+        graficoSectoresCurso("myChartPrim10", [3,3,2,3], "Candidato 4")
 
         function exportarPDF(){       
             function mostrarResultados(id) {
@@ -438,1088 +556,5 @@
 
     </script>
 
-    <script>
-
-        var ctx= document.getElementById("myChart2").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'pie',
-            data: {
-                labels: ['Hombres','Mujeres'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [4,9], 
-                        backgroundColor: [
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 99, 132, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 99, 132, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                title :{
-                    display: true,
-                    text: "Candidato 3"
-                },
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        display: false,
-                        stacked: false
-                    }],
-                    xAxes:[{
-                        display: false
-                    }]
-                }
-            }
-        });
-
-
-        var ctx= document.getElementById("myChart3").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'pie',
-            data: {
-                labels: ['Hombres','Mujeres'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [3,2], 
-                        backgroundColor: [
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(153, 102, 255, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(153, 102, 255, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                title :{
-                    display: true,
-                    text: "Candidato 4"
-                },
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        display: false,
-                        stacked: false
-                    }],
-                    xAxes:[{
-                        display: false
-                    }]
-                }
-            }
-        });
-
-        var ctx= document.getElementById("myChart4").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'pie',
-            data: {
-                labels: ['Hombres','Mujeres'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [9,9], 
-                        backgroundColor: [
-                            'rgba(32, 247, 176, 0.2)',
-                            'rgba(237, 124, 19, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(32, 247, 176, 1)',
-                            'rgba(237, 124, 19, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                title :{
-                    display: true,
-                    text: "Candidato 5"
-                },
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        display: false,
-                        stacked: false
-                    }],
-                    xAxes:[{
-                        display: false
-                    }]
-                }
-            }
-        });
-
-        var ctx= document.getElementById("myChart5").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'pie',
-            data: {
-                labels: ['Hombres','Mujeres'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [1,0], 
-                        backgroundColor: [
-                            'rgba(0, 0, 0, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(0, 0, 0, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                title :{
-                    display: true,
-                    text: "Candidato 6"
-                },
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        display: false,
-                        stacked: false
-                    }],
-                    xAxes:[{
-                        display: false
-                    }]
-                }
-            }
-        });
-
-        var ctx= document.getElementById("myChart6").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'pie',
-            data: {
-                labels: ['Hombres','Mujeres'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [2,7], 
-                        backgroundColor: [
-                            'rgba(47, 30, 232, 0.2)',
-                            'rgba(250, 15, 125, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(47, 30, 232, 1)',
-                            'rgba(250, 15, 125, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                title :{
-                    display: true,
-                    text: "Candidato 7"
-                },
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        display: false,
-                        stacked: false
-                    }],
-                    xAxes:[{
-                        display: false
-                    }]
-                }
-            }
-        });
-
-        var ctx= document.getElementById("myChart7").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'pie',
-            data: {
-                labels: ['Hombres','Mujeres'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [2,1], 
-                        backgroundColor: [
-                            'rgba(191, 250, 15, 0.2)',
-                            'rgba(255, 42, 0, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(191, 250, 15, 1)',
-                            'rgba(255, 42, 0, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                title :{
-                    display: true,
-                    text: "Candidato 8"
-                },
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        display: false,
-                        stacked: false
-                    }],
-                    xAxes:[{
-                        display: false
-                    }]
-                }
-            }
-        });
-
-        var ctx= document.getElementById("myChart8").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'pie',
-            data: {
-                labels: ['Hombres','Mujeres'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [10,1], 
-                        backgroundColor: [
-                            'rgba(44, 113, 201, 0.2)',
-                            'rgba(94, 255, 0, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(44, 113, 201, 1)',
-                            'rgba(94, 255, 0, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                title :{
-                    display: true,
-                    text: "Candidato 9"
-                },
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        display: false,
-                        stacked: false
-                    }],
-                    xAxes:[{
-                        display: false
-                    }]
-                }
-            }
-        });
-
-        var ctx= document.getElementById("myChart9").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'pie',
-            data: {
-                labels: ['Hombres','Mujeres'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [6,8], 
-                        backgroundColor: [
-                            'rgba(186, 134, 235, 0.2)',
-                            'rgba(227, 247, 146, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(186, 134, 235, 1)',
-                            'rgba(227, 247, 146, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                title :{
-                    display: true,
-                    text: "Candidato 10"
-                },
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        display: false,
-                        stacked: false
-                    }],
-                    xAxes:[{
-                        display: false
-                    }]
-                }
-            }
-        });
-
-        var ctx= document.getElementById("myChart11").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'pie',
-            data: {
-                labels: ['Votos Primero','Votos Segundo','Votos Tercero','Votos Cuarto'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [4,4,2,3], 
-                        backgroundColor: [
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(153, 102, 255, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(153, 102, 255, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                title :{
-                    display: true,
-                    text: "Candidato 3"
-                },
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        display: false,
-                        stacked: false
-                    }],
-                    xAxes:[{
-                        display: false
-                    }]
-                }
-            }
-        });
-
-        var ctx= document.getElementById("myChart12").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'pie',
-            data: {
-                labels: ['Votos Primero','Votos Segundo','Votos Tercero','Votos Cuarto'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [3,1,1], 
-                        backgroundColor: [
-                            'rgba(32, 247, 176, 0.2)',
-                            'rgba(237, 124, 19, 0.2)',
-                            'rgba(0, 0, 0, 0.2)'
-                            
-                        ],
-                        borderColor: [
-                            'rgba(32, 247, 176, 1)',
-                            'rgba(237, 124, 19, 1)',
-                            'rgba(0, 0, 0, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                title :{
-                    display: true,
-                    text: "Candidato 4"
-                },
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        display: false,
-                        stacked: false
-                    }],
-                    xAxes:[{
-                        display: false
-                    }]
-                }
-            }
-        });
-
-        var ctx= document.getElementById("myChart13").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'pie',
-            data: {
-                labels: ['Votos Primero','Votos Segundo','Votos Tercero','Votos Cuarto'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [2,2,9,5], 
-                        backgroundColor: [
-                            'rgba(47, 30, 232, 0.2)',
-                            'rgba(230, 15, 125, 0.2)',
-                            'rgba(191, 250, 15, 0.2)',
-                            'rgba(255, 42, 0, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(47, 30, 232, 1)',
-                            'rgba(230, 15, 125, 1)',
-                            'rgba(191, 250, 15, 1)',
-                            'rgba(255, 42, 0, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                title :{
-                    display: true,
-                    text: "Candidato 5"
-                },
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        display: false,
-                        stacked: false
-                    }],
-                    xAxes:[{
-                        display: false
-                    }]
-                }
-            }
-        });
-
-        var ctx= document.getElementById("myChart14").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'pie',
-            data: {
-                labels: ['Votos Primero','Votos Segundo','Votos Tercero','Votos Cuarto'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [0,1,0,0], 
-                        backgroundColor: [
-                            'rgba(44, 113, 201, 0.2)',
-                            'rgba(94, 255, 0, 0.2)',
-                            'rgba(186, 134, 235, 0.2)',
-                            'rgba(227, 247, 146, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(44, 113, 201, 1)',
-                            'rgba(94, 255, 0, 1)',
-                            'rgba(186, 134, 235, 1)',
-                            'rgba(227, 247, 146, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                title :{
-                    display: true,
-                    text: "Candidato 6"
-                },
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        display: false,
-                        stacked: false
-                    }],
-                    xAxes:[{
-                        display: false
-                    }]
-                }
-            }
-        });
-
-        var ctx= document.getElementById("myChart15").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'pie',
-            data: {
-                labels: ['Votos Primero','Votos Segundo','Votos Tercero','Votos Cuarto'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [0,3,3,3], 
-                        backgroundColor: [
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(153, 102, 255, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(153, 102, 255, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                title :{
-                    display: true,
-                    text: "Candidato 7"
-                },
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        display: false,
-                        stacked: false
-                    }],
-                    xAxes:[{
-                        display: false
-                    }]
-                }
-            }
-        });
-
-        var ctx= document.getElementById("myChart16").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'pie',
-            data: {
-                labels: ['Votos Primero','Votos Segundo','Votos Tercero','Votos Cuarto'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [1,0,1,1], 
-                        backgroundColor: [
-                            'rgba(32, 247, 176, 0.2)',
-                            'rgba(237, 124, 19, 0.2)',
-                            'rgba(0, 0, 0, 0.2)',
-                            'rgba(54, 162, 235, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(32, 247, 176, 1)',
-                            'rgba(237, 124, 19, 1)',
-                            'rgba(0, 0, 0, 1)',
-                            'rgba(54, 162, 235, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                title :{
-                    display: true,
-                    text: "Candidato 8"
-                },
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        display: false,
-                        stacked: false
-                    }],
-                    xAxes:[{
-                        display: false
-                    }]
-                }
-            }
-        });
-
-        var ctx= document.getElementById("myChart17").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'pie',
-            data: {
-                labels: ['Votos Primero','Votos Segundo','Votos Tercero','Votos Cuarto'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [4,1,2,4], 
-                        backgroundColor: [
-                            'rgba(47, 30, 232, 0.2)',
-                            'rgba(230, 15, 125, 0.2)',
-                            'rgba(191, 250, 15, 0.2)',
-                            'rgba(255, 42, 0, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(47, 30, 232, 1)',
-                            'rgba(230, 15, 125, 1)',
-                            'rgba(191, 250, 15, 1)',
-                            'rgba(255, 42, 0, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                title :{
-                    display: true,
-                    text: "Candidato 9"
-                },
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        display: false,
-                        stacked: false
-                    }],
-                    xAxes:[{
-                        display: false
-                    }]
-                }
-            }
-        });
-
-        var ctx= document.getElementById("myChart18").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'pie',
-            data: {
-                labels: ['Votos Primero','Votos Segundo','Votos Tercero','Votos Cuarto'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [1,3,7,2], 
-                        backgroundColor: [
-                            'rgba(44, 113, 201, 0.2)',
-                            'rgba(94, 255, 0, 0.2)',
-                            'rgba(186, 134, 235, 0.2)',
-                            'rgba(227, 247, 146, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(44, 90, 201, 1)',
-                            'rgba(94, 255, 0, 1)',
-                            'rgba(186, 134, 235, 1)',
-                            'rgba(227, 247, 146, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                title :{
-                    display: true,
-                    text: "Candidato 10"
-                },
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        display: false,
-                        stacked: false
-                    }],
-                    xAxes:[{
-                        display: false
-                    }]
-                }
-            }
-        });
-
-        var ctx= document.getElementById("myChartPrim2").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'pie',
-            data: {
-                labels: ['Hombres','Mujeres'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [7,7], 
-                        backgroundColor: [
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 99, 132, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 99, 132, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                title :{
-                    display: true,
-                    text: "Candidato 1"
-                },
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        display: false,
-                        stacked: false
-                    }],
-                    xAxes:[{
-                        display: false
-                    }]
-                }
-            }
-        });
-
-
-        var ctx= document.getElementById("myChartPrim3").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'pie',
-            data: {
-                labels: ['Hombres','Mujeres'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [4,9], 
-                        backgroundColor: [
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 99, 132, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 99, 132, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                title :{
-                    display: true,
-                    text: "Candidato 2"
-                },
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        display: false,
-                        stacked: false
-                    }],
-                    xAxes:[{
-                        display: false
-                    }]
-                }
-            }
-        });
-
-        var ctx= document.getElementById("myChartPrim4").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'pie',
-            data: {
-                labels: ['Hombres','Mujeres'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [10,1], 
-                        backgroundColor: [
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 99, 132, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 99, 132, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                title :{
-                    display: true,
-                    text: "Candidato 3"
-                },
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        display: false,
-                        stacked: false
-                    }],
-                    xAxes:[{
-                        display: false
-                    }]
-                }
-            }
-        });
-
-        var ctx= document.getElementById("myChartPrim5").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'pie',
-            data: {
-                labels: ['Hombres','Mujeres'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [4,5], 
-                        backgroundColor: [
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 99, 132, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 99, 132, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                title :{
-                    display: true,
-                    text: "Candidato 4"
-                },
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        display: false,
-                        stacked: false
-                    }],
-                    xAxes:[{
-                        display: false
-                    }]
-                }
-            }
-        });
-
-        var ctx= document.getElementById("myChartPrim7").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'pie',
-            data: {
-                labels: ['Votos Primero','Votos Segundo','Votos Tercero','Votos Cuarto'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [1,1,2,3], 
-                        backgroundColor: [
-                            'rgba(47, 30, 232, 0.2)',
-                            'rgba(230, 15, 125, 0.2)',
-                            'rgba(191, 250, 15, 0.2)',
-                            'rgba(255, 42, 0, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(47, 30, 232, 1)',
-                            'rgba(230, 15, 125, 1)',
-                            'rgba(191, 250, 15, 1)',
-                            'rgba(255, 42, 0, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                title :{
-                    display: true,
-                    text: "Candidato 1"
-                },
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        display: false,
-                        stacked: false
-                    }],
-                    xAxes:[{
-                        display: false
-                    }]
-                }
-            }
-        });
-
-        var ctx= document.getElementById("myChartPrim8").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'pie',
-            data: {
-                labels: ['Votos Primero','Votos Segundo','Votos Tercero','Votos Cuarto'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [2,1,2,3], 
-                        backgroundColor: [
-                            'rgba(47, 30, 232, 0.2)',
-                            'rgba(230, 15, 125, 0.2)',
-                            'rgba(191, 250, 15, 0.2)',
-                            'rgba(255, 42, 0, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(47, 30, 232, 1)',
-                            'rgba(230, 15, 125, 1)',
-                            'rgba(191, 250, 15, 1)',
-                            'rgba(255, 42, 0, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                title :{
-                    display: true,
-                    text: "Candidato 2"
-                },
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        display: false,
-                        stacked: false
-                    }],
-                    xAxes:[{
-                        display: false
-                    }]
-                }
-            }
-        });
-
-        var ctx= document.getElementById("myChartPrim9").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'pie',
-            data: {
-                labels: ['Votos Primero','Votos Segundo','Votos Tercero','Votos Cuarto'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [1,1,2,1], 
-                        backgroundColor: [
-                            'rgba(47, 30, 232, 0.2)',
-                            'rgba(230, 15, 125, 0.2)',
-                            'rgba(191, 250, 15, 0.2)',
-                            'rgba(255, 42, 0, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(47, 30, 232, 1)',
-                            'rgba(230, 15, 125, 1)',
-                            'rgba(191, 250, 15, 1)',
-                            'rgba(255, 42, 0, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                title :{
-                    display: true,
-                    text: "Candidato 3"
-                },
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        display: false,
-                        stacked: false
-                    }],
-                    xAxes:[{
-                        display: false
-                    }]
-                }
-            }
-        });
-        var ctx= document.getElementById("myChartPrim10").getContext("2d");
-        var myChart= new Chart(ctx,{
-            type:'pie',
-            data: {
-                labels: ['Votos Primero','Votos Segundo','Votos Tercero','Votos Cuarto'],
-                datasets: [{
-                        label: 'Votos',
-                        data: [3,3,2,3], 
-                        backgroundColor: [
-                            'rgba(47, 30, 232, 0.2)',
-                            'rgba(230, 15, 125, 0.2)',
-                            'rgba(191, 250, 15, 0.2)',
-                            'rgba(255, 42, 0, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(47, 30, 232, 1)',
-                            'rgba(230, 15, 125, 1)',
-                            'rgba(191, 250, 15, 1)',
-                            'rgba(255, 42, 0, 1)'
-                        ],
-                        borderWidth: 1
-                        }]
-                },
-            options:{
-                responsive: true,
-                title :{
-                    display: true,
-                    text: "Candidato 4"
-                },
-                legend :{
-                    display: false
-                },
-                scales:{
-                    yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        },
-                        display: false,
-                        stacked: false
-                    }],
-                    xAxes:[{
-                        display: false
-                    }]
-                }
-            }
-        });
-        
-    </script>
 </body>
 {% endblock %}
-
-
