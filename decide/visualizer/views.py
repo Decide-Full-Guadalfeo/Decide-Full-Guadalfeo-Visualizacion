@@ -40,61 +40,29 @@ class BotResponse(TemplateView):
         vid = kwargs.get('voting_id', 0)
 
         try:
+            script_location = Path(__file__).absolute().parent
+            file_location = script_location / 'API_vGeneral.json'
+            with file_location.open() as json_file:
+                json_file = json.load(json_file)
+                
+            # Sorting the results
+            lista = []
+            if (json_file['tipo'] == 'VG'):
+                lista = [0,1,2,3,4,5,6]
+            else:
+                lista = [0,1,2,3,4,5]
+            for i in lista:
+                json_file['preguntas'][i]['opts'] = sorted(json_file['preguntas'][i]['opts'], key=lambda x : x['voto_M']+x['voto_F'], reverse=True)
+
+            context['voting'] = json_file
             r = mods.get('voting', params={'id': vid})
-            context['voting'] = json.dumps(r[0])
-            r[0]={
-                "id":"2",
-                "titulo":"Votación primaria dentro de una candidatura",
-                "desc":"Votación primaria dentro de una candidatura",
-                "fecha_inicio":"23/12/2020",
-                "fecha_fin":"31/12/2020",
-                "tipo":"VP",
-                "n_personas_censo":"465",
-                "preguntas":[
-                    {
-                        "titulo": "Delegado de centro",
-                        "opts":[
-                                {
-                                "nombre": "Primer candidato (nombre de la persona)",
-                                "numero": "3 (numero de opcion)",
-                                "voto_F": "24",
-                                "voto_M":"23",
-                                "media_Edad": "22.12 (media de edad de los votantes de la opción)",
-                                "voto_curso":{"primero": "2","segundo":"3" ,"tercero":"3", "cuarto":"5", "master":"4"}
-                                },
-                            ]
-                        },
-                    {
-                        "titulo":"Primarias de primer curso",
-                        "opts":[
-                            {
-                                "nombre": "Primer candidato (nombre de la persona)",
-                                "numero": "3 (numero de opcion)",
-                                "voto_F": "24",
-                                "voto_M":"23",
-                                "media_Edad": "22.12 (media de edad de los votantes de la opción)",
-                                },
-                        ]
-                    },
-                    {
-                        "titulo":"Primarias de segundo curso",
-                        "opts":[
-                            {
-                                "nombre": "Primer candidato (nombre de la persona)",
-                                "numero": "3 (numero de opcion)",
-                                "voto_F": "24",
-                                "voto_M":"23",
-                                "media_Edad": "22.12 (media de edad de los votantes de la opción)",
-                                },
-                        ]
-                    }
-                ]
-            }
+            r[0]=json_file
+
             voting_id=str(r[0]['id'])
-            message="<b>Votación: "+ r[0]['titulo']+"</b>  " + r[0]['fecha_inicio']+" - "+ r[0]['fecha_fin']+"\n"+"Descripción: "+r[0]['desc']+"\n"+"Personas censadas: "+r[0]['n_personas_censo']+"\n"
+            message="<b>Votación: "+ r[0]['titulo']+"</b>  " + r[0]['fecha_inicio']+" - "+ r[0]['fecha_fin']+"\n"+"Descripción: "+r[0]['desc']+"\n"+"Personas censadas: "+str(r[0]['n_personas_censo'])+" / Votantes: "+str(r[0]['n_votantes'])+"\n"
             preguntas=r[0]['preguntas']
             for pregunta in preguntas:
-                message=message+"·"+pregunta['titulo']+":\n"
+                message=message+"<b>·"+pregunta['titulo']+": "+ str(pregunta['numero_candidatos'])+" candidatos</b>\n"
                 candidatos=pregunta['opts']
                 for candidato in candidatos:
                     votos=int(candidato["voto_F"])+int(candidato["voto_M"])
