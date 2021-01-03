@@ -532,6 +532,31 @@
                 nombres.push(candidatos[e].nombre)
                 votos.push(candidatos[e].voto_F+candidatos[e].voto_M)
                 colores.push(getRandomColor())
+
+                //Crear grafos votos por candidatos segun sexo
+                var canvas = document.createElement('canvas');
+                canvas.id     = "myPieCharm"+i.toString()+"-"+e.toString();
+                canvas.width  = 107;
+                canvas.height = 27;
+                div.appendChild(canvas)
+                graficoSectoresSexo("myPieCharm"+i.toString()+"-"+e.toString(), [candidatos[e].voto_F, candidatos[e].voto_M], candidatos[e].nombre)
+
+                //Crear grafos voto por curso
+                if(i==0 || i==6){
+                    var canvasCurso = document.createElement('canvas');
+                    canvasCurso.id = "myPieCharmCurso"+i.toString()+"-"+e.toString();
+                    canvasCurso.width  = 107;
+                    canvasCurso.height = 27;
+                    divCurso.appendChild(canvasCurso)
+
+                    var votosCurso=[]
+                    votosCurso.push(candidatos[e].voto_curso.primero)
+                    votosCurso.push(candidatos[e].voto_curso.segundo)
+                    votosCurso.push(candidatos[e].voto_curso.tercero)
+                    votosCurso.push(candidatos[e].voto_curso.cuarto)
+                    votosCurso.push(candidatos[e].voto_curso.master)
+                    graficoSectoresCurso("myPieCharmCurso"+i.toString()+"-"+e.toString(), votosCurso, candidatos[e].nombre)
+                }
             }
              
             graficoBarras("myChartVotes"+i.toString(), nombres, votos, "Votos",colores);
@@ -584,36 +609,28 @@
             });
         }
 
-        graficoSectoresSexo("myChart2", [4,9], "Candidato 3")
-        graficoSectoresSexo("myChart3", [3,2], "Candidato 4")
-        graficoSectoresSexo("myChart4", [9,9], "Candidato 5")
-        graficoSectoresSexo("myChart5", [1,0], "Candidato 6")
-        graficoSectoresSexo("myChart6", [2,7], "Candidato 7")
-        graficoSectoresSexo("myChart7", [2,1], "Candidato 8")
-        graficoSectoresSexo("myChart8", [10,1], "Candidato 9")
-        graficoSectoresSexo("myChart9", [6,8], "Candidato 10")
-
-        graficoSectoresSexo("myChartPrim2", [7,7], "Candidato 1")
-        graficoSectoresSexo("myChartPrim3", [4,9], "Candidato 2")
-        graficoSectoresSexo("myChartPrim4", [10,1], "Candidato 3")
-        graficoSectoresSexo("myChartPrim5", [4,5], "Candidato 4")
-
         function graficoSectoresCurso(id, datos, candidato) {
             var ctx= document.getElementById(id).getContext("2d");
             var myChart= new Chart(ctx,{
                 type:'pie',
                 data: {
-                    labels: ['Votos Primero','Votos Segundo','Votos Tercero','Votos Cuarto'],
+                    labels: ['Votos Primero','Votos Segundo','Votos Tercero','Votos Cuarto', 'Votos Master'],
                     datasets: [{
                             label: 'Votos',
                             data: datos, 
                             backgroundColor: [
                                 'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 99, 132, 0.2)'
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(142, 38, 163, 0.2)',
+                                'rgba(56, 163, 38, 0.2)',
+                                'rgba(224, 212, 45, 0.2)',
                             ],
                             borderColor: [
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 99, 132, 1)'
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(142, 38, 163, 0.2)',
+                                'rgba(56, 163, 38, 0.2)',
+                                'rgba(224, 212, 45, 0.2)',
                             ],
                             borderWidth: 1
                             }]
@@ -642,20 +659,6 @@
                 }
             });
         }
-
-        graficoSectoresCurso("myChart11", [4,4,2,3], "Candidato 3")
-        graficoSectoresCurso("myChart12", [3,1,1], "Candidato 4")
-        graficoSectoresCurso("myChart13", [2,2,9,5], "Candidato 5")
-        graficoSectoresCurso("myChart14", [0,1,0,0], "Candidato 6")
-        graficoSectoresCurso("myChart15", [0,3,3,3], "Candidato 7")
-        graficoSectoresCurso("myChart16", [1,0,1,1], "Candidato 8")
-        graficoSectoresCurso("myChart17", [4,1,2,4], "Candidato 9")
-        graficoSectoresCurso("myChart18", [1,3,7,2], "Candidato 10")
-
-        graficoSectoresCurso("myChartPrim7", [1,1,2,3], "Candidato 1")
-        graficoSectoresCurso("myChartPrim8", [2,1,2,3], "Candidato 2")
-        graficoSectoresCurso("myChartPrim9", [1,1,2,1], "Candidato 3")
-        graficoSectoresCurso("myChartPrim10", [3,3,2,3], "Candidato 4")
 
         function exportarPDF(){       
             function mostrarResultados(id) {
