@@ -18,7 +18,7 @@
       
         <div class="voting mr-5">
             <h1>[[ voting.titulo ]]</h1>
-            <h5>Censo: [[voting.n_personas_censo]]</h5>
+            <a href={{botUrl}} style="float:right;" class="btn btn-outline-dark" target="_blank">Enviar resultados por Telegram </a>
             <button class="btn btn-outline-dark" style="float:right;" data-html2canvas-ignore="true" onclick="exportarExcel('results')">Exportar a Excel</button>            
             <input type="button" class="btn btn-outline-dark" style="float:right;" data-html2canvas-ignore="true" value="Exportar a PDF" onclick="exportarPDF();">
             <h2 v-if="!voting.fecha_inicio">Votación no comenzada</h2>
@@ -263,7 +263,7 @@
                 </div>
 
                 <div id="graphics">
-                    <div id="votacionGeneral" v-if="voting.tipo='VG'">
+                    <div id="votacionGeneral" v-if="voting.tipo=='VG'">
                         <h2>Votación General</h2>
                         <input type="button" class="btn btn-outline-dark" value="Mostrar gráficas votación general" data-html2canvas-ignore="true" onclick="mostrarContenido('allGraphics');">
                         <br><br>
@@ -272,69 +272,105 @@
                             <br><br>
                             <div id="delegadoCentro">
                                 <h6 style="text-align: center;">Votos de todos los candidatos</h6>
-                                <canvas id="myChart" width="75" height="35"></canvas>
+                                <canvas id="myChartVotes0" width="75" height="35"></canvas>
                                 <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
-                                <canvas id="myChart2" width="107" height="27"></canvas>
-                                <canvas id="myChart3" width="107" height="27"></canvas>
-                                <canvas id="myChart4" width="107" height="27"></canvas>
-                                <canvas id="myChart5" width="107" height="27"></canvas>
-                                <canvas id="myChart6" width="107" height="27"></canvas>
-                                <canvas id="myChart7" width="107" height="27"></canvas>
-                                <canvas id="myChart8" width="107" height="27"></canvas>
-                                <canvas id="myChart9" width="107" height="27"></canvas>
+                                <div id="graficosSexo0"></div>
                                 <br>
                                 <h6 style="text-align: center;">Media de edad de los votantes</h6>
-                                <canvas id="myChart10" width="75" height="35"></canvas>
+                                <canvas id="myChartAges0" width="75" height="35"></canvas>
                                 <h6 style="text-align: center;">Votos por curso de cada candidato</h6>
-                                <canvas id="myChart11" width="107" height="27"></canvas>
-                                <canvas id="myChart12" width="107" height="27"></canvas>
-                                <canvas id="myChart13" width="107" height="27"></canvas>
-                                <canvas id="myChart14" width="107" height="27"></canvas>
-                                <canvas id="myChart15" width="107" height="27"></canvas>
-                                <canvas id="myChart16" width="107" height="27"></canvas>
-                                <canvas id="myChart17" width="107" height="27"></canvas>
-                                <canvas id="myChart18" width="107" height="27"></canvas>
+                                <div id="graficosCurso0"></div>
                             </div>
 
                             <input type="button" class="btn btn-outline-dark" value="Votos Primero" data-html2canvas-ignore="true" onclick="mostrarContenido('primero');">
                             <br><br>
                             <div id="primero">
-                                
+                                <h6 style="text-align: center;">Votos de todos los candidatos</h6>
+                                <canvas id="myChartVotes1" width="75" height="35"></canvas>
+                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
+                                <div id="graficosSexo1"></div>
+
+                                <br>
+                                <h6 style="text-align: center;">Media de edad de los votantes</h6>
+                                <canvas id="myChartAges1" width="75" height="35"></canvas>
+                               
                             </div>
 
                             <input type="button" class="btn btn-outline-dark" value="Votos Segundo" data-html2canvas-ignore="true" onclick="mostrarContenido('segundo');">
                             <br><br>
                             <div id="segundo">
+                                <h6 style="text-align: center;">Votos de todos los candidatos</h6>
+                                <canvas id="myChartVotes2" width="75" height="35"></canvas>
+                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
+                                <div id="graficosSexo2"></div>
                                 
+                                <br>
+                                <h6 style="text-align: center;">Media de edad de los votantes</h6>
+                                <canvas id="myChartAges2" width="75" height="35"></canvas>
+
                             </div>
 
                             <input type="button" class="btn btn-outline-dark" value="Votos Tercero" data-html2canvas-ignore="true" onclick="mostrarContenido('tercero');">
                             <br><br>
                             <div id="tercero">
-                                
+                                <h6 style="text-align: center;">Votos de todos los candidatos</h6>
+                                <canvas id="myChartVotes3" width="75" height="35"></canvas>
+                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
+                                <div id="graficosSexo3"></div>
+                               
+                                <br>
+                                <h6 style="text-align: center;">Media de edad de los votantes</h6>
+                                <canvas id="myChartAges3" width="75" height="35"></canvas>
+
                             </div>
 
                             <input type="button" class="btn btn-outline-dark" value="Votos Cuarto" data-html2canvas-ignore="true" onclick="mostrarContenido('cuarto');">
                             <br><br>
                             <div id="cuarto">
-                                
+                                <h6 style="text-align: center;">Votos de todos los candidatos</h6>
+                                <canvas id="myChartVotes4" width="75" height="35"></canvas>
+                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
+                                <div id="graficosSexo4"></div>
+                               
+                                <br>
+                                <h6 style="text-align: center;">Media de edad de los votantes</h6>
+                                <canvas id="myChartAges4" width="75" height="35"></canvas>
+
                             </div>
 
                             <input type="button" class="btn btn-outline-dark" value="Votos Master" data-html2canvas-ignore="true" onclick="mostrarContenido('master');">
                             <br><br>
                             <div id="master">
-                                
+                                <h6 style="text-align: center;">Votos de todos los candidatos</h6>
+                                <canvas id="myChartVotes5" width="75" height="35"></canvas>
+                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
+                                <div id="graficosSexo5"></div>
+                               
+                                <br>
+                                <h6 style="text-align: center;">Media de edad de los votantes</h6>
+                                <canvas id="myChartAges5" width="75" height="35"></canvas>
+
                             </div>
 
                             <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Alumnos" data-html2canvas-ignore="true" onclick="mostrarContenido('delegadoAlumnos');">
                             <br><br>
                             <div id="delegadoAlumnos">
-                                
+                                <h6 style="text-align: center;">Votos de todos los candidatos</h6>
+                                <canvas id="myChartVotes6" width="75" height="35"></canvas>
+                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
+                                <div id="graficosSexo6"></div>
+                               
+                                <br>
+                                <h6 style="text-align: center;">Media de edad de los votantes</h6>
+                                <canvas id="myChartAges6" width="75" height="35"></canvas>
+                                <h6 style="text-align: center;">Votos por curso de cada candidato</h6>
+                                <div id="graficosCurso6"></div>
+
                             </div>
                         </div> 
                     </div>
 
-                    <div id="votacionPrimaria">
+                    <div id="votacionPrimaria" v-else-if="voting.tipo=='VP'">
                         <h2>Votación Primaria</h2>
                         <input type="button" class="btn btn-outline-dark" value="Mostrar gráficas votación primaria" onclick="mostrarContenido('allGraphicsPrimaria');">
                         <br><br>
@@ -343,57 +379,80 @@
                             <br><br>
                             <div id="delegadoCentroPrimaria">
                                 <h6 style="text-align: center;">Votos de todos los candidatos</h6>
-                                <canvas id="myChartPrim1" width="75" height="35"></canvas>
+                                <canvas id="myChartVotes0" width="75" height="35"></canvas>
                                 <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
-                                <canvas id="myChartPrim2" width="107" height="27"></canvas>
-                                <canvas id="myChartPrim3" width="107" height="27"></canvas>
-                                <canvas id="myChartPrim4" width="107" height="27"></canvas>
-                                <canvas id="myChartPrim5" width="107" height="27"></canvas>
-                                <br><br>
+                                <div id="graficosSexo0"></div>
+                                <br>
                                 <h6 style="text-align: center;">Media de edad de los votantes</h6>
-                                <canvas id="myChartPrim6" width="75" height="35"></canvas>
-                                <br><br>
+                                <canvas id="myChartAges0" width="75" height="35"></canvas>
                                 <h6 style="text-align: center;">Votos por curso de cada candidato</h6>
-                                <canvas id="myChartPrim7" width="107" height="27"></canvas>
-                                <canvas id="myChartPrim8" width="107" height="27"></canvas>
-                                <canvas id="myChartPrim9" width="107" height="27"></canvas>
-                                <canvas id="myChartPrim10" width="107" height="27"></canvas>
+                                <div id="graficosCurso0"></div>
                             </div>
 
                             <input type="button" class="btn btn-outline-dark" value="Votos Primero" onclick="mostrarContenido('primeroPrim');">
                             <br><br>
                             <div id="primeroPrim">
-                                
+                                <h6 style="text-align: center;">Votos de todos los candidatos</h6>
+                                <canvas id="myChartVotes1" width="75" height="35"></canvas>
+                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
+                                <div id="graficosSexo1"></div>
+
+                                <br>
+                                <h6 style="text-align: center;">Media de edad de los votantes</h6>
+                                <canvas id="myChartAges1" width="75" height="35"></canvas>
                             </div>
 
                             <input type="button" class="btn btn-outline-dark" value="Votos Segundo" onclick="mostrarContenido('segundoPrim');">
                             <br><br>
                             <div id="segundoPrim">
+                                <h6 style="text-align: center;">Votos de todos los candidatos</h6>
+                                <canvas id="myChartVotes2" width="75" height="35"></canvas>
+                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
+                                <div id="graficosSexo2"></div>
                                 
+                                <br>
+                                <h6 style="text-align: center;">Media de edad de los votantes</h6>
+                                <canvas id="myChartAges2" width="75" height="35"></canvas>
                             </div>
 
                             <input type="button" class="btn btn-outline-dark" value="Votos Tercero" onclick="mostrarContenido('terceroPrim');">
                             <br><br>
                             <div id="terceroPrim">
-                                
+                                <h6 style="text-align: center;">Votos de todos los candidatos</h6>
+                                <canvas id="myChartVotes3" width="75" height="35"></canvas>
+                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
+                                <div id="graficosSexo3"></div>
+                               
+                                <br>
+                                <h6 style="text-align: center;">Media de edad de los votantes</h6>
+                                <canvas id="myChartAges3" width="75" height="35"></canvas>
                             </div>
 
                             <input type="button" class="btn btn-outline-dark" value="Votos Cuarto" onclick="mostrarContenido('cuartoPrim');">
                             <br><br>
                             <div id="cuartoPrim">
-                                
+                                <h6 style="text-align: center;">Votos de todos los candidatos</h6>
+                                <canvas id="myChartVotes4" width="75" height="35"></canvas>
+                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
+                                <div id="graficosSexo4"></div>
+                               
+                                <br>
+                                <h6 style="text-align: center;">Media de edad de los votantes</h6>
+                                <canvas id="myChartAges4" width="75" height="35"></canvas>
                             </div>
 
                             <input type="button" class="btn btn-outline-dark" value="Votos Master" onclick="mostrarContenido('masterPrim');">
                             <br><br>
                             <div id="masterPrim">
-                                
-                            </div>
-
-                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Alumnos" onclick="mostrarContenido('delegadoAlumnosPrim');">
-                            <br><br>
-                            <div id="delegadoAlumnosPrim">
-                                
+                                <h6 style="text-align: center;">Votos de todos los candidatos</h6>
+                                <canvas id="myChartVotes5" width="75" height="35"></canvas>
+                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
+                                <div id="graficosSexo5"></div>
+                               
+                                <br>
+                                <h6 style="text-align: center;">Media de edad de los votantes</h6>
+                                <canvas id="myChartAges5" width="75" height="35"></canvas>
+                            </div>                                
                             </div>
                         </div>
                     </div>
@@ -436,7 +495,7 @@
             }
         }
 
-        function graficoBarras(id, etiquetas, datos, etY) {
+        function graficoBarras(id, etiquetas, datos, etY, colores) {
             var ctx= document.getElementById(id).getContext("2d");
             var myChart= new Chart(ctx,{
                 type:'bar',
@@ -445,18 +504,8 @@
                     datasets: [{
                         label: etY,
                             data: datos, 
-                            backgroundColor:  [                           
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                ],
-                            borderColor:  [                           
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                ],
+                            backgroundColor:  colores,
+                            borderColor:  colores,
                             borderWidth: 1
                     }]
                     },
@@ -481,10 +530,61 @@
             });
         }
 
-        graficoBarras("myChart", ['Cand.1','Cand.2','Cand.3','Cand.4','Cand.5','Cand.6','Cand.7','Cand.8','Cand.9','Cand.10'], [10,7,13,5,18,1,9,3,11,13], "Votos");
-        graficoBarras("myChart10", ['Cand.1','Cand.2','Cand.3','Cand.4','Cand.5','Cand.6','Cand.7','Cand.8','Cand.9','Cand.10'], [10,7,13,5,18,1,9,3,11,13], "Edad");
-        graficoBarras("myChartPrim1", ['Cand.1','Cand.2','Cand.3','Cand.4'], [10,7,13,5], "Votos");
-        graficoBarras("myChartPrim6", ['Cand.1','Cand.2','Cand.3','Cand.4'], [9,3,11,13], "Edad");
+        function getRandomColor() {
+            var trans = '0.5'; // 50% transparency
+            var color = 'rgba(';
+            for (var i = 0; i < 3; i++) {
+                color += Math.floor(Math.random() * 255) + ',';
+            }
+            color += trans + ')'; // add the transparency
+            return color;
+        }
+
+        var preguntas=voting.preguntas
+        for (var i = 0; i < preguntas.length; i++) {
+            var candidatos=preguntas[i].opts
+            var nombres=[]
+            var votos=[]
+            var colores=[]
+            var div="" 
+            div = document.getElementById("graficosSexo"+i.toString());
+            var divCurso="" 
+            divCurso = document.getElementById("graficosCurso"+i.toString());
+            for(var e=0; e<candidatos.length;e++){
+                nombres.push(candidatos[e].nombre)
+                votos.push(candidatos[e].voto_F+candidatos[e].voto_M)
+                colores.push(getRandomColor())
+
+                //Crear grafos votos por candidatos segun sexo
+                var canvas = document.createElement('canvas');
+                canvas.id     = "myPieCharm"+i.toString()+"-"+e.toString();
+                canvas.width  = 107;
+                canvas.height = 27;
+                div.appendChild(canvas)
+                graficoSectoresSexo("myPieCharm"+i.toString()+"-"+e.toString(), [candidatos[e].voto_F, candidatos[e].voto_M], candidatos[e].nombre)
+
+                //Crear grafos voto por curso
+                if(i==0 || i==6){
+                    var canvasCurso = document.createElement('canvas');
+                    canvasCurso.id = "myPieCharmCurso"+i.toString()+"-"+e.toString();
+                    canvasCurso.width  = 107;
+                    canvasCurso.height = 27;
+                    divCurso.appendChild(canvasCurso)
+
+                    var votosCurso=[]
+                    votosCurso.push(candidatos[e].voto_curso.primero)
+                    votosCurso.push(candidatos[e].voto_curso.segundo)
+                    votosCurso.push(candidatos[e].voto_curso.tercero)
+                    votosCurso.push(candidatos[e].voto_curso.cuarto)
+                    votosCurso.push(candidatos[e].voto_curso.master)
+                    graficoSectoresCurso("myPieCharmCurso"+i.toString()+"-"+e.toString(), votosCurso, candidatos[e].nombre)
+                }
+            }
+            
+            graficoBarras("myChartVotes"+i.toString(), nombres, votos, "Votos",colores);
+            graficoBarras("myChartAges"+i.toString(), nombres, votos, "Edad",colores);
+
+        }
 
         function graficoSectoresSexo(id, datos, candidato) {
             var ctx= document.getElementById(id).getContext("2d");
@@ -531,36 +631,28 @@
             });
         }
 
-        graficoSectoresSexo("myChart2", [4,9], "Candidato 3")
-        graficoSectoresSexo("myChart3", [3,2], "Candidato 4")
-        graficoSectoresSexo("myChart4", [9,9], "Candidato 5")
-        graficoSectoresSexo("myChart5", [1,0], "Candidato 6")
-        graficoSectoresSexo("myChart6", [2,7], "Candidato 7")
-        graficoSectoresSexo("myChart7", [2,1], "Candidato 8")
-        graficoSectoresSexo("myChart8", [10,1], "Candidato 9")
-        graficoSectoresSexo("myChart9", [6,8], "Candidato 10")
-
-        graficoSectoresSexo("myChartPrim2", [7,7], "Candidato 1")
-        graficoSectoresSexo("myChartPrim3", [4,9], "Candidato 2")
-        graficoSectoresSexo("myChartPrim4", [10,1], "Candidato 3")
-        graficoSectoresSexo("myChartPrim5", [4,5], "Candidato 4")
-
         function graficoSectoresCurso(id, datos, candidato) {
             var ctx= document.getElementById(id).getContext("2d");
             var myChart= new Chart(ctx,{
                 type:'pie',
                 data: {
-                    labels: ['Votos Primero','Votos Segundo','Votos Tercero','Votos Cuarto'],
+                    labels: ['Votos Primero','Votos Segundo','Votos Tercero','Votos Cuarto', 'Votos Master'],
                     datasets: [{
                             label: 'Votos',
                             data: datos, 
                             backgroundColor: [
                                 'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 99, 132, 0.2)'
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(142, 38, 163, 0.2)',
+                                'rgba(56, 163, 38, 0.2)',
+                                'rgba(224, 212, 45, 0.2)',
                             ],
                             borderColor: [
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 99, 132, 1)'
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(142, 38, 163, 0.2)',
+                                'rgba(56, 163, 38, 0.2)',
+                                'rgba(224, 212, 45, 0.2)',
                             ],
                             borderWidth: 1
                             }]
@@ -589,20 +681,6 @@
                 }
             });
         }
-
-        graficoSectoresCurso("myChart11", [4,4,2,3], "Candidato 3")
-        graficoSectoresCurso("myChart12", [3,1,1], "Candidato 4")
-        graficoSectoresCurso("myChart13", [2,2,9,5], "Candidato 5")
-        graficoSectoresCurso("myChart14", [0,1,0,0], "Candidato 6")
-        graficoSectoresCurso("myChart15", [0,3,3,3], "Candidato 7")
-        graficoSectoresCurso("myChart16", [1,0,1,1], "Candidato 8")
-        graficoSectoresCurso("myChart17", [4,1,2,4], "Candidato 9")
-        graficoSectoresCurso("myChart18", [1,3,7,2], "Candidato 10")
-
-        graficoSectoresCurso("myChartPrim7", [1,1,2,3], "Candidato 1")
-        graficoSectoresCurso("myChartPrim8", [2,1,2,3], "Candidato 2")
-        graficoSectoresCurso("myChartPrim9", [1,1,2,1], "Candidato 3")
-        graficoSectoresCurso("myChartPrim10", [3,3,2,3], "Candidato 4")
 
         function exportarPDF(){       
             function mostrarResultados(id) {
