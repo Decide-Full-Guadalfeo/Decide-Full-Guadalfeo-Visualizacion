@@ -16,7 +16,7 @@ CSS para el menú desplegable
 
 #header {
     margin:auto;
-    width:500px;
+    width:518px;
     font-family:Arial, Helvetica, sans-serif;
 }
 
@@ -37,12 +37,20 @@ ul, ol {
 }
 
 .nav li p {
+  background-color:#000;
+  color:#fff;
+  height: 44px;
+  padding: 10px;
+  float:right;
+}
+
+.nav li s {
     background-color:#000;
     color:#fff;
     text-decoration:none;
     height: 44px;
     padding: 10px;
-    display: inline-flex;
+    display:block;
 }
 
 .nav li a:hover {
@@ -74,6 +82,7 @@ checkbox
 
 .switch {
     position: relative;
+    float: right;
     display: inline-flex;
     width: 40px;
     height: 24px;
@@ -102,7 +111,7 @@ checkbox
     content: "";
     height: 18px;
     width: 18px;
-    left: 3px;
+    left: 4px;
     bottom: 3px;
     background-color: white;
     -webkit-transition: .4s;

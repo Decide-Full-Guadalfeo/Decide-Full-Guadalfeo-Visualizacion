@@ -15,6 +15,40 @@
 {% block extrabody %}
     <div id="header">
         <ul class="nav">
+            <script type="text/javascript"> 
+                function cambiarModo() { 
+                    var cuerpoweb = document.body; 
+                    cuerpoweb.classList.toggle("oscuro"); 
+                } 
+            </script>
+            <li><a href=""> ▼ Mostrar</a>
+                <ul>
+                    <li>
+                        <s>Resultados &nbsp
+                            <label class="switch">
+                                <input id="checkbox_resultados" type="checkbox" onclick="" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </s>
+                    </li>
+                    <li>
+                        <s>Estad&iacutesticas &nbsp
+                            <label class="switch">
+                                <input id="checkbox_estadisticas" type="checkbox" onclick="" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </s>
+                    </li>
+                    <li>
+                        <s>Gr&aacuteficas &nbsp
+                            <label class="switch">
+                                <input id="checkbox_graficas" type="checkbox" onclick="" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </s>
+                    </li>
+                </ul>
+            </li>
             <li><a href=""> ▼ Compartir</a>
                 <ul>
                     <li><a href="">Whatsapp</a></li>
@@ -27,20 +61,14 @@
                     <li><a href="">PDF</a></li>
                     <li><a href="">Excel</a></li>
                 </ul>
-            </li>
             <li>
-            <script type="text/javascript"> 
-                function cambiarModo() { 
-                    var cuerpoweb = document.body; 
-                    cuerpoweb.classList.toggle("oscuro"); 
-                } 
-            </script>
                 <p>Tema oscuro/claro &nbsp
                     <label class="switch">
                         <input id="checkbox_nocturno" type="checkbox" onclick="cambiarModo()" checked>
                         <span class="slider round"></span>
                     </label>
                 </p>
+            </li>
             </li>
         </ul>
     </div>
