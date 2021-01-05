@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import VisualizerView, Prueba, BotResponse,ContactUs
+from .views import VisualizerView, Prueba, BotResponse,ContactUs,AboutUs
 
 
 urlpatterns = [
