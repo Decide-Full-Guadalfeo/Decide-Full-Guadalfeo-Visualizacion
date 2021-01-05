@@ -7,26 +7,80 @@
     <link type="text/css" rel="stylesheet"
          href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
     <link type="text/css" rel="stylesheet" href="{% static "booth/style.css" %}" />
+    <link type="text/css" rel="stylesheet" href="{% static "visualizer/style.css" %}" />
 {% endblock %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 {% block content %}
     <div id="app-visualizer">
         <!-- Navbar -->
-        <b-navbar type="dark" variant="secondary">
+        <b-navbar type="dark" data-html2canvas-ignore="true" variant="secondary">
             <b-navbar-brand tag="h1">Decide</b-navbar-brand>
+            <ul class="nav">
+                <script type="text/javascript"> 
+                    function cambiarModo() { 
+                        var cuerpoweb = document.body; 
+                        cuerpoweb.classList.toggle("oscuro"); 
+                    } 
+                </script>
+                <li><a href=""> ▼ Mostrar</a>
+                    <ul>
+                        <li>
+                            <s>Resultados &nbsp
+                                <label class="switch">
+                                    <input id="checkbox_resultados" type="checkbox" onclick="mostrarContenido('results');" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </s>
+                        </li>
+                        <li>
+                            <s>Estad&iacutesticas &nbsp
+                                <label class="switch">
+                                    <input id="checkbox_estadisticas" type="checkbox" onclick="mostrarContenido('statistics');" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </s>
+                        </li>
+                        <li>
+                            <s>Gr&aacuteficas &nbsp
+                                <label class="switch">
+                                    <input id="checkbox_graficas" type="checkbox" onclick="mostrarContenido('graphics');" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </s>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href=""> ▼ Compartir</a>
+                    <ul>
+                        <li><a href="">Whatsapp</a></li>
+                        <li><a href={{botUrl}}>Telegram </a></li>
+                        <li><a href="">Facebook</a></li>
+                    </ul>
+                </li>
+                <li><a href=""> ▼ Exportar</a>
+                    <ul>
+                        <li><a class="text-white" onclick="exportarPDF();">PDF</a></li>
+                        <li><a class="text-white" onclick="exportarExcel('results')">Excel</a></li>
+                    </ul>
+                <li>
+                    <p>Tema oscuro/claro &nbsp
+                        <label class="switch">
+                            <input id="checkbox_nocturno" type="checkbox" onclick="cambiarModo()" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </p>
+                </li>
+            </ul>
         </b-navbar>
       
         <div class="voting mr-5">
             <h1>[[ voting.titulo ]]</h1>
-            <a href={{botUrl}} style="float:right;" class="btn btn-outline-dark" target="_blank">Enviar resultados por Telegram </a>
-            <button class="btn btn-outline-dark" style="float:right;" data-html2canvas-ignore="true" onclick="exportarExcel('results')">Exportar a Excel</button>            
-            <input type="button" class="btn btn-outline-dark" style="float:right;" data-html2canvas-ignore="true" value="Exportar a PDF" onclick="exportarPDF();">
+            <a href={{botUrl}} style="float:right;" class="btn btn-outline-dark" data-html2canvas-ignore="true" target="_blank">Enviar resultados por Telegram </a>
             <h2 v-if="!voting.fecha_inicio">Votación no comenzada</h2>
             <h2 v-else-if="!voting.fecha_fin">Votación en curso</h2>
             <div v-else>
-                <br>
-                <input type="button" class="btn btn-outline-dark" value="Mostrar/ocultar resultados de la votación" data-html2canvas-ignore="true" onclick="mostrarContenido('results');">
-                <br><br>
 
                 <div id="results">
 
@@ -265,7 +319,6 @@
                 <div id="graphics">
                     <div id="votacionGeneral" v-if="voting.tipo=='VG'">
                         <h2>Votación General</h2>
-                        <input type="button" class="btn btn-outline-dark" value="Mostrar gráficas votación general" data-html2canvas-ignore="true" onclick="mostrarContenido('allGraphics');">
                         <br><br>
                         <div id="allGraphics" class="col-md-6">
                             <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Centro" data-html2canvas-ignore="true" onclick="mostrarContenido('delegadoCentro');">
