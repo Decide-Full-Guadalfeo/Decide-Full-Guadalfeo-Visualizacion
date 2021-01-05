@@ -110,6 +110,12 @@ class Prueba(TemplateView):
     except:
         raise Http404
 
+class ContactUs(TemplateView):
+    try:
+        template_name = 'visualizer/contactUs.html'
+    except:
+        raise Http404
+
 class AboutUs(TemplateView):
     try:
         template_name = 'visualizer/aboutUs.html'

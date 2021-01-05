@@ -1,0 +1,178 @@
+ {% extends "base.html" %}
+{% load i18n static %}
+
+{% block extrahead %}
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'booth/contactUs.css' %}" />
+{% endblock %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% block content %}
+<body>
+ <div class="header1">
+        <div class="inner_header">
+            <div class="logotipo">
+                <h1>
+                     Decide Full Guadalfeo
+                </h1>
+            </div>
+        </div>
+    </div>
+   <button class=button onclick="window.history.go(-1);">Return</button>
+
+ <div id="header">
+        <ul class="nav">
+            <script type="text/javascript"> 
+                function cambiarModo() { 
+                    var cuerpoweb = document.body; 
+                    cuerpoweb.classList.toggle("oscuro"); 
+                } 
+            </script>
+            <li><a href=""> ▼ Mostrar</a>
+                <ul>
+                    <li>
+                        <s>Resultados &nbsp
+                            <label class="switch">
+                                <input id="checkbox_resultados" type="checkbox" onclick="" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </s>
+                    </li>
+                    <li>
+                        <s>Estad&iacutesticas &nbsp
+                            <label class="switch">
+                                <input id="checkbox_estadisticas" type="checkbox" onclick="" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </s>
+                    </li>
+                    <li>
+                        <s>Gr&aacuteficas &nbsp
+                            <label class="switch">
+                                <input id="checkbox_graficas" type="checkbox" onclick="" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </s>
+                    </li>
+                </ul>
+            </li>
+            <li><a href=""> ▼ Compartir</a>
+                <ul>
+                    <li><a href="">Whatsapp</a></li>
+                    <li><a href="">Telegram</a></li>
+                    <li><a href="">Facebook</a></li>
+                </ul>
+            </li>
+            <li><a href=""> ▼ Exportar</a>
+                <ul>
+                    <li><a href="">PDF</a></li>
+                    <li><a href="">Excel</a></li>
+                </ul>
+            <li>
+                <p>Tema oscuro/claro &nbsp
+                    <label class="switch">
+                        <input id="checkbox_nocturno" type="checkbox" onclick="cambiarModo()" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </p>
+            </li>
+            </li>
+        </ul>
+    </div>
+      <br/>
+   
+              
+
+
+
+{% endblock %}
+
+{% block extrabody %}
+<body>
+    <div class="body">
+    <h1> ¡Contactanos!</h1>
+
+    <p> La plataforma de decida ha sido desarrollada por la compañia wadobo, y modificada por el equipo de decide-Full-Guadalfeo</p>
+    <p> Decide-Full-Guadalfeo tiene una serie de modulos de trabajo, como booth, voting, visualización...</p>
+    <p> Si desea ponerse enc ontacto con los miembros del modulo de visualización, los contactos por correo electronico están a continuación. </p>
+    <div class=table>
+    <table class=contact>
+        <tr>
+            <th>
+                Miembros
+            </th>
+            <th>
+                Emails
+            </th>
+        </tr>
+        <tr>
+            <td>
+                Fernando Sola 
+            </td>
+            <td class=correo>
+            <button id=correoEz><a href=""><img onclick="window.open('mailto:fersolesp@alum.us.es?subject=Decide!&body=Querido Fernando: Soy _______ y le escribo este correo con motivo:');" 
+                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a></button><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Reyes Blasco 
+            </td>
+            <td class=correo>
+            <button id=correoB><a href=""><img onclick="window.open('mailto:reyblacua@alum.us.es?subject=Decide!&body=Querida Reyes: Soy _______ y le escribo este correo con motivo:');" 
+                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a></button><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                José Salado   
+            </td> 
+            <td class=correo>
+            <button id=correoMt><a href=""><img onclick="window.open('mailto:jossalase@alum.us.es?subject=Decide!&body=Querid José: Soy _______ y le escribo este correo con motivo:');" 
+                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a></button><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                José María Cornac   
+            </td>
+            <td class=correo>
+            <button id=correoMar><a href=""><img onclick="window.open('mailto:joscorfis@alum.us.es?subject=Decide!&body=Querido José María: Soy _______ y le escribo este correo con motivo:');" 
+                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a></button></br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Pablo Cardenal
+            </td>
+            <td class=correo>
+            <button id=correoAle><a href=""><img onclick="window.open('mailto:pabcargam@alum.us.es?subject=Decide!&body=Querido Pablo: Soy _______ y le escribo este correo con motivo:');"
+                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a></button><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Vanesa Pradas
+            </td>
+            <td class=correo>
+            <button id=correoAle><a href=""><img onclick="window.open('mailto:vanprafer@alum.us.es?subject=Decide!&body=Querida Vanesa: Soy _______ y le escribo este correo con motivo:');"
+                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a></button><br>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <p> En caso de tener alguna duda, sugerencia o encontrar algun fallo no dude en contactar con nosotros </p>
+    <p> Intentaremos arreglarlo de la manera más eficaz posible, ¡Muchas gracias! </p>
+    </div>
+
+</body>
+<script>
+function enviarCorreo () {
+    var thread = GmailApp.getInboxThreads(0,1)[0]; // get first thread in inbox
+    var message = thread.getMessages()[0]; // get first message
+    Logger.log(message.getFrom());
+}
+
+</script>
+</body>
+{% endblock %}
