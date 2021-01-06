@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block extrahead %}
+    <link type="text/css" rel="stylesheet"
+         href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet"
+         href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
+    <link type="text/css" rel="stylesheet" href="{% static "visualizer/style.css" %}" />
+
+{% endblock %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% block extrabody %}
+    <div id="header">
+        <ul class="nav">
+            <script type="text/javascript"> 
+                function cambiarModo() { 
+                    var cuerpoweb = document.body; 
+                    cuerpoweb.classList.toggle("oscuro"); 
+                } 
+            </script>
+            <li><a href=""> ▼ Mostrar</a>
+                <ul>
+                    <li>
+                        <s>Resultados &nbsp
+                            <label class="switch">
+                                <input id="checkbox_resultados" type="checkbox" onclick="" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </s>
+                    </li>
+                    <li>
+                        <s>Estad&iacutesticas &nbsp
+                            <label class="switch">
+                                <input id="checkbox_estadisticas" type="checkbox" onclick="" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </s>
+                    </li>
+                    <li>
+                        <s>Gr&aacuteficas &nbsp
+                            <label class="switch">
+                                <input id="checkbox_graficas" type="checkbox" onclick="" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </s>
+                    </li>
+                </ul>
+            </li>
+            <li><a href=""> ▼ Compartir</a>
+                <ul>
+                    <li><a href="">Whatsapp</a></li>
+                    <li><a href="">Telegram</a></li>
+                    <li><a href="">Facebook</a></li>
+                </ul>
+            </li>
+            <li><a href=""> ▼ Exportar</a>
+                <ul>
+                    <li><a href="">PDF</a></li>
+                    <li><a href="">Excel</a></li>
+                </ul>
+            <li>
+                <p>Tema oscuro/claro &nbsp
+                    <label class="switch">
+                        <input id="checkbox_nocturno" type="checkbox" onclick="cambiarModo()" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </p>
+            </li>
+            </li>
+        </ul>
+    </div>
+
+
+<!--
+    <div id="app-visualizer">
+        <!-- Navbar 
+        <b-navbar type="dark" variant="secondary">
+            <b-navbar-brand tag="h1">Decide</b-navbar-brand>
+        </b-navbar>
+
+        <div class="voting container">
+            <h1>[[ voting.id ]] - [[ voting.name ]]</h1>
+
+            <h2 v-if="!voting.start_date">Votación no comenzada</h2>
+            <h2 v-else-if="!voting.end_date">Votación en curso</h2>
+            <div v-else>
+                <h2 class="heading">Resultados:</h2>
+
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>Puntuación</th>
+                            <th>Votos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="opt in voting.postproc" :key="opt.number">
+                            <th>[[opt.option]]</th>
+                            <td>[[opt.postproc]]</td>
+                            <td class="text-muted">[[opt.votes]]</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+-->
+
+ Hola :) 
+
+La ocupación y la democratización
+Por la rendición del Imperio de Japón el 2 de septiembre de 1945, el Imperio de Japón fue disuelto, Japón fue ocupado por los aliados hasta el 28 de abril de 1952.
+
+Durante este período de la ocupación, Japón fue cambiado a un estado democrático. La monarquía absoluta fue abolida, la soberanía nacional fue instaurada para la nueva Constitución (literalmente, la Constitución del Estado de Japón). Por la Constitución de Japón desde el 3 de mayo de 1947, legalmente, se disolvió el Imperio del Japón y se formó el Estado de Japón.
+
+El objetivo principal fue democratizar la política con la abolición de la policía secreta en octubre de 1945, la participación de las mujeres en la política en abril de 1946, la Ley Fundamental de Educación de 1947, y así sucesivamente.
+
+Los políticos del Japón de la Preguerra (antiguo imperio) fueron hallados culpables en el Juicio de Tokio. Pero, el Emperador Shōwa no fue condenado, y su trono al emperador del nuevo estado. Después de la muerte de siete criminales de guerra, los condenados del Juicio de Tokio, fue restaurada la posición política. La ola reaccionaria se llama la “inversa del curso”, el efecto de los principios de la Guerra Fría. De esta forma, el Japón de Posguerra comenzó bajo la "sombrilla nuclear" de los Estados Unidos.
+
+{% endblock %}

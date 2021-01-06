@@ -1,0 +1,394 @@
+{
+    "id":"2",
+	"titulo":"Ejemplo de una votación general de centro",
+	"desc":"Descripción de una votación general",
+    "fecha_inicio":"2020-12-29T12:47:58.267945Z",
+    "fecha_fin":"2020-12-30T12:47:58.267945Z",
+    "tipo":"VG",
+    "n_personas_censo": 465,
+    "n_votantes": 400,
+    "n_hombres_censo": 200,
+    "n_votantes_m": 160,
+    "n_mujeres_censo": 265,
+    "n_votantes_f": 240,
+    "media_edad_votantes": 20.4,
+	"preguntas":[
+		{
+            "titulo": "Delegado de centro",
+            "numero_candidatos": 4,
+			"opts":[
+                    {
+                    "nombre": "Antonio Pérez Reverte",
+                    "numero": 3,
+                    "voto_F": 113,
+                    "voto_M": 87,
+                    "media_Edad": 22.12,
+                    "voto_curso":{"primero": 50,"segundo": 51 ,"tercero": 49, "cuarto": 30, "master": 20}
+                    },
+                    {
+                    "nombre": "Miguel Angulo Mojávez",
+                    "numero": 4,
+                    "voto_F": 45,
+                    "voto_M": 32,
+                    "media_Edad": 18.3,
+                    "voto_curso":{"primero": 15,"segundo": 15 ,"tercero": 15, "cuarto": 15, "master": 17}
+                    },
+                    {
+                    "nombre": "Alfredo Alcantarilla Bautista",
+                    "numero": 5,
+                    "voto_F": 53,
+                    "voto_M": 20,
+                    "media_Edad": 20.5,
+                    "voto_curso":{"primero": 15,"segundo": 13 ,"tercero": 15, "cuarto": 15, "master": 15}
+                    },
+                    {
+                    "nombre": "Carmen Santos Villarino",
+                    "numero": 6,
+                    "voto_F": 32,
+                    "voto_M": 18,
+                    "media_Edad": 21.34,
+                    "voto_curso":{"primero": 7,"segundo": 13 ,"tercero": 6, "cuarto": 14, "master": 10}
+                    }
+                ]
+            },
+		{
+            "titulo":"Delegado de primer curso",
+            "numero_candidatos": 4,
+            "n_personas_censo": 100,
+            "n_votantes": 90,
+            "n_hombres_censo": 40,
+            "n_votantes_m": 35,
+            "n_mujeres_censo": 60,
+            "n_votantes_f": 55,
+            "media_edad_votantes": 18.4,
+			"opts":[
+                    {
+                    "nombre": "Francisco Hoyos Becerra",
+                    "numero": 7,
+                    "voto_F": 26,
+                    "voto_M": 24,
+                    "media_Edad": 18.3
+                    },
+                    {
+                    "nombre": "Celia Mejías Luz",
+                    "numero": 8,
+                    "voto_F": 13,
+                    "voto_M": 7,
+                    "media_Edad": 18.5
+                    },
+                    {
+                    "nombre": "Xavier Cortina Blanch",
+                    "numero": 9,
+                    "voto_F": 3,
+                    "voto_M": 7,
+                    "media_Edad": 18.7
+                    },
+                    {
+                    "nombre": "Agustín Valdes Viña",
+                    "numero": 10,
+                    "voto_F": 5,
+                    "voto_M": 5,
+                    "media_Edad": 18.1
+                    }
+            ]
+        },
+        {
+            "titulo":"Delegado de segundo curso",
+            "numero_candidatos": 4,
+            "n_personas_censo": 70,
+            "n_votantes": 65,
+            "n_hombres_censo": 30,
+            "n_votantes_m": 27,
+            "n_mujeres_censo": 40,
+            "n_votantes_f": 38,
+            "media_edad_votantes": 19.4,
+			"opts":[
+                    {
+                    "nombre": "Josep Caraballo Curto",
+                    "numero": 11,
+                    "voto_F": 17,
+                    "voto_M": 13,
+                    "media_Edad": 19.3
+                    },
+                    {
+                    "nombre": "Eva Barco Morillo",
+                    "numero": 12,
+                    "voto_F": 3,
+                    "voto_M": 7,
+                    "media_Edad": 19.5
+                    },
+                    {
+                    "nombre": "José Maqueda Maza",
+                    "numero": 13,
+                    "voto_F": 13,
+                    "voto_M": 7,
+                    "media_Edad": 20.7
+                    },
+                    {
+                    "nombre": "Lorena Salvado Ramiro",
+                    "numero": 14,
+                    "voto_F": 1,
+                    "voto_M": 4,
+                    "media_Edad": 19.1
+                    }
+            ]
+        },
+        {
+            "titulo":"Delegado de tercer curso",
+            "numero_candidatos": 4,
+            "n_personas_censo": 100,
+            "n_votantes": 85,
+            "n_hombres_censo": 40,
+            "n_votantes_m": 30,
+            "n_mujeres_censo": 60,
+            "n_votantes_f": 55,
+            "media_edad_votantes": 20.5,
+			"opts":[
+                    {
+                    "nombre": "Juana Berna Aguirre",
+                    "numero": 15,
+                    "voto_F": 3,
+                    "voto_M": 7,
+                    "media_Edad": 20.3
+                    },
+                    {
+                    "nombre": "Juan José Pinilla Feijóo",
+                    "numero": 16,
+                    "voto_F": 6,
+                    "voto_M": 6,
+                    "media_Edad": 20.5
+                    },
+                    {
+                    "nombre": "Inmaculada Montoro Monzón",
+                    "numero": 17,
+                    "voto_F": 45,
+                    "voto_M": 15,
+                    "media_Edad": 21.7
+                    },
+                    {
+                    "nombre": "Julio Pinedo Pimentel",
+                    "numero": 18,
+                    "voto_F": 2,
+                    "voto_M": 1,
+                    "media_Edad": 19.8
+                    }
+            ]
+        },
+        {
+            "titulo":"Delegado de cuarto curso",
+            "numero_candidatos": 4,
+            "n_personas_censo": 120,
+            "n_votantes": 105,
+            "n_hombres_censo": 60,
+            "n_votantes_m": 45,
+            "n_mujeres_censo": 60,
+            "n_votantes_f": 60,
+            "media_edad_votantes": 21.5,
+			"opts":[
+                    {
+                    "nombre": "Hugo Aguado Casero",
+                    "numero": 19,
+                    "voto_F": 15,
+                    "voto_M": 5,
+                    "media_Edad": 21.3
+                    },
+                    {
+                    "nombre": "Nabil Fekir Canales",
+                    "numero": 20,
+                    "voto_F": 55,
+                    "voto_M": 15,
+                    "media_Edad": 21.5
+                    },
+                    {
+                    "nombre": "Daniel Doncel Escribano",
+                    "numero": 21,
+                    "voto_F": 3,
+                    "voto_M": 7,
+                    "media_Edad": 21.7
+                    },
+                    {
+                    "nombre": "Paula Almendros Alonso",
+                    "numero": 22,
+                    "voto_F": 3,
+                    "voto_M": 2,
+                    "media_Edad": 22.1
+                    }
+            ]
+        },
+        {
+            "titulo":"Delegado de master",
+            "numero_candidatos": 4,
+            "n_personas_censo": 75,
+            "n_votantes": 55,
+            "n_hombres_censo": 30,
+            "n_votantes_m": 25,
+            "n_mujeres_censo": 45,
+            "n_votantes_f": 30,
+            "media_edad_votantes": 23.5,
+			"opts":[
+                {
+                    "nombre": "Miriam Vilches Donoso",
+                    "numero": 23,
+                    "voto_F": 2,
+                    "voto_M": 1,
+                    "media_Edad": 22.3
+                    },
+                    {
+                    "nombre": "Luis Nadal Patiño",
+                    "numero": 24,
+                    "voto_F": 1,
+                    "voto_M": 1,
+                    "media_Edad": 23.5
+                    },
+                    {
+                    "nombre": "Concepción Vacas Mañez",
+                    "numero": 25,
+                    "voto_F": 3,
+                    "voto_M": 7,
+                    "media_Edad": 22.7
+                    },
+                    {
+                    "nombre": "Solomeo Paredes Agrietadas",
+                    "numero": 26,
+                    "voto_F": 20,
+                    "voto_M": 20,
+                    "media_Edad": 22.1
+                    }
+            ]
+        },
+        {
+            "titulo": "Delegación de alumnos",
+            "numero_candidatos": 16,
+			"opts":[
+                {
+                    "nombre": "Adrián Iglesias Guirado",
+                    "numero": 27,
+                    "voto_F": 113,
+                    "voto_M": 87,
+                    "media_Edad": 21.3,
+                    "voto_curso":{"primero": 50,"segundo": 51 ,"tercero": 49, "cuarto": 30, "master": 20}
+                    },
+                    {
+                    "nombre": "María Ángeles Laborda de los Reyes",
+                    "numero": 28,
+                    "voto_F": 45,
+                    "voto_M": 32,
+                    "media_Edad": 23.3,
+                    "voto_curso":{"primero": 15,"segundo": 15 ,"tercero": 15, "cuarto": 15, "master": 17}
+                    },
+                    {
+                    "nombre": "Joaquín Torralbo Asensio",
+                    "numero": 29,
+                    "voto_F": 53,
+                    "voto_M": 20,
+                    "media_Edad": 20.5,
+                    "voto_curso":{"primero": 15,"segundo": 13 ,"tercero": 15, "cuarto": 15, "master": 15}
+                    },
+                    {
+                    "nombre": "Lorena Paniagua Morera",
+                    "numero": 30,
+                    "voto_F": 32,
+                    "voto_M": 18,
+                    "media_Edad": 21.2,
+                    "voto_curso":{"primero": 7,"segundo": 13 ,"tercero": 6, "cuarto": 14, "master": 10}
+                    },
+                    {
+                    "nombre": "Jesús Rama Aguero",
+                    "numero": 31,
+                    "voto_F": 14,
+                    "voto_M": 64,
+                    "media_Edad": 18.12,
+                    "voto_curso":{"primero": 50,"segundo": 10 ,"tercero": 5, "cuarto": 1, "master": 12}
+                    },
+                    {
+                    "nombre": "Sara Márquez Capel",
+                    "numero": 32,
+                    "voto_F": 34,
+                    "voto_M": 26,
+                    "media_Edad": 19.7,
+                    "voto_curso":{"primero": 15,"segundo": 40 ,"tercero": 1, "cuarto": 2, "master": 2}
+                    },
+                    {
+                    "nombre": "Juan Carlos Perís Asensio",
+                    "numero": 33,
+                    "voto_F": 23,
+                    "voto_M": 20,
+                    "media_Edad": 20.5,
+                    "voto_curso":{"primero": 5,"segundo": 5 ,"tercero": 20, "cuarto": 5, "master": 8}
+                    },
+                    {
+                    "nombre": "María Rosa Quiroga Prada",
+                    "numero": 34,
+                    "voto_F": 56,
+                    "voto_M": 14,
+                    "media_Edad": 20.34,
+                    "voto_curso":{"primero": 7,"segundo": 3 ,"tercero": 50, "cuarto": 6, "master": 4}
+                    },
+                    {
+                    "nombre": "Emilio Pizarro Valdés",
+                    "numero": 35,
+                    "voto_F": 32,
+                    "voto_M": 8,
+                    "media_Edad": 23.12,
+                    "voto_curso":{"primero": 0,"segundo": 0 ,"tercero": 3, "cuarto": 7, "master": 30}
+                    },
+                    {
+                    "nombre": "María Rosa Cuellar Davila",
+                    "numero": 36,
+                    "voto_F": 21,
+                    "voto_M": 3,
+                    "media_Edad": 18.6,
+                    "voto_curso":{"primero": 15,"segundo": 9 ,"tercero": 0, "cuarto": 0, "master": 0}
+                    },
+                    {
+                    "nombre": "Aitor Negrín Huguet",
+                    "numero": 37,
+                    "voto_F": 47,
+                    "voto_M": 23,
+                    "media_Edad": 20.9,
+                    "voto_curso":{"primero": 15,"segundo": 15 ,"tercero": 15, "cuarto": 15, "master": 15}
+                    },
+                    {
+                    "nombre": "Verónica Calero Herrador",
+                    "numero": 38,
+                    "voto_F": 28,
+                    "voto_M": 22,
+                    "media_Edad": 21.13,
+                    "voto_curso":{"primero": 7,"segundo": 13 ,"tercero": 6, "cuarto": 14, "master": 10}
+                    },
+                    {
+                    "nombre": "Jose Carlos Amoro Plasencia",
+                    "numero": 39,
+                    "voto_F": 25,
+                    "voto_M": 16,
+                    "media_Edad": 20.12,
+                    "voto_curso":{"primero": 0,"segundo": 5 ,"tercero": 34, "cuarto": 2, "master": 0}
+                    },
+                    {
+                    "nombre": "Nerea Castañeda Amengual",
+                    "numero": 40,
+                    "voto_F": 48,
+                    "voto_M": 29,
+                    "media_Edad": 18.9,
+                    "voto_curso":{"primero": 15,"segundo": 15 ,"tercero": 15, "cuarto": 15, "master": 17}
+                    },
+                    {
+                    "nombre": "José Ramón Mateo Gavilán",
+                    "numero": 41,
+                    "voto_F": 24,
+                    "voto_M": 5,
+                    "media_Edad": 17.98,
+                    "voto_curso":{"primero": 26,"segundo": 3 ,"tercero": 0, "cuarto": 0, "master": 0}
+                    },
+                    {
+                    "nombre": "Sandra Zabaleta Cerezo",
+                    "numero": 42,
+                    "voto_F": 23,
+                    "voto_M": 18,
+                    "media_Edad": 21.34,
+                    "voto_curso":{"primero": 7,"segundo": 5 ,"tercero": 4, "cuarto": 24, "master": 1}
+                    }
+                ]
+            }
+    ]
+}
