@@ -1,0 +1,234 @@
+{
+    "id":"2",
+	"titulo":"Ejemplo de una Votación primaria dentro de una candidatura",
+	"desc":"Descripción de la votación primaria",
+    "fecha_inicio":"2020-12-29T12:47:58.267945Z",
+    "fecha_fin":"2020-12-30T12:47:58.267945Z",
+    "tipo":"VP",
+    "n_personas_censo": 190,
+    "n_votantes": 150,
+    "n_hombres_censo": 100,
+    "n_votantes_m": 70,
+    "n_mujeres_censo": 90,
+    "n_votantes_f": 80,
+    "media_edad_votantes": 20.4,
+	"preguntas":[
+		{
+            "titulo": "Delegado de centro",
+            "numero_candidatos": 6,
+			"opts":[
+                    {
+                    "nombre": "Antonio Pérez Reverte",
+                    "numero": 3,
+                    "voto_F": 24,
+                    "voto_M": 23,
+                    "media_Edad": 22.12,
+                    "voto_curso":{"primero": 4,"segundo": 6 ,"tercero": 7, "cuarto": 20, "master": 10}
+                    },
+                    {
+                    "nombre": "Miguel Angulo Mojávez",
+                    "numero": 4,
+                    "voto_F": 10,
+                    "voto_M": 12,
+                    "media_Edad": 18.3,
+                    "voto_curso":{"primero": 5,"segundo": 5 ,"tercero": 5, "cuarto": 5, "master": 2}
+                    },
+                    {
+                    "nombre": "Alfredo Alcantarilla Bautista",
+                    "numero": 5,
+                    "voto_F": 13,
+                    "voto_M": 7,
+                    "media_Edad": 20.5,
+                    "voto_curso":{"primero": 3,"segundo": 3 ,"tercero": 3, "cuarto": 5, "master": 6}
+                    },
+                    {
+                    "nombre": "Carmen Santos Villarino",
+                    "numero": 6,
+                    "voto_F": 14,
+                    "voto_M": 16,
+                    "media_Edad": 21.34,
+                    "voto_curso":{"primero": 4,"segundo": 6 ,"tercero": 6, "cuarto": 6, "master": 8}
+                    },
+                    {
+                    "nombre": "Pablo Clemente Ortiz",
+                    "numero": 7,
+                    "voto_F": 15,
+                    "voto_M": 12,
+                    "media_Edad": 19.7,
+                    "voto_curso":{"primero": 5,"segundo": 5 ,"tercero": 5, "cuarto": 5, "master": 7}
+                    },
+                    {
+                    "nombre": "Godofreda Sánchez Casado",
+                    "numero": 8,
+                    "voto_F": 10,
+                    "voto_M": 7,
+                    "media_Edad": 22.4,
+                    "voto_curso":{"primero": 2,"segundo": 3 ,"tercero": 3, "cuarto": 5, "master": 4}
+                    }
+                ]
+            },
+		{
+            "titulo":"Primarias de primer curso",
+            "numero_candidatos": 2,
+            "n_personas_censo": 35,
+            "n_votantes": 30,
+            "n_hombres_censo": 15,
+            "n_votantes_m": 13,
+            "n_mujeres_censo": 20,
+            "n_votantes_f": 17,
+            "media_edad_votantes": 18.4,
+			"opts":[
+                {
+                "nombre": "Francisco Hoyos Becerra",
+                "numero": 9,
+                "voto_F": 7,
+                "voto_M": 6,
+                "media_Edad": 18.3
+                },
+                {
+                "nombre": "Celia Mejías Luz",
+                "numero": 10,
+                "voto_F": 10,
+                "voto_M": 7,
+                "media_Edad": 18.5
+                }
+            ]
+        },
+        {
+            "titulo":"Primarias de segundo curso",
+            "numero_candidatos": 3,
+            "n_personas_censo": 35,
+            "n_votantes": 30,
+            "n_hombres_censo": 20,
+            "n_votantes_m": 15,
+            "n_mujeres_censo": 15,
+            "n_votantes_f": 15,
+            "media_edad_votantes": 19.4,
+			"opts":[
+                {
+                "nombre": "Rogelio Alcalá Olivero",
+                "numero": 11,
+                "voto_F": 4,
+                "voto_M": 8,
+                "media_Edad": 19.1
+                },
+                {
+                "nombre": "Yolanda Piñero Pradas",
+                "numero": 12,
+                "voto_F": 4,
+                "voto_M": 5,
+                "media_Edad": 19.7
+                },
+                {
+                "nombre": "Ana Moro Casanova",
+                "numero": 13,
+                "voto_F": 7,
+                "voto_M": 2,
+                "media_Edad": 19.4
+                }
+            ]
+        },
+        {
+            "titulo":"Primarias de tercer curso",
+            "numero_candidatos": 2,
+            "n_personas_censo": 35,
+            "n_votantes": 30,
+            "n_hombres_censo": 15,
+            "n_votantes_m": 11,
+            "n_mujeres_censo": 20,
+            "n_votantes_f": 19,
+            "media_edad_votantes": 21.8,
+			"opts":[
+                {
+                "nombre": "Natalia Hueso Murillo",
+                "numero": 14,
+                "voto_F": 8,
+                "voto_M": 6,
+                "media_Edad": 21.1
+                },
+                {
+                "nombre": "Cristian Villalón Cornejo",
+                "numero": 15,
+                "voto_F": 11,
+                "voto_M": 5,
+                "media_Edad": 20.5
+                }
+            ]
+        },
+        {
+            "titulo":"Primarias de cuarto curso",
+            "numero_candidatos": 4,
+            "n_personas_censo": 40,
+            "n_votantes": 30,
+            "n_hombres_censo": 20,
+            "n_votantes_m": 14,
+            "n_mujeres_censo": 20,
+            "n_votantes_f": 16,
+            "media_edad_votantes": 21.7,
+			"opts":[
+                {
+                "nombre": "Gabriel Armero Potro",
+                "numero": 17,
+                "voto_F": 4,
+                "voto_M": 7,
+                "media_Edad": 21.6
+                },
+                {
+                "nombre": "Amparo Caños Rosillo",
+                "numero": 18,
+                "voto_F": 2,
+                "voto_M": 4,
+                "media_Edad": 22.0
+                },
+                {
+                "nombre": "Joaquín Miguel Andújar",
+                "numero": 19,
+                "voto_F": 7,
+                "voto_M": 2,
+                "media_Edad": 21.3
+                },
+                {
+                "nombre": "Mercedes Lechuga Cabezas",
+                "numero": 16,
+                "voto_F": 3,
+                "voto_M": 1,
+                "media_Edad": 21.8
+                }
+            ]
+        },
+        {
+            "titulo":"Primarias de master",
+            "numero_candidatos": 3,
+            "n_personas_censo": 45,
+            "n_votantes": 30,
+            "n_hombres_censo": 20,
+            "n_votantes_m": 19,
+            "n_mujeres_censo": 25,
+            "n_votantes_f": 24,
+            "media_edad_votantes": 23.2,
+			"opts":[
+                {
+                "nombre": "María Carmen Vilar Carranza",
+                "numero": 20,
+                "voto_F": 12,
+                "voto_M": 8,
+                "media_Edad": 23.4
+                },
+                {
+                "nombre": "Vicente Mercader Pascuas",
+                "numero": 21,
+                "voto_F": 4,
+                "voto_M": 6,
+                "media_Edad": 22.9
+                },
+                {
+                "nombre": "Andrea Villena Ramiro",
+                "numero": 22,
+                "voto_F": 8,
+                "voto_M": 5,
+                "media_Edad": 23.2
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,302 @@
+.oscuro{ 
+    background-color: #1f1f1f; 
+    color: #f1eded; 
+}
+
+
+/*
+CSS para el menú desplegable 
+*/
+
+
+* {
+    margin:0px;
+    padding:0px;
+}
+
+#header {
+    margin:auto;
+    width:518px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+ul, ol {
+    list-style:none;
+}
+
+.nav > li {
+    float:left;
+}
+
+.nav li a,label {
+    background-color:#000;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 12px;
+    display:block;
+}
+
+.nav li p {
+  background-color:#000;
+  color:#fff;
+  height: 44px;
+  padding: 10px;
+  float:right;
+}
+
+.nav li s {
+    background-color:#000;
+    color:#fff;
+    text-decoration:none;
+    height: 44px;
+    padding: 10px;
+    display:block;
+}
+
+.nav li a:hover {
+    background-color:#434343;
+}
+
+.nav li ul {
+    display:none;
+    position:absolute;
+    min-width:140px;
+}
+
+.nav li:hover > ul {
+    display:block;
+}
+
+.nav li ul li {
+    position:relative;
+}
+
+.nav li ul li ul {
+    right:-140px;
+    top:0px;
+}
+
+/*
+checkbox
+*/
+
+.switch {
+    position: relative;
+    float: right;
+    display: inline-flex;
+    width: 40px;
+    height: 24px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: rgb(0, 102, 255);
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(15px);
+    -ms-transform: translateX(15px);
+    transform: translateX(15px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+/* About us y contact us */
+.header1{
+  width: 100%;
+  height: 80px;
+  display: block;
+  background-color: #202020;
+}
+
+div.inner_header{
+  color: white;
+  font-variant: small-caps;
+  font-size: x-large;
+  font-family:"Montserrat";
+font-weight: bold;
+}
+
+.logo_container{
+  height: 100%;
+  display: table;
+  float: left;
+  font-family: 'Montserrat';
+}
+
+.logo_container h1{
+  color: white;
+  height:100%;
+  display: table-cell;
+  vertical-align: middle;
+  font-size:  32px;
+  font-weight: 800;
+  font-family: 'Montserrat';
+}
+
+.logotipo{
+  float: left;
+  left: 20px;
+  display: table;
+  margin-top: 0;
+  vertical-align: middle;
+} 
+
+.container-body{
+  display: flex;
+}
+
+.colum1{
+  max-width: 400px;
+}
+
+.colum1 h1{
+  font-size: 22px;
+  font-family:"Montserrat";
+}
+
+.colum1 p{
+  font-size: 14px;
+  font-family:"Montserrat";
+  color: #C7C7C7;
+  margin-top: 20px;
+}
+
+.colum2{
+  max-width:400px;
+  margin-left: 50px;
+}
+
+.colum2 h1{
+  font-size: 22px;
+  font-family:"Montserrat";
+}
+
+.row1, .row2, .row3 {
+  margin-top: 20px;
+}
+
+
+.row1 label, .row2 label, .row3 label{
+  margin-top: 10px;
+  margin-left: 20px;
+  max-width: 150px;
+  font-size: 14px;
+  font-family:"Montserrat";
+  color: #C7C7C7;
+
+}
+
+.container-footer{
+  width:100%;
+  background: #101010;
+  display: flex;
+  padding: 20px;
+  max-width:  1200px;
+  margin: auto;
+}
+
+.copyright{
+  color: #C7C7C7;
+  font-family:"Montserrat";
+
+}
+
+.copyright a{
+  color: white;
+  font-weight: bold;
+}
+.body {
+  margin-left: 100px;
+  padding: 20px;
+  font-family:"Montserrat";
+}
+.button {
+  margin-top: 20px;
+  margin-left: 50px;
+  padding: 10px;
+  font-family:"Montserrat";
+  background-color:  #3366FF;
+  border: 1px solid  #b8b894;
+ color: white;
+  border-radius: 5px;
+  transition-duration: 0.4s;
+}
+.button:hover {
+  background-color: #99ffff;
+  color: black;
+}
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 25%;
+}
+.table {
+  margin-left: 240px;
+}
+th {
+  background-color:  #3366FF;
+  width: 10%;
+
+}
+td, tr {
+  background-color:  #0099FF;
+}
+tr, td, th {
+  padding: 10px;
+  border: 1px solid grey;
+}
+.correo {
+  text-align: center;
+}
+
+.enlace {
+  text-align: center;
+}
+
+@media screen and (max-width: 1100px){
+  .container-body{
+      flex-wrap: wrap;
+  }
+
+  .colum2{
+
+      margin-top: 40px;
+  }
+}
