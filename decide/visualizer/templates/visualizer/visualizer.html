@@ -88,36 +88,58 @@
                         <br>
                         
                         <h3 class="heading">[[voting.preguntas[0].titulo]]</h3>
-                        <table class="table table-bordered table-condensed table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Candidato</th>
-                                    <th>Votos totales</th>
-                                    <th>Votos masculinos</th>
-                                    <th>Votos femeninos</th>
-                                    <th>Votos de alumnos de primero</th>
-                                    <th>Votos de alumnos de segundo</th>
-                                    <th>Votos de alumnos de tercero</th>
-                                    <th>Votos de alumnos de cuarto</th>
-                                    <th>Votos de alumnos de master</th>
-                                    <th>Media de edad de sus votantes</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="opt in voting.preguntas[0].opts" :key="opt.numero">
-                                    <td>[[opt.nombre]]</td>
-                                    <td>[[opt.voto_F + opt.voto_M]]</td>
-                                    <td>[[opt.voto_M]]</td>
-                                    <td>[[opt.voto_F]]</td>
-                                    <td>[[opt.voto_curso.primero]]</td>
-                                    <td>[[opt.voto_curso.segundo]]</td>
-                                    <td>[[opt.voto_curso.tercero]]</td>
-                                    <td>[[opt.voto_curso.cuarto]]</td>
-                                    <td>[[opt.voto_curso.master]]</td>
-                                    <td>[[opt.media_Edad]]</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="">
+                            <table class="table table-bordered table-condensed table-striped table-hover display-15 w-auto">
+                                <thead>
+                                    <tr>
+                                        <th><font size=2>Candidato</font></th>
+                                        <th><font size=2>Votos totales</font></th>
+                                        <th><font size=2>Votos masculinos</font></th>
+                                        <th><font size=2>Votos femeninos</font></th>
+                                        <th><font size=2>Votos de alumnos de primero</font></th>
+                                        <th><font size=2>Votos de alumnos de segundo</font></th>
+                                        <th><font size=2>Votos de alumnos de tercero</font></th>
+                                        <th><font size=2>Votos de alumnos de cuarto</font></th>
+                                        <th><font size=2>Votos de alumnos de master</font></th>
+                                        <th><font size=2>Media de edad de sus votantes</font></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="opt in voting.preguntas[0].opts" :key="opt.numero">
+                                        <td>[[opt.nombre]]</td>
+                                        <td>[[opt.voto_F + opt.voto_M]]</td>
+                                        <td>[[opt.voto_M]]</td>
+                                        <td>[[opt.voto_F]]</td>
+                                        <td>[[opt.voto_curso.primero]]</td>
+                                        <td>[[opt.voto_curso.segundo]]</td>
+                                        <td>[[opt.voto_curso.tercero]]</td>
+                                        <td>[[opt.voto_curso.cuarto]]</td>
+                                        <td>[[opt.voto_curso.master]]</td>
+                                        <td>[[opt.media_Edad]]</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="espacio_graficas">
+                                <div class="float-left abajito">
+                                    <h6 style="text-align: center;">Votos de todos los candidatos</h6>
+                                    <canvas id="myChartVotes0" width="50" height="30"></canvas>
+                                </div>
+                                <div class="float-right abajito">
+                                    <h6 style="text-align: center;">Media de edad de los votantes</h6>
+                                    <canvas id="myChartAges0" width="50" height="30"></canvas>
+                                </div>
+                                <div class="row menuito">
+                                    <div class="col">
+                                        <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
+                                        <div id="graficosSexo0"></div>
+                                    </div>
+                                    <div class="col">
+                                        <h6 style="text-align: center;">Votos por curso de cada candidato</h6>
+                                        <div id="graficosCurso0"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         
                         <div v-for="preg in [1,2,3,4,5]">
                             <br>
@@ -150,16 +172,16 @@
                             <table class="table table-bordered table-condensed table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Candidato</th>
-                                        <th>Votos totales</th>
-                                        <th>Votos masculinos</th>
-                                        <th>Votos femeninos</th>
-                                        <th>Votos de alumnos de primero</th>
-                                        <th>Votos de alumnos de segundo</th>
-                                        <th>Votos de alumnos de tercero</th>
-                                        <th>Votos de alumnos de cuarto</th>
-                                        <th>Votos de alumnos de master</th>
-                                        <th>Media de edad de sus votantes</th>
+                                        <th><font size=2>Candidato</font></th>
+                                        <th><font size=2>Votos totales</font></th>
+                                        <th><font size=2>Votos masculinos</font></th>
+                                        <th><font size=2>Votos femeninos</font></th>
+                                        <th><font size=2>Votos de alumnos de primero</font></th>
+                                        <th><font size=2>Votos de alumnos de segundo</font></th>
+                                        <th><font size=2>Votos de alumnos de tercero</font></th>
+                                        <th><font size=2>Votos de alumnos de cuarto</font></th>
+                                        <th><font size=2>Votos de alumnos de master</font></th>
+                                        <th><font size=2>Media de edad de sus votantes</font></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -233,15 +255,15 @@
                         <table class="table table-bordered table-condensed table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>Candidato</th>
-                                    <th>Porcentaje de votos respecto al censo</th>
-                                    <th>Porcentaje de votantes masculinos</th>
-                                    <th>Porcentaje de votantes femeninos</th>
-                                    <th>Porcentaje de votantes primer curso</th>
-                                    <th>Porcentaje de votantes segundo curso</th>
-                                    <th>Porcentaje de votantes tercer curso</th>
-                                    <th>Porcentaje de votantes cuarto curso</th>
-                                    <th>Porcentaje de votantes master</th>
+                                    <th><font size=2>Candidato</font></th>
+                                    <th><font size=2>Porcentaje de votos respecto al censo</font></th>
+                                    <th><font size=2>Porcentaje de votantes masculinos</font></th>
+                                    <th><font size=2>Porcentaje de votantes femeninos</font></th>
+                                    <th><font size=2>Porcentaje de votantes primer curso</font></th>
+                                    <th><font size=2>Porcentaje de votantes segundo curso</font></th>
+                                    <th><font size=2>Porcentaje de votantes tercer curso</font></th>
+                                    <th><font size=2>Porcentaje de votantes cuarto curso</font></th>
+                                    <th><font size=2>Porcentaje de votantes master</font></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -288,15 +310,15 @@
                             <table class="table table-bordered table-condensed table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Candidato</th>
-                                        <th>Porcentaje de votos respecto al censo</th>
-                                        <th>Porcentaje de votantes masculinos</th>
-                                        <th>Porcentaje de votantes femeninos</th>
-                                        <th>Porcentaje de votantes primer curso</th>
-                                        <th>Porcentaje de votantes segundo curso</th>
-                                        <th>Porcentaje de votantes tercer curso</th>
-                                        <th>Porcentaje de votantes cuarto curso</th>
-                                        <th>Porcentaje de votantes master</th>
+                                        <th><font size=2>Candidato</font></th>
+                                        <th><font size=2>Porcentaje de votos respecto al censo</font></th>
+                                        <th><font size=2>Porcentaje de votantes masculinos</font></th>
+                                        <th><font size=2>Porcentaje de votantes femeninos</font></th>
+                                        <th><font size=2>Porcentaje de votantes primer curso</font></th>
+                                        <th><font size=2>Porcentaje de votantes segundo curso</font></th>
+                                        <th><font size=2>Porcentaje de votantes tercer curso</font></th>
+                                        <th><font size=2>Porcentaje de votantes cuarto curso</font></th>
+                                        <th><font size=2>Porcentaje de votantes master</font></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -804,6 +826,7 @@
                 downloadLink.click();
             }
         }
+
 
     </script>
 
