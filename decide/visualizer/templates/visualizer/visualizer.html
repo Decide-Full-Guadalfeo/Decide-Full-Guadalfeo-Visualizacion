@@ -88,7 +88,7 @@
                         <br>
                         
                         <h3 class="heading">[[voting.preguntas[0].titulo]]</h3>
-                        <div class="">
+                        <div>
                             <table class="table table-bordered table-condensed table-striped table-hover display-15 w-auto">
                                 <thead>
                                     <tr>
@@ -144,61 +144,97 @@
                         <div v-for="preg in [1,2,3,4,5]">
                             <br>
                             <h3 class="heading">[[voting.preguntas[preg].titulo]]</h3>
-                            <table class="table table-bordered table-condensed table-striped table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Candidato</th>
-                                        <th>Votos totales</th>
-                                        <th>Votos masculinos</th>
-                                        <th>Votos femeninos</th>
-                                        <th>Media de edad de sus votantes</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr v-for="opt in voting.preguntas[preg].opts" :key="opt.numero">
-                                        <td>[[opt.nombre]]</td>
-                                        <td>[[opt.voto_F + opt.voto_M]]</td>
-                                        <td>[[opt.voto_M]]</td>
-                                        <td>[[opt.voto_F]]</td>
-                                        <td>[[opt.media_Edad]]</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div>
+                                <table class="table table-bordered table-condensed table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Candidato</th>
+                                            <th>Votos totales</th>
+                                            <th>Votos masculinos</th>
+                                            <th>Votos femeninos</th>
+                                            <th>Media de edad de sus votantes</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr v-for="opt in voting.preguntas[preg].opts" :key="opt.numero">
+                                            <td>[[opt.nombre]]</td>
+                                            <td>[[opt.voto_F + opt.voto_M]]</td>
+                                            <td>[[opt.voto_M]]</td>
+                                            <td>[[opt.voto_F]]</td>
+                                            <td>[[opt.media_Edad]]</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="espacio_graficas">
+                                    <div class="float-left abajito">
+                                        <h6 style="text-align: center;">Votos de todos los candidatos</h6>
+                                        <canvas v-bind:id="'myChartVotes'+preg" width="75" height="35"></canvas>
+                                    </div> 
+                                    <div class="float-right abajito">
+                                        <h6 style="text-align: center;">Media de edad de los votantes</h6>
+                                        <canvas v-bind:id="'myChartAges'+preg" width="75" height="35"></canvas>
+                                    </div>
+                                    <div class="row menuito">
+                                        <div class="col-md-6" style="margin-left:25%;">
+                                            <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
+                                            <div v-bind:id="'graficosSexo'+preg"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div v-if="voting.tipo=='VG'">
                             <br>
                             <h3 class="heading">[[voting.preguntas[6].titulo]]</h3>
-                            <table class="table table-bordered table-condensed table-striped table-hover">
-                                <thead>
-                                    <tr>
-                                        <th><font size=2>Candidato</font></th>
-                                        <th><font size=2>Votos totales</font></th>
-                                        <th><font size=2>Votos masculinos</font></th>
-                                        <th><font size=2>Votos femeninos</font></th>
-                                        <th><font size=2>Votos de alumnos de primero</font></th>
-                                        <th><font size=2>Votos de alumnos de segundo</font></th>
-                                        <th><font size=2>Votos de alumnos de tercero</font></th>
-                                        <th><font size=2>Votos de alumnos de cuarto</font></th>
-                                        <th><font size=2>Votos de alumnos de master</font></th>
-                                        <th><font size=2>Media de edad de sus votantes</font></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr v-for="opt in voting.preguntas[6].opts" :key="opt.numero">
-                                        <td>[[opt.nombre]]</td>
-                                        <td>[[opt.voto_F + opt.voto_M]]</td>
-                                        <td>[[opt.voto_M]]</td>
-                                        <td>[[opt.voto_F]]</td>
-                                        <td>[[opt.voto_curso.primero]]</td>
-                                        <td>[[opt.voto_curso.segundo]]</td>
-                                        <td>[[opt.voto_curso.tercero]]</td>
-                                        <td>[[opt.voto_curso.cuarto]]</td>
-                                        <td>[[opt.voto_curso.master]]</td>
-                                        <td>[[opt.media_Edad]]</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div>
+                                <table class="table table-bordered table-condensed table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th><font size=2>Candidato</font></th>
+                                            <th><font size=2>Votos totales</font></th>
+                                            <th><font size=2>Votos masculinos</font></th>
+                                            <th><font size=2>Votos femeninos</font></th>
+                                            <th><font size=2>Votos de alumnos de primero</font></th>
+                                            <th><font size=2>Votos de alumnos de segundo</font></th>
+                                            <th><font size=2>Votos de alumnos de tercero</font></th>
+                                            <th><font size=2>Votos de alumnos de cuarto</font></th>
+                                            <th><font size=2>Votos de alumnos de master</font></th>
+                                            <th><font size=2>Media de edad de sus votantes</font></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr v-for="opt in voting.preguntas[6].opts" :key="opt.numero">
+                                            <td>[[opt.nombre]]</td>
+                                            <td>[[opt.voto_F + opt.voto_M]]</td>
+                                            <td>[[opt.voto_M]]</td>
+                                            <td>[[opt.voto_F]]</td>
+                                            <td>[[opt.voto_curso.primero]]</td>
+                                            <td>[[opt.voto_curso.segundo]]</td>
+                                            <td>[[opt.voto_curso.tercero]]</td>
+                                            <td>[[opt.voto_curso.cuarto]]</td>
+                                            <td>[[opt.voto_curso.master]]</td>
+                                            <td>[[opt.media_Edad]]</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="espacio_graficas">
+                                    <div class="float-left abajito">
+                                        <h6 style="text-align: center;">Votos de todos los candidatos</h6>
+                                        <canvas id="myChartVotes2" width="75" height="35"></canvas>
+                                    </div>
+                                    <div class="float-right abajito">
+                                        <h6 style="text-align: center;">Media de edad de los votantes</h6>
+                                        <canvas id="myChartAges2" width="75" height="35"></canvas>
+                                    </div>
+                                    <div class="row menuito">
+                                        <div class="col-md-6" style="margin-left:25%;">
+                                            <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
+                                            <div id="graficosSexo2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
                 </div>
@@ -826,7 +862,6 @@
                 downloadLink.click();
             }
         }
-
 
     </script>
 
