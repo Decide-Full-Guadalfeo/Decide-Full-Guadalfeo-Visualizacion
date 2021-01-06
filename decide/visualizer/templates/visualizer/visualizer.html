@@ -45,7 +45,7 @@
                         <li>
                             <s>Gr&aacuteficas &nbsp
                                 <label class="switch">
-                                    <input id="checkbox_graficas" type="checkbox" onclick="mostrarContenido('graphics');" checked>
+                                    <input id="checkbox_graficas" type="checkbox" onclick="mostrarGraficas();" checked>
                                     <span class="slider round"></span>
                                 </label>
                             </s>
@@ -119,7 +119,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <div class="espacio_graficas">
+                            <div id="espacio_graficas0">
                                 <div class="float-left abajito">
                                     <h6 style="text-align: center;">Votos de todos los candidatos</h6>
                                     <canvas id="myChartVotes0" width="50" height="30"></canvas>
@@ -165,7 +165,7 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                                <div class="espacio_graficas">
+                                <div v-bind:id="'espacio_graficas'+preg">
                                     <div class="float-left abajito">
                                         <h6 style="text-align: center;">Votos de todos los candidatos</h6>
                                         <canvas v-bind:id="'myChartVotes'+preg" width="75" height="35"></canvas>
@@ -218,26 +218,26 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                                <div class="espacio_graficas">
-                                <div class="float-left abajito">
-                                    <h6 style="text-align: center;">Votos de todos los candidatos</h6>
-                                    <canvas id="myChartVotes6" width="50" height="30"></canvas>
-                                </div>
-                                <div class="float-right abajito">
-                                    <h6 style="text-align: center;">Media de edad de los votantes</h6>
-                                    <canvas id="myChartAges6" width="50" height="30"></canvas>
-                                </div>
-                                <div class="row menuito">
-                                    <div class="col">
-                                        <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
-                                        <div id="graficosSexo6"></div>
+                                <div id="espacio_graficas6">
+                                    <div class="float-left abajito">
+                                        <h6 style="text-align: center;">Votos de todos los candidatos</h6>
+                                        <canvas id="myChartVotes6" width="50" height="30"></canvas>
                                     </div>
-                                    <div class="col">
-                                        <h6 style="text-align: center;">Votos por curso de cada candidato</h6>
-                                        <div id="graficosCurso6"></div>
+                                    <div class="float-right abajito">
+                                        <h6 style="text-align: center;">Media de edad de los votantes</h6>
+                                        <canvas id="myChartAges6" width="50" height="30"></canvas>
+                                    </div>
+                                    <div class="row menuito">
+                                        <div class="col">
+                                            <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
+                                            <div id="graficosSexo6"></div>
+                                        </div>
+                                        <div class="col">
+                                            <h6 style="text-align: center;">Votos por curso de cada candidato</h6>
+                                            <div id="graficosCurso6"></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                             </div>
                         </div>
                         
@@ -378,201 +378,6 @@
                         </div>
                 </div>
 
-                <div id="graphics">
-                    <div id="votacionGeneral" v-if="voting.tipo=='VG'">
-                        <h2>Votación General</h2>
-                        <br><br>
-                        <div id="allGraphics" class="col-md-6">
-                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Centro" data-html2canvas-ignore="true" onclick="mostrarContenido('delegadoCentro');">
-                            <br><br>
-                            <div id="delegadoCentro">
-                                <h6 style="text-align: center;">Votos de todos los candidatos</h6>
-                                <canvas id="myChartVotes0" width="75" height="35"></canvas>
-                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
-                                <div id="graficosSexo0"></div>
-                                <br>
-                                <h6 style="text-align: center;">Media de edad de los votantes</h6>
-                                <canvas id="myChartAges0" width="75" height="35"></canvas>
-                                <h6 style="text-align: center;">Votos por curso de cada candidato</h6>
-                                <div id="graficosCurso0"></div>
-                            </div>
-
-                            <input type="button" class="btn btn-outline-dark" value="Votos Primero" data-html2canvas-ignore="true" onclick="mostrarContenido('primero');">
-                            <br><br>
-                            <div id="primero">
-                                <h6 style="text-align: center;">Votos de todos los candidatos</h6>
-                                <canvas id="myChartVotes1" width="75" height="35"></canvas>
-                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
-                                <div id="graficosSexo1"></div>
-
-                                <br>
-                                <h6 style="text-align: center;">Media de edad de los votantes</h6>
-                                <canvas id="myChartAges1" width="75" height="35"></canvas>
-                               
-                            </div>
-
-                            <input type="button" class="btn btn-outline-dark" value="Votos Segundo" data-html2canvas-ignore="true" onclick="mostrarContenido('segundo');">
-                            <br><br>
-                            <div id="segundo">
-                                <h6 style="text-align: center;">Votos de todos los candidatos</h6>
-                                <canvas id="myChartVotes2" width="75" height="35"></canvas>
-                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
-                                <div id="graficosSexo2"></div>
-                                
-                                <br>
-                                <h6 style="text-align: center;">Media de edad de los votantes</h6>
-                                <canvas id="myChartAges2" width="75" height="35"></canvas>
-
-                            </div>
-
-                            <input type="button" class="btn btn-outline-dark" value="Votos Tercero" data-html2canvas-ignore="true" onclick="mostrarContenido('tercero');">
-                            <br><br>
-                            <div id="tercero">
-                                <h6 style="text-align: center;">Votos de todos los candidatos</h6>
-                                <canvas id="myChartVotes3" width="75" height="35"></canvas>
-                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
-                                <div id="graficosSexo3"></div>
-                               
-                                <br>
-                                <h6 style="text-align: center;">Media de edad de los votantes</h6>
-                                <canvas id="myChartAges3" width="75" height="35"></canvas>
-
-                            </div>
-
-                            <input type="button" class="btn btn-outline-dark" value="Votos Cuarto" data-html2canvas-ignore="true" onclick="mostrarContenido('cuarto');">
-                            <br><br>
-                            <div id="cuarto">
-                                <h6 style="text-align: center;">Votos de todos los candidatos</h6>
-                                <canvas id="myChartVotes4" width="75" height="35"></canvas>
-                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
-                                <div id="graficosSexo4"></div>
-                               
-                                <br>
-                                <h6 style="text-align: center;">Media de edad de los votantes</h6>
-                                <canvas id="myChartAges4" width="75" height="35"></canvas>
-
-                            </div>
-
-                            <input type="button" class="btn btn-outline-dark" value="Votos Master" data-html2canvas-ignore="true" onclick="mostrarContenido('master');">
-                            <br><br>
-                            <div id="master">
-                                <h6 style="text-align: center;">Votos de todos los candidatos</h6>
-                                <canvas id="myChartVotes5" width="75" height="35"></canvas>
-                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
-                                <div id="graficosSexo5"></div>
-                               
-                                <br>
-                                <h6 style="text-align: center;">Media de edad de los votantes</h6>
-                                <canvas id="myChartAges5" width="75" height="35"></canvas>
-
-                            </div>
-
-                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Alumnos" data-html2canvas-ignore="true" onclick="mostrarContenido('delegadoAlumnos');">
-                            <br><br>
-                            <div id="delegadoAlumnos">
-                                <h6 style="text-align: center;">Votos de todos los candidatos</h6>
-                                <canvas id="myChartVotes6" width="75" height="35"></canvas>
-                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
-                                <div id="graficosSexo6"></div>
-                               
-                                <br>
-                                <h6 style="text-align: center;">Media de edad de los votantes</h6>
-                                <canvas id="myChartAges6" width="75" height="35"></canvas>
-                                <h6 style="text-align: center;">Votos por curso de cada candidato</h6>
-                                <div id="graficosCurso6"></div>
-
-                            </div>
-                        </div> 
-                    </div>
-
-                    <div id="votacionPrimaria" v-else-if="voting.tipo=='VP'">
-                        <h2>Votación Primaria</h2>
-                        <input type="button" class="btn btn-outline-dark" value="Mostrar gráficas votación primaria" onclick="mostrarContenido('allGraphicsPrimaria');">
-                        <br><br>
-                        <div id="allGraphicsPrimaria" class="col-md-6">
-                            <input type="button" class="btn btn-outline-dark" value="Votos Delegado de Centro" onclick="mostrarContenido('delegadoCentroPrimaria');">
-                            <br><br>
-                            <div id="delegadoCentroPrimaria">
-                                <h6 style="text-align: center;">Votos de todos los candidatos</h6>
-                                <canvas id="myChartVotes0" width="75" height="35"></canvas>
-                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
-                                <div id="graficosSexo0"></div>
-                                <br>
-                                <h6 style="text-align: center;">Media de edad de los votantes</h6>
-                                <canvas id="myChartAges0" width="75" height="35"></canvas>
-                                <h6 style="text-align: center;">Votos por curso de cada candidato</h6>
-                                <div id="graficosCurso0"></div>
-                            </div>
-
-                            <input type="button" class="btn btn-outline-dark" value="Votos Primero" onclick="mostrarContenido('primeroPrim');">
-                            <br><br>
-                            <div id="primeroPrim">
-                                <h6 style="text-align: center;">Votos de todos los candidatos</h6>
-                                <canvas id="myChartVotes1" width="75" height="35"></canvas>
-                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
-                                <div id="graficosSexo1"></div>
-
-                                <br>
-                                <h6 style="text-align: center;">Media de edad de los votantes</h6>
-                                <canvas id="myChartAges1" width="75" height="35"></canvas>
-                            </div>
-
-                            <input type="button" class="btn btn-outline-dark" value="Votos Segundo" onclick="mostrarContenido('segundoPrim');">
-                            <br><br>
-                            <div id="segundoPrim">
-                                <h6 style="text-align: center;">Votos de todos los candidatos</h6>
-                                <canvas id="myChartVotes2" width="75" height="35"></canvas>
-                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
-                                <div id="graficosSexo2"></div>
-                                
-                                <br>
-                                <h6 style="text-align: center;">Media de edad de los votantes</h6>
-                                <canvas id="myChartAges2" width="75" height="35"></canvas>
-                            </div>
-
-                            <input type="button" class="btn btn-outline-dark" value="Votos Tercero" onclick="mostrarContenido('terceroPrim');">
-                            <br><br>
-                            <div id="terceroPrim">
-                                <h6 style="text-align: center;">Votos de todos los candidatos</h6>
-                                <canvas id="myChartVotes3" width="75" height="35"></canvas>
-                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
-                                <div id="graficosSexo3"></div>
-                               
-                                <br>
-                                <h6 style="text-align: center;">Media de edad de los votantes</h6>
-                                <canvas id="myChartAges3" width="75" height="35"></canvas>
-                            </div>
-
-                            <input type="button" class="btn btn-outline-dark" value="Votos Cuarto" onclick="mostrarContenido('cuartoPrim');">
-                            <br><br>
-                            <div id="cuartoPrim">
-                                <h6 style="text-align: center;">Votos de todos los candidatos</h6>
-                                <canvas id="myChartVotes4" width="75" height="35"></canvas>
-                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
-                                <div id="graficosSexo4"></div>
-                               
-                                <br>
-                                <h6 style="text-align: center;">Media de edad de los votantes</h6>
-                                <canvas id="myChartAges4" width="75" height="35"></canvas>
-                            </div>
-
-                            <input type="button" class="btn btn-outline-dark" value="Votos Master" onclick="mostrarContenido('masterPrim');">
-                            <br><br>
-                            <div id="masterPrim">
-                                <h6 style="text-align: center;">Votos de todos los candidatos</h6>
-                                <canvas id="myChartVotes5" width="75" height="35"></canvas>
-                                <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
-                                <div id="graficosSexo5"></div>
-                               
-                                <br>
-                                <h6 style="text-align: center;">Media de edad de los votantes</h6>
-                                <canvas id="myChartAges5" width="75" height="35"></canvas>
-                            </div>                                
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
             </div>
 
         </div>
@@ -601,13 +406,20 @@
 
     <script>
 
+
+        function mostrarGraficas() {
+            for (var i=0; i<7; i++) {
+                mostrarContenido('espacio_graficas'+i);
+            }
+        }
+
         function mostrarContenido(id) {
             var graficas = document.getElementById(id);
-            if (graficas.style.display === "none") {
-               graficas.style.display = "block";
-            } else {
-                graficas.style.display = "none";
-            }
+                if (graficas.style.display === "none") {
+                graficas.style.display = "block";
+                } else {
+                    graficas.style.display = "none";
+                }
         }
 
         function graficoBarras(id, etiquetas, datos, etY, colores) {
