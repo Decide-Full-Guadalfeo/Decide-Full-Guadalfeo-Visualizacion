@@ -447,16 +447,22 @@
 
 
         function mostrarResultados() {
-            
+            var limit = 7;
+            if(voting.tipo === 'VP'){
+                limit = 6;
+            }
             mostrarContenido('enun_result');
-            for (var i=0; i<7; i++) {
+            for (var i=0; i<limit; i++) {
                 mostrarContenido('resultados'+i);
             }
             mostrarEnunciado();
         }
         function mostrarGraficas() {
-
-            for (var i=0; i<7; i++) {
+            var limit = 7;
+            if(voting.tipo === 'VP'){
+                limit = 6;
+            }
+            for (var i=0; i<limit; i++) {
                 mostrarContenido('espacio_graficas'+i);
             }
             mostrarEnunciado();
