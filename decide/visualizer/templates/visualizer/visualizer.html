@@ -528,6 +528,7 @@
             var candidatos=preguntas[i].opts
             var nombres=[]
             var votos=[]
+            var mediasEdad=[]
             var colores=[]
             var div="" 
             div = document.getElementById("graficosSexo"+i.toString());
@@ -536,6 +537,7 @@
             for(var e=0; e<candidatos.length;e++){
                 nombres.push(candidatos[e].nombre)
                 votos.push(candidatos[e].voto_F+candidatos[e].voto_M)
+                mediasEdad.push(candidatos[e].media_Edad)
                 colores.push(getRandomColor())
 
                 //Crear grafos votos por candidatos segun sexo
@@ -565,7 +567,7 @@
             }
             
             graficoBarras("myChartVotes"+i.toString(), nombres, votos, "Votos",colores);
-            graficoBarras("myChartAges"+i.toString(), nombres, votos, "Edad",colores);
+            graficoBarras("myChartAges"+i.toString(), nombres, mediasEdad, "Edad",colores);
 
         }
 
