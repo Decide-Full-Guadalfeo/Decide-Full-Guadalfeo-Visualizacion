@@ -82,7 +82,7 @@ class VisualizerView(TemplateView):
 
         try:
             script_location = Path(__file__).absolute().parent
-            file_location = script_location / 'API_vPrimaria_v2.json'
+            file_location = script_location / 'API_vGeneral.json'
             with file_location.open() as json_file:
                 json_file = json.load(json_file)
                 

@@ -12,6 +12,35 @@
     "n_mujeres_censo": 265,
     "n_votantes_f": 240,
     "media_edad_votantes": 20.4,
+    "estadisticas": {
+        "abstencion_0": 13.98,
+        "abstencion_1": 10.00,
+        "abstencion_2": 7.14,
+        "abstencion_3": 15.00,
+        "abstencion_4": 12.50,
+        "abstencion_5": 26.67,
+
+        "abstencion_m_0": 20.00,
+        "abstencion_m_1": 12.50,
+        "abstencion_m_2": 10.00,
+        "abstencion_m_3": 25.00,
+        "abstencion_m_4": 25.00,
+        "abstencion_m_5": 16.67,
+
+        "abstencion_f_0": 9.43,
+        "abstencion_f_1": 8.33,
+        "abstencion_f_2": 5.00,
+        "abstencion_f_3": 8.33,
+        "abstencion_f_4": 0.00,
+        "abstencion_f_5": 33.33,
+
+        "media_edad_0": 20.4,
+        "media_edad_1": 18.4,
+        "media_edad_2": 19.4,
+        "media_edad_3": 20.5,
+        "media_edad_4": 21.5,
+        "media_edad_5": 23.5
+    },
 	"preguntas":[
 		{
             "titulo": "Delegado de centro",
@@ -23,7 +52,8 @@
                     "voto_F": 113,
                     "voto_M": 87,
                     "media_Edad": 22.12,
-                    "voto_curso":{"primero": 50,"segundo": 51 ,"tercero": 49, "cuarto": 30, "master": 20}
+                    "voto_curso":{"primero": 50,"segundo": 51 ,"tercero": 49, "cuarto": 30, "master": 20},
+                    "votes": 200
                     },
                     {
                     "nombre": "Miguel Angulo Mojávez",
@@ -31,7 +61,8 @@
                     "voto_F": 45,
                     "voto_M": 32,
                     "media_Edad": 18.3,
-                    "voto_curso":{"primero": 15,"segundo": 15 ,"tercero": 15, "cuarto": 15, "master": 17}
+                    "voto_curso":{"primero": 15,"segundo": 15 ,"tercero": 15, "cuarto": 15, "master": 17},
+                    "votes": 77
                     },
                     {
                     "nombre": "Alfredo Alcantarilla Bautista",
@@ -39,7 +70,8 @@
                     "voto_F": 53,
                     "voto_M": 20,
                     "media_Edad": 20.5,
-                    "voto_curso":{"primero": 15,"segundo": 13 ,"tercero": 15, "cuarto": 15, "master": 15}
+                    "voto_curso":{"primero": 15,"segundo": 13 ,"tercero": 15, "cuarto": 15, "master": 15},
+                    "votes": 73
                     },
                     {
                     "nombre": "Carmen Santos Villarino",
@@ -47,7 +79,8 @@
                     "voto_F": 32,
                     "voto_M": 18,
                     "media_Edad": 21.34,
-                    "voto_curso":{"primero": 7,"segundo": 13 ,"tercero": 6, "cuarto": 14, "master": 10}
+                    "voto_curso":{"primero": 7,"segundo": 13 ,"tercero": 6, "cuarto": 14, "master": 10},
+                    "votes": 50
                     }
                 ]
             },
@@ -67,28 +100,32 @@
                     "numero": 7,
                     "voto_F": 26,
                     "voto_M": 24,
-                    "media_Edad": 18.3
+                    "media_Edad": 18.3,
+                    "votes": 50
                     },
                     {
                     "nombre": "Celia Mejías Luz",
                     "numero": 8,
                     "voto_F": 13,
                     "voto_M": 7,
-                    "media_Edad": 18.5
+                    "media_Edad": 18.5,
+                    "votes": 20
                     },
                     {
                     "nombre": "Xavier Cortina Blanch",
                     "numero": 9,
                     "voto_F": 3,
                     "voto_M": 7,
-                    "media_Edad": 18.7
+                    "media_Edad": 18.7,
+                    "votes": 10
                     },
                     {
                     "nombre": "Agustín Valdes Viña",
                     "numero": 10,
                     "voto_F": 5,
                     "voto_M": 5,
-                    "media_Edad": 18.1
+                    "media_Edad": 18.1,
+                    "votes": 10
                     }
             ]
         },
@@ -108,28 +145,32 @@
                     "numero": 11,
                     "voto_F": 17,
                     "voto_M": 13,
-                    "media_Edad": 19.3
+                    "media_Edad": 19.3,
+                    "votes": 30
                     },
                     {
                     "nombre": "Eva Barco Morillo",
                     "numero": 12,
                     "voto_F": 3,
                     "voto_M": 7,
-                    "media_Edad": 19.5
+                    "media_Edad": 19.5,
+                    "votes": 10
                     },
                     {
                     "nombre": "José Maqueda Maza",
                     "numero": 13,
                     "voto_F": 13,
                     "voto_M": 7,
-                    "media_Edad": 20.7
+                    "media_Edad": 20.7,
+                    "votes": 20
                     },
                     {
                     "nombre": "Lorena Salvado Ramiro",
                     "numero": 14,
                     "voto_F": 1,
                     "voto_M": 4,
-                    "media_Edad": 19.1
+                    "media_Edad": 19.1,
+                    "votes": 5
                     }
             ]
         },
@@ -149,28 +190,32 @@
                     "numero": 15,
                     "voto_F": 3,
                     "voto_M": 7,
-                    "media_Edad": 20.3
+                    "media_Edad": 20.3,
+                    "votes": 10
                     },
                     {
                     "nombre": "Juan José Pinilla Feijóo",
                     "numero": 16,
                     "voto_F": 6,
                     "voto_M": 6,
-                    "media_Edad": 20.5
+                    "media_Edad": 20.5,
+                    "votes": 12
                     },
                     {
                     "nombre": "Inmaculada Montoro Monzón",
                     "numero": 17,
                     "voto_F": 45,
                     "voto_M": 15,
-                    "media_Edad": 21.7
+                    "media_Edad": 21.7,
+                    "votes": 60
                     },
                     {
                     "nombre": "Julio Pinedo Pimentel",
                     "numero": 18,
                     "voto_F": 2,
                     "voto_M": 1,
-                    "media_Edad": 19.8
+                    "media_Edad": 19.8,
+                    "votes": 3
                     }
             ]
         },
@@ -190,28 +235,32 @@
                     "numero": 19,
                     "voto_F": 15,
                     "voto_M": 5,
-                    "media_Edad": 21.3
+                    "media_Edad": 21.3,
+                    "votes": 20
                     },
                     {
                     "nombre": "Nabil Fekir Canales",
                     "numero": 20,
                     "voto_F": 55,
                     "voto_M": 15,
-                    "media_Edad": 21.5
+                    "media_Edad": 21.5,
+                    "votes": 70
                     },
                     {
                     "nombre": "Daniel Doncel Escribano",
                     "numero": 21,
                     "voto_F": 3,
                     "voto_M": 7,
-                    "media_Edad": 21.7
+                    "media_Edad": 21.7,
+                    "votes": 10
                     },
                     {
                     "nombre": "Paula Almendros Alonso",
                     "numero": 22,
                     "voto_F": 3,
                     "voto_M": 2,
-                    "media_Edad": 22.1
+                    "media_Edad": 22.1,
+                    "votes": 5
                     }
             ]
         },
@@ -231,28 +280,32 @@
                     "numero": 23,
                     "voto_F": 2,
                     "voto_M": 1,
-                    "media_Edad": 22.3
+                    "media_Edad": 22.3,
+                    "votes": 3
                     },
                     {
                     "nombre": "Luis Nadal Patiño",
                     "numero": 24,
                     "voto_F": 1,
                     "voto_M": 1,
-                    "media_Edad": 23.5
+                    "media_Edad": 23.5,
+                    "votes": 2
                     },
                     {
                     "nombre": "Concepción Vacas Mañez",
                     "numero": 25,
                     "voto_F": 3,
                     "voto_M": 7,
-                    "media_Edad": 22.7
+                    "media_Edad": 22.7,
+                    "votes": 10
                     },
                     {
                     "nombre": "Solomeo Paredes Agrietadas",
                     "numero": 26,
                     "voto_F": 20,
                     "voto_M": 20,
-                    "media_Edad": 22.1
+                    "media_Edad": 22.1,
+                    "votes": 40
                     }
             ]
         },
@@ -266,7 +319,8 @@
                     "voto_F": 113,
                     "voto_M": 87,
                     "media_Edad": 21.3,
-                    "voto_curso":{"primero": 50,"segundo": 51 ,"tercero": 49, "cuarto": 30, "master": 20}
+                    "voto_curso":{"primero": 50,"segundo": 51 ,"tercero": 49, "cuarto": 30, "master": 20},
+                    "votes": 200
                     },
                     {
                     "nombre": "María Ángeles Laborda de los Reyes",
@@ -274,7 +328,8 @@
                     "voto_F": 45,
                     "voto_M": 32,
                     "media_Edad": 23.3,
-                    "voto_curso":{"primero": 15,"segundo": 15 ,"tercero": 15, "cuarto": 15, "master": 17}
+                    "voto_curso":{"primero": 15,"segundo": 15 ,"tercero": 15, "cuarto": 15, "master": 17},
+                    "votes": 77
                     },
                     {
                     "nombre": "Joaquín Torralbo Asensio",
@@ -282,7 +337,8 @@
                     "voto_F": 53,
                     "voto_M": 20,
                     "media_Edad": 20.5,
-                    "voto_curso":{"primero": 15,"segundo": 13 ,"tercero": 15, "cuarto": 15, "master": 15}
+                    "voto_curso":{"primero": 15,"segundo": 13 ,"tercero": 15, "cuarto": 15, "master": 15},
+                    "votes": 73
                     },
                     {
                     "nombre": "Lorena Paniagua Morera",
@@ -290,7 +346,8 @@
                     "voto_F": 32,
                     "voto_M": 18,
                     "media_Edad": 21.2,
-                    "voto_curso":{"primero": 7,"segundo": 13 ,"tercero": 6, "cuarto": 14, "master": 10}
+                    "voto_curso":{"primero": 7,"segundo": 13 ,"tercero": 6, "cuarto": 14, "master": 10},
+                    "votes": 50
                     },
                     {
                     "nombre": "Jesús Rama Aguero",
@@ -298,7 +355,8 @@
                     "voto_F": 14,
                     "voto_M": 64,
                     "media_Edad": 18.12,
-                    "voto_curso":{"primero": 50,"segundo": 10 ,"tercero": 5, "cuarto": 1, "master": 12}
+                    "voto_curso":{"primero": 50,"segundo": 10 ,"tercero": 5, "cuarto": 1, "master": 12},
+                    "votes": 78
                     },
                     {
                     "nombre": "Sara Márquez Capel",
@@ -306,7 +364,8 @@
                     "voto_F": 34,
                     "voto_M": 26,
                     "media_Edad": 19.7,
-                    "voto_curso":{"primero": 15,"segundo": 40 ,"tercero": 1, "cuarto": 2, "master": 2}
+                    "voto_curso":{"primero": 15,"segundo": 40 ,"tercero": 1, "cuarto": 2, "master": 2},
+                    "votes": 70
                     },
                     {
                     "nombre": "Juan Carlos Perís Asensio",
@@ -314,7 +373,8 @@
                     "voto_F": 23,
                     "voto_M": 20,
                     "media_Edad": 20.5,
-                    "voto_curso":{"primero": 5,"segundo": 5 ,"tercero": 20, "cuarto": 5, "master": 8}
+                    "voto_curso":{"primero": 5,"segundo": 5 ,"tercero": 20, "cuarto": 5, "master": 8},
+                    "votes": 43
                     },
                     {
                     "nombre": "María Rosa Quiroga Prada",
@@ -322,7 +382,8 @@
                     "voto_F": 56,
                     "voto_M": 14,
                     "media_Edad": 20.34,
-                    "voto_curso":{"primero": 7,"segundo": 3 ,"tercero": 50, "cuarto": 6, "master": 4}
+                    "voto_curso":{"primero": 7,"segundo": 3 ,"tercero": 50, "cuarto": 6, "master": 4},
+                    "votes": 70
                     },
                     {
                     "nombre": "Emilio Pizarro Valdés",
@@ -330,7 +391,8 @@
                     "voto_F": 32,
                     "voto_M": 8,
                     "media_Edad": 23.12,
-                    "voto_curso":{"primero": 0,"segundo": 0 ,"tercero": 3, "cuarto": 7, "master": 30}
+                    "voto_curso":{"primero": 0,"segundo": 0 ,"tercero": 3, "cuarto": 7, "master": 30},
+                    "votes": 40
                     },
                     {
                     "nombre": "María Rosa Cuellar Davila",
@@ -338,7 +400,8 @@
                     "voto_F": 21,
                     "voto_M": 3,
                     "media_Edad": 18.6,
-                    "voto_curso":{"primero": 15,"segundo": 9 ,"tercero": 0, "cuarto": 0, "master": 0}
+                    "voto_curso":{"primero": 15,"segundo": 9 ,"tercero": 0, "cuarto": 0, "master": 0},
+                    "votes": 24
                     },
                     {
                     "nombre": "Aitor Negrín Huguet",
@@ -346,7 +409,8 @@
                     "voto_F": 47,
                     "voto_M": 23,
                     "media_Edad": 20.9,
-                    "voto_curso":{"primero": 15,"segundo": 15 ,"tercero": 15, "cuarto": 15, "master": 15}
+                    "voto_curso":{"primero": 15,"segundo": 15 ,"tercero": 15, "cuarto": 15, "master": 15},
+                    "votes": 70
                     },
                     {
                     "nombre": "Verónica Calero Herrador",
@@ -354,7 +418,8 @@
                     "voto_F": 28,
                     "voto_M": 22,
                     "media_Edad": 21.13,
-                    "voto_curso":{"primero": 7,"segundo": 13 ,"tercero": 6, "cuarto": 14, "master": 10}
+                    "voto_curso":{"primero": 7,"segundo": 13 ,"tercero": 6, "cuarto": 14, "master": 10},
+                    "votes": 50
                     },
                     {
                     "nombre": "Jose Carlos Amoro Plasencia",
@@ -362,7 +427,8 @@
                     "voto_F": 25,
                     "voto_M": 16,
                     "media_Edad": 20.12,
-                    "voto_curso":{"primero": 0,"segundo": 5 ,"tercero": 34, "cuarto": 2, "master": 0}
+                    "voto_curso":{"primero": 0,"segundo": 5 ,"tercero": 34, "cuarto": 2, "master": 0},
+                    "votes": 41
                     },
                     {
                     "nombre": "Nerea Castañeda Amengual",
@@ -370,7 +436,8 @@
                     "voto_F": 48,
                     "voto_M": 29,
                     "media_Edad": 18.9,
-                    "voto_curso":{"primero": 15,"segundo": 15 ,"tercero": 15, "cuarto": 15, "master": 17}
+                    "voto_curso":{"primero": 15,"segundo": 15 ,"tercero": 15, "cuarto": 15, "master": 17},
+                    "votes": 77
                     },
                     {
                     "nombre": "José Ramón Mateo Gavilán",
@@ -378,7 +445,8 @@
                     "voto_F": 24,
                     "voto_M": 5,
                     "media_Edad": 17.98,
-                    "voto_curso":{"primero": 26,"segundo": 3 ,"tercero": 0, "cuarto": 0, "master": 0}
+                    "voto_curso":{"primero": 26,"segundo": 3 ,"tercero": 0, "cuarto": 0, "master": 0},
+                    "votes": 29
                     },
                     {
                     "nombre": "Sandra Zabaleta Cerezo",
@@ -386,7 +454,8 @@
                     "voto_F": 23,
                     "voto_M": 18,
                     "media_Edad": 21.34,
-                    "voto_curso":{"primero": 7,"segundo": 5 ,"tercero": 4, "cuarto": 24, "master": 1}
+                    "voto_curso":{"primero": 7,"segundo": 5 ,"tercero": 4, "cuarto": 24, "master": 1},
+                    "votes": 41
                     }
                 ]
             }
