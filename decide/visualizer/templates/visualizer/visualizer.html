@@ -115,7 +115,7 @@
                                     <tbody>
                                         <tr v-for="opt in voting.preguntas[0].opts" :key="opt.numero">
                                             <td>[[opt.nombre]]</td>
-                                            <td>[[opt.voto_F + opt.voto_M]]</td>
+                                            <td>[[opt.votes]]</td>
                                             <td>[[opt.voto_M]]</td>
                                             <td>[[opt.voto_F]]</td>
                                             <td>[[opt.voto_curso.primero]]</td>
@@ -170,7 +170,7 @@
                                         <tbody>
                                             <tr v-for="opt in voting.preguntas[preg].opts" :key="opt.numero">
                                                 <td>[[opt.nombre]]</td>
-                                                <td>[[opt.voto_F + opt.voto_M]]</td>
+                                                <td>[[opt.votes]]</td>
                                                 <td>[[opt.voto_M]]</td>
                                                 <td>[[opt.voto_F]]</td>
                                                 <td>[[opt.media_Edad]]</td>
@@ -222,7 +222,7 @@
                                         <tbody>
                                             <tr v-for="opt in voting.preguntas[6].opts" :key="opt.numero">
                                                 <td>[[opt.nombre]]</td>
-                                                <td>[[opt.voto_F + opt.voto_M]]</td>
+                                                <td>[[opt.votes]]</td>
                                                 <td>[[opt.voto_M]]</td>
                                                 <td>[[opt.voto_F]]</td>
                                                 <td>[[opt.voto_curso.primero]]</td>
@@ -542,7 +542,7 @@
             divCurso = document.getElementById("graficosCurso"+i.toString());
             for(var e=0; e<candidatos.length;e++){
                 nombres.push(candidatos[e].nombre)
-                votos.push(candidatos[e].voto_F+candidatos[e].voto_M)
+                votos.push(candidatos[e].votes)
                 mediasEdad.push(candidatos[e].media_Edad)
                 colores.push(getRandomColor())
 
