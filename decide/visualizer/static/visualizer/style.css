@@ -291,3 +291,21 @@ font-weight: bold;
   margin: 3%;
   width: 95%;
 }
+
+/* footer */
+.foot {
+  float:right;
+  background-color:#6c757d;
+  color:#fff;
+  text-decoration:none;
+  padding:10px 12px;
+  display:block;
+}
+
+.foot li a,label {
+  background-color:#6c757d;
+  color:#fff;
+  text-decoration:none;
+  padding:10px 12px;
+}
+
