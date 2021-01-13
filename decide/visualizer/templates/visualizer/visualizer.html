@@ -188,7 +188,7 @@
                                         <canvas v-bind:id="'myChartAges'+preg" width="75" height="35"></canvas>
                                     </div>
                                     <div class="row menuito">
-                                        <div class="col-md-6" style="margin-left:25%;">
+                                        <div class="col-md-6">
                                             <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
                                             <div v-bind:id="'graficosSexo'+preg"></div>
                                         </div>
@@ -700,20 +700,31 @@
             }
 
             mostrarResultados("results")   
-            mostrarResultados("allGraphics") 
-            mostrarResultados("delegadoCentro") 
-            mostrarResultados("primero") 
-            mostrarResultados("tercero") 
-            mostrarResultados("cuarto") 
-            mostrarResultados("master")
-            mostrarResultados("delegadoAlumnos")
+            mostrarResultados("espacio_graficas0") 
+            mostrarResultados("espacio_graficas1") 
+            mostrarResultados("espacio_graficas2") 
+            mostrarResultados("espacio_graficas3") 
+            mostrarResultados("espacio_graficas4")
+            mostrarResultados("espacio_graficas5")
+
+            var limit = 7;
+            if(voting.tipo === 'VP'){
+                limit = 6;
+            } else mostrarResultados("espacio_graficas6");
+
+            for(i=0;i<limit;i++) {
+                var cssGrafVotes = document.getElementById("myChartVotes"+i);
+                var cssGrafAges = document.getElementById("myChartAges"+i);
+                cssGrafVotes.style.cssText = "width:100%";
+                cssGrafAges.style.cssText = "width:100%";
+            }
 
             var elementHTML= document.getElementById('app-visualizer');
 
             var opt = {
                 filename:     'resultados.pdf',
                 image:        { type: 'png', quality: 0.98 },
-                html2canvas:  {dpi: 300, letterRendering: true, useCORS: true},
+                html2canvas:  {dpi: 400, letterRendering: true, useCORS: true},
                 jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
                 };
 
