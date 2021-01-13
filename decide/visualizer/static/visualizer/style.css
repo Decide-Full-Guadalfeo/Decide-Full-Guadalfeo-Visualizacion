@@ -106,6 +106,16 @@ checkbox
     transition: .4s;
   }
   
+  container2 {
+    max-width: 100%;
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    position: absolute;
+  }
+
   .slider:before {
     position: absolute;
     content: "";
