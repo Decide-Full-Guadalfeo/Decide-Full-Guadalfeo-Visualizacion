@@ -56,5 +56,20 @@ class VisualizerTestCase(BaseTestCase):
     def test_access_bot_400(self):
         data = {} #El campo action es requerido en la request
         self.login()
-        response = self.client.get('/visualizer/botResults/{}/'.format(-1), data, format= 'json')
+        response = self.client.get('/visualizer/{}/'.format(-1), data, format= 'json')
+        self.assertEquals(response.status_code, 404)
+
+        
+    def test_access_visualizer_200(self):
+        v = self.create_voting()
+        data = {} #El campo action es requerido en la request
+        self.login()
+        response = self.client.get('/visualizer/{}/'.format(v.pk), data, format= 'json')
+        self.assertEquals(response.status_code, 200)
+
+    def test_access_visualizer_400(self):
+        v = self.create_voting()
+        data = {} #El campo action es requerido en la request
+        self.login()
+        response = self.client.get('/visualizer/{}/'.format(-1), data, format= 'json')
         self.assertEquals(response.status_code, 404)
