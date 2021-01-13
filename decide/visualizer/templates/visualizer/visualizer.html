@@ -115,7 +115,7 @@
                                     <tbody>
                                         <tr v-for="opt in voting.preguntas[0].opts" :key="opt.numero">
                                             <td>[[opt.nombre]]</td>
-                                            <td>[[opt.voto_F + opt.voto_M]]</td>
+                                            <td>[[opt.votes]]</td>
                                             <td>[[opt.voto_M]]</td>
                                             <td>[[opt.voto_F]]</td>
                                             <td>[[opt.voto_curso.primero]]</td>
@@ -170,7 +170,7 @@
                                         <tbody>
                                             <tr v-for="opt in voting.preguntas[preg].opts" :key="opt.numero">
                                                 <td>[[opt.nombre]]</td>
-                                                <td>[[opt.voto_F + opt.voto_M]]</td>
+                                                <td>[[opt.votes]]</td>
                                                 <td>[[opt.voto_M]]</td>
                                                 <td>[[opt.voto_F]]</td>
                                                 <td>[[opt.media_Edad]]</td>
@@ -222,7 +222,7 @@
                                         <tbody>
                                             <tr v-for="opt in voting.preguntas[6].opts" :key="opt.numero">
                                                 <td>[[opt.nombre]]</td>
-                                                <td>[[opt.voto_F + opt.voto_M]]</td>
+                                                <td>[[opt.votes]]</td>
                                                 <td>[[opt.voto_M]]</td>
                                                 <td>[[opt.voto_F]]</td>
                                                 <td>[[opt.voto_curso.primero]]</td>
@@ -277,31 +277,39 @@
                             <tbody>
                                 <tr>
                                     <th>Porcentaje de abstención</th>
-                                    <td>[[(100 - (voting.n_votantes / voting.n_personas_censo * 100)).toFixed(2)]] %</td>
-                                    <td v-for="preg in [1,2,3,4,5]">
-                                        [[(100 - (voting.preguntas[preg].n_votantes / voting.preguntas[preg].n_personas_censo * 100)).toFixed(2)]] %
-                                    </td>
+                                    <td>[[ voting.estadisticas.abstencion._0 ]] %</td>
+                                    <td>[[ voting.estadisticas.abstencion._1 ]] %</td>
+                                    <td>[[ voting.estadisticas.abstencion._2 ]] %</td>
+                                    <td>[[ voting.estadisticas.abstencion._3 ]] %</td>
+                                    <td>[[ voting.estadisticas.abstencion._4 ]] %</td>
+                                    <td>[[ voting.estadisticas.abstencion._5 ]] %</td>
                                 </tr>
                                 <tr>
                                     <th>Porcentaje de abstención masculina</th>
-                                    <td>[[(100 - (voting.n_votantes_m / voting.n_hombres_censo * 100)).toFixed(2)]] %</td>
-                                    <td v-for="preg in [1,2,3,4,5]">
-                                        [[(100 - (voting.preguntas[preg].n_votantes_m / voting.preguntas[preg].n_hombres_censo * 100)).toFixed(2)]] %
-                                    </td>
+                                    <td>[[ voting.estadisticas.abstencion_m._0 ]] %</td>
+                                    <td>[[ voting.estadisticas.abstencion_m._1 ]] %</td>
+                                    <td>[[ voting.estadisticas.abstencion_m._2 ]] %</td>
+                                    <td>[[ voting.estadisticas.abstencion_m._3 ]] %</td>
+                                    <td>[[ voting.estadisticas.abstencion_m._4 ]] %</td>
+                                    <td>[[ voting.estadisticas.abstencion_m._5 ]] %</td>
                                 </tr>
                                 <tr>
                                     <th>Porcentaje de abstención femenina</th>
-                                    <td>[[(100 - (voting.n_votantes_f / voting.n_mujeres_censo * 100)).toFixed(2)]] %</td>
-                                    <td v-for="preg in [1,2,3,4,5]">
-                                        [[(100 - (voting.preguntas[preg].n_votantes_f / voting.preguntas[preg].n_mujeres_censo * 100)).toFixed(2)]] %
-                                    </td>
+                                    <td>[[ voting.estadisticas.abstencion_f._0 ]] %</td>
+                                    <td>[[ voting.estadisticas.abstencion_f._1 ]] %</td>
+                                    <td>[[ voting.estadisticas.abstencion_f._2 ]] %</td>
+                                    <td>[[ voting.estadisticas.abstencion_f._3 ]] %</td>
+                                    <td>[[ voting.estadisticas.abstencion_f._4 ]] %</td>
+                                    <td>[[ voting.estadisticas.abstencion_f._5 ]] %</td>
                                 </tr>
                                 <tr>
                                     <th>Media de edad</th>
-                                    <td>[[voting.media_edad_votantes]]</td>
-                                    <td v-for="preg in [1,2,3,4,5]">
-                                        [[voting.preguntas[preg].media_edad_votantes]]
-                                    </td>
+                                    <td>[[ voting.estadisticas.media_edad._0 ]] %</td>
+                                    <td>[[ voting.estadisticas.media_edad._1 ]] %</td>
+                                    <td>[[ voting.estadisticas.media_edad._2 ]] %</td>
+                                    <td>[[ voting.estadisticas.media_edad._3 ]] %</td>
+                                    <td>[[ voting.estadisticas.media_edad._4 ]] %</td>
+                                    <td>[[ voting.estadisticas.media_edad._5 ]] %</td>
                                 </tr>
 
                             </tbody>
@@ -325,14 +333,14 @@
                             <tbody>
                                 <tr v-for="opt in voting.preguntas[0].opts" :key="opt.numero">
                                     <td>[[opt.nombre]]</td>
-                                    <td>[[((opt.voto_F + opt.voto_M) / voting.n_personas_censo * 100).toFixed(2)]] %</td>
-                                    <td>[[(opt.voto_M/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
-                                    <td>[[(opt.voto_F/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
-                                    <td>[[(opt.voto_curso.primero/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
-                                    <td>[[(opt.voto_curso.segundo/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
-                                    <td>[[(opt.voto_curso.tercero/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
-                                    <td>[[(opt.voto_curso.cuarto/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
-                                    <td>[[(opt.voto_curso.master/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
+                                    <td>[[opt.estadisticas.votos_censo]] %</td>
+                                    <td>[[opt.estadisticas.votos_m]] %</td>
+                                    <td>[[opt.estadisticas.votos_f]] %</td>
+                                    <td>[[opt.estadisticas.votos_primero]] %</td>
+                                    <td>[[opt.estadisticas.votos_segundo]] %</td>
+                                    <td>[[opt.estadisticas.votos_tercero]] %</td>
+                                    <td>[[opt.estadisticas.votos_cuarto]] %</td>
+                                    <td>[[opt.estadisticas.votos_master]] %</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -352,9 +360,9 @@
                                 <tbody>
                                     <tr v-for="opt in voting.preguntas[preg].opts" :key="opt.numero">
                                         <td>[[opt.nombre]]</td>
-                                        <td>[[((opt.voto_F + opt.voto_M) / voting.preguntas[preg].n_personas_censo * 100).toFixed(2)]] %</td>
-                                        <td>[[(opt.voto_M/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
-                                        <td>[[(opt.voto_F/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
+                                        <td>[[opt.estadisticas.votos_censo]] %</td>
+                                        <td>[[opt.estadisticas.votos_m]] %</td>
+                                        <td>[[opt.estadisticas.votos_f]] %</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -380,14 +388,14 @@
                                 <tbody>
                                     <tr v-for="opt in voting.preguntas[6].opts" :key="opt.numero">
                                         <td>[[opt.nombre]]</td>
-                                        <td>[[((opt.voto_F + opt.voto_M) / voting.n_personas_censo * 100).toFixed(2)]] %</td>
-                                        <td>[[(opt.voto_M/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
-                                        <td>[[(opt.voto_F/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
-                                        <td>[[(opt.voto_curso.primero/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
-                                        <td>[[(opt.voto_curso.segundo/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
-                                        <td>[[(opt.voto_curso.tercero/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
-                                        <td>[[(opt.voto_curso.cuarto/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
-                                        <td>[[(opt.voto_curso.master/(opt.voto_F + opt.voto_M) * 100).toFixed(2)]] %</td>
+                                        <td>[[opt.estadisticas.votos_censo]] %</td>
+                                        <td>[[opt.estadisticas.votos_m]] %</td>
+                                        <td>[[opt.estadisticas.votos_f]] %</td>
+                                        <td>[[opt.estadisticas.votos_primero]] %</td>
+                                        <td>[[opt.estadisticas.votos_segundo]] %</td>
+                                        <td>[[opt.estadisticas.votos_tercero]] %</td>
+                                        <td>[[opt.estadisticas.votos_cuarto]] %</td>
+                                        <td>[[opt.estadisticas.votos_master]] %</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -552,7 +560,7 @@
             divCurso = document.getElementById("graficosCurso"+i.toString());
             for(var e=0; e<candidatos.length;e++){
                 nombres.push(candidatos[e].nombre)
-                votos.push(candidatos[e].voto_F+candidatos[e].voto_M)
+                votos.push(candidatos[e].votes)
                 mediasEdad.push(candidatos[e].media_Edad)
                 colores.push(getRandomColor())
 

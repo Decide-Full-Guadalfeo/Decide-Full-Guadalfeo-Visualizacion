@@ -97,7 +97,7 @@ class VisualizerView(TemplateView):
 
             context['voting'] = json_file
             r = mods.get('voting', params={'id': vid})
-            # context['voting'] = json.dumps(r[0])
+            # context['voting'] = json.dumps(r[0],indent=4)
             context['botUrl']="http://localhost:8000/visualizer/botResults/"+str(r[0]['id'])
         except:
             raise Http404
