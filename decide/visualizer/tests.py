@@ -8,7 +8,6 @@ from base.tests import BaseTestCase
 import json
 
 class VisualizerTestCase(BaseTestCase):
-    
     def setUp(self):
         super().setUp()
 
@@ -55,7 +54,6 @@ class VisualizerTestCase(BaseTestCase):
         self.assertEquals(response.status_code, 200)
 
     def test_access_bot_400(self):
-        v = self.create_voting()
         data = {} #El campo action es requerido en la request
         self.login()
         response = self.client.get('/visualizer/botResults/{}/'.format(-1), data, format= 'json')
