@@ -500,7 +500,7 @@
                 }
         }
 
-        function graficoBarras(id, etiquetas, datos, etY, colores) {
+        function graficoBarras(id, etiquetas, datos, etY, colores, beginAtZero) {
             var ctx= document.getElementById(id).getContext("2d");
             var myChart= new Chart(ctx,{
                 type:'bar',
@@ -526,7 +526,7 @@
                                 labelString: etY
                             },
                             ticks:{
-                                beginAtZero:true
+                                min: beginAtZero
                             },
                             stacked: false
                         }]
@@ -558,7 +558,7 @@
             divCurso = document.getElementById("graficosCurso"+i.toString());
             for(var e=0; e<candidatos.length;e++){
                 nombres.push(candidatos[e].nombre)
-                votos.push(candidatos[e].votes)
+                votos.push(candidatos[e].voto_F+candidatos[e].voto_M)
                 mediasEdad.push(candidatos[e].media_Edad)
                 colores.push(getRandomColor())
 
@@ -587,9 +587,10 @@
                     graficoSectoresCurso("myPieCharmCurso"+i.toString()+"-"+e.toString(), votosCurso, candidatos[e].nombre)
                 }
             }
-            
-            graficoBarras("myChartVotes"+i.toString(), nombres, votos, "Votos",colores);
-            graficoBarras("myChartAges"+i.toString(), nombres, mediasEdad, "Edad",colores);
+            minEdad=Math.min.apply(17,mediasEdad)-1
+            console.log(mediasEdad)
+            graficoBarras("myChartVotes"+i.toString(), nombres, votos, "Votos",colores, 0);
+            graficoBarras("myChartAges"+i.toString(), nombres, mediasEdad, "Edad",colores, minEdad);
 
         }
 
