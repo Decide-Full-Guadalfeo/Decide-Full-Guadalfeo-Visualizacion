@@ -18,12 +18,6 @@
         <b-navbar type="dark" data-html2canvas-ignore="true" variant="secondary">
             <b-navbar-brand tag="h1">Decide</b-navbar-brand>
             <ul class="nav">
-                <script type="text/javascript"> 
-                    function cambiarModo() { 
-                        var cuerpoweb = document.body; 
-                        cuerpoweb.classList.toggle("oscuro"); 
-                    } 
-                </script>
                 <li><a href=""> ▼ Mostrar</a>
                     <ul>
                         <li>
@@ -138,12 +132,12 @@
                                     <canvas id="myChartAges0" width="50" height="30"></canvas>
                                 </div>
                                 <div class="row menuito">
-                                    <div class="col">
-                                        <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
+                                    <div class="col-md-6">
+                                        <h6 class="centralizar">Votos por sexo de cada candidato</h6>
                                         <div id="graficosSexo0"></div>
                                     </div>
-                                    <div class="col">
-                                        <h6 style="text-align: center;">Votos por curso de cada candidato</h6>
+                                    <div class="col-md-6">
+                                        <h6 class="centralizar">Votos por curso de cada candidato</h6>
                                         <div id="graficosCurso0"></div>
                                     </div>
                                 </div>
@@ -181,17 +175,17 @@
                                 <div v-bind:id="'espacio_graficas'+preg">
                                     <div class="float-left abajito">
                                         <h6 style="text-align: center;">Votos de todos los candidatos</h6>
-                                        <canvas v-bind:id="'myChartVotes'+preg" width="75" height="35"></canvas>
+                                        <canvas v-bind:id="'myChartVotes'+preg" width="50" height="30"></canvas>
                                     </div> 
                                     <div class="float-right abajito">
                                         <h6 style="text-align: center;">Media de edad de los votantes</h6>
-                                        <canvas v-bind:id="'myChartAges'+preg" width="75" height="35"></canvas>
+                                        <canvas v-bind:id="'myChartAges'+preg" width="50" height="30"></canvas>
                                     </div>
                                     <div class="row menuito">
-                                        <div class="col-md-6">
-                                            <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
+                                        <div class="col-md-6 mx-auto">
+                                            <h6 class="centralizar">Votos por sexo de cada candidato</h6>
                                             <div v-bind:id="'graficosSexo'+preg"></div>
-                                        </div>
+                                        </div>    
                                     </div>
                                 </div>
                             </div>
@@ -245,12 +239,12 @@
                                         <canvas id="myChartAges6" width="50" height="30"></canvas>
                                     </div>
                                     <div class="row menuito">
-                                        <div class="col">
-                                            <h6 style="text-align: center;">Votos por sexo de cada candidato</h6>
+                                        <div class="col-md-6">
+                                            <h6 class="centralizar">Votos por sexo de cada candidato</h6>
                                             <div id="graficosSexo6"></div>
                                         </div>
-                                        <div class="col">
-                                            <h6 style="text-align: center;">Votos por curso de cada candidato</h6>
+                                        <div class="col-md-6">
+                                            <h6 class="centralizar">Votos por curso de cada candidato</h6>
                                             <div id="graficosCurso6"></div>
                                         </div>
                                     </div>
@@ -403,7 +397,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <!-- Footer -->
@@ -455,6 +448,11 @@
             }
         }
         */
+
+        /* Modo oscuro */
+        function cambiarModo() { 
+            document.documentElement.classList.toggle("dark-mode");
+        } 
 
         function mostrarEnunciado() {
             var divResult = document.getElementById('resultados0');
@@ -698,6 +696,14 @@
                     graficas.style.display = "block";
                 }
             }
+            function resetearGraficas() {
+                for(var i=0;i<limit;i++) {
+                menuitos[i].style.marginLeft = "0%";
+                }
+                for(var i=0; i<enunciados.length; i++) {
+                    enunciados[i].style.paddingLeft = "0%";
+                }
+            }
 
             mostrarResultados("results")   
             mostrarResultados("espacio_graficas0") 
@@ -712,11 +718,18 @@
                 limit = 6;
             } else mostrarResultados("espacio_graficas6");
 
-            for(i=0;i<limit;i++) {
+            var menuitos = document.querySelectorAll(".menuito");
+            for(var i=0;i<limit;i++) {
                 var cssGrafVotes = document.getElementById("myChartVotes"+i);
                 var cssGrafAges = document.getElementById("myChartAges"+i);
+                menuitos[i].style.marginLeft = "-8%";
                 cssGrafVotes.style.cssText = "width:100%";
                 cssGrafAges.style.cssText = "width:100%";
+            }
+            var enunciados = document.querySelectorAll(".centralizar");
+            for(var i=0; i<enunciados.length; i++) {
+                enunciados[i].style.paddingLeft = "50%";
+
             }
 
             var elementHTML= document.getElementById('app-visualizer');
@@ -730,7 +743,10 @@
 
             html2pdf().from(elementHTML).set(opt).save();
 
+            window.setTimeout(resetearGraficas, 3000);
+
         }
+        
 
     </script>
 

@@ -1,6 +1,7 @@
-.oscuro{ 
-    background-color: #1f1f1f; 
-    color: #f1eded; 
+html.dark-mode {
+  background-color: #525252; 
+  filter: invert(100%);
+  transition: all 0.5s ease-in-out;
 }
 
 
@@ -290,6 +291,7 @@ font-weight: bold;
 .menuito {
   margin: 3%;
   width: 95%;
+  text-align: center;
 }
 
 /* footer */
@@ -311,8 +313,3 @@ font-weight: bold;
   padding:10px 12px;
   float:right;
 }
-
-
-
-
-
