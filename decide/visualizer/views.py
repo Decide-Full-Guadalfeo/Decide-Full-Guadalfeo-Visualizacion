@@ -23,10 +23,10 @@ def bot(voting_id, msg,chat_id=BOT_CHAT_ID, token=BOT_TOKEN):
     whatsappMessage="https://api.whatsapp.com/send?text=Puedes%20ver%20los%20resultados%20de%20la%20votación%20en%20el%20siguiente%20enlace:%20http://localhost:8000/visualizer/botResults/"+voting_id
     whatsapp_keyboard = telegram.InlineKeyboardButton(text="Share Link in WhatsApp", url=whatsappMessage)
 
-    whatsappResultsMessage="https://api.whatsapp.com/send?text="+msg.replace("<b>","").replace("</b>","")
-    whatsapp_results_keyboard = telegram.InlineKeyboardButton(text="Share Results in WhatsApp", url=whatsappResultsMessage)
+    # whatsappResultsMessage="https://api.whatsapp.com/send?text="+msg.replace("<b>","").replace("</b>","")
+    # whatsapp_results_keyboard = telegram.InlineKeyboardButton(text="Share Results in WhatsApp", url=whatsappResultsMessage)
 
-    custom_keyboard = [[telegram_keyboard,twitter_keyboard],[whatsapp_keyboard,telegram_results_keyboard],[whatsapp_results_keyboard]]
+    custom_keyboard = [[telegram_keyboard,twitter_keyboard],[telegram_results_keyboard,whatsapp_keyboard]]
     reply_markup = telegram.InlineKeyboardMarkup(custom_keyboard)
 
     bot.sendMessage(chat_id=chat_id, text=msg, parse_mode='HTML',reply_markup=reply_markup)
@@ -40,27 +40,12 @@ class BotResponse(TemplateView):
         vid = kwargs.get('voting_id', 0)
 
         try:
-            script_location = Path(__file__).absolute().parent
-            file_location = script_location / 'API_vGeneral.json'
-            with file_location.open() as json_file:
-                json_file = json.load(json_file)
-                
-            # Sorting the results
-            lista = []
-            if (json_file['tipo'] == 'VG'):
-                lista = [0,1,2,3,4,5,6]
-            else:
-                lista = [0,1,2,3,4,5]
-            for i in lista:
-                json_file['preguntas'][i]['opts'] = sorted(json_file['preguntas'][i]['opts'], key=lambda x : x['voto_M']+x['voto_F'], reverse=True)
-
-            context['voting'] = json_file
             r = mods.get('voting', params={'id': vid})
-            r[0]=json_file
+            context['voting'] = json.dumps(r[0]["postproc"],indent=4)
 
-            voting_id=str(r[0]['id'])
-            message="<b>Votación: "+ r[0]['titulo']+"</b>  " + r[0]['fecha_inicio']+" - "+ r[0]['fecha_fin']+"\n"+"Descripción: "+r[0]['desc']+"\n"+"Personas censadas: "+str(r[0]['n_personas_censo'])+" / Votantes: "+str(r[0]['n_votantes'])+"\n"
-            preguntas=r[0]['preguntas']
+            voting_id=str(r[0]["postproc"]['id'])
+            message="<b>Votación: "+ r[0]["postproc"]['titulo']+"</b>  " + r[0]["postproc"]['fecha_inicio']+" - "+ r[0]["postproc"]['fecha_fin']+"\n"+"Descripción: "+r[0]["postproc"]['desc']+"\n"+"Personas censadas: "+str(r[0]["postproc"]['n_personas_censo'])+" / Votantes: "+str(r[0]["postproc"]['n_votantes'])+"\n"
+            preguntas=r[0]["postproc"]['preguntas']
             for pregunta in preguntas:
                 message=message+"<b>·"+pregunta['titulo']+": "+ str(pregunta['numero_candidatos'])+" candidatos</b>\n"
                 candidatos=pregunta['opts']
@@ -81,24 +66,12 @@ class VisualizerView(TemplateView):
         vid = kwargs.get('voting_id', 0)
 
         try:
-            script_location = Path(__file__).absolute().parent
-            file_location = script_location / 'API_vGeneral.json'
-            with file_location.open() as json_file:
-                json_file = json.load(json_file)
-                
-            # Sorting the results
-            lista = []
-            if (json_file['tipo'] == 'VG'):
-                lista = [0,1,2,3,4,5,6]
-            else:
-                lista = [0,1,2,3,4,5]
-            for i in lista:
-                json_file['preguntas'][i]['opts'] = sorted(json_file['preguntas'][i]['opts'], key=lambda x : x['voto_M']+x['voto_F'], reverse=True)
-
-            context['voting'] = json_file
             r = mods.get('voting', params={'id': vid})
-            # context['voting'] = json.dumps(r[0])
+            context['voting'] = json.dumps(r[0]["postproc"])
             context['botUrl']="http://localhost:8000/visualizer/botResults/"+str(r[0]['id'])
+            context['whatsappUrl']="https://api.whatsapp.com/send?text=Puedes%20ver%20los%20resultados%20de%20la%20votación%20en%20el%20siguiente%20enlace:%20http://localhost:8000/visualizer/botResults/"+str(r[0]['id'])
+            context['twitterUrl']="https://twitter.com/intent/tweet?text=Puedes%20ver%20los%20resultados%20de%20la%20votación%20en%20el%20siguiente%20enlace:%20http://localhost:8000/visualizer/botResults/"+str(r[0]['id'])
+            context['facebookUrl']="http://www.facebook.com/sharer.php?u=http://localhost:8000/visualizer/botResults/"+str(r[0]['id'])
         except:
             raise Http404
 

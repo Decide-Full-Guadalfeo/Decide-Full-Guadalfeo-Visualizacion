@@ -1,14 +1,51 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block extrahead %}
+    <link type="text/css" rel="stylesheet"
+         href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet"
+         href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
+    <link type="text/css" rel="stylesheet" 
+         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="{% static "booth/style.css" %}" />
+    <link type="text/css" rel="stylesheet" href="{% static "visualizer/style.css" %}" />
+{% endblock %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 {% block content %}
-   <div id="app-visualizer">
+    <div id="app-visualizer">
         <!-- Navbar -->
-        <b-navbar type="dark" variant="secondary">
+        <b-navbar type="dark" data-html2canvas-ignore="true" variant="secondary">
             <b-navbar-brand tag="h1">Decide</b-navbar-brand>
         </b-navbar>
 
-        <div class="response">
-         <p>Se ha realizado correctamente la petición al servidor</p>
-        </div>
-
+        <div class="panel panel-default" style="text-align: center;">
+            <h3>Resultado de la petición:  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span></h3> 
+            <div class="panel-body">Exitoso, se ha realizado correctamente la petición al servidor</div>
         </div>
     </div>
+{% endblock %}
+
+{% block extrabody %}
+    <!-- Vuejs -->
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+
+    <script>
+        var voting = {{voting|safe}};
+        var app = new Vue({
+            delimiters: ['[[', ']]'],
+            el: '#app-visualizer',
+            data: {
+                voting: voting
+            }
+        })
+    </script>
+</body>
 {% endblock %}

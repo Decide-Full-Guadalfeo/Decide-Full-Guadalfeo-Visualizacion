@@ -16,7 +16,7 @@ CSS para el menú desplegable
 
 #header {
     margin:auto;
-    width:518px;
+    width:520px;
     font-family:Arial, Helvetica, sans-serif;
 }
 
@@ -25,11 +25,11 @@ ul, ol {
 }
 
 .nav > li {
-    float:left;
+    float:right;
 }
 
 .nav li a,label {
-    background-color:#000;
+    background-color:#6c757d;
     color:#fff;
     text-decoration:none;
     padding:10px 12px;
@@ -37,7 +37,7 @@ ul, ol {
 }
 
 .nav li p {
-  background-color:#000;
+  background-color:#6c757d;
   color:#fff;
   height: 44px;
   padding: 10px;
@@ -45,7 +45,7 @@ ul, ol {
 }
 
 .nav li s {
-    background-color:#000;
+    background-color: #6c757d;
     color:#fff;
     text-decoration:none;
     height: 44px;
@@ -262,26 +262,7 @@ font-weight: bold;
   background-color: #99ffff;
   color: black;
 }
-table {
-  border: 1px solid black;
-  border-collapse: collapse;
-  width: 25%;
-}
-.table {
-  margin-left: 240px;
-}
-th {
-  background-color:  #3366FF;
-  width: 10%;
 
-}
-td, tr {
-  background-color:  #0099FF;
-}
-tr, td, th {
-  padding: 10px;
-  border: 1px solid grey;
-}
 .correo {
   text-align: center;
 }
@@ -300,3 +281,38 @@ tr, td, th {
       margin-top: 40px;
   }
 }
+
+.abajito {
+  margin: 3%;
+  width: 40%;
+}
+
+.menuito {
+  margin: 3%;
+  width: 95%;
+}
+
+/* footer */
+
+.foot {
+  float:right;
+  background-color:#6c757d;
+  color:#fff;
+  text-decoration:none;
+  padding:10px 12px;
+  display:block;
+  width:100%;
+}
+
+.foot li a,label {
+  background-color:#6c757d;
+  color:#fff;
+  text-decoration:none;
+  padding:10px 12px;
+  float:right;
+}
+
+
+
+
+

@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     'corsheaders',
     'django_filters',
@@ -44,19 +45,62 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_framework_swagger',
     'gateway',
+    #Login with social networks
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    #Login with github
+    'social_django',
 ]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     ),
     'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.QueryParameterVersioning'
 }
 
 AUTHENTICATION_BACKENDS = [
     'base.backends.AuthBackend',
+    'django.contrib.auth.backends.ModelBackend',
+    #Login with email
+    'authentication.backends.EmailAuthBackend',
+    #Login with social networks
+    'allauth.account.auth_backends.AuthenticationBackend',
+    #BackEnd Github
+    'social_core.backends.github.GithubOAuth2',
+    #BackEnd Linkedin
+    'social_core.backends.linkedin.LinkedinOAuth2' ,
 ]
+
+#Login with social networks
+#Google
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+#Github
+SOCIAL_AUTH_GITHUB_KEY = 'f1cdcd7ded3ef6491888'
+SOCIAL_AUTH_GITHUB_SECRET = '38e5b6bbacec1f56ff2e3849742a67d7ab54b52e'
+
+#Linkedin
+SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '77upgo9aosfx0q'
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'vdG8AvMdkRsuLv8q'
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}
 
 MODULES = [
     'authentication',
@@ -70,8 +114,6 @@ MODULES = [
     'voting',
 ]
 
-BASEURL = 'http://localhost:8000'
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -80,6 +122,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #Login With Github
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'decide.urls'
@@ -87,7 +131,7 @@ ROOT_URLCONF = 'decide.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR+'/decide', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -95,6 +139,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                #LoginWithGithub
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -150,7 +198,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 # Static files (CSS, JavaScript, Images)
@@ -165,6 +212,9 @@ KEYBITS = 256
 ALLOWED_VERSIONS = ['v1', 'v2']
 DEFAULT_VERSION = 'v1'
 
+BASEURL="https://decide-full-guadalfeo-auth.herokuapp.com"
+APIS = {}
+
 try:
     from local_settings import *
 except ImportError:
@@ -178,5 +228,8 @@ if os.path.exists("config.jsonnet"):
     for k, v in config.items():
         vars()[k] = v
 
-
 INSTALLED_APPS = INSTALLED_APPS + MODULES
+
+# import django_heroku
+
+# django_heroku.settings(locals())
