@@ -61,7 +61,9 @@
                 <li>
                 <li><a href=""> ▼ Telegram</a>
                     <ul>
-                        <li><a href={{botUrl}} target="_blank">Enviar resultados por Telegram </a></li>
+                        {% if request.user.is_superuser %}
+                            <li><a href={{botUrl}} target="_blank">Enviar resultados por Telegram </a></li>
+                        {% endif %}
                         <li><a href="https://t.me/guadalfeo_visualizacion" target="_blank">Unirse al canal de Telegram </a></li>
                     </ul>
                 <li>

@@ -38,24 +38,26 @@ class BotResponse(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         vid = kwargs.get('voting_id', 0)
+        
+        if self.request.user.is_superuser:
+            try:
+                r = mods.get('voting', params={'id': vid})
+                context['voting'] = json.dumps(r[0]["postproc"],indent=4)
 
-        try:
-            r = mods.get('voting', params={'id': vid})
-            context['voting'] = json.dumps(r[0]["postproc"],indent=4)
-
-            voting_id=str(r[0]["postproc"]['id'])
-            message="<b>Votación: "+ r[0]["postproc"]['titulo']+"</b>  " + r[0]["postproc"]['fecha_inicio']+" - "+ r[0]["postproc"]['fecha_fin']+"\n"+"Descripción: "+r[0]["postproc"]['desc']+"\n"+"Personas censadas: "+str(r[0]["postproc"]['n_personas_censo'])+" / Votantes: "+str(r[0]["postproc"]['n_votantes'])+"\n"
-            preguntas=r[0]["postproc"]['preguntas']
-            for pregunta in preguntas:
-                message=message+"<b>·"+pregunta['titulo']+": "+ str(pregunta['numero_candidatos'])+" candidatos</b>\n"
-                candidatos=pregunta['opts']
-                for candidato in candidatos:
-                    votos=int(candidato["voto_F"])+int(candidato["voto_M"])
-                    message=message+"-"+candidato['nombre']+":"+str(votos)+"\n"
-            bot(voting_id,message)
-        except:
+                voting_id=str(r[0]["postproc"]['id'])
+                message="<b>Votación: "+ r[0]["postproc"]['titulo']+"</b>  " + r[0]["postproc"]['fecha_inicio']+" - "+ r[0]["postproc"]['fecha_fin']+"\n"+"Descripción: "+r[0]["postproc"]['desc']+"\n"+"Personas censadas: "+str(r[0]["postproc"]['n_personas_censo'])+" / Votantes: "+str(r[0]["postproc"]['n_votantes'])+"\n"
+                preguntas=r[0]["postproc"]['preguntas']
+                for pregunta in preguntas:
+                    message=message+"<b>·"+pregunta['titulo']+": "+ str(pregunta['numero_candidatos'])+" candidatos</b>\n"
+                    candidatos=pregunta['opts']
+                    for candidato in candidatos:
+                        votos=int(candidato["voto_F"])+int(candidato["voto_M"])
+                        message=message+"-"+candidato['nombre']+":"+str(votos)+"\n"
+                bot(voting_id,message)
+            except:
+                raise Http404
+        else:
             raise Http404
-            
         return context
 
 class VisualizerView(TemplateView):
