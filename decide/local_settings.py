@@ -29,7 +29,7 @@ APIS = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
+        'NAME': 'decide',
         'USER': 'decide',
         'PASSWORD': 'complexpassword',
         'HOST': 'localhost',

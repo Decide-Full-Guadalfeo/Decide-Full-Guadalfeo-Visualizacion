@@ -74,7 +74,7 @@
                 </li>
             </ul>
         </b-navbar>
-      
+
         <div class="voting mr-5">
             <h1>[[ voting.titulo ]]</h1>
             <h2 v-if="!voting.fecha_inicio">Votación no comenzada</h2>
@@ -117,7 +117,7 @@
                                             <td>[[opt.voto_curso.tercero]]</td>
                                             <td>[[opt.voto_curso.cuarto]]</td>
                                             <td>[[opt.voto_curso.master]]</td>
-                                            <td>[[opt.media_Edad]]</td>
+                                            <td>[[opt.media_edad]]</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -133,11 +133,11 @@
                                 </div>
                                 <div class="row menuito">
                                     <div class="col-md-6">
-                                        <h6 class="centralizar">Votos por sexo de cada candidato</h6>
+                                        <h6 id="tituloGraficosSexo0" class="centralizar">Votos por sexo de cada candidato</h6>
                                         <div id="graficosSexo0"></div>
                                     </div>
                                     <div class="col-md-6">
-                                        <h6 class="centralizar">Votos por curso de cada candidato</h6>
+                                        <h6 id="tituloGraficosCurso0" class="centralizar">Votos por curso de cada candidato</h6>
                                         <div id="graficosCurso0"></div>
                                     </div>
                                 </div>
@@ -145,8 +145,9 @@
                         </div>
                         
                         <div v-for="preg in [1,2,3,4,5]">
-                            <br>
+                            
                             <div v-bind:id="'enun_titulo'+preg">
+                                <br>
                                 <h3 class="heading">[[voting.preguntas[preg].titulo]]</h3>
                             </div>
                             <div>
@@ -167,7 +168,7 @@
                                                 <td>[[opt.votes]]</td>
                                                 <td>[[opt.voto_M]]</td>
                                                 <td>[[opt.voto_F]]</td>
-                                                <td>[[opt.media_Edad]]</td>
+                                                <td>[[opt.media_edad]]</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -183,7 +184,7 @@
                                     </div>
                                     <div class="row menuito">
                                         <div class="col-md-6 mx-auto">
-                                            <h6 class="centralizar">Votos por sexo de cada candidato</h6>
+                                            <h6 v-bind:id="'tituloGraficosCurso'+preg" class="centralizar">Votos por sexo de cada candidato</h6>
                                             <div v-bind:id="'graficosSexo'+preg"></div>
                                         </div>    
                                     </div>
@@ -224,7 +225,7 @@
                                                 <td>[[opt.voto_curso.tercero]]</td>
                                                 <td>[[opt.voto_curso.cuarto]]</td>
                                                 <td>[[opt.voto_curso.master]]</td>
-                                                <td>[[opt.media_Edad]]</td>
+                                                <td>[[opt.media_edad]]</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -240,11 +241,11 @@
                                     </div>
                                     <div class="row menuito">
                                         <div class="col-md-6">
-                                            <h6 class="centralizar">Votos por sexo de cada candidato</h6>
+                                            <h6 id="tituloGraficosSexo6" class="centralizar">Votos por sexo de cada candidato</h6>
                                             <div id="graficosSexo6"></div>
                                         </div>
                                         <div class="col-md-6">
-                                            <h6 class="centralizar">Votos por curso de cada candidato</h6>
+                                            <h6 id="tituloGraficosCurso6" class="centralizar">Votos por curso de cada candidato</h6>
                                             <div id="graficosCurso6"></div>
                                         </div>
                                     </div>
@@ -474,7 +475,9 @@
                 limit = 6;
             }
             mostrarContenido('enun_result');
+
             for (var i=0; i<limit; i++) {
+                mostrarContenido('enun_titulo'+i);
                 mostrarContenido('resultados'+i);
             }
             mostrarEnunciado();
@@ -547,48 +550,75 @@
 
         var preguntas=voting.preguntas
         for (var i = 0; i < preguntas.length; i++) {
-            var candidatos=preguntas[i].opts
-            var nombres=[]
-            var votos=[]
-            var mediasEdad=[]
-            var colores=[]
-            var div="" 
+            var candidatos=preguntas[i].opts;
+            var nombres=[];
+            var votos=[];
+            var mediasEdad=[];
+            var colores=[];
+            var div="" ;
             div = document.getElementById("graficosSexo"+i.toString());
-            var divCurso="" 
+            var divCurso="" ;
             divCurso = document.getElementById("graficosCurso"+i.toString());
+            var mostrarTituloS = false;
+            var mostrarTituloC = false;
             for(var e=0; e<candidatos.length;e++){
-                nombres.push(candidatos[e].nombre)
-                votos.push(candidatos[e].voto_F+candidatos[e].voto_M)
-                mediasEdad.push(candidatos[e].media_Edad)
-                colores.push(getRandomColor())
+                nombres.push(candidatos[e].nombre);
+                votos.push(candidatos[e].votes);
+                mediasEdad.push(candidatos[e].media_edad);
+                colores.push(getRandomColor());
 
                 //Crear grafos votos por candidatos segun sexo
-                var canvas = document.createElement('canvas');
-                canvas.id     = "myPieCharm"+i.toString()+"-"+e.toString();
-                canvas.width  = 107;
-                canvas.height = 27;
-                div.appendChild(canvas)
-                graficoSectoresSexo("myPieCharm"+i.toString()+"-"+e.toString(), [candidatos[e].voto_F, candidatos[e].voto_M], candidatos[e].nombre)
-
+                if(candidatos[e].votes !=0 ){
+                    var canvas = document.createElement('canvas');
+                    canvas.id     = "myPieCharm"+i.toString()+"-"+e.toString();
+                    canvas.width  = 107;
+                    canvas.height = 27;
+                    div.appendChild(canvas);
+                    mostrarTituloS = true;
+                    graficoSectoresSexo("myPieCharm"+i.toString()+"-"+e.toString(), [candidatos[e].voto_F, candidatos[e].voto_M], candidatos[e].nombre);
+                }
                 //Crear grafos voto por curso
                 if(i==0 || i==6){
-                    var canvasCurso = document.createElement('canvas');
-                    canvasCurso.id = "myPieCharmCurso"+i.toString()+"-"+e.toString();
-                    canvasCurso.width  = 107;
-                    canvasCurso.height = 27;
-                    divCurso.appendChild(canvasCurso)
+                    if(candidatos[e].votes !=0 ){
+                        var canvasCurso = document.createElement('canvas');
+                        canvasCurso.id = "myPieCharmCurso"+i.toString()+"-"+e.toString();
+                        canvasCurso.width  = 107;
+                        canvasCurso.height = 27;
+                        divCurso.appendChild(canvasCurso);
+                        mostrarTituloC = true;
 
-                    var votosCurso=[]
-                    votosCurso.push(candidatos[e].voto_curso.primero)
-                    votosCurso.push(candidatos[e].voto_curso.segundo)
-                    votosCurso.push(candidatos[e].voto_curso.tercero)
-                    votosCurso.push(candidatos[e].voto_curso.cuarto)
-                    votosCurso.push(candidatos[e].voto_curso.master)
-                    graficoSectoresCurso("myPieCharmCurso"+i.toString()+"-"+e.toString(), votosCurso, candidatos[e].nombre)
+                        var votosCurso=[];
+                        votosCurso.push(candidatos[e].voto_curso.primero);
+                        votosCurso.push(candidatos[e].voto_curso.segundo);
+                        votosCurso.push(candidatos[e].voto_curso.tercero);
+                        votosCurso.push(candidatos[e].voto_curso.cuarto);
+                        votosCurso.push(candidatos[e].voto_curso.master);
+                        graficoSectoresCurso("myPieCharmCurso"+i.toString()+"-"+e.toString(), votosCurso, candidatos[e].nombre);
+                    }
                 }
+                
+
             }
-            minEdad=Math.min.apply(17,mediasEdad)-1
-            console.log(mediasEdad)
+            if( (i==0 || i==6) && !mostrarTituloC ) {
+                var para = document.createElement("p");
+                var node = document.createTextNode("No existen datos");
+                para.appendChild(node);
+                para.style.textAlign="center";
+                divCurso.appendChild(para);
+            }
+            if( !mostrarTituloS ) {
+                var para = document.createElement("p");
+                var node = document.createTextNode("No existen datos");
+                para.appendChild(node);
+                para.style.textAlign="center";
+                div.appendChild(para);
+            }
+            if (Math.min.apply(17,mediasEdad) != 0){
+                minEdad=Math.min.apply(17,mediasEdad)-1;
+            }else{
+                minEdad=0;
+            }
+            console.log(mediasEdad);
             graficoBarras("myChartVotes"+i.toString(), nombres, votos, "Votos",colores, 0);
             graficoBarras("myChartAges"+i.toString(), nombres, mediasEdad, "Edad",colores, minEdad);
 
