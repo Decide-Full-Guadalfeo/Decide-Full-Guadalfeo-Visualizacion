@@ -35,7 +35,7 @@ class VisualizerTestCase(BaseTestCase):
                 
             # Sorting the results
             lista = []
-            if (json_file['tipo'] == 'VG'):
+            if (json_file['tipo'] == 'GV'):
                 lista = [0,1,2,3,4,5,6]
             else:
                 lista = [0,1,2,3,4,5]

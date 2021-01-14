@@ -2,7 +2,7 @@
 {% load i18n static %}
 
 {% block extrahead %}
-    <link type="text/css" rel="stylesheet"
+   <link type="text/css" rel="stylesheet"
          href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet"
          href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
@@ -13,13 +13,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 {% block content %}
-    <div id="app-visualizer">
-        <!-- Navbar -->
-        <b-navbar type="dark" data-html2canvas-ignore="true" variant="secondary">
-            <b-navbar-brand tag="h1">Decide</b-navbar-brand>
-        </b-navbar>
-
-        <div class="body">
+    <div class="container2">
+        <nav class="navbar navbar-dark" style="background-color:#6c757d">
+            <a class="navbar-brand" href="#">Decide</a>
+        </nav>
+        <div class="body" style="font-family:Arial;">
             <h1>SOBRE NOSOTROS</h1>
     
         <h2> Este es nuestro desarrollo </h2>
@@ -118,28 +116,6 @@
                 </tr>
             </table>
         </div>
-    
     </div>
-{% endblock %}
-
-{% block extrabody %}
-    <!-- Vuejs -->
-    <script src="https://unpkg.com/vue"></script>
-    <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
-    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
-
-    <script>
-        var voting = {{voting|safe}};
-        var app = new Vue({
-            delimiters: ['[[', ']]'],
-            el: '#app-visualizer',
-            data: {
-                voting: voting
-            }
-        })
-    </script>
-</body>
+    </div>
 {% endblock %}

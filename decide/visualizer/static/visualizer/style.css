@@ -106,16 +106,6 @@ checkbox
     -webkit-transition: .4s;
     transition: .4s;
   }
-  
-  container2 {
-    max-width: 100%;
-    width: 100%;
-    padding-right: 0px;
-    padding-left: 0px;
-    margin-right: auto;
-    margin-left: auto;
-    position: absolute;
-  }
 
   .slider:before {
     position: absolute;
@@ -201,6 +191,7 @@ font-weight: bold;
   margin-right: auto;
   margin-left: auto;
   position: absolute;
+  font-family:Arial;
 }
 
 .colum1{
@@ -311,6 +302,7 @@ font-weight: bold;
 .menuito {
   margin: 3%;
   width: 95%;
+  text-align: center;
 }
 
 /* footer */
