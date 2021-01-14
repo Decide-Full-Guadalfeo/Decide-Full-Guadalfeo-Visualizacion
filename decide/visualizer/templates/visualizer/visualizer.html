@@ -784,7 +784,7 @@
             function removeElement(elementId) {
                 // Removes an element from the document
                 var element = document.getElementById(elementId);
-                element.parentNode.style.display = "none";
+                element.parentNode.removeChild(element);
             }
             var downloadLink;
             var dataType = 'data:application/vnd.ms-excel;charset=UTF-8';
@@ -827,6 +827,7 @@
                 downloadLink.download = filename;
                 downloadLink.click();
             }
+            document.location.reload();
         }
 
     </script>
