@@ -1,0 +1,75 @@
+<nav class="menu">
+      {% load socialaccount %}
+     <span>
+       <h1>
+           <a href="/">DECIDE</a>
+       </h1>
+     </span>
+     <ul v-if="voting.end_date != null" class="nav" data-html2canvas-ignore="true">
+      <li><a href=""> ▼ Mostrar</a>
+          <ul>
+              <li>
+                  <s>Resultados &nbsp
+                      <label class="switch">
+                          <input id="checkbox_resultados" type="checkbox" onchange="mostrarResultados();" checked>
+                          <span class="slider round"></span>
+                      </label>
+                  </s>
+              </li>
+              <li>
+                  <s>Estad&iacutesticas &nbsp
+                      <label class="switch">
+                          <input id="checkbox_estadisticas" type="checkbox" onclick="mostrarContenido('statistics');" checked>
+                          <span class="slider round"></span>
+                      </label>
+                  </s>
+              </li>
+              <li>
+                  <s>Gr&aacuteficas &nbsp
+                      <label class="switch">
+                          <input id="checkbox_graficas" type="checkbox" onchange="mostrarGraficas();" checked>
+                          <span class="slider round"></span>
+                      </label>
+                  </s>
+              </li>
+          </ul>
+      </li>
+      <li><a href=""> ▼ Compartir</a>
+          <ul>
+              <li><a href="{{whatsappUrl}}" target="_blank">Whatsapp</a></li>
+              <li><a href="{{twitterUrl}}" target="_blank">Twitter</a></li>
+              <li><a href="{{facebookUrl}}" target="_blank">Facebook</a></li>
+          </ul>
+      </li>
+      <li><a href=""> ▼ Exportar</a>
+          <ul>
+              <li><a class="text-white" onclick="exportarPDF();">PDF</a></li>
+              <li><a class="text-white" onclick="exportarExcel('resultados_estadisticas')">Excel</a></li>
+          </ul>
+      <li>
+      <li><a href=""> ▼ Telegram</a>
+          <ul>
+              {% if request.user.is_superuser %}
+                  <li><a href={{botUrl}} target="_blank">Enviar resultados por Telegram </a></li>
+              {% endif %}
+              <li><a href="https://t.me/guadalfeo_visualizacion" target="_blank">Unirse al canal de Telegram </a></li>
+          </ul>
+      <li>
+          <p>Tema oscuro/claro &nbsp
+              <label class="switch">
+                  <input id="checkbox_nocturno" type="checkbox" onclick="cambiarModo()" checked>
+                  <span class="slider round"></span>
+              </label>
+          </p>
+      </li>
+  </ul>
+     <ul>
+         {% if user.is_authenticated %}
+         <li>Welcome, <a href="/user/{{user.id}}">{{ user.username }}</a> !</li>
+            <li><a href="{% url 'auth_logout' %}">Logout</a></li>
+         {% else %}
+            <li><a href="{% url 'auth_login' %}">Login</a></li>
+            <li><a href="{% url 'auth_register' %}">Register</a></li>
+         {% endif %}
+     </ul>
+</nav>

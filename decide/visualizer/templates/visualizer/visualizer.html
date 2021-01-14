@@ -6,8 +6,10 @@
          href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet"
          href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
-    <link type="text/css" rel="stylesheet" href="{% static "booth/style.css" %}" />
-    <link type="text/css" rel="stylesheet" href="{% static "visualizer/style.css" %}" />
+    <link type="text/css" rel="stylesheet" href="{% static 'visualizer/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'visualizer/menu.css' %}">
+    
+    
 {% endblock %}
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,67 +17,7 @@
 {% block content %}
     <div id="app-visualizer">
         <!-- Navbar -->
-        <b-navbar type="dark" data-html2canvas-ignore="true" variant="secondary">
-            <b-navbar-brand tag="h1">Decide</b-navbar-brand>
-            <ul v-if="voting.end_date != null" class="nav">
-                <li><a href=""> ▼ Mostrar</a>
-                    <ul>
-                        <li>
-                            <s>Resultados &nbsp
-                                <label class="switch">
-                                    <input id="checkbox_resultados" type="checkbox" onchange="mostrarResultados();" checked>
-                                    <span class="slider round"></span>
-                                </label>
-                            </s>
-                        </li>
-                        <li>
-                            <s>Estad&iacutesticas &nbsp
-                                <label class="switch">
-                                    <input id="checkbox_estadisticas" type="checkbox" onclick="mostrarContenido('statistics');" checked>
-                                    <span class="slider round"></span>
-                                </label>
-                            </s>
-                        </li>
-                        <li>
-                            <s>Gr&aacuteficas &nbsp
-                                <label class="switch">
-                                    <input id="checkbox_graficas" type="checkbox" onchange="mostrarGraficas();" checked>
-                                    <span class="slider round"></span>
-                                </label>
-                            </s>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href=""> ▼ Compartir</a>
-                    <ul>
-                        <li><a href="{{whatsappUrl}}" target="_blank">Whatsapp</a></li>
-                        <li><a href="{{twitterUrl}}" target="_blank">Twitter</a></li>
-                        <li><a href="{{facebookUrl}}" target="_blank">Facebook</a></li>
-                    </ul>
-                </li>
-                <li><a href=""> ▼ Exportar</a>
-                    <ul>
-                        <li><a class="text-white" onclick="exportarPDF();">PDF</a></li>
-                        <li><a class="text-white" onclick="exportarExcel('resultados_estadisticas')">Excel</a></li>
-                    </ul>
-                <li>
-                <li><a href=""> ▼ Telegram</a>
-                    <ul>
-                        {% if request.user.is_superuser %}
-                            <li><a href={{botUrl}} target="_blank">Enviar resultados por Telegram </a></li>
-                        {% endif %}
-                        <li><a href="https://t.me/guadalfeo_visualizacion" target="_blank">Unirse al canal de Telegram </a></li>
-                    </ul>
-                <li>
-                    <p>Tema oscuro/claro &nbsp
-                        <label class="switch">
-                            <input id="checkbox_nocturno" type="checkbox" onclick="cambiarModo()" checked>
-                            <span class="slider round"></span>
-                        </label>
-                    </p>
-                </li>
-            </ul>
-        </b-navbar>
+        {% include "visualizer/menu.html" %}
 
         <div class="voting mr-5">
             <h1 v-if="voting != null" class="ml-5">[[ voting.titulo ]]</h1><br/>
@@ -446,6 +388,7 @@
         /* Modo oscuro */
         function cambiarModo() { 
             document.documentElement.classList.toggle("dark-mode");
+            document.body.style.height="fit-content";
         } 
 
         function mostrarEnunciado() {
@@ -466,9 +409,16 @@
             var estadoB1 = document.getElementById("checkbox_resultados");
             var estadoB2 = document.getElementById("checkbox_estadisticas");
             var estadoB3 = document.getElementById("checkbox_graficas");
-            if(!(estadoB1.checked == "checked" && estadoB2.checked == "checked" && estadoB2.checked == "checked")) {
+            console.log(estadoB1.checked != "checked");
+            console.log(estadoB2.checked != "checked"); 
+            console.log(estadoB3.checked != "checked");
+            if(estadoB1.checked != "checked" && estadoB2.checked != "checked" && estadoB3.checked != "checked") {
                 var cuerpo = document.getElementById("app-visualizer");
-                cuerpo.style.height="100%";
+                cuerpo.style.minHeight="100%";
+                document.body.style.height="100%";
+            }
+            else{
+                document.body.style.height="fit-content";
             }
         }
 
@@ -794,11 +744,15 @@
 
             var menuitos = document.querySelectorAll(".menuito");
             for(var i=0;i<limit;i++) {
-                var cssGrafVotes = document.getElementById("myChartVotes"+i);
-                var cssGrafAges = document.getElementById("myChartAges"+i);
+                if(document.getElementById("myChartVotes"+i)!=null){
+                    var cssGrafVotes = document.getElementById("myChartVotes"+i);
+                    cssGrafVotes.style.cssText = "width:100%";
+                }
+                if(document.getElementById("myChartAges"+i)!=null){
+                    var cssGrafAges = document.getElementById("myChartAges"+i);
+                    cssGrafAges.style.cssText = "width:100%";
+                }
                 menuitos[i].style.marginLeft = "-8%";
-                cssGrafVotes.style.cssText = "width:100%";
-                cssGrafAges.style.cssText = "width:100%";
             }
             var enunciados = document.querySelectorAll(".centralizar");
             for(var i=0; i<enunciados.length; i++) {
@@ -830,7 +784,7 @@
             function removeElement(elementId) {
                 // Removes an element from the document
                 var element = document.getElementById(elementId);
-                element.parentNode.removeChild(element);
+                element.parentNode.style.display = "none";
             }
             var downloadLink;
             var dataType = 'data:application/vnd.ms-excel;charset=UTF-8';
