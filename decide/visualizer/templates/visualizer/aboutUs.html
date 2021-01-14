@@ -6,26 +6,26 @@
          href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet"
          href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
-    <link type="text/css" rel="stylesheet" href="{% static "booth/style.css" %}" />
-    <link type="text/css" rel="stylesheet" href="{% static "visualizer/style.css" %}" />
+    <link type="text/css" rel="stylesheet" href="{% static 'visualizer/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'index/menu.css' %}">
 {% endblock %}
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 {% block content %}
     <div class="container2">
-        <nav class="navbar navbar-dark" style="background-color:#6c757d">
-            <a class="navbar-brand" href="#">Decide</a>
-        </nav>
+        {% include "index/menu.html" %}
+        
         <div class="body" style="font-family:Arial;">
             <h1>SOBRE NOSOTROS</h1>
+            
+            <br>
     
         <h2> Este es nuestro desarrollo </h2>
       
-        <p>Decide esta hecho a base de distintos modulos, los cuales han sido desarrollados por distintos subequipos, 
-            en el equipo de Visualización nos hemos encargado de que los datos de cada una de las votaciones lleguen al 
-            usuario en forma de graficas y estadisticas, y que el usuario sea capaz de compartiralas en distintas redes sociales,
-            o las descarguen en distintos formatos.</p>
+        <p> Decide esta hecho a base de distintos modulos, los cuales han sido desarrollados por distintos subequipos, en el equipo <br>
+            de Visualización nos hemos encargado de que los datos de cada una de las votaciones lleguen al usuario en forma de graficas <br>
+            y estadisticas, y que el usuario sea capaz de compartiralas en distintas redes sociales, o las descarguen en distintos formatos.</p>
     
         <u><b>Visualizer</b></u>
         

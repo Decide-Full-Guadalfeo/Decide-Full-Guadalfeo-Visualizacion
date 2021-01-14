@@ -8,18 +8,15 @@
          href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
     <link type="text/css" rel="stylesheet" 
          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
-    <link type="text/css" rel="stylesheet" href="{% static "booth/style.css" %}" />
-    <link type="text/css" rel="stylesheet" href="{% static "visualizer/style.css" %}" />
+    <link type="text/css" rel="stylesheet" href="{% static 'visualizer/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'index/menu.css' %}">
 {% endblock %}
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 {% block content %}
     <div id="app-visualizer">
-        <!-- Navbar -->
-        <b-navbar type="dark" data-html2canvas-ignore="true" variant="secondary">
-            <b-navbar-brand tag="h1">Decide</b-navbar-brand>
-        </b-navbar>
+        {% include "index/menu.html" %}
 
         <div class="panel panel-default" style="text-align: center;">
             <h3>Resultado de la petición:  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span></h3> 

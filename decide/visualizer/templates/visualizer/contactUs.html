@@ -6,24 +6,24 @@
          href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet"
          href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
-    <link type="text/css" rel="stylesheet" href="{% static "booth/style.css" %}" />
-    <link type="text/css" rel="stylesheet" href="{% static "visualizer/style.css" %}" />
+    <link type="text/css" rel="stylesheet" href="{% static 'visualizer/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'index/menu.css' %}">
 {% endblock %}
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 {% block content %}
     <div class="container2">
-        <nav class="navbar navbar-dark" style="background-color:#6c757d">
-            <a class="navbar-brand" href="#">Decide</a>
-        </nav>
+        {% include "index/menu.html" %}
             
         <div class="body" style="font-family:Arial;">
         <h1> ¡Contáctanos!</h1>
+
+        <br>
         
-        <p> La plataforma de decida ha sido desarrollada por la compañia wadobo, y modificada por el equipo de decide-Full-Guadalfeo</p>
-        <p> Decide-Full-Guadalfeo tiene una serie de modulos de trabajo, como booth, voting, visualización...</p>
-        <p> Si desea ponerse en contacto con los miembros del modulo de visualización, los contactos por correo electronico están a continuación. </p>
+        <p> La plataforma de decida ha sido desarrollada por la compañia wadobo, y modificada por el equipo de decide-Full-Guadalfeo. <br>
+            Decide-Full-Guadalfeo tiene una serie de modulos de trabajo, como booth, voting, visualización... <br>
+            Si desea ponerse en contacto con los miembros del modulo de visualización, los contactos por correo electronico están a continuación. </p>
 
     <div class=table>
     <table class=contact>
@@ -91,8 +91,8 @@
         </tr>
     </table>
     </div>
-    <p> En caso de tener alguna duda, sugerencia o encontrar algun fallo no dude en contactar con nosotros </p>
-    <p> Intentaremos arreglarlo de la manera más eficaz posible, ¡Muchas gracias! </p>
+    <p> En caso de tener alguna duda, sugerencia o encontrar algun fallo no dude en contactar con nosotros. <br>
+     Intentaremos arreglarlo de la manera más eficaz posible, ¡Muchas gracias! </p>
     </div>
 </div>
 

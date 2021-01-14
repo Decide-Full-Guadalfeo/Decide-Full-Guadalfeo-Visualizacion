@@ -1,5 +1,5 @@
 html.dark-mode {
-  background-color: #525252; 
+  background-color: #000000; 
   filter: invert(100%);
   transition: all 0.5s ease-in-out;
 }
@@ -30,7 +30,7 @@ ul, ol {
 }
 
 .nav li a,label {
-    background-color:#6c757d;
+    background-color: #00b894;
     color:#fff;
     text-decoration:none;
     padding:10px 12px;
@@ -38,7 +38,7 @@ ul, ol {
 }
 
 .nav li p {
-  background-color:#6c757d;
+  background-color: #00b894;
   color:#fff;
   height: 44px;
   padding: 10px;
@@ -46,7 +46,7 @@ ul, ol {
 }
 
 .nav li s {
-    background-color: #6c757d;
+    background-color: #00b894;
     color:#fff;
     text-decoration:none;
     height: 44px;
@@ -55,10 +55,11 @@ ul, ol {
 }
 
 .nav li a:hover {
-    background-color:#434343;
+    background-color: #00b894;
 }
 
 .nav li ul {
+    background-color: #00b894;
     display:none;
     position:absolute;
     min-width:140px;
@@ -132,6 +133,7 @@ checkbox
   /* Rounded sliders */
   .slider.round {
     border-radius: 34px;
+    background-color: #00b894;
   }
   
   .slider.round:before {
@@ -309,7 +311,7 @@ font-weight: bold;
 
 .foot {
   float:right;
-  background-color:#6c757d;
+  background-color: #00b894;
   color:#fff;
   text-decoration:none;
   padding:10px 12px;
@@ -319,18 +321,13 @@ font-weight: bold;
 }
 
 .foot li a,label {
-  background-color:#6c757d;
+  background-color:transparent;
   color:#fff;
   text-decoration:none;
   padding:10px 12px;
   float:right;
 }
 
-html,body {
+html, body {
   height: 100%;
 }
-
-
-
-
-
