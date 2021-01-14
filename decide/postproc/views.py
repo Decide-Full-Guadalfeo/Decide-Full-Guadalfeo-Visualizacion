@@ -55,7 +55,7 @@ class PostProcView(APIView):
 
                 opt["estadisticas"] = {"votos_censo": votos_censo, "votos_m": votos_m, "votos_f": votos_f}
 
-        if voting["tipo"] == "VG":
+        if voting["tipo"] == "GV":
             for opt in voting["preguntas"][6]["opts"]:
                 votos_censo = round(((opt["votes"]) / voting["n_personas_censo"] * 100), 2) if voting["n_personas_censo"] !=0 else 0
                 votos_m = round((opt["voto_M"]/(opt["votes"]) * 100), 2) if opt["votes"] !=0 else 0

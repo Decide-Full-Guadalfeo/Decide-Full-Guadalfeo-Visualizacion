@@ -48,9 +48,9 @@
                 </li>
                 <li><a href=""> ▼ Compartir</a>
                     <ul>
-                        <li><a href="{{whatsappUrl}}">Whatsapp</a></li>
-                        <li><a href="{{twitterUrl}}">Twitter</a></li>
-                        <li><a href="{{facebookUrl}}">Facebook</a></li>
+                        <li><a href="{{whatsappUrl}}" target="_blank">Whatsapp</a></li>
+                        <li><a href="{{twitterUrl}}" target="_blank">Twitter</a></li>
+                        <li><a href="{{facebookUrl}}" target="_blank">Facebook</a></li>
                     </ul>
                 </li>
                 <li><a href=""> ▼ Exportar</a>
@@ -76,11 +76,11 @@
         </b-navbar>
 
         <div class="voting mr-5">
-            <h1>[[ voting.titulo ]]</h1>
+            <h1  class="ml-5">[[ voting.titulo ]]</h1><br/>
             <h2 v-if="!voting.fecha_inicio">Votación no comenzada</h2>
             <h2 v-else-if="!voting.fecha_fin">Votación en curso</h2>
             <div v-else>
-                <div id="resultados_estadisticas">
+                <div id="resultados_estadisticas"  class="ml-5">
                     <div id="results">
                         <div id="enun_result"> 
                             <h2 class="heading">Resultados:</h2>
@@ -123,11 +123,11 @@
                                 </table>
                             </div>
                             <div id="espacio_graficas0">
-                                <div class="float-left abajito">
+                                <div id="divMyChartVotes0" class="float-left abajito">
                                     <h6 style="text-align: center;">Votos de todos los candidatos</h6>
                                     <canvas id="myChartVotes0" width="50" height="30"></canvas>
                                 </div>
-                                <div class="float-right abajito">
+                                <div id="divMyChartAges0" class="float-right abajito">
                                     <h6 style="text-align: center;">Media de edad de los votantes</h6>
                                     <canvas id="myChartAges0" width="50" height="30"></canvas>
                                 </div>
@@ -174,11 +174,11 @@
                                     </table>
                                 </div>
                                 <div v-bind:id="'espacio_graficas'+preg">
-                                    <div class="float-left abajito">
+                                    <div v-bind:id="'divMyChartVotes'+preg" class="float-left abajito">
                                         <h6 style="text-align: center;">Votos de todos los candidatos</h6>
                                         <canvas v-bind:id="'myChartVotes'+preg" width="50" height="30"></canvas>
                                     </div> 
-                                    <div class="float-right abajito">
+                                    <div v-bind:id="'divMyChartAges'+preg" class="float-right abajito">
                                         <h6 style="text-align: center;">Media de edad de los votantes</h6>
                                         <canvas v-bind:id="'myChartAges'+preg" width="50" height="30"></canvas>
                                     </div>
@@ -192,7 +192,7 @@
                             </div>
                         </div>
 
-                        <div v-if="voting.tipo=='VG'">
+                        <div v-if="voting.tipo=='GV'">
                             <br>
                             <div id="enun_titulo6">
                                 <h3 class="heading">[[voting.preguntas[6].titulo]]</h3>
@@ -231,11 +231,11 @@
                                     </table>
                                 </div>
                                 <div id="espacio_graficas6">
-                                    <div class="float-left abajito">
+                                    <div id="divMyChartVotes6" class="float-left abajito">
                                         <h6 style="text-align: center;">Votos de todos los candidatos</h6>
                                         <canvas id="myChartVotes6" width="50" height="30"></canvas>
                                     </div>
-                                    <div class="float-right abajito">
+                                    <div id="divMyChartAges6" class="float-right abajito">
                                         <h6 style="text-align: center;">Media de edad de los votantes</h6>
                                         <canvas id="myChartAges6" width="50" height="30"></canvas>
                                     </div>
@@ -363,7 +363,7 @@
                             </table>
                         </div>
 
-                        <div v-if="voting.tipo=='VG'">
+                        <div v-if="voting.tipo=='GV'">
                             <br>
                             <h3 class="heading">[[voting.preguntas[6].titulo]]</h3>
                             <table class="table table-bordered table-condensed table-striped table-hover">
@@ -471,20 +471,19 @@
 
         function mostrarResultados() {
             var limit = 7;
-            if(voting.tipo === 'VP'){
+            if(voting.tipo === 'PV'){
                 limit = 6;
             }
             mostrarContenido('enun_result');
 
             for (var i=0; i<limit; i++) {
-                mostrarContenido('enun_titulo'+i);
                 mostrarContenido('resultados'+i);
             }
             mostrarEnunciado();
         }
         function mostrarGraficas() {
             var limit = 7;
-            if(voting.tipo === 'VP'){
+            if(voting.tipo === 'PV'){
                 limit = 6;
             }
             for (var i=0; i<limit; i++) {
@@ -618,9 +617,44 @@
             }else{
                 minEdad=0;
             }
-            console.log(mediasEdad);
-            graficoBarras("myChartVotes"+i.toString(), nombres, votos, "Votos",colores, 0);
-            graficoBarras("myChartAges"+i.toString(), nombres, mediasEdad, "Edad",colores, minEdad);
+
+            todoCeroVotos= true
+            for(var l=0; l<votos.length;l++){
+                if(votos[l] != 0){
+                    todoCeroVotos=false
+                }
+            }
+
+            todoCeroEdad= true
+            for(var l=0; l<votos.length;l++){
+                if(votos[l] != 0){
+                    todoCeroEdad=false
+                }
+            }
+
+            if(!todoCeroVotos){
+                graficoBarras("myChartVotes"+i.toString(), nombres, votos, "Votos",colores, 0);
+            }else{
+                divGraficos=document.getElementById("divMyChartVotes"+i);
+                var para = document.createElement("p");
+                var node = document.createTextNode("No existen datos");
+                para.appendChild(node);
+                para.style.textAlign="center";
+                divGraficos.appendChild(para);
+                divGraficos.removeChild(document.getElementById("myChartVotes"+i))
+            }
+            if(!todoCeroVotos){
+                graficoBarras("myChartAges"+i.toString(), nombres, mediasEdad, "Edad",colores, minEdad);
+            }else{
+                divGraficos=document.getElementById("divMyChartAges"+i);
+                var para = document.createElement("p");
+                var node = document.createTextNode("No existen datos");
+                para.appendChild(node);
+                para.style.textAlign="center";
+                divGraficos.appendChild(para);
+                divGraficos.appendChild(para);
+                divGraficos.removeChild(document.getElementById("myChartAges"+i))
+            }
 
         }
 
@@ -745,7 +779,7 @@
             mostrarResultados("espacio_graficas5")
 
             var limit = 7;
-            if(voting.tipo === 'VP'){
+            if(voting.tipo === 'PV'){
                 limit = 6;
             } else mostrarResultados("espacio_graficas6");
 
@@ -791,7 +825,12 @@
             }
             var downloadLink;
             var dataType = 'data:application/vnd.ms-excel;charset=UTF-8';
-            for (i=0; i<7; i++) {
+
+            var limit = 7;
+            if(voting.tipo === 'PV'){
+                limit = 6;
+            }
+            for (i=0; i<limit; i++) {
                 removeElement('espacio_graficas'+i)
             }
             var tableSelect = document.getElementById(tableID);
