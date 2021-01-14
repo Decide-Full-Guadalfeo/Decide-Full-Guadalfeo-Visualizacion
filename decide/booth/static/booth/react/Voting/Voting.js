@@ -116,7 +116,7 @@ const Voting = ({ utils }) => {
 
     let cont1 = 0
     for (let i = 0; i < questions.length; i++) {
-      const titulo = questions[i].children[0].innerHTML.replace(" <h2>", "").replace("</h2>", "");
+      const titulo = questions[i].children[0].innerHTML.replace(' <h2 style="text-transform: uppercase;"><strong>', "").replace("</strong></h2>", "");
       let inputs = questions[i].getElementsByTagName("input");
       for (let j = 0; j < inputs.length; j++) {
         if (inputs[j].checked) {
