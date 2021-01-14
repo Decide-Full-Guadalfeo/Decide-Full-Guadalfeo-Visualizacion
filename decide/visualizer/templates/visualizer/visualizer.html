@@ -77,7 +77,7 @@
             </ul>
         </b-navbar>
 
-        <div class="voting mr-5">
+        <div id="cuerpo" class="voting mr-5">
             <h1  class="ml-5">[[ voting.titulo ]]</h1><br/>
             <h2 v-if="!voting.fecha_inicio">Votación no comenzada</h2>
             <h2 v-else-if="!voting.fecha_fin">Votación en curso</h2>
@@ -401,17 +401,8 @@
                 </div>
             </div>
         </div>
-
-        <!-- Footer -->
-        <b-footer data-html2canvas-ignore="true" variant="secondary">
-            <ul class="foot">
-                <li>
-                    <a class="AboutUs" href='/visualizer/aboutUs/'>About Us</a>
-                    <a class="ContactUs" href='/visualizer/contactUs/'>Contact Us</a>
-                </li>
-            </ul>
-        </b-footer>
     </div>
+
 {% endblock %}
 
 {% block extrabody %}
@@ -470,6 +461,16 @@
             }
         }
 
+        
+        function sinBody() {
+            var estadoB1 = document.getElementById("checkbox_resultados");
+            var estadoB2 = document.getElementById("checkbox_estadisticas");
+            var estadoB3 = document.getElementById("checkbox_graficas");
+            if(!(estadoB1.checked == "checked" && estadoB2.checked == "checked" && estadoB2.checked == "checked")) {
+                var cuerpo = document.getElementById("app-visualizer");
+                cuerpo.style.height="100%";
+            }
+        }
 
         function mostrarResultados() {
             var limit = 7;
@@ -481,6 +482,7 @@
             for (var i=0; i<limit; i++) {
                 mostrarContenido('resultados'+i);
             }
+            sinBody();
             mostrarEnunciado();
         }
         function mostrarGraficas() {
@@ -491,6 +493,7 @@
             for (var i=0; i<limit; i++) {
                 mostrarContenido('espacio_graficas'+i);
             }
+            sinBody();
             mostrarEnunciado();
         }
 
@@ -502,7 +505,9 @@
                 } else {
                     graficas.style.display = "none";
                 }
+                sinBody();
         }
+
 
         function graficoBarras(id, etiquetas, datos, etY, colores, beginAtZero) {
             var ctx= document.getElementById(id).getContext("2d");
@@ -871,4 +876,14 @@
     </script>
 
 </body>
+
+    <!-- Footer -->
+    <b-footer  data-html2canvas-ignore="true" variant="secondary">
+        <ul class="foot">
+            <li>
+                <a class="AboutUs" href='/visualizer/aboutUs/'>About Us</a>
+                <a class="ContactUs" href='/visualizer/contactUs/'>Contact Us</a>
+            </li>
+        </ul>
+    </b-footer>
 {% endblock %}
