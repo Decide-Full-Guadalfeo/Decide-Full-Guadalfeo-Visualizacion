@@ -17,7 +17,7 @@
         <!-- Navbar -->
         <b-navbar type="dark" data-html2canvas-ignore="true" variant="secondary">
             <b-navbar-brand tag="h1">Decide</b-navbar-brand>
-            <ul class="nav">
+            <ul v-if="voting.end_date != null" class="nav">
                 <li><a href=""> ▼ Mostrar</a>
                     <ul>
                         <li>
@@ -76,18 +76,18 @@
         </b-navbar>
 
         <div class="voting mr-5">
-            <h1  class="ml-5">[[ voting.titulo ]]</h1><br/>
-            <h2 v-if="!voting.fecha_inicio">Votación no comenzada</h2>
-            <h2 v-else-if="!voting.fecha_fin">Votación en curso</h2>
+            <h1 v-if="voting != null" class="ml-5">[[ voting.titulo ]]</h1><br/>
+            <h2 v-if="voting.start_date == null">Votación no comenzada  </h2>
+            <h2 v-else-if="voting.end_date == null">Votación en curso </h2>
             <div v-else>
-                <div id="resultados_estadisticas"  class="ml-5">
+                <div  v-if="voting.postproc != null" id="resultados_estadisticas"  class="ml-5">
                     <div id="results">
                         <div id="enun_result"> 
                             <h2 class="heading">Resultados:</h2>
                         </div> 
                         <br>
                         <div id="enun_titulo0">                        
-                            <h3 class="heading">[[voting.preguntas[0].titulo]]</h3>
+                            <h3 class="heading">[[voting.postproc.preguntas[0].titulo]]</h3>
                         </div>
                         <div>
                             <div id="resultados0">
@@ -107,7 +107,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr v-for="opt in voting.preguntas[0].opts" :key="opt.numero">
+                                        <tr v-for="opt in voting.postproc.preguntas[0].opts" :key="opt.numero">
                                             <td>[[opt.nombre]]</td>
                                             <td>[[opt.votes]]</td>
                                             <td>[[opt.voto_M]]</td>
@@ -148,7 +148,7 @@
                             
                             <div v-bind:id="'enun_titulo'+preg">
                                 <br>
-                                <h3 class="heading">[[voting.preguntas[preg].titulo]]</h3>
+                                <h3 class="heading">[[voting.postproc.preguntas[preg].titulo]]</h3>
                             </div>
                             <div>
                                 <div v-bind:id="'resultados'+preg">
@@ -163,7 +163,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr v-for="opt in voting.preguntas[preg].opts" :key="opt.numero">
+                                            <tr v-for="opt in voting.postproc.preguntas[preg].opts" :key="opt.numero">
                                                 <td>[[opt.nombre]]</td>
                                                 <td>[[opt.votes]]</td>
                                                 <td>[[opt.voto_M]]</td>
@@ -192,10 +192,10 @@
                             </div>
                         </div>
 
-                        <div v-if="voting.tipo=='GV'">
+                        <div v-if="voting.postproc.tipo=='GV'">
                             <br>
                             <div id="enun_titulo6">
-                                <h3 class="heading">[[voting.preguntas[6].titulo]]</h3>
+                                <h3 class="heading">[[voting.postproc.preguntas[6].titulo]]</h3>
                             </div>
                             <div>
                                 <div id="resultados6">
@@ -215,7 +215,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr v-for="opt in voting.preguntas[6].opts" :key="opt.numero">
+                                            <tr v-for="opt in voting.postproc.preguntas[6].opts" :key="opt.numero">
                                                 <td>[[opt.nombre]]</td>
                                                 <td>[[opt.votes]]</td>
                                                 <td>[[opt.voto_M]]</td>
@@ -272,45 +272,45 @@
                             <tbody>
                                 <tr>
                                     <th>Porcentaje de abstención</th>
-                                    <td>[[ voting.estadisticas.abstencion._0 ]] %</td>
-                                    <td>[[ voting.estadisticas.abstencion._1 ]] %</td>
-                                    <td>[[ voting.estadisticas.abstencion._2 ]] %</td>
-                                    <td>[[ voting.estadisticas.abstencion._3 ]] %</td>
-                                    <td>[[ voting.estadisticas.abstencion._4 ]] %</td>
-                                    <td>[[ voting.estadisticas.abstencion._5 ]] %</td>
+                                    <td>[[ voting.postproc.estadisticas.abstencion._0 ]] %</td>
+                                    <td>[[ voting.postproc.estadisticas.abstencion._1 ]] %</td>
+                                    <td>[[ voting.postproc.estadisticas.abstencion._2 ]] %</td>
+                                    <td>[[ voting.postproc.estadisticas.abstencion._3 ]] %</td>
+                                    <td>[[ voting.postproc.estadisticas.abstencion._4 ]] %</td>
+                                    <td>[[ voting.postproc.estadisticas.abstencion._5 ]] %</td>
                                 </tr>
                                 <tr>
                                     <th>Porcentaje de abstención masculina</th>
-                                    <td>[[ voting.estadisticas.abstencion_m._0 ]] %</td>
-                                    <td>[[ voting.estadisticas.abstencion_m._1 ]] %</td>
-                                    <td>[[ voting.estadisticas.abstencion_m._2 ]] %</td>
-                                    <td>[[ voting.estadisticas.abstencion_m._3 ]] %</td>
-                                    <td>[[ voting.estadisticas.abstencion_m._4 ]] %</td>
-                                    <td>[[ voting.estadisticas.abstencion_m._5 ]] %</td>
+                                    <td>[[ voting.postproc.estadisticas.abstencion_m._0 ]] %</td>
+                                    <td>[[ voting.postproc.estadisticas.abstencion_m._1 ]] %</td>
+                                    <td>[[ voting.postproc.estadisticas.abstencion_m._2 ]] %</td>
+                                    <td>[[ voting.postproc.estadisticas.abstencion_m._3 ]] %</td>
+                                    <td>[[ voting.postproc.estadisticas.abstencion_m._4 ]] %</td>
+                                    <td>[[ voting.postproc.estadisticas.abstencion_m._5 ]] %</td>
                                 </tr>
                                 <tr>
                                     <th>Porcentaje de abstención femenina</th>
-                                    <td>[[ voting.estadisticas.abstencion_f._0 ]] %</td>
-                                    <td>[[ voting.estadisticas.abstencion_f._1 ]] %</td>
-                                    <td>[[ voting.estadisticas.abstencion_f._2 ]] %</td>
-                                    <td>[[ voting.estadisticas.abstencion_f._3 ]] %</td>
-                                    <td>[[ voting.estadisticas.abstencion_f._4 ]] %</td>
-                                    <td>[[ voting.estadisticas.abstencion_f._5 ]] %</td>
+                                    <td>[[ voting.postproc.estadisticas.abstencion_f._0 ]] %</td>
+                                    <td>[[ voting.postproc.estadisticas.abstencion_f._1 ]] %</td>
+                                    <td>[[ voting.postproc.estadisticas.abstencion_f._2 ]] %</td>
+                                    <td>[[ voting.postproc.estadisticas.abstencion_f._3 ]] %</td>
+                                    <td>[[ voting.postproc.estadisticas.abstencion_f._4 ]] %</td>
+                                    <td>[[ voting.postproc.estadisticas.abstencion_f._5 ]] %</td>
                                 </tr>
                                 <tr>
                                     <th>Media de edad</th>
-                                    <td>[[ voting.estadisticas.media_edad._0 ]] %</td>
-                                    <td>[[ voting.estadisticas.media_edad._1 ]] %</td>
-                                    <td>[[ voting.estadisticas.media_edad._2 ]] %</td>
-                                    <td>[[ voting.estadisticas.media_edad._3 ]] %</td>
-                                    <td>[[ voting.estadisticas.media_edad._4 ]] %</td>
-                                    <td>[[ voting.estadisticas.media_edad._5 ]] %</td>
+                                    <td>[[ voting.postproc.estadisticas.media_edad._0 ]] %</td>
+                                    <td>[[ voting.postproc.estadisticas.media_edad._1 ]] %</td>
+                                    <td>[[ voting.postproc.estadisticas.media_edad._2 ]] %</td>
+                                    <td>[[ voting.postproc.estadisticas.media_edad._3 ]] %</td>
+                                    <td>[[ voting.postproc.estadisticas.media_edad._4 ]] %</td>
+                                    <td>[[ voting.postproc.estadisticas.media_edad._5 ]] %</td>
                                 </tr>
 
                             </tbody>
                         </table><br>
 
-                        <h3 class="heading">[[voting.preguntas[0].titulo]]</h3>
+                        <h3 class="heading">[[voting.postproc.preguntas[0].titulo]]</h3>
                         <table class="table table-bordered table-condensed table-striped table-hover">
                             <thead>
                                 <tr>
@@ -326,7 +326,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="opt in voting.preguntas[0].opts" :key="opt.numero">
+                                <tr v-for="opt in voting.postproc.preguntas[0].opts" :key="opt.numero">
                                     <td>[[opt.nombre]]</td>
                                     <td>[[opt.estadisticas.votos_censo]] %</td>
                                     <td>[[opt.estadisticas.votos_m]] %</td>
@@ -342,7 +342,7 @@
                         
                         <div v-for="preg in [1,2,3,4,5]">
                             <br>
-                            <h3 class="heading">[[voting.preguntas[preg].titulo]]</h3>
+                            <h3 class="heading">[[voting.postproc.preguntas[preg].titulo]]</h3>
                             <table class="table table-bordered table-condensed table-striped table-hover">
                                 <thead>
                                     <tr>
@@ -353,7 +353,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr v-for="opt in voting.preguntas[preg].opts" :key="opt.numero">
+                                    <tr v-for="opt in voting.postproc.preguntas[preg].opts" :key="opt.numero">
                                         <td>[[opt.nombre]]</td>
                                         <td>[[opt.estadisticas.votos_censo]] %</td>
                                         <td>[[opt.estadisticas.votos_m]] %</td>
@@ -363,9 +363,9 @@
                             </table>
                         </div>
 
-                        <div v-if="voting.tipo=='GV'">
+                        <div v-if="voting.postproc.tipo=='GV'">
                             <br>
-                            <h3 class="heading">[[voting.preguntas[6].titulo]]</h3>
+                            <h3 class="heading">[[voting.postproc.preguntas[6].titulo]]</h3>
                             <table class="table table-bordered table-condensed table-striped table-hover">
                                 <thead>
                                     <tr>
@@ -381,7 +381,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr v-for="opt in voting.preguntas[6].opts" :key="opt.numero">
+                                    <tr v-for="opt in voting.postproc.preguntas[6].opts" :key="opt.numero">
                                         <td>[[opt.nombre]]</td>
                                         <td>[[opt.estadisticas.votos_censo]] %</td>
                                         <td>[[opt.estadisticas.votos_m]] %</td>
@@ -471,7 +471,7 @@
 
         function mostrarResultados() {
             var limit = 7;
-            if(voting.tipo === 'PV'){
+            if(voting.postproc.tipo === 'PV'){
                 limit = 6;
             }
             mostrarContenido('enun_result');
@@ -483,7 +483,7 @@
         }
         function mostrarGraficas() {
             var limit = 7;
-            if(voting.tipo === 'PV'){
+            if(voting.postproc.tipo === 'PV'){
                 limit = 6;
             }
             for (var i=0; i<limit; i++) {
@@ -547,57 +547,59 @@
             return color;
         }
 
-        var preguntas=voting.preguntas
-        for (var i = 0; i < preguntas.length; i++) {
-            var candidatos=preguntas[i].opts;
-            var nombres=[];
-            var votos=[];
-            var mediasEdad=[];
-            var colores=[];
-            var div="" ;
-            div = document.getElementById("graficosSexo"+i.toString());
-            var divCurso="" ;
-            divCurso = document.getElementById("graficosCurso"+i.toString());
-            var mostrarTituloS = false;
-            var mostrarTituloC = false;
-            for(var e=0; e<candidatos.length;e++){
-                nombres.push(candidatos[e].nombre);
-                votos.push(candidatos[e].votes);
-                mediasEdad.push(candidatos[e].media_edad);
-                colores.push(getRandomColor());
+        if(voting.postproc != null){
 
-                //Crear grafos votos por candidatos segun sexo
-                if(candidatos[e].votes !=0 ){
-                    var canvas = document.createElement('canvas');
-                    canvas.id     = "myPieCharm"+i.toString()+"-"+e.toString();
-                    canvas.width  = 107;
-                    canvas.height = 27;
-                    div.appendChild(canvas);
-                    mostrarTituloS = true;
-                    graficoSectoresSexo("myPieCharm"+i.toString()+"-"+e.toString(), [candidatos[e].voto_F, candidatos[e].voto_M], candidatos[e].nombre);
-                }
-                //Crear grafos voto por curso
-                if(i==0 || i==6){
+            var preguntas=voting.postproc.preguntas
+            for (var i = 0; i < preguntas.length; i++) {
+                var candidatos=preguntas[i].opts;
+                var nombres=[];
+                var votos=[];
+                var mediasEdad=[];
+                var colores=[];
+                var div="" ;
+                div = document.getElementById("graficosSexo"+i.toString());
+                var divCurso="" ;
+                divCurso = document.getElementById("graficosCurso"+i.toString());
+                var mostrarTituloS = false;
+                var mostrarTituloC = false;
+                for(var e=0; e<candidatos.length;e++){
+                    nombres.push(candidatos[e].nombre);
+                    votos.push(candidatos[e].votes);
+                    mediasEdad.push(candidatos[e].media_edad);
+                    colores.push(getRandomColor());
+
+                    //Crear grafos votos por candidatos segun sexo
                     if(candidatos[e].votes !=0 ){
-                        var canvasCurso = document.createElement('canvas');
-                        canvasCurso.id = "myPieCharmCurso"+i.toString()+"-"+e.toString();
-                        canvasCurso.width  = 107;
-                        canvasCurso.height = 27;
-                        divCurso.appendChild(canvasCurso);
-                        mostrarTituloC = true;
-
-                        var votosCurso=[];
-                        votosCurso.push(candidatos[e].voto_curso.primero);
-                        votosCurso.push(candidatos[e].voto_curso.segundo);
-                        votosCurso.push(candidatos[e].voto_curso.tercero);
-                        votosCurso.push(candidatos[e].voto_curso.cuarto);
-                        votosCurso.push(candidatos[e].voto_curso.master);
-                        graficoSectoresCurso("myPieCharmCurso"+i.toString()+"-"+e.toString(), votosCurso, candidatos[e].nombre);
+                        var canvas = document.createElement('canvas');
+                        canvas.id     = "myPieCharm"+i.toString()+"-"+e.toString();
+                        canvas.width  = 107;
+                        canvas.height = 27;
+                        div.appendChild(canvas);
+                        mostrarTituloS = true;
+                        graficoSectoresSexo("myPieCharm"+i.toString()+"-"+e.toString(), [candidatos[e].voto_F, candidatos[e].voto_M], candidatos[e].nombre);
                     }
-                }
-                
+                    //Crear grafos voto por curso
+                    if(i==0 || i==6){
+                        if(candidatos[e].votes !=0 ){
+                            var canvasCurso = document.createElement('canvas');
+                            canvasCurso.id = "myPieCharmCurso"+i.toString()+"-"+e.toString();
+                            canvasCurso.width  = 107;
+                            canvasCurso.height = 27;
+                            divCurso.appendChild(canvasCurso);
+                            mostrarTituloC = true;
 
-            }
+                            var votosCurso=[];
+                            votosCurso.push(candidatos[e].voto_curso.primero);
+                            votosCurso.push(candidatos[e].voto_curso.segundo);
+                            votosCurso.push(candidatos[e].voto_curso.tercero);
+                            votosCurso.push(candidatos[e].voto_curso.cuarto);
+                            votosCurso.push(candidatos[e].voto_curso.master);
+                            graficoSectoresCurso("myPieCharmCurso"+i.toString()+"-"+e.toString(), votosCurso, candidatos[e].nombre);
+                        }
+                    }
+                    
+
+                }
             if( (i==0 || i==6) && !mostrarTituloC ) {
                 var para = document.createElement("p");
                 var node = document.createTextNode("No existen datos");
@@ -655,7 +657,7 @@
                 divGraficos.appendChild(para);
                 divGraficos.removeChild(document.getElementById("myChartAges"+i))
             }
-
+            }
         }
 
         function graficoSectoresSexo(id, datos, candidato) {
@@ -779,7 +781,7 @@
             mostrarResultados("espacio_graficas5")
 
             var limit = 7;
-            if(voting.tipo === 'PV'){
+            if(voting.postproc.tipo === 'PV'){
                 limit = 6;
             } else mostrarResultados("espacio_graficas6");
 
@@ -827,7 +829,7 @@
             var dataType = 'data:application/vnd.ms-excel;charset=UTF-8';
 
             var limit = 7;
-            if(voting.tipo === 'PV'){
+            if(voting.postproc.tipo === 'PV'){
                 limit = 6;
             }
             for (i=0; i<limit; i++) {
