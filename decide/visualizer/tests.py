@@ -89,6 +89,21 @@ class TesExport(StaticLiveServerTestCase):
         self.driver.quit()
         self.base.tearDown()
 
+    def voting_in_process(self):
+        self.driver.get("http://localhost:8000/visualizer/2")
+        self.driver.maximize_window()
+        self.assertTrue(self.driver.find_element_by_css_selector('h2')=="Votación en curso")
+
+    def voting_is_not_started(self):
+        self.driver.get("http://localhost:8000/visualizer/3")
+        self.driver.maximize_window()
+        self.assertTrue(self.driver.find_element_by_css_selector('h2')=="Votación no comenzada")
+
+    def voting_without_tally(self):
+        self.driver.get("http://localhost:8000/visualizer/4")
+        self.driver.maximize_window()
+        self.assertTrue(self.driver.find_element_by_css_selector('h2')=="Votación sin recuento")
+        
     def test_exportar_PDF(self):
         self.driver.get("http://localhost:8000/visualizer/1")
         self.driver.maximize_window()
@@ -99,4 +114,4 @@ class TesExport(StaticLiveServerTestCase):
         self.driver.get("http://localhost:8000/visualizer/1")
         self.driver.maximize_window()
         self.driver.find_element(By.LINK_TEXT,"▼ Exportar").click()
-        self.driver.find_element(By.LINK_TEXT, "Excel").click()       
+        self.driver.find_element(By.LINK_TEXT, "Excel").click()
