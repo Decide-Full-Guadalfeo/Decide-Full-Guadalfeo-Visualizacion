@@ -3,6 +3,8 @@ from mixnet.models import Auth
 from django.conf import settings
 from pathlib import Path
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
+from django.core.management import call_command
+
 
 # Create your tests here.
 from base.tests import BaseTestCase
@@ -17,36 +19,11 @@ import time
 class VisualizerTestCase(BaseTestCase):
     def setUp(self):
         super().setUp()
+        call_command("loaddata", "test_data_visualizer.json")
 
     def tearDown(self):
         super().tearDown()
-
-    def create_voting(self,opt_number=5):
-        v = Voting(name="Test primaria 1 pregunta")
-        v.save()
-
-        a, _ = Auth.objects.get_or_create(url=settings.BASEURL,
-                                          defaults={'me': True, 'name': 'test auth'})
-        a.save()
-        v.auths.add(a)
-
-        script_location = Path(__file__).absolute().parent
-        file_location = script_location / 'API_vGeneral.json'
-        with file_location.open() as json_file:
-            json_file = json.load(json_file)
-
-            # Sorting the results
-            lista = []
-            if (json_file['tipo'] == 'VG'):
-                lista = [0,1,2,3,4,5,6]
-            else:
-                lista = [0,1,2,3,4,5]
-            for i in lista:
-                json_file['preguntas'][i]['opts'] = sorted(json_file['preguntas'][i]['opts'], key=lambda x : x['voto_M']+x['voto_F'], reverse=True)
-
-        v.postproc=json_file
-
-        return v
+        call_command("flush", interactive=False)
 
     # def test_access_bot_200(self):
     #     v = self.create_voting()
@@ -59,10 +36,9 @@ class VisualizerTestCase(BaseTestCase):
 
 
     def test_access_bot_no_admin_404(self):
-        v = self.create_voting()
         data = {} 
-        self.login(user='noadmin')
-        response = self.client.get('/visualizer/botResults/{}/'.format(v.pk), data, format= 'json')
+        self.login(user='franpe', password="complexpassword")
+        response = self.client.get('/visualizer/botResults/{}/'.format(1), data, format= 'json')
         self.assertEquals(response.status_code, 404)
 
     def test_access_bot_404(self):
@@ -72,10 +48,9 @@ class VisualizerTestCase(BaseTestCase):
         self.assertEquals(response.status_code, 404)
         
     def test_access_visualizer_200(self):
-        v = self.create_voting()
         data = {} 
         self.login()
-        response = self.client.get('/visualizer/{}/'.format(v.pk), data, format= 'json')
+        response = self.client.get('/visualizer/{}/'.format(1), data, format= 'json')
         self.assertEquals(response.status_code, 200)
 
     def test_access_visualizer_404(self):
