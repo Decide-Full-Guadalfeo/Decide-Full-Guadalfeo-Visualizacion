@@ -152,27 +152,17 @@ class TestExport(StaticLiveServerTestCase):
         elements = self.driver.find_elements(By.ID, "myPieCharm5-0")
         assert len(elements) > 0
 
-    def test_aboutus_link(self):
+    def test_acceso_AboutUs_section(self):
         self.driver.get("http://localhost:8000/visualizer/1/")
-        self.driver.set_window_size(969, 677)
-        elements = self.driver.find_elements(By.LINK_TEXT, "About Us")
-        assert len(elements) > 0
+        self.driver.set_window_size(970, 679)
+        self.driver.find_element(By.LINK_TEXT, "About Us").click()
+        assert self.driver.find_element(By.CSS_SELECTOR, ".body > h1").text == "SOBRE NOSOTROS"
 
-    def test_aboutus_section(self):
+    def test_botones_AboutUs(self):
         self.driver.get("http://localhost:8000/visualizer/aboutUs/")
-        self.driver.set_window_size(969, 677)
-        elements = self.driver.find_elements(By.CSS_SELECTOR, ".body > h1")
-        assert len(elements) > 0
-        elements = self.driver.find_elements(By.CSS_SELECTOR, "h2")
-        assert len(elements) > 0
-        elements = self.driver.find_elements(By.CSS_SELECTOR, "p")
-        assert len(elements) > 0
-        elements = self.driver.find_elements(By.CSS_SELECTOR, "b")
-        assert len(elements) > 0
-        elements = self.driver.find_elements(By.CSS_SELECTOR, "th:nth-child(1)")
-        assert len(elements) > 0
-        elements = self.driver.find_elements(By.CSS_SELECTOR, "tr:nth-child(2) > td:nth-child(1)")
-        assert len(elements) > 0
+        self.driver.set_window_size(970, 679)
+        self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(2) > .enlace img").click()
+        assert self.driver.find_element(By.CSS_SELECTOR, ".js-pinned-items-reorder-container > .f4").text == "Popular repositories"
 
     def test_first_table_present(self):
         self.driver.get("http://localhost:8000/visualizer/1/")
