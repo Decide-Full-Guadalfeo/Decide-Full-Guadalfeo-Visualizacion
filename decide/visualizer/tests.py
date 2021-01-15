@@ -26,54 +26,54 @@ class VisualizerTestCase(BaseTestCase):
         call_command("flush", interactive=False)
 
     def test_access_bot_no_admin_404(self):
-        data = {} 
+        data = {}
         self.login(user='franpe', password="complexpassword")
         response = self.client.get('/visualizer/botResults/{}/'.format(1), data, format= 'json')
         self.assertEquals(response.status_code, 404)
 
     def test_access_bot_404(self):
-        data = {} 
+        data = {}
         self.login()
         response = self.client.get('/visualizer/{}/'.format(-1), data, format= 'json')
         self.assertEquals(response.status_code, 404)
-        
+
     def test_access_visualizer_200(self):
-        data = {} 
+        data = {}
         self.login()
         response = self.client.get('/visualizer/{}/'.format(1), data, format= 'json')
         self.assertEquals(response.status_code, 200)
 
     def test_access_visualizer_404(self):
-        data = {} 
+        data = {}
         self.login()
         response = self.client.get('/visualizer/{}/'.format(-1), data, format= 'json')
         self.assertEquals(response.status_code, 404)
-        
+
     def test_access_aboutus_200(self):
-        data = {} 
+        data = {}
         self.login()
         response = self.client.get('/visualizer/aboutUs/', data, format= 'json')
         self.assertEquals(response.status_code, 200)
 
     def test_access_aboutus_404(self):
-        data = {} 
+        data = {}
         self.login()
         response = self.client.get('/visualizer/aboutUs/{}'.format(-1), data, format= 'json')
         self.assertEquals(response.status_code, 404)
 
     def test_access_contactus_200(self):
-        data = {} 
+        data = {}
         self.login()
         response = self.client.get('/visualizer/contactUs/', data, format= 'json')
         self.assertEquals(response.status_code, 200)
 
     def test_access_contactus_404(self):
-        data = {} 
+        data = {}
         self.login()
         response = self.client.get('/visualizer/contactUs/{}'.format(-1), data, format= 'json')
         self.assertEquals(response.status_code, 404)
 
-class TesExport(StaticLiveServerTestCase):
+class TestExport(StaticLiveServerTestCase):
     def setUp(self):
         #Load base test functionality for decide
         self.base = BaseTestCase()
@@ -83,8 +83,8 @@ class TesExport(StaticLiveServerTestCase):
         self.driver = webdriver.Chrome(options=options)
 
         super().setUp()
-            
-    def tearDown(self):           
+
+    def tearDown(self):
         super().tearDown()
         self.driver.quit()
         self.base.tearDown()
@@ -103,7 +103,7 @@ class TesExport(StaticLiveServerTestCase):
         self.driver.get("http://localhost:8000/visualizer/4")
         self.driver.maximize_window()
         self.assertTrue(self.driver.find_element_by_css_selector('h2')=="Votación sin recuento")
-        
+
     def test_exportar_PDF(self):
         self.driver.get("http://localhost:8000/visualizer/1")
         self.driver.maximize_window()
@@ -114,7 +114,7 @@ class TesExport(StaticLiveServerTestCase):
         self.driver.get("http://localhost:8000/visualizer/1")
         self.driver.maximize_window()
         self.driver.find_element(By.LINK_TEXT,"▼ Exportar").click()
-        self.driver.find_element(By.LINK_TEXT, "Excel").click()   
+        self.driver.find_element(By.LINK_TEXT, "Excel").click()
 
     def test_grafico_sectores_vsexo(self):
         self.driver.get("http://localhost:8000/visualizer/1/")
@@ -122,7 +122,7 @@ class TesExport(StaticLiveServerTestCase):
         self.driver.find_element(By.ID, "tituloGraficosSexo0").click()
         self.driver.find_element(By.ID, "myPieCharm0-0").click()
         self.assertTrue(self.driver.find_element_by_id('tituloGraficosSexo0')!=None)
-        self.assertTrue(self.driver.find_element_by_id('myPieCharm0-0')!=None)  
+        self.assertTrue(self.driver.find_element_by_id('myPieCharm0-0')!=None)
 
     def test_grafico_sectores_vcurso(self):
         self.driver.get("http://localhost:8000/visualizer/1/")
@@ -130,7 +130,7 @@ class TesExport(StaticLiveServerTestCase):
         self.driver.find_element(By.ID, "tituloGraficosCurso0").click()
         self.driver.find_element(By.ID, "myPieCharmCurso0-0").click()
         self.assertTrue(self.driver.find_element_by_id('tituloGraficosCurso0')!=None)
-        self.assertTrue(self.driver.find_element_by_id('myPieCharmCurso0-0')!=None) 
+        self.assertTrue(self.driver.find_element_by_id('myPieCharmCurso0-0')!=None)
 
     def test_aboutus_link(self):
         self.driver.get("http://localhost:8000/visualizer/1/")
@@ -153,3 +153,38 @@ class TesExport(StaticLiveServerTestCase):
         assert len(elements) > 0
         elements = self.driver.find_elements(By.CSS_SELECTOR, "tr:nth-child(2) > td:nth-child(1)")
         assert len(elements) > 0
+
+    def test_first_table_present(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_result > .heading")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo0 > .heading")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.CSS_SELECTOR, ".display-15 th:nth-child(1) > font")
+        assert len(elements) > 0
+
+    def test_middle_tables_presents(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_result > .heading")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo1 > .heading")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo2 > .heading")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo3 > .heading")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo4 > .heading")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo5 > .heading")
+        assert len(elements) > 0
+
+    def test_last_table_not_present(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo6 > .heading")
+        assert len(elements) == 0
+
+    # def test_last_table_present(self):
+    #     self.driver.get("http://localhost:8000/visualizer//")
+    #     elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo6 > .heading")
+    #     assert len(elements) > 0
+
