@@ -131,3 +131,25 @@ class TesExport(StaticLiveServerTestCase):
         self.driver.find_element(By.ID, "myPieCharmCurso0-0").click()
         self.assertTrue(self.driver.find_element_by_id('tituloGraficosCurso0')!=None)
         self.assertTrue(self.driver.find_element_by_id('myPieCharmCurso0-0')!=None) 
+
+    def test_aboutus(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.set_window_size(969, 677)
+        elements = self.driver.find_elements(By.LINK_TEXT, "About Us")
+        assert len(elements) > 0
+
+    def test_aboutus(self):
+        self.driver.get("http://localhost:8000/visualizer/aboutUs/")
+        self.driver.set_window_size(969, 677)
+        elements = self.driver.find_elements(By.CSS_SELECTOR, ".body > h1")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "h2")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "p")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "b")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "th:nth-child(1)")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "tr:nth-child(2) > td:nth-child(1)")
+        assert len(elements) > 0
