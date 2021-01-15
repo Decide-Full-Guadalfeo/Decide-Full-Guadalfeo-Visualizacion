@@ -183,6 +183,23 @@ class TestExport(StaticLiveServerTestCase):
         elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo6 > .heading")
         assert len(elements) == 0
 
+
+
+    def test_light_mode(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.set_window_size(1936, 1056)
+        color = self.driver.find_elements(By.CSS_SELECTOR, ".dark-mode")
+        assert len(color) == 0
+    
+    def test_dark_mode(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.set_window_size(1936, 1056)
+        self.driver.find_element(By.CSS_SELECTOR, "p .slider").click()
+        color = self.driver.find_elements(By.CSS_SELECTOR, ".dark-mode")
+        assert len(color) > 0
+
+
+
     # def test_last_table_present(self):
     #     self.driver.get("http://localhost:8000/visualizer//")
     #     elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo6 > .heading")
