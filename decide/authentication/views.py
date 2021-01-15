@@ -215,6 +215,8 @@ class GetUserDetailsView(APIView):
                               })
 
                 register_user = ProfileUserForm(initial={
+                    'first_name': request.user.first_name,
+                    'last_name': request.user.last_name,
                     'username': request.user.username,
                     'email': request.user.email,
                 })
@@ -259,6 +261,8 @@ class GetUserDetailsView(APIView):
 
                 if user_form.is_valid() and voting_user_form.is_valid():
 
+                    request.user.first_name = user_form.cleaned_data['first_name']
+                    request.user.last_name = user_form.cleaned_data['last_name']
                     request.user.username = user_form.cleaned_data['username']
                     request.user.email = user_form.cleaned_data['email']
 

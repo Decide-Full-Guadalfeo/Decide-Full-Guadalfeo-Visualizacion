@@ -5,6 +5,11 @@ from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
 class CustomUserCreationForm(UserCreationForm):
+    def __init__(self, *args, **kwargs):
+        super(CustomUserCreationForm, self).__init__(*args, **kwargs)
+        self.fields['first_name'].required = True
+        self.fields['last_name'].required = True
+
     def clean_email(self):
         email = self.cleaned_data.get('email')
         if User.objects.filter(email=email).exists():
@@ -23,6 +28,11 @@ class RegisterVotingUserForm(ModelForm):
 
 
 class ProfileUserForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(ProfileUserForm, self).__init__(*args, **kwargs)
+        self.fields['first_name'].required = True
+        self.fields['last_name'].required = True
+    
     def clean_email(self):
         email = self.cleaned_data['email']
         email_exists = User.objects.filter(email=email).exclude(pk=self.instance.pk)
@@ -33,7 +43,7 @@ class ProfileUserForm(ModelForm):
     
     class Meta:
         model = User
-        fields = ['username','email']
+        fields = ['first_name', 'last_name','username','email']
 
 
 class ProfileVotingUserForm(ModelForm):
