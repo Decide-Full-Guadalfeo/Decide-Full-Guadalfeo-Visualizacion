@@ -1,4 +1,4 @@
-from voting.models import Voting, Question, QuestionOption
+from voting.models import Voting
 from mixnet.models import Auth
 from django.conf import settings
 from pathlib import Path
@@ -12,12 +12,9 @@ import json
 from django.utils import timezone
 from django.contrib.auth.models import User
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.keys import Keys
-from voting.models import Candidatura
 from base.tests import BaseTestCase
+import time
 
 class VisualizerTestCase(BaseTestCase):
     def setUp(self):
@@ -28,23 +25,13 @@ class VisualizerTestCase(BaseTestCase):
         super().tearDown()
         call_command("flush", interactive=False)
 
-    # def test_access_bot_200(self):
-    #     v = self.create_voting()
-    #     data = {} 
-    #     self.login()
-    #     response = self.client.get('/visualizer/botResults/{}/'.format(v.pk), data, format= 'json')
-    #     print("Hola")
-    #     print(response.resolver_match.func.__name__)
-    #     self.assertEquals(response.status_code, 200)
-
-
     def test_access_bot_no_admin_404(self):
         data = {} 
         self.login(user='franpe', password="complexpassword")
         response = self.client.get('/visualizer/botResults/{}/'.format(1), data, format= 'json')
         self.assertEquals(response.status_code, 404)
 
-    def test_access_bot_400(self):
+    def test_access_bot_404(self):
         data = {} 
         self.login()
         response = self.client.get('/visualizer/{}/'.format(-1), data, format= 'json')
@@ -56,12 +43,12 @@ class VisualizerTestCase(BaseTestCase):
         response = self.client.get('/visualizer/{}/'.format(1), data, format= 'json')
         self.assertEquals(response.status_code, 200)
 
-    def test_access_visualizer_400(self):
+    def test_access_visualizer_404(self):
         data = {} 
         self.login()
         response = self.client.get('/visualizer/{}/'.format(-1), data, format= 'json')
         self.assertEquals(response.status_code, 404)
-
+        
     def test_access_aboutus_200(self):
         data = {} 
         self.login()
@@ -73,3 +60,31 @@ class VisualizerTestCase(BaseTestCase):
         self.login()
         response = self.client.get('/visualizer/aboutUs/{}'.format(-1), data, format= 'json')
         self.assertEquals(response.status_code, 404)
+
+class TesExport(StaticLiveServerTestCase):
+    def setUp(self):
+        #Load base test functionality for decide
+        self.base = BaseTestCase()
+        self.base.setUp()
+        options = webdriver.ChromeOptions()
+        options.headless = True
+        self.driver = webdriver.Chrome(options=options)
+
+        super().setUp()
+            
+    def tearDown(self):           
+        super().tearDown()
+        self.driver.quit()
+        self.base.tearDown()
+
+    def test_exportar_PDF(self):
+        self.driver.get("http://localhost:8000/visualizer/1")
+        self.driver.maximize_window()
+        self.driver.find_element(By.LINK_TEXT,"▼ Exportar").click()
+        self.driver.find_element(By.LINK_TEXT, "PDF").click()
+
+    def test_exportar_Excel(self):
+        self.driver.get("http://localhost:8000/visualizer/1")
+        self.driver.maximize_window()
+        self.driver.find_element(By.LINK_TEXT,"▼ Exportar").click()
+        self.driver.find_element(By.LINK_TEXT, "Excel").click()       

@@ -6,7 +6,7 @@
        </h1>
      </span>
      <ul v-if="voting.end_date != null && voting.postproc !=null" class="nav" data-html2canvas-ignore="true">
-      <li><a href=""> ▼ Mostrar</a>
+      <li><a href="#"> ▼ Mostrar</a>
           <ul>
               <li>
                   <s>Resultados &nbsp
@@ -34,20 +34,20 @@
               </li>
           </ul>
       </li>
-      <li><a href=""> ▼ Compartir</a>
+      <li><a href="#"> ▼ Compartir</a>
           <ul>
               <li><a href="{{whatsappUrl}}" target="_blank">Whatsapp</a></li>
               <li><a href="{{twitterUrl}}" target="_blank">Twitter</a></li>
               <li><a href="{{facebookUrl}}" target="_blank">Facebook</a></li>
           </ul>
       </li>
-      <li><a href=""> ▼ Exportar</a>
+      <li><a href="#"> ▼ Exportar</a>
           <ul>
               <li><a class="text-white" onclick="exportarPDF();">PDF</a></li>
               <li><a class="text-white" onclick="exportarExcel('resultados_estadisticas')">Excel</a></li>
           </ul>
       <li>
-      <li><a href=""> ▼ Telegram</a>
+      <li><a href="#"> ▼ Telegram</a>
           <ul>
               {% if request.user.is_superuser %}
                   <li><a href={{botUrl}} target="_blank">Enviar resultados por Telegram </a></li>
