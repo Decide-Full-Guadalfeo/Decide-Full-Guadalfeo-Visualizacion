@@ -23,6 +23,7 @@
             <h1 v-if="voting != null" class="ml-5">[[ voting.titulo ]]</h1><br/>
             <h2 v-if="voting.start_date == null">Votación no comenzada  </h2>
             <h2 v-else-if="voting.end_date == null">Votación en curso </h2>
+            <h2 v-else-if="voting.postproc == null">Votación sin recuento </h2>
             <div v-else>
                 <div  v-if="voting.postproc != null" id="resultados_estadisticas"  class="ml-5">
                     <div id="results">
