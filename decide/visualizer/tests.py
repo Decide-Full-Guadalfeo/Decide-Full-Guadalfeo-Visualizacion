@@ -117,43 +117,53 @@ class TestExport(StaticLiveServerTestCase):
         self.driver.find_element(By.LINK_TEXT,"▼ Exportar").click()
         self.driver.find_element(By.LINK_TEXT, "Excel").click()
 
-    def test_grafico_sectores_vsexo(self):
+    def test_sectores_delegado(self):
         self.driver.get("http://localhost:8000/visualizer/1/")
-        self.driver.set_window_size(1550, 838)
-        self.driver.find_element(By.ID, "tituloGraficosSexo0").click()
-        self.driver.find_element(By.ID, "myPieCharm0-0").click()
-        self.assertTrue(self.driver.find_element_by_id('tituloGraficosSexo0')!=None)
-        self.assertTrue(self.driver.find_element_by_id('myPieCharm0-0')!=None)
-
-    def test_grafico_sectores_vcurso(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")
-        self.driver.set_window_size(969, 677)
-        self.driver.find_element(By.ID, "tituloGraficosCurso0").click()
-        self.driver.find_element(By.ID, "myPieCharmCurso0-0").click()
-        self.assertTrue(self.driver.find_element_by_id('tituloGraficosCurso0')!=None)
-        self.assertTrue(self.driver.find_element_by_id('myPieCharmCurso0-0')!=None)
-
-    def test_aboutus_link(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")
-        self.driver.set_window_size(969, 677)
-        elements = self.driver.find_elements(By.LINK_TEXT, "About Us")
+        self.driver.set_window_size(970, 679)
+        elements = self.driver.find_elements(By.ID, "tituloGraficosSexo0")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.ID, "myPieCharm0-0")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.ID, "tituloGraficosCurso0")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.ID, "myPieCharmCurso0-0")
         assert len(elements) > 0
 
-    def test_aboutus_section(self):
+    def test_sectores_cursos(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.set_window_size(970, 679)
+        elements = self.driver.find_elements(By.ID, "tituloGraficosCurso1")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.ID, "myPieCharm1-0")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.ID, "tituloGraficosCurso2")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.ID, "myPieCharm2-0")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.ID, "tituloGraficosCurso3")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.ID, "myPieCharm3-0")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.ID, "tituloGraficosCurso4")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.ID, "myPieCharm4-0")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.ID, "tituloGraficosCurso5")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.ID, "myPieCharm5-0")
+        assert len(elements) > 0
+
+    def test_acceso_AboutUs_section(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.set_window_size(970, 679)
+        self.driver.find_element(By.LINK_TEXT, "About Us").click()
+        assert self.driver.find_element(By.CSS_SELECTOR, ".body > h1").text == "SOBRE NOSOTROS"
+
+    def test_botones_AboutUs(self):
         self.driver.get("http://localhost:8000/visualizer/aboutUs/")
-        self.driver.set_window_size(969, 677)
-        elements = self.driver.find_elements(By.CSS_SELECTOR, ".body > h1")
-        assert len(elements) > 0
-        elements = self.driver.find_elements(By.CSS_SELECTOR, "h2")
-        assert len(elements) > 0
-        elements = self.driver.find_elements(By.CSS_SELECTOR, "p")
-        assert len(elements) > 0
-        elements = self.driver.find_elements(By.CSS_SELECTOR, "b")
-        assert len(elements) > 0
-        elements = self.driver.find_elements(By.CSS_SELECTOR, "th:nth-child(1)")
-        assert len(elements) > 0
-        elements = self.driver.find_elements(By.CSS_SELECTOR, "tr:nth-child(2) > td:nth-child(1)")
-        assert len(elements) > 0
+        self.driver.set_window_size(970, 679)
+        self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(2) > .enlace img").click()
+        assert self.driver.find_element(By.CSS_SELECTOR, ".js-pinned-items-reorder-container > .f4").text == "Popular repositories"
 
     def test_first_table_present(self):
         self.driver.get("http://localhost:8000/visualizer/1/")
@@ -183,6 +193,23 @@ class TestExport(StaticLiveServerTestCase):
         self.driver.get("http://localhost:8000/visualizer/1/")
         elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo6 > .heading")
         assert len(elements) == 0
+
+
+
+    def test_light_mode(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.set_window_size(1936, 1056)
+        color = self.driver.find_elements(By.CSS_SELECTOR, ".dark-mode")
+        assert len(color) == 0
+    
+    def test_dark_mode(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.set_window_size(1936, 1056)
+        self.driver.find_element(By.CSS_SELECTOR, "p .slider").click()
+        color = self.driver.find_elements(By.CSS_SELECTOR, ".dark-mode")
+        assert len(color) > 0
+
+
 
     # def test_last_table_present(self):
     #     self.driver.get("http://localhost:8000/visualizer//")
