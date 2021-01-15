@@ -61,6 +61,18 @@ class VisualizerTestCase(BaseTestCase):
         response = self.client.get('/visualizer/aboutUs/{}'.format(-1), data, format= 'json')
         self.assertEquals(response.status_code, 404)
 
+    def test_access_contactus_200(self):
+        data = {} 
+        self.login()
+        response = self.client.get('/visualizer/contactUs/', data, format= 'json')
+        self.assertEquals(response.status_code, 200)
+
+    def test_access_contactus_404(self):
+        data = {} 
+        self.login()
+        response = self.client.get('/visualizer/contactUs/{}'.format(-1), data, format= 'json')
+        self.assertEquals(response.status_code, 404)
+
 class TesExport(StaticLiveServerTestCase):
     def setUp(self):
         #Load base test functionality for decide
@@ -77,6 +89,21 @@ class TesExport(StaticLiveServerTestCase):
         self.driver.quit()
         self.base.tearDown()
 
+    def voting_in_process(self):
+        self.driver.get("http://localhost:8000/visualizer/2")
+        self.driver.maximize_window()
+        self.assertTrue(self.driver.find_element_by_css_selector('h2')=="Votación en curso")
+
+    def voting_is_not_started(self):
+        self.driver.get("http://localhost:8000/visualizer/3")
+        self.driver.maximize_window()
+        self.assertTrue(self.driver.find_element_by_css_selector('h2')=="Votación no comenzada")
+
+    def voting_without_tally(self):
+        self.driver.get("http://localhost:8000/visualizer/4")
+        self.driver.maximize_window()
+        self.assertTrue(self.driver.find_element_by_css_selector('h2')=="Votación sin recuento")
+        
     def test_exportar_PDF(self):
         self.driver.get("http://localhost:8000/visualizer/1")
         self.driver.maximize_window()
