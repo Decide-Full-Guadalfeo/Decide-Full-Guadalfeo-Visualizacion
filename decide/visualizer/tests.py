@@ -16,6 +16,7 @@ from selenium.webdriver.common.by import By
 from base.tests import BaseTestCase
 import time
 
+
 class VisualizerTestCase(BaseTestCase):
     def setUp(self):
         super().setUp()
@@ -215,3 +216,10 @@ class TestExport(StaticLiveServerTestCase):
     #     elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo6 > .heading")
     #     assert len(elements) > 0
 
+    def test_join_telegram(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.find_element(By.LINK_TEXT, "▼ Telegram").click()
+        valor = self.driver.find_element(By.LINK_TEXT, "Unirse al canal de Telegram").get_attribute("href")
+        self.driver.get(valor)
+        elements = self.driver.find_elements(By.XPATH, "//span[contains(.,\'guadalfeo-visualizacion\')]")
+        assert len(elements) > 0
