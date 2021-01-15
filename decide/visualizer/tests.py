@@ -209,6 +209,44 @@ class TestExport(StaticLiveServerTestCase):
         color = self.driver.find_elements(By.CSS_SELECTOR, ".dark-mode")
         assert len(color) > 0
 
+    def test_prueba_tablas_estadistica_abstencion(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        elements  = self.driver.find_element(By.CSS_SELECTOR, ".table:nth-child(4) th:nth-child(2)").text
+        assert  elements == "Totales" 
+
+    def test_prueba_tablas_estadistica_delegado(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        elements = self.driver.find_element(By.CSS_SELECTOR, ".table:nth-child(7) th:nth-child(1) > font").text
+        assert  elements == "Candidato"
+
+    def test_prueba_tablas_estadistica_cursos(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")   
+        elements  =self.driver.find_element(By.CSS_SELECTOR, "div:nth-child(8) > .table th:nth-child(1)").text
+        assert  elements == "Candidato"
+        elements  =self.driver.find_element(By.CSS_SELECTOR, "div:nth-child(9) > .table th:nth-child(1)").text
+        assert  elements == "Candidato"
+        elements  =self.driver.find_element(By.CSS_SELECTOR, "div:nth-child(10) th:nth-child(1)").text
+        assert  elements == "Candidato"
+        elements  =self.driver.find_element(By.CSS_SELECTOR, "div:nth-child(11) th:nth-child(1)").text
+        assert  elements == "Candidato"
+        elements  =self.driver.find_element(By.CSS_SELECTOR, "div:nth-child(12) th:nth-child(1)").text
+        assert  elements == "Candidato"
+
+
+    # Estas pruebas son para cuando se pueda testear mirar que no haya tabla delegacion de alumno en una primaria y testear que si la haya en una general
+
+    # def test_pruebatablassestadistica(self):
+    #     self.driver.get("http://localhost:8000/visualizer/1/")    
+    #     elements = self.driver.find_element(By.CSS_SELECTOR, "div:nth-child(8) > .table th:nth-child(1)").text()
+    #     assert  elements == "Candidato"
+
+    # def test_pruebatablassestadistica(self):
+    #     self.driver.get("http://localhost:8000/visualizer/1/")    
+    #     elements = self.driver.find_element(By.CSS_SELECTOR, "div:nth-child(8) > .table th:nth-child(1)").text()
+    #     assert  elements != "Candidato"
+
+
+    #================================================================================
 
 
     # def test_last_table_present(self):
