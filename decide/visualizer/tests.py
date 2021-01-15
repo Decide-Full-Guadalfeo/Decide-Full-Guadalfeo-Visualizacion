@@ -114,4 +114,20 @@ class TesExport(StaticLiveServerTestCase):
         self.driver.get("http://localhost:8000/visualizer/1")
         self.driver.maximize_window()
         self.driver.find_element(By.LINK_TEXT,"▼ Exportar").click()
-        self.driver.find_element(By.LINK_TEXT, "Excel").click()
+        self.driver.find_element(By.LINK_TEXT, "Excel").click()   
+
+    def test_grafico_sectores_vsexo(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.set_window_size(1550, 838)
+        self.driver.find_element(By.ID, "tituloGraficosSexo0").click()
+        self.driver.find_element(By.ID, "myPieCharm0-0").click()
+        self.assertTrue(self.driver.find_element_by_id('tituloGraficosSexo0')!=None)
+        self.assertTrue(self.driver.find_element_by_id('myPieCharm0-0')!=None)  
+
+    def test_grafico_sectores_vcurso(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.set_window_size(969, 677)
+        self.driver.find_element(By.ID, "tituloGraficosCurso0").click()
+        self.driver.find_element(By.ID, "myPieCharmCurso0-0").click()
+        self.assertTrue(self.driver.find_element_by_id('tituloGraficosCurso0')!=None)
+        self.assertTrue(self.driver.find_element_by_id('myPieCharmCurso0-0')!=None) 
