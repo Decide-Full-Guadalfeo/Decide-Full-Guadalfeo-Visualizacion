@@ -73,7 +73,7 @@ class VisualizerTestCase(BaseTestCase):
         response = self.client.get('/visualizer/contactUs/{}'.format(-1), data, format= 'json')
         self.assertEquals(response.status_code, 404)
 
-class TesExport(StaticLiveServerTestCase):
+class TestExport(StaticLiveServerTestCase):
     def setUp(self):
         #Load base test functionality for decide
         self.base = BaseTestCase()
@@ -153,3 +153,33 @@ class TesExport(StaticLiveServerTestCase):
         assert len(elements) > 0
         elements = self.driver.find_elements(By.CSS_SELECTOR, "tr:nth-child(2) > td:nth-child(1)")
         assert len(elements) > 0
+
+    def test_first_table_present(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_result > .heading")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo0 > .heading")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.CSS_SELECTOR, ".display-15 th:nth-child(1) > font")
+        assert len(elements) > 0
+
+    def test_middle_tables_presents(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_result > .heading")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo1 > .heading")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo2 > .heading")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo3 > .heading")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo4 > .heading")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo5 > .heading")
+        assert len(elements) > 0
+    
+    def test_last_table_present(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo6 > .heading")
+        assert len(elements) == 0
+  
