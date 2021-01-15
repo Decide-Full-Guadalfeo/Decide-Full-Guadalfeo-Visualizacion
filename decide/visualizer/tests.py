@@ -61,3 +61,15 @@ class VisualizerTestCase(BaseTestCase):
         self.login()
         response = self.client.get('/visualizer/{}/'.format(-1), data, format= 'json')
         self.assertEquals(response.status_code, 404)
+
+    def test_access_aboutus_200(self):
+        data = {} 
+        self.login()
+        response = self.client.get('/visualizer/aboutUs/', data, format= 'json')
+        self.assertEquals(response.status_code, 200)
+
+    def test_access_aboutus_404(self):
+        data = {} 
+        self.login()
+        response = self.client.get('/visualizer/aboutUs/{}'.format(-1), data, format= 'json')
+        self.assertEquals(response.status_code, 404)
