@@ -20,7 +20,9 @@
                         <ul class="votes_container">
                             {% for vote in votes %}
                                 <li class="vote">
-                                    <a href="/visualizer/{{vote.id}}">{{vote.name}}</a>
+                                    <div>
+                                        <a href="/visualizer/{{vote.id}}">{{vote.name}}</a>
+                                    </div>
                                 </li>
                             {% endfor %}
                         </ul>
@@ -30,7 +32,7 @@
                 </div>
             {% else %}
               <div class="container">
-                <h3>Votings Visualizer</h3>
+                <h3 style="margin: 10px;">Votings Visualizer</h3>
 
                 {% if not votes %}
                     <p>There are no votes</p>
@@ -38,11 +40,16 @@
                     <ul class="votes_container">
                         {% for vote in votes %}
                             <li class="vote">
-                                <a href="/visualizer/{{vote.id}}">{{vote.name}}</a>
+                                 <div>
+                                    <a href="/visualizer/{{vote.id}}">{{vote.name}}</a>
+                                </div>
                             </li>
                         {% endfor %}
                     </ul>
                 {% endif %}
+                  <h3 style="margin: 10px;">Do you want to vote?</h3>
+
+                  <p>Go to <a href="/booth">booths</a> </p>
             </div>
             {% endif %}
         {% else %}
@@ -55,7 +62,9 @@
                     <ul class="votes_container">
                         {% for vote in votes %}
                             <li class="vote">
-                                <a href="/visualizer/{{vote.id}}">{{vote.name}}</a>
+                                 <div>
+                                    <a href="/visualizer/{{vote.id}}">{{vote.name}}</a>
+                                </div>
                             </li>
                         {% endfor %}
                     </ul>

@@ -39,7 +39,7 @@ class BotResponse(TemplateView):
         context = super().get_context_data(**kwargs)
         vid = kwargs.get('voting_id', 0)
         
-        if self.request.user.is_superuser:
+        if self.request.user.is_staff:
             try:
                 r = mods.get('voting', params={'id': vid})
                 context['voting'] = json.dumps(r[0]["postproc"],indent=4)

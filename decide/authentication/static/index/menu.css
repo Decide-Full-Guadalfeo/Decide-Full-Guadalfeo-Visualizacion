@@ -37,17 +37,26 @@
     align-self: center;
 }
 
+.menu > span > h1
+{
+    font-size: revert;
+    font-weight: revert;
+    margin-bottom: 0px;
+}
+
 .menu ul
 {
-    direction: lt;
+    direction: left;
     display: flex;
     flex-grow: 1;
     align-self: center;
     justify-content: flex-end;
     list-style-type: none;
+    margin-bottom: 0px;
 }
 
 .menu ul li
 {
     padding: 10px;
+    margin-bottom: 0px;
 }

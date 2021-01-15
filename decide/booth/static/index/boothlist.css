@@ -2,10 +2,7 @@ html,
 body {
   height: 100%;
 }
-nav.menu {
-  padding-top: 1% !important;
-  height: 6%;
-}
+
 #content {
   height: 92%;
 }
