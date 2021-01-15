@@ -61,6 +61,18 @@ class VisualizerTestCase(BaseTestCase):
         response = self.client.get('/visualizer/aboutUs/{}'.format(-1), data, format= 'json')
         self.assertEquals(response.status_code, 404)
 
+    def test_access_contactus_200(self):
+        data = {} 
+        self.login()
+        response = self.client.get('/visualizer/contactUs/', data, format= 'json')
+        self.assertEquals(response.status_code, 200)
+
+    def test_access_contactus_404(self):
+        data = {} 
+        self.login()
+        response = self.client.get('/visualizer/contactUs/{}'.format(-1), data, format= 'json')
+        self.assertEquals(response.status_code, 404)
+
 class TesExport(StaticLiveServerTestCase):
     def setUp(self):
         #Load base test functionality for decide
