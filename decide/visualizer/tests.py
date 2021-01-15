@@ -132,13 +132,13 @@ class TesExport(StaticLiveServerTestCase):
         self.assertTrue(self.driver.find_element_by_id('tituloGraficosCurso0')!=None)
         self.assertTrue(self.driver.find_element_by_id('myPieCharmCurso0-0')!=None) 
 
-    def test_aboutus(self):
+    def test_aboutus_link(self):
         self.driver.get("http://localhost:8000/visualizer/1/")
         self.driver.set_window_size(969, 677)
         elements = self.driver.find_elements(By.LINK_TEXT, "About Us")
         assert len(elements) > 0
 
-    def test_aboutus(self):
+    def test_aboutus_section(self):
         self.driver.get("http://localhost:8000/visualizer/aboutUs/")
         self.driver.set_window_size(969, 677)
         elements = self.driver.find_elements(By.CSS_SELECTOR, ".body > h1")
