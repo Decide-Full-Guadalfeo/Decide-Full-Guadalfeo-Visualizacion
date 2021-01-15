@@ -116,18 +116,38 @@ class TesExport(StaticLiveServerTestCase):
         self.driver.find_element(By.LINK_TEXT,"▼ Exportar").click()
         self.driver.find_element(By.LINK_TEXT, "Excel").click()   
 
-    def test_grafico_sectores_vsexo(self):
+    def test_sectores_delegado(self):
         self.driver.get("http://localhost:8000/visualizer/1/")
-        self.driver.set_window_size(1550, 838)
-        self.driver.find_element(By.ID, "tituloGraficosSexo0").click()
-        self.driver.find_element(By.ID, "myPieCharm0-0").click()
-        self.assertTrue(self.driver.find_element_by_id('tituloGraficosSexo0')!=None)
-        self.assertTrue(self.driver.find_element_by_id('myPieCharm0-0')!=None)  
+        self.driver.set_window_size(970, 679)
+        elements = self.driver.find_elements(By.ID, "tituloGraficosSexo0")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.ID, "myPieCharm0-0")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.ID, "tituloGraficosCurso0")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.ID, "myPieCharmCurso0-0")
+        assert len(elements) > 0
 
-    def test_grafico_sectores_vcurso(self):
+    def test_sectores_cursos(self):
         self.driver.get("http://localhost:8000/visualizer/1/")
-        self.driver.set_window_size(969, 677)
-        self.driver.find_element(By.ID, "tituloGraficosCurso0").click()
-        self.driver.find_element(By.ID, "myPieCharmCurso0-0").click()
-        self.assertTrue(self.driver.find_element_by_id('tituloGraficosCurso0')!=None)
-        self.assertTrue(self.driver.find_element_by_id('myPieCharmCurso0-0')!=None) 
+        self.driver.set_window_size(970, 679)
+        elements = self.driver.find_elements(By.ID, "tituloGraficosCurso1")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.ID, "myPieCharm1-0")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.ID, "tituloGraficosCurso2")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.ID, "myPieCharm2-0")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.ID, "tituloGraficosCurso3")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.ID, "myPieCharm3-0")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.ID, "tituloGraficosCurso4")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.ID, "myPieCharm4-0")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.ID, "tituloGraficosCurso5")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.ID, "myPieCharm5-0")
+        assert len(elements) > 0
