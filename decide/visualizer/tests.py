@@ -496,3 +496,32 @@ class TestExport(StaticLiveServerTestCase):
         url = self.driver.current_url
         pattern = re.compile("^https://www.facebook.com/")
         assert pattern.match(url)
+
+    def test_mostrar_resultados(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        style = self.driver.find_element(By.ID, "enun_result").get_attribute("style")
+        assert style == ""
+        self.driver.find_element(By.LINK_TEXT, "▼ Mostrar").click()
+        self.driver.find_element(By.XPATH, "//div[@id=\'app-visualizer\']/nav/ul/li/ul/li/s/label/span").click()
+        style = self.driver.find_element(By.ID, "enun_result").get_attribute("style")
+        assert style == "display: none;"
+
+    def test_mostrar_graficas(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        style = self.driver.find_element(By.ID, "espacio_graficas0").get_attribute("style")
+        assert style == ""
+        self.driver.find_element(By.LINK_TEXT, "▼ Mostrar").click()
+        self.driver.find_element(By.XPATH, "//div[@id=\'app-visualizer\']/nav/ul/li/ul/li[3]/s/label/span").click()
+        style = self.driver.find_element(By.ID, "espacio_graficas0").get_attribute("style")
+        assert style == "display: none;"
+
+    def test_mostrar_estadisticas(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        style = self.driver.find_element(By.ID, "statistics").get_attribute("style")
+        assert style == ""
+        self.driver.find_element(By.LINK_TEXT, "▼ Mostrar").click()
+        self.driver.find_element(By.XPATH, "//div[@id=\'app-visualizer\']/nav/ul/li/ul/li[2]/s/label/span").click()
+        style = self.driver.find_element(By.ID, "statistics").get_attribute("style")
+        assert style == "display: none;"
+
+    
