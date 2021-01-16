@@ -79,7 +79,6 @@ const App = () => {
       headers: {
         "content-type": "application/json",
         "X-CSRFToken": getCookie("csrftoken"),
-        //"auth-token": votingUserData.token,
       },
       method: "POST",
     };
@@ -104,7 +103,8 @@ const App = () => {
         setVotingUserData(res);
       })
       .catch((error) => {
-        console.log(error); //this.showAlert("danger", '{% trans "Error: " %}' + error);
+        console.log(error);
+        window.location.replace('/decide/login')
       });
   };
 
