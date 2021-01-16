@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
         "password": "pbkdf2_sha256$100000$auAqIL06w3cr$3Zmj0Q77tJyR1Zczq+K2xeHqWiy5K12NzGaW616KdfY=",
-        "last_login": "2021-01-15T10:57:04.304Z",
+        "last_login": "2021-01-16T01:35:49.441Z",
         "is_superuser": true,
         "username": "admin",
         "first_name": "",
@@ -22,7 +22,7 @@
     "pk": 2,
     "fields": {
         "password": "pbkdf2_sha256$100000$LkLRYZcc2Uq2$F4Zzy0L6xkTPk3oKDaKdHwh6sfCse5PQDbFpK1BgU2k=",
-        "last_login": "2021-01-15T10:38:46.789Z",
+        "last_login": "2021-01-16T01:35:03.239Z",
         "is_superuser": false,
         "username": "franpe",
         "first_name": "Francisco",
@@ -195,6 +195,22 @@
         "date_joined": "2021-01-15T10:27:11.159Z",
         "groups": [],
         "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "jptj8f2sscd2psunlsx3bfu6ii2ax9mp",
+    "fields": {
+        "session_data": "MGZjNDY0MGJlZDRhNjQxZjJjNzc2MDE4MjNlZTNiMmY2OWU1ZTZjNjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYmFzZS5iYWNrZW5kcy5BdXRoQmFja2VuZCIsIl9hdXRoX3VzZXJfaGFzaCI6IjM0NjMyNWZjOTEyMjY3NDJjNGYwY2VjYzYzZDQ1YjdmMzJiODM2NmQifQ==",
+        "expire_date": "2021-01-30T01:35:49.445Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "sror53k7ngjc1wi7gocp8xwls0vqx798",
+    "fields": {
+        "session_data": "Zjc2NTMyZjA5YmI1NGFkYjJkYjdkZTZlYWQzNWUzMzMyOWY3MzUwYjp7ImF1dGgtdG9rZW4iOiI5MjNlYjkwOWMxNTY1OTU1MzFlN2JjZjk4ODYyM2Q0MjU1MzQyODJmIiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJiYXNlLmJhY2tlbmRzLkF1dGhCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiMzQ2MzI1ZmM5MTIyNjc0MmM0ZjBjZWNjNjNkNDViN2YzMmI4MzY2ZCJ9",
+        "expire_date": "2021-01-29T22:00:04.132Z"
     }
 },
 {
@@ -502,6 +518,96 @@
     }
 },
 {
+    "model": "base.key",
+    "pk": 7,
+    "fields": {
+        "p": 59201937798629306842694158650305788108284306860788968547306987637748268202903,
+        "g": 33531135083680914312535106155806129341050638438131904214945066146044587149239,
+        "y": 5642696769308178945766706007320326741504160595327585138592054029881497257532,
+        "x": 48429826361809672556929590623780094231958588358693786135075737485642225868574
+    }
+},
+{
+    "model": "base.key",
+    "pk": 8,
+    "fields": {
+        "p": 59201937798629306842694158650305788108284306860788968547306987637748268202903,
+        "g": 33531135083680914312535106155806129341050638438131904214945066146044587149239,
+        "y": 5642696769308178945766706007320326741504160595327585138592054029881497257532,
+        "x": 0
+    }
+},
+{
+    "model": "base.key",
+    "pk": 9,
+    "fields": {
+        "p": 59201937798629306842694158650305788108284306860788968547306987637748268202903,
+        "g": 33531135083680914312535106155806129341050638438131904214945066146044587149239,
+        "y": 5642696769308178945766706007320326741504160595327585138592054029881497257532,
+        "x": 0
+    }
+},
+{
+    "model": "base.key",
+    "pk": 10,
+    "fields": {
+        "p": 106364299435629977686372754387412957192737948659202627478214730600902888298507,
+        "g": 71523436088517310024049811689758238532898845296523155614346065044222178834354,
+        "y": 52250900079116344113988225945926778432872607287497157603353119883387545833655,
+        "x": 55897640266406973141985992659705490042635563973868918767551308359843419288617
+    }
+},
+{
+    "model": "base.key",
+    "pk": 11,
+    "fields": {
+        "p": 106364299435629977686372754387412957192737948659202627478214730600902888298507,
+        "g": 71523436088517310024049811689758238532898845296523155614346065044222178834354,
+        "y": 52250900079116344113988225945926778432872607287497157603353119883387545833655,
+        "x": 0
+    }
+},
+{
+    "model": "base.key",
+    "pk": 12,
+    "fields": {
+        "p": 106364299435629977686372754387412957192737948659202627478214730600902888298507,
+        "g": 71523436088517310024049811689758238532898845296523155614346065044222178834354,
+        "y": 52250900079116344113988225945926778432872607287497157603353119883387545833655,
+        "x": 0
+    }
+},
+{
+    "model": "base.key",
+    "pk": 13,
+    "fields": {
+        "p": 69062629707564946661990956871406131939904007018339790219088491743934470709783,
+        "g": 51831320902194459337775962427833068655251367478196803555058334962732460939562,
+        "y": 7741569287706240268427408020010675118086130202513621236888366216881430753086,
+        "x": 68531198296858949772208442472790738260195781730536075482971904771726290372600
+    }
+},
+{
+    "model": "base.key",
+    "pk": 14,
+    "fields": {
+        "p": 69062629707564946661990956871406131939904007018339790219088491743934470709783,
+        "g": 51831320902194459337775962427833068655251367478196803555058334962732460939562,
+        "y": 7741569287706240268427408020010675118086130202513621236888366216881430753086,
+        "x": 0
+    }
+},
+{
+    "model": "base.key",
+    "pk": 15,
+    "fields": {
+        "p": 69062629707564946661990956871406131939904007018339790219088491743934470709783,
+        "g": 51831320902194459337775962427833068655251367478196803555058334962732460939562,
+        "y": 7741569287706240268427408020010675118086130202513621236888366216881430753086,
+        "x": 0
+    }
+},
+{
     "model": "census.census",
     "pk": 1,
     "fields": {
@@ -662,6 +768,22 @@
     }
 },
 {
+    "model": "census.census",
+    "pk": 21,
+    "fields": {
+        "voting_id": 5,
+        "voter_id": 2
+    }
+},
+{
+    "model": "census.census",
+    "pk": 22,
+    "fields": {
+        "voting_id": 6,
+        "voter_id": 2
+    }
+},
+{
     "model": "mixnet.mixnet",
     "pk": 1,
     "fields": {
@@ -682,6 +804,45 @@
         "auth_position": 0,
         "key": 4,
         "pubkey": 5,
+        "auths": [
+            2
+        ]
+    }
+},
+{
+    "model": "mixnet.mixnet",
+    "pk": 3,
+    "fields": {
+        "voting_id": 4,
+        "auth_position": 0,
+        "key": 7,
+        "pubkey": 8,
+        "auths": [
+            2
+        ]
+    }
+},
+{
+    "model": "mixnet.mixnet",
+    "pk": 4,
+    "fields": {
+        "voting_id": 5,
+        "auth_position": 0,
+        "key": 10,
+        "pubkey": 11,
+        "auths": [
+            2
+        ]
+    }
+},
+{
+    "model": "mixnet.mixnet",
+    "pk": 5,
+    "fields": {
+        "voting_id": 6,
+        "auth_position": 0,
+        "key": 13,
+        "pubkey": 14,
         "auths": [
             2
         ]
@@ -1263,6 +1424,82 @@
     }
 },
 {
+    "model": "store.vote",
+    "pk": 16,
+    "fields": {
+        "voting_id": 6,
+        "voter_id": 2,
+        "data": {
+            "age": {
+                "a": "53755124900737151703895122612450708120134899891010606001713830537646961548441",
+                "b": "66740898031747585520330782149012125341977866463698880577355795994468922869812"
+            },
+            "sex": {
+                "a": "65301081790996850932129862492489828139328260832261670376598163662181243140630",
+                "b": "53436703368480950217240513367556732939434477006192360274220462573681951611523"
+            },
+            "year": {
+                "a": "24943088826319884452684251318028059305766268638776723811491384615881724894961",
+                "b": "50686596029298886553312718910455234513204195373070804313227440714712932399446"
+            },
+            "grade": {
+                "a": "41614082871988296752443802066300178775647622102880072864211582706050734138513",
+                "b": "66545108596086471564422477984282070075470063184509577744228378707560296205492"
+            },
+            "Votaci\u00f3n general 2: Elige al delegado al centro": {
+                "a": "2653545150670142548764019153886670272956685957314099676643867132837077665324",
+                "b": "11955648003505871382411554198000314380656864798895031785068318810687257798165"
+            },
+            "Votaci\u00f3n general 2: Elige al delegado de primero": {
+                "a": "11231213591370657978443064472100474489657860787421219875329981493615848225999",
+                "b": "21190323594488599366809482962545683264484737703164989283096712060608723147278"
+            },
+            "Votaci\u00f3n general 2: Elige a los miembros de delegaci\u00f3n de alumnos": [
+                {
+                    "a": "11608309901234049569810253240542897342561484970371124874356945253598536010827",
+                    "b": "3989741115334957327541144974051569444286510951285476070007927679177285503840"
+                }
+            ]
+        },
+        "voted": "2021-01-16T01:35:22.061Z"
+    }
+},
+{
+    "model": "store.vote",
+    "pk": 17,
+    "fields": {
+        "voting_id": 5,
+        "voter_id": 2,
+        "data": {
+            "age": {
+                "a": "28262294427875369101088116228011425396058090908611804156584334187483404318907",
+                "b": "101649401147525622821916354036532462756598323040091696711998945031892910231124"
+            },
+            "sex": {
+                "a": "98253793763828494867643802165792686039713516481061081603560661404588662014799",
+                "b": "10459281376266475038593351056760884780637847938118686008141556006056729143279"
+            },
+            "year": {
+                "a": "61420881947261624984296329050156740910070606693988613314091595556175679588381",
+                "b": "44645576597385456436128554423598405053607321892168551855278429286696507929317"
+            },
+            "grade": {
+                "a": "6408617174124099183532685941621377483387077138945291670395917311851794827629",
+                "b": "81834149446306546808716863787754200933270998697697169956705487213268453924624"
+            },
+            "elige representante de primero de la candidatura \"Candidatura de ejemplo\"": {
+                "a": "22120960824465986320991944505998231149693386463879411434418726583921834555802",
+                "b": "93142033216017869196227646849883807021187679299778491290524592027386577546993"
+            },
+            "elige representante de delegado de centro de la candidatura \"Candidatura de ejemplo\"": {
+                "a": "70088489118936524211931054815191968982355150461495650302422364824153180959972",
+                "b": "49335458765319656313357466323946994311363148281226869890304275392065816255632"
+            }
+        },
+        "voted": "2021-01-16T01:35:37.554Z"
+    }
+},
+{
     "model": "voting.question",
     "pk": 1,
     "fields": {
@@ -1351,6 +1588,181 @@
     "pk": 13,
     "fields": {
         "desc": "Votaci\u00f3n general 1: Elige a los miembros de delegaci\u00f3n de alumnos"
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 14,
+    "fields": {
+        "desc": "elige representante de primero de la candidatura \"Candidatura de ejemplo\""
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 15,
+    "fields": {
+        "desc": "elige representante de segundo de la candidatura \"Candidatura de ejemplo\""
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 16,
+    "fields": {
+        "desc": "elige representante de tercero de la candidatura \"Candidatura de ejemplo\""
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 17,
+    "fields": {
+        "desc": "elige representante de cuarto de la candidatura \"Candidatura de ejemplo\""
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 18,
+    "fields": {
+        "desc": "elige representante de m\u00e1ster de la candidatura \"Candidatura de ejemplo\""
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 19,
+    "fields": {
+        "desc": "elige representante de delegado de centro de la candidatura \"Candidatura de ejemplo\""
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 20,
+    "fields": {
+        "desc": "elige representante de primero de la candidatura \"Candidatura de ejemplo\""
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 21,
+    "fields": {
+        "desc": "elige representante de segundo de la candidatura \"Candidatura de ejemplo\""
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 22,
+    "fields": {
+        "desc": "elige representante de tercero de la candidatura \"Candidatura de ejemplo\""
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 23,
+    "fields": {
+        "desc": "elige representante de cuarto de la candidatura \"Candidatura de ejemplo\""
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 24,
+    "fields": {
+        "desc": "elige representante de m\u00e1ster de la candidatura \"Candidatura de ejemplo\""
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 25,
+    "fields": {
+        "desc": "elige representante de delegado de centro de la candidatura \"Candidatura de ejemplo\""
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 26,
+    "fields": {
+        "desc": "elige representante de primero de la candidatura \"Candidatura de ejemplo\""
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 27,
+    "fields": {
+        "desc": "elige representante de segundo de la candidatura \"Candidatura de ejemplo\""
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 28,
+    "fields": {
+        "desc": "elige representante de tercero de la candidatura \"Candidatura de ejemplo\""
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 29,
+    "fields": {
+        "desc": "elige representante de cuarto de la candidatura \"Candidatura de ejemplo\""
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 30,
+    "fields": {
+        "desc": "elige representante de m\u00e1ster de la candidatura \"Candidatura de ejemplo\""
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 31,
+    "fields": {
+        "desc": "elige representante de delegado de centro de la candidatura \"Candidatura de ejemplo\""
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 32,
+    "fields": {
+        "desc": "Votaci\u00f3n general 2: Elige al delegado de primero"
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 33,
+    "fields": {
+        "desc": "Votaci\u00f3n general 2: Elige al delegado de segundo"
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 34,
+    "fields": {
+        "desc": "Votaci\u00f3n general 2: Elige al delegado de tercero"
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 35,
+    "fields": {
+        "desc": "Votaci\u00f3n general 2: Elige al delegado de cuarto"
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 36,
+    "fields": {
+        "desc": "Votaci\u00f3n general 2: Elige al delegado del master"
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 37,
+    "fields": {
+        "desc": "Votaci\u00f3n general 2: Elige al delegado al centro"
+    }
+},
+{
+    "model": "voting.question",
+    "pk": 38,
+    "fields": {
+        "desc": "Votaci\u00f3n general 2: Elige a los miembros de delegaci\u00f3n de alumnos"
     }
 },
 {
@@ -1628,6 +2040,645 @@
     "pk": 31,
     "fields": {
         "question": 13,
+        "number": 5,
+        "option": "Lorena Gabarri / 11"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 32,
+    "fields": {
+        "question": 14,
+        "number": 1,
+        "option": "Francisco P\u00e9rez / 2"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 33,
+    "fields": {
+        "question": 14,
+        "number": 2,
+        "option": "Angel Parrado / 7"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 34,
+    "fields": {
+        "question": 15,
+        "number": 1,
+        "option": "David Adri\u00e1n / 3"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 35,
+    "fields": {
+        "question": 15,
+        "number": 2,
+        "option": "Eva Zambrano / 8"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 36,
+    "fields": {
+        "question": 16,
+        "number": 1,
+        "option": "Maria Sales / 4"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 37,
+    "fields": {
+        "question": 16,
+        "number": 2,
+        "option": "Ana Fontan / 9"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 38,
+    "fields": {
+        "question": 17,
+        "number": 1,
+        "option": "Josefina Varas / 5"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 39,
+    "fields": {
+        "question": 17,
+        "number": 2,
+        "option": "Antonio Linares / 10"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 40,
+    "fields": {
+        "question": 18,
+        "number": 1,
+        "option": "Jose Luis Granados / 6"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 41,
+    "fields": {
+        "question": 18,
+        "number": 2,
+        "option": "Lorena Gabarri / 11"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 42,
+    "fields": {
+        "question": 19,
+        "number": 1,
+        "option": "Francisco P\u00e9rez / 2"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 43,
+    "fields": {
+        "question": 19,
+        "number": 2,
+        "option": "David Adri\u00e1n / 3"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 44,
+    "fields": {
+        "question": 19,
+        "number": 3,
+        "option": "Maria Sales / 4"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 45,
+    "fields": {
+        "question": 19,
+        "number": 4,
+        "option": "Josefina Varas / 5"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 46,
+    "fields": {
+        "question": 19,
+        "number": 5,
+        "option": "Jose Luis Granados / 6"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 47,
+    "fields": {
+        "question": 19,
+        "number": 6,
+        "option": "Angel Parrado / 7"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 48,
+    "fields": {
+        "question": 19,
+        "number": 7,
+        "option": "Eva Zambrano / 8"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 49,
+    "fields": {
+        "question": 19,
+        "number": 8,
+        "option": "Ana Fontan / 9"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 50,
+    "fields": {
+        "question": 19,
+        "number": 9,
+        "option": "Antonio Linares / 10"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 51,
+    "fields": {
+        "question": 19,
+        "number": 10,
+        "option": "Lorena Gabarri / 11"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 52,
+    "fields": {
+        "question": 20,
+        "number": 1,
+        "option": "Francisco P\u00e9rez / 2"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 53,
+    "fields": {
+        "question": 20,
+        "number": 2,
+        "option": "Angel Parrado / 7"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 54,
+    "fields": {
+        "question": 21,
+        "number": 1,
+        "option": "David Adri\u00e1n / 3"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 55,
+    "fields": {
+        "question": 21,
+        "number": 2,
+        "option": "Eva Zambrano / 8"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 56,
+    "fields": {
+        "question": 22,
+        "number": 1,
+        "option": "Maria Sales / 4"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 57,
+    "fields": {
+        "question": 22,
+        "number": 2,
+        "option": "Ana Fontan / 9"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 58,
+    "fields": {
+        "question": 23,
+        "number": 1,
+        "option": "Josefina Varas / 5"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 59,
+    "fields": {
+        "question": 23,
+        "number": 2,
+        "option": "Antonio Linares / 10"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 60,
+    "fields": {
+        "question": 24,
+        "number": 1,
+        "option": "Jose Luis Granados / 6"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 61,
+    "fields": {
+        "question": 24,
+        "number": 2,
+        "option": "Lorena Gabarri / 11"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 62,
+    "fields": {
+        "question": 25,
+        "number": 1,
+        "option": "Francisco P\u00e9rez / 2"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 63,
+    "fields": {
+        "question": 25,
+        "number": 2,
+        "option": "David Adri\u00e1n / 3"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 64,
+    "fields": {
+        "question": 25,
+        "number": 3,
+        "option": "Maria Sales / 4"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 65,
+    "fields": {
+        "question": 25,
+        "number": 4,
+        "option": "Josefina Varas / 5"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 66,
+    "fields": {
+        "question": 25,
+        "number": 5,
+        "option": "Jose Luis Granados / 6"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 67,
+    "fields": {
+        "question": 25,
+        "number": 6,
+        "option": "Angel Parrado / 7"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 68,
+    "fields": {
+        "question": 25,
+        "number": 7,
+        "option": "Eva Zambrano / 8"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 69,
+    "fields": {
+        "question": 25,
+        "number": 8,
+        "option": "Ana Fontan / 9"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 70,
+    "fields": {
+        "question": 25,
+        "number": 9,
+        "option": "Antonio Linares / 10"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 71,
+    "fields": {
+        "question": 25,
+        "number": 10,
+        "option": "Lorena Gabarri / 11"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 72,
+    "fields": {
+        "question": 26,
+        "number": 1,
+        "option": "Francisco P\u00e9rez / 2"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 73,
+    "fields": {
+        "question": 26,
+        "number": 2,
+        "option": "Angel Parrado / 7"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 74,
+    "fields": {
+        "question": 27,
+        "number": 1,
+        "option": "David Adri\u00e1n / 3"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 75,
+    "fields": {
+        "question": 27,
+        "number": 2,
+        "option": "Eva Zambrano / 8"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 76,
+    "fields": {
+        "question": 28,
+        "number": 1,
+        "option": "Maria Sales / 4"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 77,
+    "fields": {
+        "question": 28,
+        "number": 2,
+        "option": "Ana Fontan / 9"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 78,
+    "fields": {
+        "question": 29,
+        "number": 1,
+        "option": "Josefina Varas / 5"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 79,
+    "fields": {
+        "question": 29,
+        "number": 2,
+        "option": "Antonio Linares / 10"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 80,
+    "fields": {
+        "question": 30,
+        "number": 1,
+        "option": "Jose Luis Granados / 6"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 81,
+    "fields": {
+        "question": 30,
+        "number": 2,
+        "option": "Lorena Gabarri / 11"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 82,
+    "fields": {
+        "question": 31,
+        "number": 1,
+        "option": "Francisco P\u00e9rez / 2"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 83,
+    "fields": {
+        "question": 31,
+        "number": 2,
+        "option": "David Adri\u00e1n / 3"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 84,
+    "fields": {
+        "question": 31,
+        "number": 3,
+        "option": "Maria Sales / 4"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 85,
+    "fields": {
+        "question": 31,
+        "number": 4,
+        "option": "Josefina Varas / 5"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 86,
+    "fields": {
+        "question": 31,
+        "number": 5,
+        "option": "Jose Luis Granados / 6"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 87,
+    "fields": {
+        "question": 31,
+        "number": 6,
+        "option": "Angel Parrado / 7"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 88,
+    "fields": {
+        "question": 31,
+        "number": 7,
+        "option": "Eva Zambrano / 8"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 89,
+    "fields": {
+        "question": 31,
+        "number": 8,
+        "option": "Ana Fontan / 9"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 90,
+    "fields": {
+        "question": 31,
+        "number": 9,
+        "option": "Antonio Linares / 10"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 91,
+    "fields": {
+        "question": 31,
+        "number": 10,
+        "option": "Lorena Gabarri / 11"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 92,
+    "fields": {
+        "question": 32,
+        "number": 1,
+        "option": "Francisco P\u00e9rez / 2"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 93,
+    "fields": {
+        "question": 33,
+        "number": 1,
+        "option": "David Adri\u00e1n / 3"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 94,
+    "fields": {
+        "question": 34,
+        "number": 1,
+        "option": "Maria Sales / 4"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 95,
+    "fields": {
+        "question": 35,
+        "number": 1,
+        "option": "Josefina Varas / 5"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 96,
+    "fields": {
+        "question": 36,
+        "number": 1,
+        "option": "Jose Luis Granados / 6"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 97,
+    "fields": {
+        "question": 37,
+        "number": 1,
+        "option": "Francisco P\u00e9rez / 2"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 98,
+    "fields": {
+        "question": 38,
+        "number": 1,
+        "option": "Angel Parrado / 7"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 99,
+    "fields": {
+        "question": 38,
+        "number": 2,
+        "option": "Eva Zambrano / 8"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 100,
+    "fields": {
+        "question": 38,
+        "number": 3,
+        "option": "Ana Fontan / 9"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 101,
+    "fields": {
+        "question": 38,
+        "number": 4,
+        "option": "Antonio Linares / 10"
+    }
+},
+{
+    "model": "voting.questionoption",
+    "pk": 102,
+    "fields": {
+        "question": 38,
         "number": 5,
         "option": "Lorena Gabarri / 11"
     }
@@ -2267,12 +3318,423 @@
         "name": "Votaci\u00f3n general 1",
         "desc": "Elige a los representantes de tu centro",
         "start_date": "2021-01-15T10:53:30.232Z",
-        "end_date": null,
+        "end_date": "2021-01-15T22:00:14.402Z",
         "tipo": "GV",
         "candiancy": null,
         "pub_key": 6,
-        "tally": null,
-        "postproc": null,
+        "tally": [
+            {
+                "age": 22,
+                "sex": "Woman",
+                "year": "Master",
+                "grade": "Software",
+                "Votaci\u00f3n general 1: Elige al delegado al centro": 1,
+                "Votaci\u00f3n general 1: Elige al delegado del master": 1,
+                "<h2>Votaci\u00f3n general 1: Elige a los miembros de delegaci\u00f3n de alumnos</h2>": [
+                    7,
+                    8
+                ]
+            },
+            {
+                "age": 21,
+                "sex": "Man",
+                "year": "Fourth",
+                "grade": "Software",
+                "Votaci\u00f3n general 1: Elige al delegado al centro": 1,
+                "Votaci\u00f3n general 1: Elige al delegado de cuarto": 1,
+                "<h2>Votaci\u00f3n general 1: Elige a los miembros de delegaci\u00f3n de alumnos</h2>": [
+                    8,
+                    9
+                ]
+            },
+            {
+                "age": 20,
+                "sex": "Woman",
+                "year": "Third",
+                "grade": "Software",
+                "Votaci\u00f3n general 1: Elige al delegado al centro": 1,
+                "Votaci\u00f3n general 1: Elige al delegado de tercero": 1,
+                "<h2>Votaci\u00f3n general 1: Elige a los miembros de delegaci\u00f3n de alumnos</h2>": [
+                    8,
+                    10
+                ]
+            },
+            {
+                "age": 19,
+                "sex": "Woman",
+                "year": "Second",
+                "grade": "Software",
+                "Votaci\u00f3n general 1: Elige al delegado al centro": 1,
+                "Votaci\u00f3n general 1: Elige al delegado de segundo": 1,
+                "<h2>Votaci\u00f3n general 1: Elige a los miembros de delegaci\u00f3n de alumnos</h2>": [
+                    7,
+                    10
+                ]
+            },
+            {
+                "age": 18,
+                "sex": "Man",
+                "year": "First",
+                "grade": "Software",
+                "Votaci\u00f3n general 1: Elige al delegado al centro": 1,
+                "Votaci\u00f3n general 1: Elige al delegado de primero": 1,
+                "<h2>Votaci\u00f3n general 1: Elige a los miembros de delegaci\u00f3n de alumnos</h2>": [
+                    8,
+                    9
+                ]
+            }
+        ],
+        "postproc": {
+            "id": 2,
+            "desc": "Elige a los representantes de tu centro",
+            "tipo": "GV",
+            "type": "IDENTITY",
+            "titulo": "Votaci\u00f3n general 1",
+            "fecha_fin": "2021-01-15 22:00:14.402326+00:00",
+            "preguntas": [
+                {
+                    "opts": [
+                        {
+                            "votes": 5,
+                            "nombre": "Francisco P\u00e9rez / 2",
+                            "numero": 1,
+                            "voto_F": 3,
+                            "voto_M": 2,
+                            "media_edad": 20.0,
+                            "voto_curso": {
+                                "cuarto": 1,
+                                "master": 1,
+                                "primero": 1,
+                                "segundo": 1,
+                                "tercero": 1
+                            },
+                            "estadisticas": {
+                                "votos_f": 60.0,
+                                "votos_m": 40.0,
+                                "votos_censo": 50.0,
+                                "votos_cuarto": 20.0,
+                                "votos_master": 20.0,
+                                "votos_primero": 20.0,
+                                "votos_segundo": 20.0,
+                                "votos_tercero": 20.0
+                            }
+                        }
+                    ],
+                    "titulo": "Votaci\u00f3n general 1: Elige al delegado al centro",
+                    "indice_preg": 0,
+                    "numero_candidatos": 1
+                },
+                {
+                    "opts": [
+                        {
+                            "votes": 1,
+                            "nombre": "Francisco P\u00e9rez / 2",
+                            "numero": 1,
+                            "voto_F": 0,
+                            "voto_M": 1,
+                            "media_edad": 18.0,
+                            "estadisticas": {
+                                "votos_f": 0.0,
+                                "votos_m": 100.0,
+                                "votos_censo": 50.0
+                            }
+                        }
+                    ],
+                    "titulo": "Votaci\u00f3n general 1: Elige al delegado de primero",
+                    "n_votantes": 1,
+                    "indice_preg": 1,
+                    "n_votantes_f": 1,
+                    "n_votantes_m": 1,
+                    "n_hombres_censo": 2,
+                    "n_mujeres_censo": 0,
+                    "n_personas_censo": 2,
+                    "numero_candidatos": 1,
+                    "media_edad_votantes": 18.0
+                },
+                {
+                    "opts": [
+                        {
+                            "votes": 1,
+                            "nombre": "David Adri\u00e1n / 3",
+                            "numero": 1,
+                            "voto_F": 1,
+                            "voto_M": 0,
+                            "media_edad": 19.0,
+                            "estadisticas": {
+                                "votos_f": 100.0,
+                                "votos_m": 0.0,
+                                "votos_censo": 50.0
+                            }
+                        }
+                    ],
+                    "titulo": "Votaci\u00f3n general 1: Elige al delegado de segundo",
+                    "n_votantes": 1,
+                    "indice_preg": 2,
+                    "n_votantes_f": 0,
+                    "n_votantes_m": 0,
+                    "n_hombres_censo": 1,
+                    "n_mujeres_censo": 1,
+                    "n_personas_censo": 2,
+                    "numero_candidatos": 1,
+                    "media_edad_votantes": 19.0
+                },
+                {
+                    "opts": [
+                        {
+                            "votes": 1,
+                            "nombre": "Maria Sales / 4",
+                            "numero": 1,
+                            "voto_F": 1,
+                            "voto_M": 0,
+                            "media_edad": 20.0,
+                            "estadisticas": {
+                                "votos_f": 100.0,
+                                "votos_m": 0.0,
+                                "votos_censo": 50.0
+                            }
+                        }
+                    ],
+                    "titulo": "Votaci\u00f3n general 1: Elige al delegado de tercero",
+                    "n_votantes": 1,
+                    "indice_preg": 3,
+                    "n_votantes_f": 0,
+                    "n_votantes_m": 0,
+                    "n_hombres_censo": 0,
+                    "n_mujeres_censo": 2,
+                    "n_personas_censo": 2,
+                    "numero_candidatos": 1,
+                    "media_edad_votantes": 20.0
+                },
+                {
+                    "opts": [
+                        {
+                            "votes": 1,
+                            "nombre": "Josefina Varas / 5",
+                            "numero": 1,
+                            "voto_F": 0,
+                            "voto_M": 1,
+                            "media_edad": 21.0,
+                            "estadisticas": {
+                                "votos_f": 0.0,
+                                "votos_m": 100.0,
+                                "votos_censo": 50.0
+                            }
+                        }
+                    ],
+                    "titulo": "Votaci\u00f3n general 1: Elige al delegado de cuarto",
+                    "n_votantes": 1,
+                    "indice_preg": 4,
+                    "n_votantes_f": 1,
+                    "n_votantes_m": 1,
+                    "n_hombres_censo": 1,
+                    "n_mujeres_censo": 1,
+                    "n_personas_censo": 2,
+                    "numero_candidatos": 1,
+                    "media_edad_votantes": 21.0
+                },
+                {
+                    "opts": [
+                        {
+                            "votes": 1,
+                            "nombre": "Jose Luis Granados / 6",
+                            "numero": 1,
+                            "voto_F": 1,
+                            "voto_M": 0,
+                            "media_edad": 22.0,
+                            "estadisticas": {
+                                "votos_f": 100.0,
+                                "votos_m": 0.0,
+                                "votos_censo": 50.0
+                            }
+                        }
+                    ],
+                    "titulo": "Votaci\u00f3n general 1: Elige al delegado del master",
+                    "n_votantes": 1,
+                    "indice_preg": 5,
+                    "n_votantes_f": 0,
+                    "n_votantes_m": 0,
+                    "n_hombres_censo": 1,
+                    "n_mujeres_censo": 1,
+                    "n_personas_censo": 2,
+                    "numero_candidatos": 1,
+                    "media_edad_votantes": 22.0
+                },
+                {
+                    "opts": [
+                        {
+                            "votes": 0,
+                            "nombre": "Angel Parrado / 7",
+                            "numero": 1,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "voto_curso": {
+                                "cuarto": 0,
+                                "master": 0,
+                                "primero": 0,
+                                "segundo": 0,
+                                "tercero": 0
+                            },
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0.0,
+                                "votos_cuarto": 0,
+                                "votos_master": 0,
+                                "votos_primero": 0,
+                                "votos_segundo": 0,
+                                "votos_tercero": 0
+                            }
+                        },
+                        {
+                            "votes": 0,
+                            "nombre": "Eva Zambrano / 8",
+                            "numero": 2,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "voto_curso": {
+                                "cuarto": 0,
+                                "master": 0,
+                                "primero": 0,
+                                "segundo": 0,
+                                "tercero": 0
+                            },
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0.0,
+                                "votos_cuarto": 0,
+                                "votos_master": 0,
+                                "votos_primero": 0,
+                                "votos_segundo": 0,
+                                "votos_tercero": 0
+                            }
+                        },
+                        {
+                            "votes": 0,
+                            "nombre": "Ana Fontan / 9",
+                            "numero": 3,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "voto_curso": {
+                                "cuarto": 0,
+                                "master": 0,
+                                "primero": 0,
+                                "segundo": 0,
+                                "tercero": 0
+                            },
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0.0,
+                                "votos_cuarto": 0,
+                                "votos_master": 0,
+                                "votos_primero": 0,
+                                "votos_segundo": 0,
+                                "votos_tercero": 0
+                            }
+                        },
+                        {
+                            "votes": 0,
+                            "nombre": "Antonio Linares / 10",
+                            "numero": 4,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "voto_curso": {
+                                "cuarto": 0,
+                                "master": 0,
+                                "primero": 0,
+                                "segundo": 0,
+                                "tercero": 0
+                            },
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0.0,
+                                "votos_cuarto": 0,
+                                "votos_master": 0,
+                                "votos_primero": 0,
+                                "votos_segundo": 0,
+                                "votos_tercero": 0
+                            }
+                        },
+                        {
+                            "votes": 0,
+                            "nombre": "Lorena Gabarri / 11",
+                            "numero": 5,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "voto_curso": {
+                                "cuarto": 0,
+                                "master": 0,
+                                "primero": 0,
+                                "segundo": 0,
+                                "tercero": 0
+                            },
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0.0,
+                                "votos_cuarto": 0,
+                                "votos_master": 0,
+                                "votos_primero": 0,
+                                "votos_segundo": 0,
+                                "votos_tercero": 0
+                            }
+                        }
+                    ],
+                    "titulo": "Votaci\u00f3n general 1: Elige a los miembros de delegaci\u00f3n de alumnos",
+                    "indice_preg": 6,
+                    "numero_candidatos": 5
+                }
+            ],
+            "n_votantes": 5,
+            "estadisticas": {
+                "abstencion": {
+                    "_0": 50.0,
+                    "_1": 50.0,
+                    "_2": 50.0,
+                    "_3": 50.0,
+                    "_4": 50.0,
+                    "_5": 50.0
+                },
+                "media_edad": {
+                    "_0": 20.0,
+                    "_1": 18.0,
+                    "_2": 19.0,
+                    "_3": 20.0,
+                    "_4": 21.0,
+                    "_5": 22.0
+                },
+                "abstencion_f": {
+                    "_0": 40.0,
+                    "_1": 0,
+                    "_2": 100.0,
+                    "_3": 100.0,
+                    "_4": 0.0,
+                    "_5": 100.0
+                },
+                "abstencion_m": {
+                    "_0": 60.0,
+                    "_1": 50.0,
+                    "_2": 100.0,
+                    "_3": 0,
+                    "_4": 0.0,
+                    "_5": 100.0
+                }
+            },
+            "fecha_inicio": "2021-01-15 10:53:30.232000+00:00",
+            "n_votantes_f": 3,
+            "n_votantes_m": 2,
+            "n_hombres_censo": 5,
+            "n_mujeres_censo": 5,
+            "n_personas_censo": 10,
+            "media_edad_votantes": 20.0
+        },
         "question": [
             7,
             8,
@@ -2281,6 +3743,115 @@
             11,
             12,
             13
+        ],
+        "auths": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "voting.voting",
+    "pk": 3,
+    "fields": {
+        "name": "Votaciones de la candidatura \"Candidatura de ejemplo\"",
+        "desc": "Elige a los representantes de tu candidatura.",
+        "start_date": null,
+        "end_date": null,
+        "tipo": "PV",
+        "candiancy": 1,
+        "pub_key": null,
+        "tally": null,
+        "postproc": null,
+        "question": [
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+        ],
+        "auths": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "voting.voting",
+    "pk": 4,
+    "fields": {
+        "name": "Votaciones de la candidatura \"Candidatura de ejemplo\"",
+        "desc": "Elige a los representantes de tu candidatura.",
+        "start_date": "2021-01-15T22:24:54.201Z",
+        "end_date": "2021-01-15T22:25:04.154Z",
+        "tipo": "PV",
+        "candiancy": 1,
+        "pub_key": 9,
+        "tally": null,
+        "postproc": null,
+        "question": [
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+        ],
+        "auths": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "voting.voting",
+    "pk": 5,
+    "fields": {
+        "name": "Votaciones de la candidatura \"Candidatura de ejemplo\"",
+        "desc": "Elige a los representantes de tu candidatura.",
+        "start_date": "2021-01-15T22:25:17.582Z",
+        "end_date": null,
+        "tipo": "PV",
+        "candiancy": 1,
+        "pub_key": 12,
+        "tally": null,
+        "postproc": null,
+        "question": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
+        ],
+        "auths": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "voting.voting",
+    "pk": 6,
+    "fields": {
+        "name": "Votaci\u00f3n general 2",
+        "desc": "Elige a los representantes de tu centro",
+        "start_date": "2021-01-16T01:34:17.022Z",
+        "end_date": "2021-01-16T01:36:02.851Z",
+        "tipo": "GV",
+        "candiancy": null,
+        "pub_key": 15,
+        "tally": null,
+        "postproc": null,
+        "question": [
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38
         ],
         "auths": [
             1,
@@ -2570,6 +4141,32 @@
         "content_type": 22,
         "object_id": "20",
         "object_repr": "Census object (20)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+        "action_time": "2021-01-16T01:33:34.607Z",
+        "user": 1,
+        "content_type": 22,
+        "object_id": "21",
+        "object_repr": "Census object (21)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+        "action_time": "2021-01-16T01:34:50.787Z",
+        "user": 1,
+        "content_type": 22,
+        "object_id": "22",
+        "object_repr": "Census object (22)",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }

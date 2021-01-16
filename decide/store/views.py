@@ -41,7 +41,7 @@ class StoreView(generics.ListAPIView):
             return Response({}, status=status.HTTP_400_BAD_REQUEST)
 
         # validating voter
-        token = request.auth.key
+        token = request.data.get('token')
         voter = mods.post('authentication', entry_point='/getuser/', json={'token': token})
         voter_id = voter.get('id', None)
         if not voter_id or voter_id != uid:
@@ -56,9 +56,13 @@ class StoreView(generics.ListAPIView):
         ########################## New encrypt ##########################
         #################################################################
 
-        v, _ = Vote.objects.get_or_create(voting_id=vid, voter_id=uid,
-                                          data=vote)
+        v = Vote.objects.filter(voting_id=vid, voter_id=uid)
 
-        v.save()
+        if len(v) == 0:
+            v1 = Vote.objects.create(voting_id=vid, voter_id=uid, data=vote)
+        else:
+            v1 = v[0]
+            v1.data = vote
+        v1.save()
 
         return  Response({})
