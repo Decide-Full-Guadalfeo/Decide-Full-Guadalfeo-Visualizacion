@@ -1,4 +1,4 @@
-dist: xenial
+ist: xenial
 
 services:
   - postgresql
@@ -26,6 +26,18 @@ install:
   - pip install selenium
 script:
   - cd decide
-  - coverage run --branch --source=. ./manage.py test --keepdb --with-xunit
-  - coverage xml
-  - python-codacy-coverage -r coverage.xml
+  - cp travis_local_settings.py local_settings.py
+  - cd decide
+  - cp travis_settings.py settings.py
+  - cd ..
+  # - coverage run --branch --source=. ./manage.py test visualizer --keepdb
+  # - coverage xml
+  # - python-codacy-coverage -r coverage.xml
+deploy:
+  provider: heroku
+  app: guadalfeo-visualizer
+  strategy: git
+  api_key: $HEROKU_AUTH_TOKEN
+  run: "cd decide && python ./manage.py flush --noinput && python ./manage.py loaddata example_data_visualizer.json"
+  on:
+    branch: Task-200-Reyes

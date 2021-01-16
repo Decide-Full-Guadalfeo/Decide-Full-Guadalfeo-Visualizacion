@@ -75,17 +75,18 @@ class BoothListView(APIView):
             votings = []
 
             if not census:
-                msg= 'You dont have any votings'
-            
+                msg = 'You dont have any votings'
+
             else:
                 for c in census:
                     try:
                         voting = Voting.objects.get(id=c.voting_id)
                         if voting.start_date != None and voting.end_date == None:
-                            votings.append({'name':voting.name, 'id':voting.id})
+                            votings.append({'name': voting.name, 'id': voting.id})
                     except:
                         print('La votación con id', c.voting_id, 'ha sido borrada')
 
+            if len(votings) == 0:
+                msg = 'You dont have any votings'
 
-        
-        return render(request, 'booth/boothlist.html', {'msg':msg, 'votings':votings})
+        return render(request, 'booth/boothlist.html', {'msg': msg, 'votings': votings})

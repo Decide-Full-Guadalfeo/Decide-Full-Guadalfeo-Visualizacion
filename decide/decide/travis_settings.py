@@ -157,7 +157,7 @@ WSGI_APPLICATION = 'decide.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'decide',
+        'NAME': 'decidegeneral',
         'USER': 'decide',
         'PASSWORD': 'decide',
         'HOST': 'localhost',
@@ -204,6 +204,7 @@ TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # number of bits for the key, all auths should use the same number of bits
 KEYBITS = 256
@@ -212,8 +213,18 @@ KEYBITS = 256
 ALLOWED_VERSIONS = ['v1', 'v2']
 DEFAULT_VERSION = 'v1'
 
-BASEURL="https://decide-full-guadalfeo-auth.herokuapp.com"
-APIS = {}
+BASEURL = "http://localhost:8000/"
+APIS = {
+    'authentication': BASEURL,
+    'base': BASEURL,
+    'booth': BASEURL,
+    'census': BASEURL,
+    'mixnet': BASEURL,
+    'postproc': BASEURL,
+    'store': BASEURL,
+    'visualizer': BASEURL,
+    'voting': BASEURL,
+}
 
 try:
     from local_settings import *
@@ -230,6 +241,6 @@ if os.path.exists("config.jsonnet"):
 
 INSTALLED_APPS = INSTALLED_APPS + MODULES
 
-import django_heroku
+#import django_heroku
 
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
