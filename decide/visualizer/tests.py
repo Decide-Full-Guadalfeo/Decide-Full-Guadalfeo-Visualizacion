@@ -89,20 +89,20 @@ class TesExport(StaticLiveServerTestCase):
         self.driver.quit()
         self.base.tearDown()
 
-    def voting_in_process(self):
+    def test_voting_in_process(self):
         self.driver.get("http://localhost:8000/visualizer/2")
         self.driver.maximize_window()
-        self.assertTrue(self.driver.find_element_by_css_selector('h2')=="Votación en curso")
+        assert self.driver.find_element(By.CSS_SELECTOR, "h2").text == "Votación en curso"
 
-    def voting_is_not_started(self):
+    def test_voting_is_not_started(self):
         self.driver.get("http://localhost:8000/visualizer/3")
         self.driver.maximize_window()
-        self.assertTrue(self.driver.find_element_by_css_selector('h2')=="Votación no comenzada")
+        assert self.driver.find_element(By.CSS_SELECTOR, "h2").text == "Votación no comenzada"
 
-    def voting_without_tally(self):
+    def test_voting_without_tally(self):
         self.driver.get("http://localhost:8000/visualizer/4")
         self.driver.maximize_window()
-        self.assertTrue(self.driver.find_element_by_css_selector('h2')=="Votación sin recuento")
+        assert self.driver.find_element(By.CSS_SELECTOR, "h2").text == "Votación sin recuento"
         
     def test_exportar_PDF(self):
         self.driver.get("http://localhost:8000/visualizer/1")
@@ -153,3 +153,94 @@ class TesExport(StaticLiveServerTestCase):
         assert len(elements) > 0
         elements = self.driver.find_elements(By.CSS_SELECTOR, "tr:nth-child(2) > td:nth-child(1)")
         assert len(elements) > 0
+
+    def test_acceso_ContactUs_section(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.set_window_size(1936, 1056)
+        self.driver.find_element(By.LINK_TEXT, "Contact Us").click()
+        assert self.driver.find_element(By.CSS_SELECTOR, ".body > h1").text == "¡Contáctanos!"
+
+    def test_botones_ContactUs(self):
+        self.driver.get("http://localhost:8000/visualizer/contactUs/")
+        self.driver.set_window_size(1936, 1056)
+        self.driver.find_element(By.ID, "correoEz").click()
+
+    def test_graficas_barras_first_section_show(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.set_window_size(1936, 1056)
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo0 > .heading")
+        assert len(elements) > 0
+        assert self.driver.find_element(By.CSS_SELECTOR, "#divMyChartVotes0 > h6").text == "Votos de todos los candidatos"
+        elements = self.driver.find_elements(By.ID, "myChartVotes0")
+        assert len(elements) > 0
+        assert self.driver.find_element(By.CSS_SELECTOR, "#divMyChartAges0 > h6").text == "Media de edad de los votantes"
+        elements = self.driver.find_elements(By.ID, "myChartAges0")
+        assert len(elements) > 0
+
+    def test_graficas_barras_second_section_show(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.set_window_size(1936, 1056)
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo1 > .heading")
+        assert len(elements) > 0
+        assert self.driver.find_element(By.CSS_SELECTOR, "#divMyChartVotes1 > h6").text == "Votos de todos los candidatos"
+        elements = self.driver.find_elements(By.ID, "myChartVotes1")
+        assert len(elements) > 0
+        assert self.driver.find_element(By.CSS_SELECTOR, "#divMyChartAges1 > h6").text == "Media de edad de los votantes"
+        elements = self.driver.find_elements(By.ID, "myChartAges1")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo2 > .heading")
+        assert len(elements) > 0
+        assert self.driver.find_element(By.CSS_SELECTOR, "#divMyChartVotes2 > h6").text == "Votos de todos los candidatos"
+        elements = self.driver.find_elements(By.ID, "myChartVotes2")
+        assert len(elements) > 0
+        assert self.driver.find_element(By.CSS_SELECTOR, "#divMyChartAges2 > h6").text == "Media de edad de los votantes"
+        elements = self.driver.find_elements(By.ID, "myChartAges2")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo3 > .heading")
+        assert len(elements) > 0
+        assert self.driver.find_element(By.CSS_SELECTOR, "#divMyChartVotes3 > h6").text == "Votos de todos los candidatos"
+        elements = self.driver.find_elements(By.ID, "myChartVotes3")
+        assert len(elements) > 0
+        assert self.driver.find_element(By.CSS_SELECTOR, "#divMyChartAges3 > h6").text == "Media de edad de los votantes"
+        elements = self.driver.find_elements(By.ID, "myChartAges3")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo4 > .heading")
+        assert len(elements) > 0
+        assert self.driver.find_element(By.CSS_SELECTOR, "#divMyChartVotes4 > h6").text == "Votos de todos los candidatos"
+        elements = self.driver.find_elements(By.ID, "myChartVotes4")
+        assert len(elements) > 0
+        assert self.driver.find_element(By.CSS_SELECTOR, "#divMyChartAges4 > h6").text == "Media de edad de los votantes"
+        elements = self.driver.find_elements(By.ID, "myChartAges4")
+        assert len(elements) > 0
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo5 > .heading")
+        assert len(elements) > 0
+        assert self.driver.find_element(By.CSS_SELECTOR, "#divMyChartVotes5 > h6").text == "Votos de todos los candidatos"
+        elements = self.driver.find_elements(By.ID, "myChartVotes5")
+        assert len(elements) > 0
+        assert self.driver.find_element(By.CSS_SELECTOR, "#divMyChartAges5 > h6").text == "Media de edad de los votantes"
+        elements = self.driver.find_elements(By.ID, "myChartAges5")
+        assert len(elements) > 0
+
+    def test_graficas_barras_third_section_not_show(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.set_window_size(1936, 1056)
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo6 > .heading")
+        assert len(elements) == 0
+        elements = self.driver.find_elements(By.ID, "myChartVotes")
+        assert len(elements) == 0
+        elements = self.driver.find_elements(By.ID, "myChartAges")
+        assert len(elements) == 0
+
+    # def test_graficas_barras_third_section_show(self):
+    #     self.driver.get("http://localhost:8000/visualizer//")
+    #     self.driver.set_window_size(1936, 1056)
+    #     elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo6 > .heading")
+    #     assert len(elements) > 0
+    #     assert self.driver.find_element(By.CSS_SELECTOR, "#divMyChartVotes6 > h6").text == "Votos de todos los candidatos"
+    #     elements = self.driver.find_elements(By.ID, "myChartVotes6")
+    #     assert len(elements) > 0
+    #     assert self.driver.find_element(By.CSS_SELECTOR, "#divMyChartAges6 > h6").text == "Media de edad de los votantes"
+    #     elements = self.driver.find_elements(By.ID, "myChartAges6")
+    #     assert len(elements) > 0
+        
+
