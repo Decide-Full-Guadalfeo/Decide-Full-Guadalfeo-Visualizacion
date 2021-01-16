@@ -20,7 +20,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from .forms import RegisterVotingUserForm, ProfileUserForm, ProfileVotingUserForm, CustomUserCreationForm
 from django.contrib import messages
 from .models import VotingUser
-from voting.models import Voting
+from voting.models import Voting, Candidatura
 
 class GetUserView(APIView):
     def post(self, request):
@@ -74,9 +74,16 @@ class IndexUserView(APIView):
         except ObjectDoesNotExist:
             votinguser = None
 
+        # Get all started candidatures
+        open_votings = Voting.objects.all().filter(end_date=None)
+        candidaturas = [voting.candiancy for voting in open_votings if voting.candiancy]
+
+        print(candidaturas)
+
         return render(request, 'index/index.html', {
             "voting_user": votinguser,
             "votes": Voting.objects.all(),
+            "candidaturas": candidaturas
         })
 
 
@@ -287,6 +294,19 @@ class GetUserDetailsView(APIView):
                                   "error": "Not authorized!",
                               })
 
+# CANDIDATURES
+
+class GetCandidaturesView(APIView):
+    def get(self, request, id):
+
+        try:
+            candidatura = Candidatura.objects.get(id=id)
+        except ObjectDoesNotExist:
+            return render(request, "index/error.html", { "error":"There is not candidature"})
+
+        return render(request, "votingusers/candidatures.html", {
+            "candidatura": candidatura
+        })
 
 # API
 

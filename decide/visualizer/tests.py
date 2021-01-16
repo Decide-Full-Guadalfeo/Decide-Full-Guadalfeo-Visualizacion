@@ -50,6 +50,18 @@ class VisualizerTestCase(BaseTestCase):
         self.login()
         response = self.client.get('/visualizer/{}/'.format(-1), data, format= 'json')
         self.assertEquals(response.status_code, 404)
+
+    def test_access_aboutus_200(self):
+        data = {}
+        self.login()
+        response = self.client.get('/visualizer/aboutUs/', data, format= 'json')
+        self.assertEquals(response.status_code, 200)
+
+    def test_access_contactus_200(self):
+        data = {}
+        self.login()
+        response = self.client.get('/visualizer/contactUs/', data, format= 'json')
+        self.assertEquals(response.status_code, 200)
         
 class StatisticsPostprocTestCase(BaseTestCase):
     
@@ -172,31 +184,7 @@ class StatisticsPostprocTestCase(BaseTestCase):
         assert len(v.postproc["preguntas"][5]["opts"][0]["estadisticas"]) == 3
         assert v.postproc["preguntas"][5]["opts"][0]["estadisticas"]["votos_censo"] == 0
 
-    def test_access_aboutus_200(self):
-        data = {}
-        self.login()
-        response = self.client.get('/visualizer/aboutUs/', data, format= 'json')
-        self.assertEquals(response.status_code, 200)
-
-    def test_access_aboutus_404(self):
-        data = {}
-        self.login()
-        response = self.client.get('/visualizer/aboutUs/{}'.format(-1), data, format= 'json')
-        self.assertEquals(response.status_code, 404)
-
-    def test_access_contactus_200(self):
-        data = {}
-        self.login()
-        response = self.client.get('/visualizer/contactUs/', data, format= 'json')
-        self.assertEquals(response.status_code, 200)
-
-    def test_access_contactus_404(self):
-        data = {}
-        self.login()
-        response = self.client.get('/visualizer/contactUs/{}'.format(-1), data, format= 'json')
-        self.assertEquals(response.status_code, 404)
-
-class TestExport(StaticLiveServerTestCase):
+class SeleniumTests(StaticLiveServerTestCase):
     def setUp(self):
         #Load base test functionality for decide
         self.base = BaseTestCase()
@@ -213,19 +201,19 @@ class TestExport(StaticLiveServerTestCase):
         self.base.tearDown()
 
     def test_voting_in_process(self):
-        self.driver.get("http://localhost:8000/visualizer/2")
+        self.driver.get("http://localhost:8000/visualizer/5")
         self.driver.maximize_window()
         assert self.driver.find_element(By.CSS_SELECTOR, "h2").text == "Votación en curso"
 
-    # def test_voting_is_not_started(self):
-    #     self.driver.get("http://localhost:8000/visualizer/3")
-    #     self.driver.maximize_window()
-    #     assert self.driver.find_element(By.CSS_SELECTOR, "h2").text == "Votación no comenzada"
+    def test_voting_is_not_started(self):
+        self.driver.get("http://localhost:8000/visualizer/3")
+        self.driver.maximize_window()
+        assert self.driver.find_element(By.CSS_SELECTOR, "h2").text == "Votación no comenzada"
 
-    # def test_voting_without_tally(self):
-    #     self.driver.get("http://localhost:8000/visualizer/4")
-    #     self.driver.maximize_window()
-    #     assert self.driver.find_element(By.CSS_SELECTOR, "h2").text == "Votación sin recuento"
+    def test_voting_without_tally(self):
+        self.driver.get("http://localhost:8000/visualizer/4")
+        self.driver.maximize_window()
+        assert self.driver.find_element(By.CSS_SELECTOR, "h2").text == "Votación sin recuento"
 
     def test_exportar_PDF(self):
         self.driver.get("http://localhost:8000/visualizer/1")
@@ -388,17 +376,17 @@ class TestExport(StaticLiveServerTestCase):
         elements = self.driver.find_elements(By.ID, "myChartAges")
         assert len(elements) == 0
 
-    # def test_graficas_barras_third_section_show(self):
-    #     self.driver.get("http://localhost:8000/visualizer//")
-    #     self.driver.set_window_size(1936, 1056)
-    #     elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo6 > .heading")
-    #     assert len(elements) > 0
-    #     assert self.driver.find_element(By.CSS_SELECTOR, "#divMyChartVotes6 > h6").text == "Votos de todos los candidatos"
-    #     elements = self.driver.find_elements(By.ID, "myChartVotes6")
-    #     assert len(elements) > 0
-    #     assert self.driver.find_element(By.CSS_SELECTOR, "#divMyChartAges6 > h6").text == "Media de edad de los votantes"
-    #     elements = self.driver.find_elements(By.ID, "myChartAges6")
-    #     assert len(elements) > 0
+    def test_graficas_barras_third_section_show(self):
+        self.driver.get("http://localhost:8000/visualizer/2/")
+        self.driver.set_window_size(1936, 1056)
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo6 > .heading")
+        assert len(elements) > 0
+        assert self.driver.find_element(By.CSS_SELECTOR, "#divMyChartVotes6 > h6").text == "Votos de todos los candidatos"
+        elements = self.driver.find_elements(By.ID, "myChartVotes6")
+        assert len(elements) > 0
+        assert self.driver.find_element(By.CSS_SELECTOR, "#divMyChartAges6 > h6").text == "Media de edad de los votantes"
+        elements = self.driver.find_elements(By.ID, "myChartAges6")
+        assert len(elements) > 0
         
     def test_last_table_not_present(self):
         self.driver.get("http://localhost:8000/visualizer/1/")
@@ -441,26 +429,21 @@ class TestExport(StaticLiveServerTestCase):
         elements  =self.driver.find_element(By.CSS_SELECTOR, "div:nth-child(12) th:nth-child(1)").text
         assert  elements == "Candidato"
 
-    # Estas pruebas son para cuando se pueda testear mirar que no haya tabla delegacion de alumno en una primaria y testear que si la haya en una general
 
-    # def test_pruebatablassestadistica(self):
-    #     self.driver.get("http://localhost:8000/visualizer/1/")    
-    #     elements = self.driver.find_element(By.CSS_SELECTOR, "div:nth-child(8) > .table th:nth-child(1)").text()
-    #     assert  elements == "Candidato"
+    def test_prueba_tablas_estadistica_general(self):
+        self.driver.get("http://localhost:8000/visualizer/2/")    
+        elements =  self.driver.find_element(By.XPATH, "//div[@id='statistics']/div[6]/h3").text
+        assert elements == "Votación general 1: Elige a los miembros de delegación de alumnos"
 
-    # def test_pruebatablassestadistica(self):
-    #     self.driver.get("http://localhost:8000/visualizer/1/")    
-    #     elements = self.driver.find_element(By.CSS_SELECTOR, "div:nth-child(8) > .table th:nth-child(1)").text()
-    #     assert  elements != "Candidato"
+    def test_prueba_tablas_estadistica_primaria(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")    
+        elements =  self.driver.find_elements(By.XPATH, "//div[@id='statistics']/div[6]/h3")
+        assert len(elements) < 1
 
-
-    #================================================================================
-
-
-    # def test_last_table_present(self):
-    #     self.driver.get("http://localhost:8000/visualizer//")
-    #     elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo6 > .heading")
-    #     assert len(elements) > 0
+    def test_last_table_present(self):
+        self.driver.get("http://localhost:8000/visualizer/2/")
+        elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo6 > .heading")
+        assert len(elements) > 0
 
     def test_join_telegram(self):
         self.driver.get("http://localhost:8000/visualizer/1/")

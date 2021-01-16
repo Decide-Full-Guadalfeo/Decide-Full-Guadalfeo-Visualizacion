@@ -28,6 +28,24 @@
                         </ul>
                     {% endif %}
 
+                    <h3 style="margin-top: 10px"> Candidatures </h3>
+
+                {% if not candidaturas %}
+                    <p>There are no Candidatures</p>
+                {% else %}
+                    <ul class="votes_container">
+                        {% for cand in candidaturas %}
+                            {% if cand %}
+                                <li class="vote">
+                                    <div>
+                                        <a href="/candidatures/{{cand.id}}">{{cand.nombre}}</a>
+                                    </div>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
                     <a href="{% url 'auth_register_complete' %}" style="margin-top: 50px">Finish setting your profile here to access the platform</a>
                 </div>
             {% else %}
@@ -47,6 +65,25 @@
                         {% endfor %}
                     </ul>
                 {% endif %}
+
+                  <h3 style="margin-top: 10px"> Candidatures </h3>
+
+                {% if not candidaturas %}
+                    <p>There are no Candidatures</p>
+                {% else %}
+                    <ul class="votes_container">
+                        {% for cand in candidaturas %}
+                            {% if cand %}
+                                <li class="vote">
+                                    <div>
+                                        <a href="/candidatures/{{cand.id}}">{{cand.nombre}}</a>
+                                    </div>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
                   <h3 style="margin: 10px;">Do you want to vote?</h3>
 
                   <p>Go to <a href="/booth">booths</a> </p>
@@ -69,6 +106,25 @@
                         {% endfor %}
                     </ul>
                 {% endif %}
+
+               <h3 style="margin-top: 10px"> Candidatures </h3>
+
+                {% if not candidaturas %}
+                    <p>There are no Candidatures</p>
+                {% else %}
+                    <ul class="votes_container">
+                        {% for cand in candidaturas %}
+                            {% if cand %}
+                                <li class="vote">
+                                    <div>
+                                        <a href="/candidatures/{{cand.id}}">{{cand.nombre}}</a>
+                                    </div>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
             </div>
         {% endif %}
     </section>

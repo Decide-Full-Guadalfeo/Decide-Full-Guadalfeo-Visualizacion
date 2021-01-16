@@ -23,6 +23,7 @@
         <div>
             {% if not user.is_authenticated %}
 
+              <p>You can also try with your email instead of username</p>
               <form id="loginForm" method="post" action="">
                   {% csrf_token %}
                   {{login_form.as_p}}
