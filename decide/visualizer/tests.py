@@ -127,7 +127,7 @@ class StatisticsPostprocTestCase(BaseTestCase):
         assert v.postproc["preguntas"][6]["titulo"] == "Votaci\u00f3n general 2: Elige a los miembros de delegaci\u00f3n de alumnos"
         assert int(len(v.postproc["preguntas"][6]["opts"])) == 5
         assert len(v.postproc["preguntas"][6]["opts"][0]["estadisticas"]) == 8
-        assert v.postproc["preguntas"][6]["opts"][0]["estadisticas"]["votos_censo"] == 0
+        assert v.postproc["preguntas"][6]["opts"][0]["estadisticas"]["votos_censo"] == 100.0
 
     def test_votacion_primaria(self):
         

@@ -2733,7 +2733,7 @@
     "pk": 1,
     "fields": {
         "nombre": "Candidatura de ejemplo",
-        "delegadoCentro": 2,
+        "delegadoCentro": 4,
         "representanteDelegadoPrimero": 2,
         "representanteDelegadoSegundo": 3,
         "representanteDelegadoTercero": 4,
@@ -3868,12 +3868,529 @@
         "name": "Votaciones de la candidatura \"Candidatura de ejemplo\"",
         "desc": "Elige a los representantes de tu candidatura.",
         "start_date": "2021-01-16T11:32:41.041Z",
-        "end_date": null,
+        "end_date": "2021-01-16T11:44:18.677Z",
         "tipo": "PV",
         "candiancy": 1,
         "pub_key": 12,
-        "tally": null,
-        "postproc": null,
+        "tally": [
+            {
+                "age": 18,
+                "sex": "Man",
+                "year": "First",
+                "grade": "Software",
+                "elige representante de primero de la candidatura \"Candidatura de ejemplo\"": 1,
+                "elige representante de delegado de centro de la candidatura \"Candidatura de ejemplo\"": 3
+            }
+        ],
+        "postproc": {
+            "id": 5,
+            "desc": "Elige a los representantes de tu candidatura.",
+            "tipo": "PV",
+            "type": "IDENTITY",
+            "titulo": "Votaciones de la candidatura \"Candidatura de ejemplo\"",
+            "fecha_fin": "2021-01-16 11:44:18.677564+00:00",
+            "preguntas": [
+                {
+                    "opts": [
+                        {
+                            "votes": 1,
+                            "nombre": "Maria Sales / 4",
+                            "numero": 3,
+                            "voto_F": 0,
+                            "voto_M": 1,
+                            "media_edad": 18.0,
+                            "voto_curso": {
+                                "cuarto": 0,
+                                "master": 0,
+                                "primero": 1,
+                                "segundo": 0,
+                                "tercero": 0
+                            },
+                            "estadisticas": {
+                                "votos_f": 0.0,
+                                "votos_m": 100.0,
+                                "votos_censo": 100.0,
+                                "votos_cuarto": 0.0,
+                                "votos_master": 0.0,
+                                "votos_primero": 100.0,
+                                "votos_segundo": 0.0,
+                                "votos_tercero": 0.0
+                            }
+                        },
+                        {
+                            "votes": 0,
+                            "nombre": "Francisco P\u00e9rez / 2",
+                            "numero": 1,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "voto_curso": {
+                                "cuarto": 0,
+                                "master": 0,
+                                "primero": 0,
+                                "segundo": 0,
+                                "tercero": 0
+                            },
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0.0,
+                                "votos_cuarto": 0,
+                                "votos_master": 0,
+                                "votos_primero": 0,
+                                "votos_segundo": 0,
+                                "votos_tercero": 0
+                            }
+                        },
+                        {
+                            "votes": 0,
+                            "nombre": "David Adri\u00e1n / 3",
+                            "numero": 2,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "voto_curso": {
+                                "cuarto": 0,
+                                "master": 0,
+                                "primero": 0,
+                                "segundo": 0,
+                                "tercero": 0
+                            },
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0.0,
+                                "votos_cuarto": 0,
+                                "votos_master": 0,
+                                "votos_primero": 0,
+                                "votos_segundo": 0,
+                                "votos_tercero": 0
+                            }
+                        },
+                        {
+                            "votes": 0,
+                            "nombre": "Josefina Varas / 5",
+                            "numero": 4,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "voto_curso": {
+                                "cuarto": 0,
+                                "master": 0,
+                                "primero": 0,
+                                "segundo": 0,
+                                "tercero": 0
+                            },
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0.0,
+                                "votos_cuarto": 0,
+                                "votos_master": 0,
+                                "votos_primero": 0,
+                                "votos_segundo": 0,
+                                "votos_tercero": 0
+                            }
+                        },
+                        {
+                            "votes": 0,
+                            "nombre": "Jose Luis Granados / 6",
+                            "numero": 5,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "voto_curso": {
+                                "cuarto": 0,
+                                "master": 0,
+                                "primero": 0,
+                                "segundo": 0,
+                                "tercero": 0
+                            },
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0.0,
+                                "votos_cuarto": 0,
+                                "votos_master": 0,
+                                "votos_primero": 0,
+                                "votos_segundo": 0,
+                                "votos_tercero": 0
+                            }
+                        },
+                        {
+                            "votes": 0,
+                            "nombre": "Angel Parrado / 7",
+                            "numero": 6,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "voto_curso": {
+                                "cuarto": 0,
+                                "master": 0,
+                                "primero": 0,
+                                "segundo": 0,
+                                "tercero": 0
+                            },
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0.0,
+                                "votos_cuarto": 0,
+                                "votos_master": 0,
+                                "votos_primero": 0,
+                                "votos_segundo": 0,
+                                "votos_tercero": 0
+                            }
+                        },
+                        {
+                            "votes": 0,
+                            "nombre": "Eva Zambrano / 8",
+                            "numero": 7,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "voto_curso": {
+                                "cuarto": 0,
+                                "master": 0,
+                                "primero": 0,
+                                "segundo": 0,
+                                "tercero": 0
+                            },
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0.0,
+                                "votos_cuarto": 0,
+                                "votos_master": 0,
+                                "votos_primero": 0,
+                                "votos_segundo": 0,
+                                "votos_tercero": 0
+                            }
+                        },
+                        {
+                            "votes": 0,
+                            "nombre": "Ana Fontan / 9",
+                            "numero": 8,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "voto_curso": {
+                                "cuarto": 0,
+                                "master": 0,
+                                "primero": 0,
+                                "segundo": 0,
+                                "tercero": 0
+                            },
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0.0,
+                                "votos_cuarto": 0,
+                                "votos_master": 0,
+                                "votos_primero": 0,
+                                "votos_segundo": 0,
+                                "votos_tercero": 0
+                            }
+                        },
+                        {
+                            "votes": 0,
+                            "nombre": "Antonio Linares / 10",
+                            "numero": 9,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "voto_curso": {
+                                "cuarto": 0,
+                                "master": 0,
+                                "primero": 0,
+                                "segundo": 0,
+                                "tercero": 0
+                            },
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0.0,
+                                "votos_cuarto": 0,
+                                "votos_master": 0,
+                                "votos_primero": 0,
+                                "votos_segundo": 0,
+                                "votos_tercero": 0
+                            }
+                        },
+                        {
+                            "votes": 0,
+                            "nombre": "Lorena Gabarri / 11",
+                            "numero": 10,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "voto_curso": {
+                                "cuarto": 0,
+                                "master": 0,
+                                "primero": 0,
+                                "segundo": 0,
+                                "tercero": 0
+                            },
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0.0,
+                                "votos_cuarto": 0,
+                                "votos_master": 0,
+                                "votos_primero": 0,
+                                "votos_segundo": 0,
+                                "votos_tercero": 0
+                            }
+                        }
+                    ],
+                    "titulo": "elige representante de delegado de centro de la candidatura \"Candidatura de ejemplo\"",
+                    "indice_preg": 0,
+                    "numero_candidatos": 10
+                },
+                {
+                    "opts": [
+                        {
+                            "votes": 1,
+                            "nombre": "Francisco P\u00e9rez / 2",
+                            "numero": 1,
+                            "voto_F": 0,
+                            "voto_M": 1,
+                            "media_edad": 18.0,
+                            "estadisticas": {
+                                "votos_f": 0.0,
+                                "votos_m": 100.0,
+                                "votos_censo": 100.0
+                            }
+                        },
+                        {
+                            "votes": 0,
+                            "nombre": "Angel Parrado / 7",
+                            "numero": 2,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0.0
+                            }
+                        }
+                    ],
+                    "titulo": "elige representante de primero de la candidatura \"Candidatura de ejemplo\"",
+                    "n_votantes": 1,
+                    "indice_preg": 1,
+                    "n_votantes_f": 1,
+                    "n_votantes_m": 1,
+                    "n_hombres_censo": 1,
+                    "n_mujeres_censo": 0,
+                    "n_personas_censo": 1,
+                    "numero_candidatos": 2,
+                    "media_edad_votantes": 18.0
+                },
+                {
+                    "opts": [
+                        {
+                            "votes": 0,
+                            "nombre": "David Adri\u00e1n / 3",
+                            "numero": 1,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0
+                            }
+                        },
+                        {
+                            "votes": 0,
+                            "nombre": "Eva Zambrano / 8",
+                            "numero": 2,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0
+                            }
+                        }
+                    ],
+                    "titulo": "elige representante de segundo de la candidatura \"Candidatura de ejemplo\"",
+                    "n_votantes": 0,
+                    "indice_preg": 2,
+                    "n_votantes_f": 0,
+                    "n_votantes_m": 0,
+                    "n_hombres_censo": 0,
+                    "n_mujeres_censo": 0,
+                    "n_personas_censo": 0,
+                    "numero_candidatos": 2,
+                    "media_edad_votantes": 0.0
+                },
+                {
+                    "opts": [
+                        {
+                            "votes": 0,
+                            "nombre": "Maria Sales / 4",
+                            "numero": 1,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0
+                            }
+                        },
+                        {
+                            "votes": 0,
+                            "nombre": "Ana Fontan / 9",
+                            "numero": 2,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0
+                            }
+                        }
+                    ],
+                    "titulo": "elige representante de tercero de la candidatura \"Candidatura de ejemplo\"",
+                    "n_votantes": 0,
+                    "indice_preg": 3,
+                    "n_votantes_f": 0,
+                    "n_votantes_m": 0,
+                    "n_hombres_censo": 0,
+                    "n_mujeres_censo": 0,
+                    "n_personas_censo": 0,
+                    "numero_candidatos": 2,
+                    "media_edad_votantes": 0.0
+                },
+                {
+                    "opts": [
+                        {
+                            "votes": 0,
+                            "nombre": "Josefina Varas / 5",
+                            "numero": 1,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0
+                            }
+                        },
+                        {
+                            "votes": 0,
+                            "nombre": "Antonio Linares / 10",
+                            "numero": 2,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0
+                            }
+                        }
+                    ],
+                    "titulo": "elige representante de cuarto de la candidatura \"Candidatura de ejemplo\"",
+                    "n_votantes": 0,
+                    "indice_preg": 4,
+                    "n_votantes_f": 0,
+                    "n_votantes_m": 0,
+                    "n_hombres_censo": 0,
+                    "n_mujeres_censo": 0,
+                    "n_personas_censo": 0,
+                    "numero_candidatos": 2,
+                    "media_edad_votantes": 0.0
+                },
+                {
+                    "opts": [
+                        {
+                            "votes": 0,
+                            "nombre": "Jose Luis Granados / 6",
+                            "numero": 1,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0
+                            }
+                        },
+                        {
+                            "votes": 0,
+                            "nombre": "Lorena Gabarri / 11",
+                            "numero": 2,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0
+                            }
+                        }
+                    ],
+                    "titulo": "elige representante de m\u00e1ster de la candidatura \"Candidatura de ejemplo\"",
+                    "n_votantes": 0,
+                    "indice_preg": 5,
+                    "n_votantes_f": 0,
+                    "n_votantes_m": 0,
+                    "n_hombres_censo": 0,
+                    "n_mujeres_censo": 0,
+                    "n_personas_censo": 0,
+                    "numero_candidatos": 2,
+                    "media_edad_votantes": 0.0
+                }
+            ],
+            "n_votantes": 1,
+            "estadisticas": {
+                "abstencion": {
+                    "_0": 0.0,
+                    "_1": 0.0,
+                    "_2": 0,
+                    "_3": 0,
+                    "_4": 0,
+                    "_5": 0
+                },
+                "media_edad": {
+                    "_0": 18.0,
+                    "_1": 18.0,
+                    "_2": 0.0,
+                    "_3": 0.0,
+                    "_4": 0.0,
+                    "_5": 0.0
+                },
+                "abstencion_f": {
+                    "_0": 0,
+                    "_1": 0,
+                    "_2": 0,
+                    "_3": 0,
+                    "_4": 0,
+                    "_5": 0
+                },
+                "abstencion_m": {
+                    "_0": 0.0,
+                    "_1": 0.0,
+                    "_2": 0,
+                    "_3": 0,
+                    "_4": 0,
+                    "_5": 0
+                }
+            },
+            "fecha_inicio": "2021-01-16 11:32:41.041865+00:00",
+            "n_votantes_f": 0,
+            "n_votantes_m": 1,
+            "n_hombres_censo": 1,
+            "n_mujeres_censo": 0,
+            "n_personas_censo": 1,
+            "media_edad_votantes": 18.0
+        },
         "question": [
             26,
             27,
@@ -3899,8 +4416,370 @@
         "tipo": "GV",
         "candiancy": null,
         "pub_key": 15,
-        "tally": null,
-        "postproc": null,
+        "tally": [
+            {
+                "age": 18,
+                "sex": "Man",
+                "year": "First",
+                "grade": "Software",
+                "Votaci\u00f3n general 2: Elige al delegado al centro": 1,
+                "Votaci\u00f3n general 2: Elige al delegado de primero": 1,
+                "Votaci\u00f3n general 2: Elige a los miembros de delegaci\u00f3n de alumnos": [
+                    3
+                ]
+            }
+        ],
+        "postproc": {
+            "id": 6,
+            "desc": "Elige a los representantes de tu centro",
+            "tipo": "GV",
+            "type": "IDENTITY",
+            "titulo": "Votaci\u00f3n general 2",
+            "fecha_fin": "2021-01-16 11:36:45.408882+00:00",
+            "preguntas": [
+                {
+                    "opts": [
+                        {
+                            "votes": 1,
+                            "nombre": "Francisco P\u00e9rez / 2",
+                            "numero": 1,
+                            "voto_F": 0,
+                            "voto_M": 1,
+                            "media_edad": 18.0,
+                            "voto_curso": {
+                                "cuarto": 0,
+                                "master": 0,
+                                "primero": 1,
+                                "segundo": 0,
+                                "tercero": 0
+                            },
+                            "estadisticas": {
+                                "votos_f": 0.0,
+                                "votos_m": 100.0,
+                                "votos_censo": 100.0,
+                                "votos_cuarto": 0.0,
+                                "votos_master": 0.0,
+                                "votos_primero": 100.0,
+                                "votos_segundo": 0.0,
+                                "votos_tercero": 0.0
+                            }
+                        }
+                    ],
+                    "titulo": "Votaci\u00f3n general 2: Elige al delegado al centro",
+                    "indice_preg": 0,
+                    "numero_candidatos": 1
+                },
+                {
+                    "opts": [
+                        {
+                            "votes": 1,
+                            "nombre": "Francisco P\u00e9rez / 2",
+                            "numero": 1,
+                            "voto_F": 0,
+                            "voto_M": 1,
+                            "media_edad": 18.0,
+                            "estadisticas": {
+                                "votos_f": 0.0,
+                                "votos_m": 100.0,
+                                "votos_censo": 100.0
+                            }
+                        }
+                    ],
+                    "titulo": "Votaci\u00f3n general 2: Elige al delegado de primero",
+                    "n_votantes": 1,
+                    "indice_preg": 1,
+                    "n_votantes_f": 1,
+                    "n_votantes_m": 1,
+                    "n_hombres_censo": 1,
+                    "n_mujeres_censo": 0,
+                    "n_personas_censo": 1,
+                    "numero_candidatos": 1,
+                    "media_edad_votantes": 18.0
+                },
+                {
+                    "opts": [
+                        {
+                            "votes": 0,
+                            "nombre": "David Adri\u00e1n / 3",
+                            "numero": 1,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0
+                            }
+                        }
+                    ],
+                    "titulo": "Votaci\u00f3n general 2: Elige al delegado de segundo",
+                    "n_votantes": 0,
+                    "indice_preg": 2,
+                    "n_votantes_f": 0,
+                    "n_votantes_m": 0,
+                    "n_hombres_censo": 0,
+                    "n_mujeres_censo": 0,
+                    "n_personas_censo": 0,
+                    "numero_candidatos": 1,
+                    "media_edad_votantes": 0.0
+                },
+                {
+                    "opts": [
+                        {
+                            "votes": 0,
+                            "nombre": "Maria Sales / 4",
+                            "numero": 1,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0
+                            }
+                        }
+                    ],
+                    "titulo": "Votaci\u00f3n general 2: Elige al delegado de tercero",
+                    "n_votantes": 0,
+                    "indice_preg": 3,
+                    "n_votantes_f": 0,
+                    "n_votantes_m": 0,
+                    "n_hombres_censo": 0,
+                    "n_mujeres_censo": 0,
+                    "n_personas_censo": 0,
+                    "numero_candidatos": 1,
+                    "media_edad_votantes": 0.0
+                },
+                {
+                    "opts": [
+                        {
+                            "votes": 0,
+                            "nombre": "Josefina Varas / 5",
+                            "numero": 1,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0
+                            }
+                        }
+                    ],
+                    "titulo": "Votaci\u00f3n general 2: Elige al delegado de cuarto",
+                    "n_votantes": 0,
+                    "indice_preg": 4,
+                    "n_votantes_f": 0,
+                    "n_votantes_m": 0,
+                    "n_hombres_censo": 0,
+                    "n_mujeres_censo": 0,
+                    "n_personas_censo": 0,
+                    "numero_candidatos": 1,
+                    "media_edad_votantes": 0.0
+                },
+                {
+                    "opts": [
+                        {
+                            "votes": 0,
+                            "nombre": "Jose Luis Granados / 6",
+                            "numero": 1,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0
+                            }
+                        }
+                    ],
+                    "titulo": "Votaci\u00f3n general 2: Elige al delegado del master",
+                    "n_votantes": 0,
+                    "indice_preg": 5,
+                    "n_votantes_f": 0,
+                    "n_votantes_m": 0,
+                    "n_hombres_censo": 0,
+                    "n_mujeres_censo": 0,
+                    "n_personas_censo": 0,
+                    "numero_candidatos": 1,
+                    "media_edad_votantes": 0.0
+                },
+                {
+                    "opts": [
+                        {
+                            "votes": 1,
+                            "nombre": "Ana Fontan / 9",
+                            "numero": 3,
+                            "voto_F": 0,
+                            "voto_M": 1,
+                            "media_edad": 18.0,
+                            "voto_curso": {
+                                "cuarto": 0,
+                                "master": 0,
+                                "primero": 1,
+                                "segundo": 0,
+                                "tercero": 0
+                            },
+                            "estadisticas": {
+                                "votos_f": 0.0,
+                                "votos_m": 100.0,
+                                "votos_censo": 100.0,
+                                "votos_cuarto": 0.0,
+                                "votos_master": 0.0,
+                                "votos_primero": 100.0,
+                                "votos_segundo": 0.0,
+                                "votos_tercero": 0.0
+                            }
+                        },
+                        {
+                            "votes": 0,
+                            "nombre": "Angel Parrado / 7",
+                            "numero": 1,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "voto_curso": {
+                                "cuarto": 0,
+                                "master": 0,
+                                "primero": 0,
+                                "segundo": 0,
+                                "tercero": 0
+                            },
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0.0,
+                                "votos_cuarto": 0,
+                                "votos_master": 0,
+                                "votos_primero": 0,
+                                "votos_segundo": 0,
+                                "votos_tercero": 0
+                            }
+                        },
+                        {
+                            "votes": 0,
+                            "nombre": "Eva Zambrano / 8",
+                            "numero": 2,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "voto_curso": {
+                                "cuarto": 0,
+                                "master": 0,
+                                "primero": 0,
+                                "segundo": 0,
+                                "tercero": 0
+                            },
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0.0,
+                                "votos_cuarto": 0,
+                                "votos_master": 0,
+                                "votos_primero": 0,
+                                "votos_segundo": 0,
+                                "votos_tercero": 0
+                            }
+                        },
+                        {
+                            "votes": 0,
+                            "nombre": "Antonio Linares / 10",
+                            "numero": 4,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "voto_curso": {
+                                "cuarto": 0,
+                                "master": 0,
+                                "primero": 0,
+                                "segundo": 0,
+                                "tercero": 0
+                            },
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0.0,
+                                "votos_cuarto": 0,
+                                "votos_master": 0,
+                                "votos_primero": 0,
+                                "votos_segundo": 0,
+                                "votos_tercero": 0
+                            }
+                        },
+                        {
+                            "votes": 0,
+                            "nombre": "Lorena Gabarri / 11",
+                            "numero": 5,
+                            "voto_F": 0,
+                            "voto_M": 0,
+                            "media_edad": 0.0,
+                            "voto_curso": {
+                                "cuarto": 0,
+                                "master": 0,
+                                "primero": 0,
+                                "segundo": 0,
+                                "tercero": 0
+                            },
+                            "estadisticas": {
+                                "votos_f": 0,
+                                "votos_m": 0,
+                                "votos_censo": 0.0,
+                                "votos_cuarto": 0,
+                                "votos_master": 0,
+                                "votos_primero": 0,
+                                "votos_segundo": 0,
+                                "votos_tercero": 0
+                            }
+                        }
+                    ],
+                    "titulo": "Votaci\u00f3n general 2: Elige a los miembros de delegaci\u00f3n de alumnos",
+                    "indice_preg": 6,
+                    "numero_candidatos": 5
+                }
+            ],
+            "n_votantes": 1,
+            "estadisticas": {
+                "abstencion": {
+                    "_0": 0.0,
+                    "_1": 0.0,
+                    "_2": 0,
+                    "_3": 0,
+                    "_4": 0,
+                    "_5": 0
+                },
+                "media_edad": {
+                    "_0": 18.0,
+                    "_1": 18.0,
+                    "_2": 0.0,
+                    "_3": 0.0,
+                    "_4": 0.0,
+                    "_5": 0.0
+                },
+                "abstencion_f": {
+                    "_0": 0,
+                    "_1": 0,
+                    "_2": 0,
+                    "_3": 0,
+                    "_4": 0,
+                    "_5": 0
+                },
+                "abstencion_m": {
+                    "_0": 0.0,
+                    "_1": 0.0,
+                    "_2": 0,
+                    "_3": 0,
+                    "_4": 0,
+                    "_5": 0
+                }
+            },
+            "fecha_inicio": "2021-01-16 11:35:17.832805+00:00",
+            "n_votantes_f": 0,
+            "n_votantes_m": 1,
+            "n_hombres_censo": 1,
+            "n_mujeres_censo": 0,
+            "n_personas_censo": 1,
+            "media_edad_votantes": 18.0
+        },
         "question": [
             32,
             33,
