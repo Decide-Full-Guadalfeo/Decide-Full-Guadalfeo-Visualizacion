@@ -15,6 +15,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from base.tests import BaseTestCase
 import time
+import re
 
 
 class VisualizerTestCase(BaseTestCase):
@@ -261,3 +262,32 @@ class TestExport(StaticLiveServerTestCase):
         self.driver.get(valor)
         elements = self.driver.find_elements(By.XPATH, "//span[contains(.,\'guadalfeo-visualizacion\')]")
         assert len(elements) > 0
+
+    def test_share_whatsapp(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.find_element(By.LINK_TEXT, "▼ Compartir").click()
+        valor = self.driver.find_element(By.LINK_TEXT, "Whatsapp").get_attribute("href")
+        self.driver.get(valor)
+        url = self.driver.current_url
+        pattern = re.compile("^https://api.whatsapp.com/")
+        assert pattern.match(url)
+
+    def test_share_twitter(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.find_element(By.LINK_TEXT, "▼ Compartir").click()
+        valor = self.driver.find_element(By.LINK_TEXT, "Twitter").get_attribute("href")
+        self.driver.get(valor)
+        url = self.driver.current_url
+        pattern = re.compile("^https://twitter.com/")
+        assert pattern.match(url)
+
+    def test_share_facebook(self):
+        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.find_element(By.LINK_TEXT, "▼ Compartir").click()
+        valor = self.driver.find_element(By.LINK_TEXT, "Facebook").get_attribute("href")
+        self.driver.get(valor)
+        url = self.driver.current_url
+        pattern = re.compile("^https://www.facebook.com/")
+        assert pattern.match(url)
+
+
