@@ -524,4 +524,43 @@ class TestExport(StaticLiveServerTestCase):
         style = self.driver.find_element(By.ID, "statistics").get_attribute("style")
         assert style == "display: none;"
 
+    def test_boton_bot_telegram_200(self):
+        # Iniciamos sesión como admin
+        self.driver.get("http://localhost:8000/")
+        self.driver.find_element_by_link_text("Login").click()
+        self.driver.find_element_by_id("id_username").click()
+        self.driver.find_element_by_id("id_username").clear()
+        self.driver.find_element_by_id("id_username").send_keys("admin")
+        self.driver.find_element_by_id("id_password").clear()
+        self.driver.find_element_by_id("id_password").send_keys("complexpassword")
+        self.driver.find_element_by_xpath("//input[@value='Login']").click()
+        assert "Welcome, admin !" == self.driver.find_element_by_xpath("//li").text
+        self.driver.get("http://localhost:8000/visualizer/2/")
+
+        # Clicamos sobre el botón y nos cercioramos de obtener un resultado exitoso
+        self.driver.find_element(By.LINK_TEXT, "▼ Telegram").click()
+        url = self.driver.find_element(By.LINK_TEXT, "Enviar resultados por Telegram").get_attribute("href")
+        self.driver.get(url)
+        elements = self.driver.find_element(By.CSS_SELECTOR, "h3")
+        assert  elements != "Resultado de la petición:  "
+        assert u"Exitoso, se ha realizado correctamente la petición al servidor" == self.driver.find_element_by_xpath("//div[@id='app-visualizer']/div/div").text
     
+    def test_boton_bot_telegram_200(self):
+        # Iniciamos sesión como un usuario no admin
+        self.driver.get("http://localhost:8000/")
+        self.driver.find_element_by_link_text("Login").click()
+        self.driver.find_element_by_id("id_username").click()
+        self.driver.find_element_by_id("id_username").clear()
+        self.driver.find_element_by_id("id_username").send_keys("franpe")
+        self.driver.find_element_by_id("id_password").clear()
+        self.driver.find_element_by_id("id_password").send_keys("complexpassword")
+        self.driver.find_element_by_xpath("//input[@value='Login']").click()
+        assert "Welcome, franpe !" == self.driver.find_element_by_xpath("//li").text
+        self.driver.get("http://localhost:8000/visualizer/2/")
+
+        # Vemos que el enlace no existe y que accediendo por URL obtenemos error 404
+        self.driver.find_element(By.LINK_TEXT, "▼ Telegram").click()
+        url = self.driver.find_elements(By.LINK_TEXT, "Enviar resultados por Telegram")
+        assert len(url) < 1
+        self.driver.get("http://localhost:8000/visualizer/botResults/2/")
+        assert "Page not found (404)" == self.driver.find_element_by_xpath("//div[@id='summary']/h1").text
