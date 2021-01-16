@@ -1,11 +1,5 @@
-import json
-import requests
-
-from random import choice
-
 from locust import (
     HttpUser,
-    SequentialTaskSet,
     TaskSet,
     task,
     between
