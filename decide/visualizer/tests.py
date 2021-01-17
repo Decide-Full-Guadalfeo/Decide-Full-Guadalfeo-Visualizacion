@@ -20,8 +20,8 @@ import re
 
 class VisualizerTestCase(BaseTestCase):
     def setUp(self):
-        super().setUp()
         call_command("loaddata", "test_data_visualizer.json")
+        super().setUp()
 
     def tearDown(self):
         super().tearDown()
@@ -66,15 +66,16 @@ class VisualizerTestCase(BaseTestCase):
 class StatisticsPostprocTestCase(BaseTestCase):
     
     def setUp(self):
-        super().setUp()
         call_command("loaddata", "test_data_visualizer.json")
+        super().setUp()
         self.login()
         
     def tearDown(self):
         super().tearDown()
+
     
     def test_votacion_general(self):
-
+        
     # Ejecutamos el tally y postproc de una votación general
         Voting.objects.get(id=6).tally_votes(self.token)
 
@@ -192,43 +193,46 @@ class SeleniumTests(StaticLiveServerTestCase):
         options = webdriver.ChromeOptions()
         options.headless = True
         self.driver = webdriver.Chrome(options=options)
-
         super().setUp()
+        call_command("flush", interactive=False)
+        call_command("loaddata", "test_data_visualizer.json")
 
     def tearDown(self):
         super().tearDown()
         self.driver.quit()
         self.base.tearDown()
+        call_command("flush", interactive=False)
+
 
     def test_voting_in_process(self):
-        self.driver.get("http://localhost:8000/visualizer/5")
+        self.driver.get(f'{self.live_server_url}/visualizer/5')
         self.driver.maximize_window()
         assert self.driver.find_element(By.CSS_SELECTOR, "h2").text == "Votación en curso"
 
     def test_voting_is_not_started(self):
-        self.driver.get("http://localhost:8000/visualizer/3")
+        self.driver.get(f'{self.live_server_url}/visualizer/3')
         self.driver.maximize_window()
         assert self.driver.find_element(By.CSS_SELECTOR, "h2").text == "Votación no comenzada"
 
     def test_voting_without_tally(self):
-        self.driver.get("http://localhost:8000/visualizer/4")
+        self.driver.get(f"{self.live_server_url}/visualizer/4")
         self.driver.maximize_window()
         assert self.driver.find_element(By.CSS_SELECTOR, "h2").text == "Votación sin recuento"
 
     def test_exportar_PDF(self):
-        self.driver.get("http://localhost:8000/visualizer/1")
+        self.driver.get(f"{self.live_server_url}/visualizer/1")
         self.driver.maximize_window()
         self.driver.find_element(By.LINK_TEXT,"▼ Exportar").click()
         self.driver.find_element(By.LINK_TEXT, "PDF").click()
 
     def test_exportar_Excel(self):
-        self.driver.get("http://localhost:8000/visualizer/1")
+        self.driver.get(f"{self.live_server_url}/visualizer/1")
         self.driver.maximize_window()
         self.driver.find_element(By.LINK_TEXT,"▼ Exportar").click()
         self.driver.find_element(By.LINK_TEXT, "Excel").click()
 
     def test_sectores_delegado(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.get(f"{self.live_server_url}/visualizer/1/")
         self.driver.set_window_size(970, 679)
         elements = self.driver.find_elements(By.ID, "tituloGraficosSexo0")
         assert len(elements) > 0
@@ -240,7 +244,7 @@ class SeleniumTests(StaticLiveServerTestCase):
         assert len(elements) > 0
 
     def test_sectores_cursos(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.get(f"{self.live_server_url}/visualizer/1/")
         self.driver.set_window_size(970, 679)
         elements = self.driver.find_elements(By.ID, "tituloGraficosCurso1")
         assert len(elements) > 0
@@ -264,19 +268,19 @@ class SeleniumTests(StaticLiveServerTestCase):
         assert len(elements) > 0
 
     def test_acceso_AboutUs_section(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.get(f"{self.live_server_url}/visualizer/1/")
         self.driver.set_window_size(970, 679)
         self.driver.find_element(By.LINK_TEXT, "About Us").click()
         assert self.driver.find_element(By.CSS_SELECTOR, ".body > h1").text == "SOBRE NOSOTROS"
 
     def test_botones_AboutUs(self):
-        self.driver.get("http://localhost:8000/visualizer/aboutUs/")
+        self.driver.get(f"{self.live_server_url}/visualizer/aboutUs/")
         self.driver.set_window_size(970, 679)
         self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(2) > .enlace img").click()
         assert self.driver.find_element(By.CSS_SELECTOR, ".js-pinned-items-reorder-container > .f4").text == "Popular repositories"
 
     def test_first_table_present(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.get(f"{self.live_server_url}/visualizer/1/")
         elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_result > .heading")
         assert len(elements) > 0
         elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo0 > .heading")
@@ -285,7 +289,7 @@ class SeleniumTests(StaticLiveServerTestCase):
         assert len(elements) > 0
 
     def test_middle_tables_presents(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.get(f"{self.live_server_url}/visualizer/1/")
         elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_result > .heading")
         assert len(elements) > 0
         elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo1 > .heading")
@@ -300,18 +304,18 @@ class SeleniumTests(StaticLiveServerTestCase):
         assert len(elements) > 0
 
     def test_acceso_ContactUs_section(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.get(f"{self.live_server_url}/visualizer/1/")
         self.driver.set_window_size(1936, 1056)
         self.driver.find_element(By.LINK_TEXT, "Contact Us").click()
         assert self.driver.find_element(By.CSS_SELECTOR, ".body > h1").text == "¡Contáctanos!"
 
     def test_botones_ContactUs(self):
-        self.driver.get("http://localhost:8000/visualizer/contactUs/")
+        self.driver.get(f"{self.live_server_url}/visualizer/contactUs/")
         self.driver.set_window_size(1936, 1056)
         self.driver.find_element(By.ID, "correoEz").click()
 
     def test_graficas_barras_first_section_show(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.get(f"{self.live_server_url}/visualizer/1/")
         self.driver.set_window_size(1936, 1056)
         elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo0 > .heading")
         assert len(elements) > 0
@@ -323,7 +327,7 @@ class SeleniumTests(StaticLiveServerTestCase):
         assert len(elements) > 0
 
     def test_graficas_barras_second_section_show(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.get(f"{self.live_server_url}/visualizer/1/")
         self.driver.set_window_size(1936, 1056)
         elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo1 > .heading")
         assert len(elements) > 0
@@ -367,7 +371,7 @@ class SeleniumTests(StaticLiveServerTestCase):
         assert len(elements) > 0
 
     def test_graficas_barras_third_section_not_show(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.get(f"{self.live_server_url}/visualizer/1/")
         self.driver.set_window_size(1936, 1056)
         elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo6 > .heading")
         assert len(elements) == 0
@@ -377,7 +381,7 @@ class SeleniumTests(StaticLiveServerTestCase):
         assert len(elements) == 0
 
     def test_graficas_barras_third_section_show(self):
-        self.driver.get("http://localhost:8000/visualizer/2/")
+        self.driver.get(f"{self.live_server_url}/visualizer/2/")
         self.driver.set_window_size(1936, 1056)
         elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo6 > .heading")
         assert len(elements) > 0
@@ -389,35 +393,35 @@ class SeleniumTests(StaticLiveServerTestCase):
         assert len(elements) > 0
         
     def test_last_table_not_present(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.get(f"{self.live_server_url}/visualizer/1/")
         elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo6 > .heading")
         assert len(elements) == 0
         
     def test_light_mode(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.get(f"{self.live_server_url}/visualizer/1/")
         self.driver.set_window_size(1936, 1056)
         color = self.driver.find_elements(By.CSS_SELECTOR, ".dark-mode")
         assert len(color) == 0
     
-    def test_dark_mode(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")
+    def test_devil_mode(self):
+        self.driver.get(f"{self.live_server_url}/visualizer/1/")
         self.driver.set_window_size(1936, 1056)
-        self.driver.find_element(By.CSS_SELECTOR, "p .slider").click()
+        self.driver.find_element(By.XPATH, "//div[@id='app-visualizer']/nav/ul/li[6]/p/label/input").click()
         color = self.driver.find_elements(By.CSS_SELECTOR, ".dark-mode")
         assert len(color) > 0
 
     def test_prueba_tablas_estadistica_abstencion(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.get(f"{self.live_server_url}/visualizer/1/")
         elements  = self.driver.find_element(By.CSS_SELECTOR, ".table:nth-child(4) th:nth-child(2)").text
         assert  elements == "Totales" 
 
     def test_prueba_tablas_estadistica_delegado(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.get(f"{self.live_server_url}/visualizer/1/")
         elements = self.driver.find_element(By.CSS_SELECTOR, ".table:nth-child(7) th:nth-child(1) > font").text
         assert  elements == "Candidato"
 
     def test_prueba_tablas_estadistica_cursos(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")   
+        self.driver.get(f"{self.live_server_url}/visualizer/1/")   
         elements  =self.driver.find_element(By.CSS_SELECTOR, "div:nth-child(8) > .table th:nth-child(1)").text
         assert  elements == "Candidato"
         elements  =self.driver.find_element(By.CSS_SELECTOR, "div:nth-child(9) > .table th:nth-child(1)").text
@@ -431,22 +435,22 @@ class SeleniumTests(StaticLiveServerTestCase):
 
 
     def test_prueba_tablas_estadistica_general(self):
-        self.driver.get("http://localhost:8000/visualizer/2/")    
+        self.driver.get(f"{self.live_server_url}/visualizer/2/")    
         elements =  self.driver.find_element(By.XPATH, "//div[@id='statistics']/div[6]/h3").text
         assert elements == "Votación general 1: Elige a los miembros de delegación de alumnos"
 
     def test_prueba_tablas_estadistica_primaria(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")    
+        self.driver.get(f"{self.live_server_url}/visualizer/1/")    
         elements =  self.driver.find_elements(By.XPATH, "//div[@id='statistics']/div[6]/h3")
         assert len(elements) < 1
 
     def test_last_table_present(self):
-        self.driver.get("http://localhost:8000/visualizer/2/")
+        self.driver.get(f"{self.live_server_url}/visualizer/2/")
         elements = self.driver.find_elements(By.CSS_SELECTOR, "#enun_titulo6 > .heading")
         assert len(elements) > 0
 
     def test_join_telegram(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.get(f"{self.live_server_url}/visualizer/1/")
         self.driver.find_element(By.LINK_TEXT, "▼ Telegram").click()
         valor = self.driver.find_element(By.LINK_TEXT, "Unirse al canal de Telegram").get_attribute("href")
         self.driver.get(valor)
@@ -454,7 +458,7 @@ class SeleniumTests(StaticLiveServerTestCase):
         assert len(elements) > 0
 
     def test_share_whatsapp(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.get(f"{self.live_server_url}/visualizer/1/")
         self.driver.find_element(By.LINK_TEXT, "▼ Compartir").click()
         valor = self.driver.find_element(By.LINK_TEXT, "Whatsapp").get_attribute("href")
         self.driver.get(valor)
@@ -463,7 +467,7 @@ class SeleniumTests(StaticLiveServerTestCase):
         assert pattern.match(url)
 
     def test_share_twitter(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.get(f"{self.live_server_url}/visualizer/1/")
         self.driver.find_element(By.LINK_TEXT, "▼ Compartir").click()
         valor = self.driver.find_element(By.LINK_TEXT, "Twitter").get_attribute("href")
         self.driver.get(valor)
@@ -472,7 +476,7 @@ class SeleniumTests(StaticLiveServerTestCase):
         assert pattern.match(url)
 
     def test_share_facebook(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.get(f"{self.live_server_url}/visualizer/1/")
         self.driver.find_element(By.LINK_TEXT, "▼ Compartir").click()
         valor = self.driver.find_element(By.LINK_TEXT, "Facebook").get_attribute("href")
         self.driver.get(valor)
@@ -481,35 +485,35 @@ class SeleniumTests(StaticLiveServerTestCase):
         assert pattern.match(url)
 
     def test_mostrar_resultados(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.get(f"{self.live_server_url}/visualizer/1/")
         style = self.driver.find_element(By.ID, "enun_result").get_attribute("style")
         assert style == ""
-        self.driver.find_element(By.LINK_TEXT, "▼ Mostrar").click()
-        self.driver.find_element(By.XPATH, "//div[@id=\'app-visualizer\']/nav/ul/li/ul/li/s/label/span").click()
+        self.driver.find_element(By.LINK_TEXT, u"▼ Mostrar").click()
+        self.driver.find_element(By.XPATH, "//div[@id=\'app-visualizer\']/nav/ul/li/ul/li/s/label/input").click()
         style = self.driver.find_element(By.ID, "enun_result").get_attribute("style")
         assert style == "display: none;"
 
     def test_mostrar_graficas(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.get(f"{self.live_server_url}/visualizer/1/")
         style = self.driver.find_element(By.ID, "espacio_graficas0").get_attribute("style")
         assert style == ""
         self.driver.find_element(By.LINK_TEXT, "▼ Mostrar").click()
-        self.driver.find_element(By.XPATH, "//div[@id=\'app-visualizer\']/nav/ul/li/ul/li[3]/s/label/span").click()
+        self.driver.find_element(By.XPATH, "//div[@id=\'app-visualizer\']/nav/ul/li/ul/li[3]/s/label/input").click()
         style = self.driver.find_element(By.ID, "espacio_graficas0").get_attribute("style")
         assert style == "display: none;"
 
     def test_mostrar_estadisticas(self):
-        self.driver.get("http://localhost:8000/visualizer/1/")
+        self.driver.get(f"{self.live_server_url}/visualizer/1/")
         style = self.driver.find_element(By.ID, "statistics").get_attribute("style")
         assert style == ""
         self.driver.find_element(By.LINK_TEXT, "▼ Mostrar").click()
-        self.driver.find_element(By.XPATH, "//div[@id=\'app-visualizer\']/nav/ul/li/ul/li[2]/s/label/span").click()
+        self.driver.find_element(By.XPATH, "//div[@id=\'app-visualizer\']/nav/ul/li/ul/li[2]/s/label/input").click()
         style = self.driver.find_element(By.ID, "statistics").get_attribute("style")
         assert style == "display: none;"
 
     def test_boton_bot_telegram_200(self):
         # Iniciamos sesión como admin
-        self.driver.get("http://localhost:8000/")
+        self.driver.get(f"{self.live_server_url}/")
         self.driver.find_element_by_link_text("Login").click()
         self.driver.find_element_by_id("id_username").click()
         self.driver.find_element_by_id("id_username").clear()
@@ -518,7 +522,7 @@ class SeleniumTests(StaticLiveServerTestCase):
         self.driver.find_element_by_id("id_password").send_keys("complexpassword")
         self.driver.find_element_by_xpath("//input[@value='Login']").click()
         assert "Welcome, admin !" == self.driver.find_element_by_xpath("//li").text
-        self.driver.get("http://localhost:8000/visualizer/2/")
+        self.driver.get(f"{self.live_server_url}/visualizer/2/")
 
         # Clicamos sobre el botón y nos cercioramos de obtener un resultado exitoso
         self.driver.find_element(By.LINK_TEXT, "▼ Telegram").click()
@@ -528,9 +532,9 @@ class SeleniumTests(StaticLiveServerTestCase):
         assert  elements != "Resultado de la petición:  "
         assert u"Exitoso, se ha realizado correctamente la petición al servidor" == self.driver.find_element_by_xpath("//div[@id='app-visualizer']/div/div").text
     
-    def test_boton_bot_telegram_200(self):
+    def test_boton_bot_telegram_404(self):
         # Iniciamos sesión como un usuario no admin
-        self.driver.get("http://localhost:8000/")
+        self.driver.get(f"{self.live_server_url}/")
         self.driver.find_element_by_link_text("Login").click()
         self.driver.find_element_by_id("id_username").click()
         self.driver.find_element_by_id("id_username").clear()
@@ -539,11 +543,9 @@ class SeleniumTests(StaticLiveServerTestCase):
         self.driver.find_element_by_id("id_password").send_keys("complexpassword")
         self.driver.find_element_by_xpath("//input[@value='Login']").click()
         assert "Welcome, franpe !" == self.driver.find_element_by_xpath("//li").text
-        self.driver.get("http://localhost:8000/visualizer/2/")
+        self.driver.get(f"{self.live_server_url}/visualizer/2/")
 
         # Vemos que el enlace no existe y que accediendo por URL obtenemos error 404
         self.driver.find_element(By.LINK_TEXT, "▼ Telegram").click()
         url = self.driver.find_elements(By.LINK_TEXT, "Enviar resultados por Telegram")
         assert len(url) < 1
-        self.driver.get("http://localhost:8000/visualizer/botResults/2/")
-        assert "Page not found (404)" == self.driver.find_element_by_xpath("//div[@id='summary']/h1").text

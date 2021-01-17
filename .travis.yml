@@ -30,10 +30,9 @@ script:
   - cd decide
   - cp travis_settings.py settings.py
   - cd ..
-  - python ./manage.py loaddata test_data_visualizer.json
-  # - coverage run --branch --source=. ./manage.py test visualizer --keepdb
-  # - coverage xml
-  # - python-codacy-coverage -r coverage.xml
+  - coverage run --branch --source=. ./manage.py test visualizer --keepdb
+  - coverage xml
+  - python-codacy-coverage -r coverage.xml
 deploy:
   provider: heroku
   app: guadalfeo-visualizer
@@ -41,4 +40,4 @@ deploy:
   api_key: $HEROKU_AUTH_TOKEN
   run: "cd decide && python ./manage.py flush --noinput && python ./manage.py loaddata test_data_visualizer.json"
   on:
-    branch: Task-200-Reyes
+    branch: develop
