@@ -40,4 +40,4 @@ deploy:
   api_key: $HEROKU_AUTH_TOKEN
   run: "cd decide && python ./manage.py flush --noinput && python ./manage.py loaddata test_data_visualizer.json"
   on:
-    branch: develop
+    branch: releases
