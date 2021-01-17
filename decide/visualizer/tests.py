@@ -7,7 +7,7 @@ from django.core.management import call_command
 
 
 # Create your tests here.
-from base.tests import BaseTestCase
+from visualizer.base_tests import BaseTestCase
 import json
 from django.utils import timezone
 from django.contrib.auth.models import User
