@@ -406,7 +406,7 @@ class SeleniumTests(StaticLiveServerTestCase):
     def test_devil_mode(self):
         self.driver.get(f"{self.live_server_url}/visualizer/1/")
         self.driver.set_window_size(1936, 1056)
-        self.driver.find_element(By.XPATH, "//div[@id='app-visualizer']/nav/ul/li[6]/p/label/input").click()
+        self.driver.find_element(By.XPATH, "//div[@id='app-visualizer']/nav/ul/li[6]/p/label").click()
         color = self.driver.find_elements(By.CSS_SELECTOR, ".dark-mode")
         assert len(color) > 0
 
@@ -489,7 +489,7 @@ class SeleniumTests(StaticLiveServerTestCase):
         style = self.driver.find_element(By.ID, "enun_result").get_attribute("style")
         assert style == ""
         self.driver.find_element(By.LINK_TEXT, u"▼ Mostrar").click()
-        self.driver.find_element(By.XPATH, "//div[@id=\'app-visualizer\']/nav/ul/li/ul/li/s/label/input").click()
+        self.driver.find_element(By.XPATH, "//div[@id=\'app-visualizer\']/nav/ul/li/ul/li/s/label").click()
         style = self.driver.find_element(By.ID, "enun_result").get_attribute("style")
         assert style == "display: none;"
 
@@ -498,7 +498,7 @@ class SeleniumTests(StaticLiveServerTestCase):
         style = self.driver.find_element(By.ID, "espacio_graficas0").get_attribute("style")
         assert style == ""
         self.driver.find_element(By.LINK_TEXT, "▼ Mostrar").click()
-        self.driver.find_element(By.XPATH, "//div[@id=\'app-visualizer\']/nav/ul/li/ul/li[3]/s/label/input").click()
+        self.driver.find_element(By.XPATH, "//div[@id=\'app-visualizer\']/nav/ul/li/ul/li[3]/s/label").click()
         style = self.driver.find_element(By.ID, "espacio_graficas0").get_attribute("style")
         assert style == "display: none;"
 
@@ -507,7 +507,7 @@ class SeleniumTests(StaticLiveServerTestCase):
         style = self.driver.find_element(By.ID, "statistics").get_attribute("style")
         assert style == ""
         self.driver.find_element(By.LINK_TEXT, "▼ Mostrar").click()
-        self.driver.find_element(By.XPATH, "//div[@id=\'app-visualizer\']/nav/ul/li/ul/li[2]/s/label/input").click()
+        self.driver.find_element(By.XPATH, "//div[@id=\'app-visualizer\']/nav/ul/li/ul/li[2]/s/label").click()
         style = self.driver.find_element(By.ID, "statistics").get_attribute("style")
         assert style == "display: none;"
 
@@ -528,7 +528,7 @@ class SeleniumTests(StaticLiveServerTestCase):
         self.driver.find_element(By.LINK_TEXT, "▼ Telegram").click()
         url = self.driver.find_element(By.LINK_TEXT, "Enviar resultados por Telegram").get_attribute("href")
         self.driver.get(url)
-        elements = self.driver.find_element(By.CSS_SELECTOR, "h3")
+        elements = self.driver.find_element(By.TAG_NAME, "h3")
         assert  elements != "Resultado de la petición:  "
         assert u"Exitoso, se ha realizado correctamente la petición al servidor" == self.driver.find_element_by_xpath("//div[@id='app-visualizer']/div/div").text
     

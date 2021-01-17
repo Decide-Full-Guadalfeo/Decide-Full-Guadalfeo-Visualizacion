@@ -74,7 +74,7 @@ class VisualizerView(TemplateView):
             #context['voting_completo'] = json.dumps(r[0])
             #context["fecha_de_comienzo"]=json.dumps(r[0]["start_date"])
             #context["fecha_de_fin"]=json.dumps(r[0]["end_date"])
-            context['botUrl']="http://localhost:8000/visualizer/botResults/"+str(r[0]['id'])
+            context['botUrl']="/visualizer/botResults/"+str(r[0]['id'])
             context['whatsappUrl']="https://api.whatsapp.com/send?text=Puedes%20ver%20los%20resultados%20de%20la%20votación%20en%20el%20siguiente%20enlace:%20http://localhost:8000/visualizer/botResults/"+str(r[0]['id'])
             context['twitterUrl']="https://twitter.com/intent/tweet?text=Puedes%20ver%20los%20resultados%20de%20la%20votación%20en%20el%20siguiente%20enlace:%20http://localhost:8000/visualizer/botResults/"+str(r[0]['id'])
             context['facebookUrl']="http://www.facebook.com/sharer.php?u=http://localhost:8000/visualizer/botResults/"+str(r[0]['id'])
