@@ -1,0 +1,3457 @@
+[
+{
+ "model": "auth.user",
+ "pk": 1,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$GVAzWjGygBdl$+lGgvAAnBY9cN+pWdujXBMFT4qEU33A8ij0YAX67Ymo=",
+  "last_login": "2021-01-14T14:18:43.624Z",
+  "is_superuser": true,
+  "username": "admin",
+  "first_name": "",
+  "last_name": "",
+  "email": "auguadalfeo@gmail.com",
+  "is_staff": true,
+  "is_active": true,
+  "date_joined": "2020-10-22T12:00:24.231Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 2,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$XbTJUuLspDsT$ou/vHfvpSh4ske4CMH3rGs6dD/8NbZu73tBBJ5k6weY=",
+  "last_login": null,
+  "is_superuser": false,
+  "username": "JoseManuelCoboGuerrero",
+  "first_name": "Jose",
+  "last_name": "Cobo",
+  "email": "",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2021-01-14T14:20:13Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 3,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$Kp5Hy7Vie75Y$1V1HR3fKP9MaufjSZRVjXZGr4sgPBipfS7IgPH+ZZVs=",
+  "last_login": null,
+  "is_superuser": false,
+  "username": "CarlosDobladoHerrero",
+  "first_name": "Carlos",
+  "last_name": "Doblado",
+  "email": "",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2021-01-14T14:20:38Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 4,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$k4yFaJSFTpFZ$C2Qf0z8LvEmE+l0aa1q0K/f2g/QPPiT0EWGuMNttwfI=",
+  "last_login": null,
+  "is_superuser": false,
+  "username": "MiguelPonceMelero",
+  "first_name": "Miguel",
+  "last_name": "Ponce",
+  "email": "",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2021-01-14T14:21:01Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 5,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$PPdVFFN1hV73$gVMUTff5845jk8FKKZkhQa4lP8BHDaHd5HK2TBS5QFo=",
+  "last_login": null,
+  "is_superuser": false,
+  "username": "AlvaroAguilarAlhama",
+  "first_name": "Alvaro",
+  "last_name": "Aguilar",
+  "email": "",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2021-01-14T14:21:17Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 6,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$tSpciBRvwcx3$ItAnefZ3w6T0ocGeB6w7r1UIjaUnAflOfNhU1vBMsWE=",
+  "last_login": null,
+  "is_superuser": false,
+  "username": "FranciscoJoseQuintelaVela",
+  "first_name": "Francisco",
+  "last_name": "Quintela",
+  "email": "",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2021-01-14T14:21:32Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 7,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$wFwlgKm5lQnA$uOgjZpgU2cjn5s2656TuYpSQsg6uKU1VB0WnZ86/qYM=",
+  "last_login": null,
+  "is_superuser": false,
+  "username": "ReyesBlascoCuadrado",
+  "first_name": "Reyes",
+  "last_name": "Blasco",
+  "email": "",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2021-01-14T14:21:52Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 8,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$uSruMl0KtN2A$gualbkZ39JIfqnUE2uMl7NOeGTNd2DIJJPxaVF/qqZg=",
+  "last_login": null,
+  "is_superuser": false,
+  "username": "EstefaniaGanforninaTriguero",
+  "first_name": "Estefania",
+  "last_name": "Ganfornina",
+  "email": "",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2021-01-14T14:24:54Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 9,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$P3jp3SfrKWrD$WjyTh3RzHp1hQQQZLh2JEBE47pepBly6xD/HhXgiZrA=",
+  "last_login": null,
+  "is_superuser": false,
+  "username": "VanessaPradasFernandez",
+  "first_name": "Vanessa",
+  "last_name": "Pradas",
+  "email": "",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2021-01-14T14:25:16Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 10,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$PefuEsSmrP3o$IuHwmc7F4KoP0sNQnHzrbOu1ZEuzzP4YEf/l2uw/JAE=",
+  "last_login": null,
+  "is_superuser": false,
+  "username": "LuciaMartinezFernandez",
+  "first_name": "Lucia",
+  "last_name": "Martinez",
+  "email": "",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2021-01-14T14:25:44Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 11,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$70m9GV0e0UTJ$uI3MN6swPmxRj3hJeXjlKTXMulxux9RjlWCysyEdQJQ=",
+  "last_login": null,
+  "is_superuser": false,
+  "username": "MariaGutierrezFernandez",
+  "first_name": "Maria",
+  "last_name": "Gutierrez",
+  "email": "",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2021-01-14T14:26:22Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 12,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$06pcERpJFl0k$S3wY3OgdAcJQ+1WjWqUnrvL5mzRTBaww9VhLLFHlZAU=",
+  "last_login": null,
+  "is_superuser": false,
+  "username": "MartaAlvarezFernandez",
+  "first_name": "Marta",
+  "last_name": "Alvarez",
+  "email": "",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2021-01-14T14:26:48Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 13,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$5UCGZWkYpNoH$aRu1w5xZYJ4q/pSMaABJjdkEotWYZtKD9zC5voNA1/Y=",
+  "last_login": "2021-01-14T15:34:41.699Z",
+  "is_superuser": false,
+  "username": "EnriqueReinaGutierrez",
+  "first_name": "Enrique",
+  "last_name": "Reina",
+  "email": "",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2021-01-14T14:27:36Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 14,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$7uYk3CURv5kf$UYxsfT9UbR9gji6QE+uGC/VMvdNdTmWzZow1UCBRayU=",
+  "last_login": null,
+  "is_superuser": false,
+  "username": "JaimeBlazquez",
+  "first_name": "Jaime",
+  "last_name": "Blazquez",
+  "email": "",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2021-01-14T15:17:31Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 15,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$3YynikUUtLch$Umdkq2MZ9ZaUC+vHJERh1wnKQvvzSCkS6dpkHydvsh4=",
+  "last_login": null,
+  "is_superuser": false,
+  "username": "RubenDominguez",
+  "first_name": "Ruben",
+  "last_name": "Dominguez",
+  "email": "",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2021-01-14T15:18:02Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 16,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$ra3pDh6j9oZC$HUstBC3YqgXfEZWxoQ8QsgUyNnWoYyAsXjuMY5uTkks=",
+  "last_login": null,
+  "is_superuser": false,
+  "username": "FelicianoAlamo",
+  "first_name": "Feliciano",
+  "last_name": "Alamo",
+  "email": "",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2021-01-14T15:18:14Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 17,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$UIY8EhzFnY9p$v89h4TsR8MqKkLmxmUWTNiRqFXtYQVCOFrG3iOdE4Q4=",
+  "last_login": null,
+  "is_superuser": false,
+  "username": "IsmailMayoral",
+  "first_name": "Ismail",
+  "last_name": "Mayoral",
+  "email": "",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2021-01-14T15:18:33Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 18,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$9fKwiQVDYe43$yBUanU30f+j2gmj2SUapT4XVtnJOfLgvxI381gBCn8E=",
+  "last_login": null,
+  "is_superuser": false,
+  "username": "CristianSancho",
+  "first_name": "Cristian",
+  "last_name": "Sancho",
+  "email": "",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2021-01-14T15:18:46Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 19,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$bmDMhKWmRO7q$MLyL1lilkJB6xC4/9D6Iq3hG1EZvH5Pddd2fheKqHlA=",
+  "last_login": null,
+  "is_superuser": false,
+  "username": "AriadnaBarba",
+  "first_name": "Ariadna",
+  "last_name": "Barba",
+  "email": "",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2021-01-14T15:19:04Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 20,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$jHCC8iIy2qqG$cziTrjj7Kb6AjfADkQhqYnnuS+qg90XVjg30mfhHjlU=",
+  "last_login": null,
+  "is_superuser": false,
+  "username": "MariaAngelaMoyano",
+  "first_name": "MariaAngela",
+  "last_name": "Moyano",
+  "email": "",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2021-01-14T15:19:20Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 21,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$HHUUhptGLwiQ$5zHim3s4hUoFYLy9Td2ZUZVmANbTUci2z1r/O8vE5nY=",
+  "last_login": null,
+  "is_superuser": false,
+  "username": "EsmeraldaValle",
+  "first_name": "Esmeralda",
+  "last_name": "Valle",
+  "email": "",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2021-01-14T15:19:41Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 22,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$x8spOmptatko$LnsLb+m9a97O+RHgzsQpGeofrOBDg5Cr1hV2y9LP5II=",
+  "last_login": null,
+  "is_superuser": false,
+  "username": "DeliaJerez",
+  "first_name": "Delia",
+  "last_name": "Jerez",
+  "email": "",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2021-01-14T15:20:02Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 23,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$Efj14DrLqRJp$W7BLg5KiLYpnHbXraAznzjxd5Dbcw7yCtIBNY/q+f8o=",
+  "last_login": null,
+  "is_superuser": false,
+  "username": "MiriamVilchez",
+  "first_name": "Miriam",
+  "last_name": "Vilchez",
+  "email": "",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2021-01-14T15:20:51Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 24,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$Su4sLODwRlF3$qDVuYcHMzfOvfAbdU4CbgUPphK2/jqqa5PCBvBqPcSQ=",
+  "last_login": null,
+  "is_superuser": false,
+  "username": "MarianaEspin",
+  "first_name": "Mariana",
+  "last_name": "Espin",
+  "email": "",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2021-01-14T15:21:12Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "auth.user",
+ "pk": 25,
+ "fields": {
+  "password": "pbkdf2_sha256$100000$K93iuGCtp7Va$3LAj52fx9jwlOGzeWdxlVdvZgm2KB1husGpIOvrATk8=",
+  "last_login": null,
+  "is_superuser": false,
+  "username": "JuanPedroGomis",
+  "first_name": "JuanPedro",
+  "last_name": "Gomis",
+  "email": "",
+  "is_staff": false,
+  "is_active": true,
+  "date_joined": "2021-01-14T15:21:37Z",
+  "groups": [],
+  "user_permissions": []
+ }
+},
+{
+ "model": "sessions.session",
+ "pk": "17qj95xcguy0rnixt7bs4p8pvlp0xkpq",
+ "fields": {
+  "session_data": "Mzk0ZDg0NDZjMWUxMDk2NDc2ZjQ4ZjU4NmQ1ZWE4MjRjYzgxMGM0Njp7ImF1dGgtdG9rZW4iOiI3NmNhZDk3MDJiYTMxMTNhODhlNjVkMzEzYmRjZWQxOTRhOTI0OGNkIiwiX2F1dGhfdXNlcl9pZCI6IjEzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYmFzZS5iYWNrZW5kcy5BdXRoQmFja2VuZCIsIl9hdXRoX3VzZXJfaGFzaCI6IjgyMTgxYzhhMjAyNWRkYzIxYjhhNjMxYWE3YjkxNzVjYWIzZDZhYjcifQ==",
+  "expire_date": "2021-01-28T15:34:41.735Z"
+ }
+},
+{
+ "model": "sessions.session",
+ "pk": "r3451hi6div2f3jtkepe4titwhyrsrwl",
+ "fields": {
+  "session_data": "NzI5YmUzOTM3MmFhYmQ4YzkzZWViYTE5YjI5ODkxZTBiOTQ1NDZkODp7ImF1dGgtdG9rZW4iOiJjYzg3NjAzNzc1ODMyN2EwMTY1ZDcwZTY5N2EzZmE1ZTBkYmI0YmM2IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJiYXNlLmJhY2tlbmRzLkF1dGhCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiNDU1ZjVhMWYyNTUwMGMyYWJkMDRhOGM3YWMxZGMyNTE4N2EyNWE4YiJ9",
+  "expire_date": "2021-01-28T14:18:43.660Z"
+ }
+},
+{
+ "model": "sites.site",
+ "pk": 1,
+ "fields": {
+  "domain": "localhost:8000",
+  "name": "localhost:8000"
+ }
+},
+{
+ "model": "authtoken.token",
+ "pk": "76cad9702ba3113a88e65d313bdced194a9248cd",
+ "fields": {
+  "user": 13,
+  "created": "2021-01-14T15:34:41.633Z"
+ }
+},
+{
+ "model": "authtoken.token",
+ "pk": "cc876037758327a0165d70e697a3fa5e0dbb4bc6",
+ "fields": {
+  "user": 1,
+  "created": "2021-01-14T14:18:43.537Z"
+ }
+},
+{
+ "model": "socialaccount.socialapp",
+ "pk": 1,
+ "fields": {
+  "provider": "google",
+  "name": "Google API",
+  "client_id": "949634819550-fpt7aflj5pj52e5spjppsl940tdshojb.apps.googleusercontent.com",
+  "secret": "7_Hoj6rTtcDppv5Q1zylGZGx",
+  "key": "",
+  "sites": [
+   1
+  ]
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 1,
+ "fields": {
+  "user": 5,
+  "dni": "12345678A",
+  "sexo": "Woman",
+  "titulo": "Software",
+  "curso": "Master",
+  "candidatura": 2,
+  "edad": 21
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 2,
+ "fields": {
+  "user": 3,
+  "dni": "12345678B",
+  "sexo": "Man",
+  "titulo": "Software",
+  "curso": "First",
+  "candidatura": 2,
+  "edad": 22
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 3,
+ "fields": {
+  "user": 13,
+  "dni": "12345678C",
+  "sexo": "Man",
+  "titulo": "Software",
+  "curso": "Second",
+  "candidatura": 2,
+  "edad": 21
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 4,
+ "fields": {
+  "user": 8,
+  "dni": "12345678D",
+  "sexo": "Woman",
+  "titulo": "Software",
+  "curso": "Third",
+  "candidatura": 2,
+  "edad": 21
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 5,
+ "fields": {
+  "user": 6,
+  "dni": "12345678E",
+  "sexo": "Man",
+  "titulo": "Software",
+  "curso": "Fourth",
+  "candidatura": 2,
+  "edad": 21
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 6,
+ "fields": {
+  "user": 2,
+  "dni": "12345678F",
+  "sexo": "Man",
+  "titulo": "Software",
+  "curso": "First",
+  "candidatura": 2,
+  "edad": 22
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 7,
+ "fields": {
+  "user": 1,
+  "dni": "12345678Z",
+  "sexo": "Woman",
+  "titulo": "Software",
+  "curso": "First",
+  "candidatura": null,
+  "edad": 18
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 8,
+ "fields": {
+  "user": 10,
+  "dni": "12345678G",
+  "sexo": "Woman",
+  "titulo": "Software",
+  "curso": "First",
+  "candidatura": 3,
+  "edad": 19
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 9,
+ "fields": {
+  "user": 11,
+  "dni": "12345678H",
+  "sexo": "Woman",
+  "titulo": "Software",
+  "curso": "Second",
+  "candidatura": 3,
+  "edad": 24
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 10,
+ "fields": {
+  "user": 12,
+  "dni": "12345678I",
+  "sexo": "Woman",
+  "titulo": "Software",
+  "curso": "Third",
+  "candidatura": 3,
+  "edad": 21
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 11,
+ "fields": {
+  "user": 4,
+  "dni": "12345678J",
+  "sexo": "Man",
+  "titulo": "Software",
+  "curso": "Third",
+  "candidatura": 3,
+  "edad": 21
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 12,
+ "fields": {
+  "user": 7,
+  "dni": "12345678K",
+  "sexo": "Woman",
+  "titulo": "Software",
+  "curso": "Fourth",
+  "candidatura": 3,
+  "edad": 21
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 13,
+ "fields": {
+  "user": 9,
+  "dni": "12345678L",
+  "sexo": "Woman",
+  "titulo": "Software",
+  "curso": "Master",
+  "candidatura": 3,
+  "edad": 22
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 14,
+ "fields": {
+  "user": 19,
+  "dni": "12345670A",
+  "sexo": "Woman",
+  "titulo": "Software",
+  "curso": "First",
+  "candidatura": 2,
+  "edad": 18
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 15,
+ "fields": {
+  "user": 18,
+  "dni": "12345670B",
+  "sexo": "Man",
+  "titulo": "Software",
+  "curso": "Second",
+  "candidatura": 2,
+  "edad": 19
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 16,
+ "fields": {
+  "user": 22,
+  "dni": "12345670C",
+  "sexo": "Woman",
+  "titulo": "Software",
+  "curso": "Third",
+  "candidatura": 2,
+  "edad": 20
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 17,
+ "fields": {
+  "user": 21,
+  "dni": "12345670D",
+  "sexo": "Woman",
+  "titulo": "Software",
+  "curso": "Fourth",
+  "candidatura": 2,
+  "edad": 21
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 18,
+ "fields": {
+  "user": 16,
+  "dni": "12345670E",
+  "sexo": "Man",
+  "titulo": "Software",
+  "curso": "Master",
+  "candidatura": 2,
+  "edad": 27
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 19,
+ "fields": {
+  "user": 17,
+  "dni": "12345670F",
+  "sexo": "Man",
+  "titulo": "Software",
+  "curso": "First",
+  "candidatura": 2,
+  "edad": 18
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 20,
+ "fields": {
+  "user": 14,
+  "dni": "12345670G",
+  "sexo": "Man",
+  "titulo": "Software",
+  "curso": "Second",
+  "candidatura": 3,
+  "edad": 25
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 21,
+ "fields": {
+  "user": 25,
+  "dni": "12345670H",
+  "sexo": "Man",
+  "titulo": "Software",
+  "curso": "First",
+  "candidatura": 3,
+  "edad": 25
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 22,
+ "fields": {
+  "user": 20,
+  "dni": "12345670I",
+  "sexo": "Woman",
+  "titulo": "Software",
+  "curso": "Third",
+  "candidatura": 2,
+  "edad": 22
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 23,
+ "fields": {
+  "user": 24,
+  "dni": "12345670J",
+  "sexo": "Woman",
+  "titulo": "Software",
+  "curso": "Second",
+  "candidatura": 2,
+  "edad": 20
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 24,
+ "fields": {
+  "user": 23,
+  "dni": "12345670K",
+  "sexo": "Woman",
+  "titulo": "Software",
+  "curso": "First",
+  "candidatura": 3,
+  "edad": 19
+ }
+},
+{
+ "model": "authentication.votinguser",
+ "pk": 25,
+ "fields": {
+  "user": 15,
+  "dni": "12345670P",
+  "sexo": "Man",
+  "titulo": "Software",
+  "curso": "Master",
+  "candidatura": 3,
+  "edad": 26
+ }
+},
+{
+ "model": "base.auth",
+ "pk": 1,
+ "fields": {
+  "name": "127.0.0.1:8000",
+  "url": "http://127.0.0.1:8000",
+  "me": false
+ }
+},
+{
+ "model": "base.key",
+ "pk": 1,
+ "fields": {
+  "p": 108883222090762673703132233443236469550341341623353306737355444757262806443487,
+  "g": 80902730834074176136646850569853915151768579445209192834558815355316376949797,
+  "y": 46444580554062307328292152515323849647720732846147094221050677339606950946840,
+  "x": 17931659289925164374107302254151398902693994440890154041240264259952329431793
+ }
+},
+{
+ "model": "base.key",
+ "pk": 2,
+ "fields": {
+  "p": 108883222090762673703132233443236469550341341623353306737355444757262806443487,
+  "g": 80902730834074176136646850569853915151768579445209192834558815355316376949797,
+  "y": 46444580554062307328292152515323849647720732846147094221050677339606950946840,
+  "x": 0
+ }
+},
+{
+ "model": "base.key",
+ "pk": 3,
+ "fields": {
+  "p": 108883222090762673703132233443236469550341341623353306737355444757262806443487,
+  "g": 80902730834074176136646850569853915151768579445209192834558815355316376949797,
+  "y": 46444580554062307328292152515323849647720732846147094221050677339606950946840,
+  "x": 0
+ }
+},
+{
+ "model": "base.key",
+ "pk": 4,
+ "fields": {
+  "p": 62454582829273350292445610547021802495928647132260163484319467223192903323647,
+  "g": 44144301524309587636487234810012805948266639142320827925150394210658201057464,
+  "y": 23501696432383268351430903914153031724124850539042875179157582001798335531846,
+  "x": 6618758877971715291852928889889746625183092219126669065268643448600575648889
+ }
+},
+{
+ "model": "base.key",
+ "pk": 5,
+ "fields": {
+  "p": 62454582829273350292445610547021802495928647132260163484319467223192903323647,
+  "g": 44144301524309587636487234810012805948266639142320827925150394210658201057464,
+  "y": 23501696432383268351430903914153031724124850539042875179157582001798335531846,
+  "x": 0
+ }
+},
+{
+ "model": "base.key",
+ "pk": 6,
+ "fields": {
+  "p": 62454582829273350292445610547021802495928647132260163484319467223192903323647,
+  "g": 44144301524309587636487234810012805948266639142320827925150394210658201057464,
+  "y": 23501696432383268351430903914153031724124850539042875179157582001798335531846,
+  "x": 0
+ }
+},
+{
+ "model": "base.key",
+ "pk": 7,
+ "fields": {
+  "p": 100603085496353901203612570821969415440225321767122364105549987334601788597187,
+  "g": 32047264008670488788220083064879953467408927786883269412658226431788123327073,
+  "y": 6979891626857911596455795055966016521254834319091383232106121358498396415751,
+  "x": 55241633971786329091216551326714773226955409044652843355428189653705518529927
+ }
+},
+{
+ "model": "base.key",
+ "pk": 8,
+ "fields": {
+  "p": 100603085496353901203612570821969415440225321767122364105549987334601788597187,
+  "g": 32047264008670488788220083064879953467408927786883269412658226431788123327073,
+  "y": 6979891626857911596455795055966016521254834319091383232106121358498396415751,
+  "x": 0
+ }
+},
+{
+ "model": "base.key",
+ "pk": 9,
+ "fields": {
+  "p": 100603085496353901203612570821969415440225321767122364105549987334601788597187,
+  "g": 32047264008670488788220083064879953467408927786883269412658226431788123327073,
+  "y": 6979891626857911596455795055966016521254834319091383232106121358498396415751,
+  "x": 0
+ }
+},
+{
+ "model": "base.key",
+ "pk": 10,
+ "fields": {
+  "p": 63084141395945095880430497417676158031642815974444696242027841244740616293967,
+  "g": 29628215338103678433179355076370649008998654937001595558015188877944555935006,
+  "y": 50350142693135103805312503013989786649288264248263155617557779255878534056689,
+  "x": 59475337190800233831446226770940950886565434791494986177507896268942712363352
+ }
+},
+{
+ "model": "base.key",
+ "pk": 11,
+ "fields": {
+  "p": 63084141395945095880430497417676158031642815974444696242027841244740616293967,
+  "g": 29628215338103678433179355076370649008998654937001595558015188877944555935006,
+  "y": 50350142693135103805312503013989786649288264248263155617557779255878534056689,
+  "x": 0
+ }
+},
+{
+ "model": "base.key",
+ "pk": 12,
+ "fields": {
+  "p": 63084141395945095880430497417676158031642815974444696242027841244740616293967,
+  "g": 29628215338103678433179355076370649008998654937001595558015188877944555935006,
+  "y": 50350142693135103805312503013989786649288264248263155617557779255878534056689,
+  "x": 0
+ }
+},
+{
+ "model": "base.key",
+ "pk": 13,
+ "fields": {
+  "p": 62657332753176358254038442059083500362890239739384129875792467639747541290519,
+  "g": 56279611921600577211684308622378261751836981313812455287123141688090002062952,
+  "y": 58219291009497777967120941108541646521268837047282407547113433106524206478053,
+  "x": 902793310522636876080693699679029258206955150173161552023936904361749745405
+ }
+},
+{
+ "model": "base.key",
+ "pk": 14,
+ "fields": {
+  "p": 62657332753176358254038442059083500362890239739384129875792467639747541290519,
+  "g": 56279611921600577211684308622378261751836981313812455287123141688090002062952,
+  "y": 58219291009497777967120941108541646521268837047282407547113433106524206478053,
+  "x": 0
+ }
+},
+{
+ "model": "base.key",
+ "pk": 15,
+ "fields": {
+  "p": 62657332753176358254038442059083500362890239739384129875792467639747541290519,
+  "g": 56279611921600577211684308622378261751836981313812455287123141688090002062952,
+  "y": 58219291009497777967120941108541646521268837047282407547113433106524206478053,
+  "x": 0
+ }
+},
+{
+ "model": "census.census",
+ "pk": 5,
+ "fields": {
+  "voting_id": 8,
+  "voter_id": 1
+ }
+},
+{
+ "model": "census.census",
+ "pk": 6,
+ "fields": {
+  "voting_id": 8,
+  "voter_id": 13
+ }
+},
+{
+ "model": "census.census",
+ "pk": 7,
+ "fields": {
+  "voting_id": 9,
+  "voter_id": 1
+ }
+},
+{
+ "model": "census.census",
+ "pk": 8,
+ "fields": {
+  "voting_id": 9,
+  "voter_id": 13
+ }
+},
+{
+ "model": "mixnet.mixnet",
+ "pk": 1,
+ "fields": {
+  "voting_id": 3,
+  "auth_position": 0,
+  "key": 1,
+  "pubkey": 2,
+  "auths": [
+   1
+  ]
+ }
+},
+{
+ "model": "mixnet.mixnet",
+ "pk": 2,
+ "fields": {
+  "voting_id": 4,
+  "auth_position": 0,
+  "key": 4,
+  "pubkey": 5,
+  "auths": [
+   1
+  ]
+ }
+},
+{
+ "model": "mixnet.mixnet",
+ "pk": 3,
+ "fields": {
+  "voting_id": 6,
+  "auth_position": 0,
+  "key": 7,
+  "pubkey": 8,
+  "auths": [
+   1
+  ]
+ }
+},
+{
+ "model": "mixnet.mixnet",
+ "pk": 4,
+ "fields": {
+  "voting_id": 8,
+  "auth_position": 0,
+  "key": 10,
+  "pubkey": 11,
+  "auths": [
+   1
+  ]
+ }
+},
+{
+ "model": "mixnet.mixnet",
+ "pk": 5,
+ "fields": {
+  "voting_id": 9,
+  "auth_position": 0,
+  "key": 13,
+  "pubkey": 14,
+  "auths": [
+   1
+  ]
+ }
+},
+{
+ "model": "store.vote",
+ "pk": 1,
+ "fields": {
+  "voting_id": 4,
+  "voter_id": 1,
+  "data": {
+   "age": {
+    "a": "19592944301373586307738502126144404359434985375493810286967490285671508480153",
+    "b": "21259384347271474046314736345956483248879187849237454359604054826398309559239"
+   },
+   "sex": {
+    "a": "9663942588303231801364809605561497646564481035776271224755197458311591835858",
+    "b": "6412479101363667532331265780764970018027210021098669983905951254257694978551"
+   },
+   "year": {
+    "a": "7868278058356895823389525752002937233642782812101669860964486772681960234045",
+    "b": "6635659459768237606300374339537502793377040390101825098709550772804950752746"
+   },
+   "grade": {
+    "a": "51362323281357464451016344996405909701167099083317509032512538853631366728261",
+    "b": "4405739218712832554318969604789129778774672631803467907563880229513666242157"
+   },
+   "elige representante de primero de la candidatura \"Candidatura 2020/2021\"": {
+    "a": "14266896110344300039599354906102894324995331596108907564842866454358587468193",
+    "b": "52988768410002582605755428062798646530626103872760535469735749826036596215659"
+   },
+   "elige representante de delegado de centro de la candidatura \"Candidatura 2020/2021\"": {
+    "a": "23808178849952016726598185833892919685438021899174437634890074196524944981488",
+    "b": "62399396324801461270187201041188864977539850479592180059681402142037082021555"
+   }
+  },
+  "voted": "2021-01-14T15:03:43.697Z"
+ }
+},
+{
+ "model": "store.vote",
+ "pk": 2,
+ "fields": {
+  "voting_id": 8,
+  "voter_id": 1,
+  "data": {
+   "age": {
+    "a": "6792172162748909795510457511670063144255961050519911774862132482896348364170",
+    "b": "59331927920550746751780559819173106457914919568025418975355427160553590620008"
+   },
+   "sex": {
+    "a": "7989106187502715251182142344448631575543723187277567890263673276317653619074",
+    "b": "48500194889162622643974950285334834932885059490872026444655892677217156929419"
+   },
+   "year": {
+    "a": "29621790176529199971780877743926899797528069268051897899623051465185918295488",
+    "b": "45990532086176689251363932086909194100116878702434760484923740815806317334286"
+   },
+   "grade": {
+    "a": "15043979113345698773449828481272841701251995869412273223517608381524158301775",
+    "b": "49108563666929635482753622783343049261845513456393568416119641163846642834679"
+   },
+   "Votaci\u00f3n general 1: Elige al delegado al centro": {
+    "a": "56206952730155249145734772856899589475490188548425094791172260571887390810666",
+    "b": "24216026963635928283704874204987432518611179444861991376846986642268206723367"
+   },
+   "Votaci\u00f3n general 1: Elige al delegado de primero": {
+    "a": "1998835913289565414443168242097846702017077835912022354664326346401343590505",
+    "b": "62058298441493608405911752022004376872632623432963354487787369613133171594597"
+   },
+   "<h2>Votaci\u00f3n general 1: Elige a los miembros de delegaci\u00f3n de alumnos</h2>": [
+    {
+     "a": "8624669085279846613299279012517950235452441462952076611272460326445768428043",
+     "b": "18502289280647197257015323705249044841825091825174451745021479139338664066487"
+    },
+    {
+     "a": "49462649263885802390521020154151622273484338919960890767989395996728128496917",
+     "b": "2953510065362053116941662943309973293002015190492557963464840236090381258809"
+    },
+    {
+     "a": "33911310998169659841727921024009761225772514929110419990037198648113585125624",
+     "b": "42756305800014475370856574311817442351386829178900662651582874628444411473167"
+    },
+    {
+     "a": "35621676173345831165713144740024038744995937846014460099292055109376511013599",
+     "b": "51942991071581786758160158345473056596993915856352074099486022567563839946888"
+    }
+   ]
+  },
+  "voted": "2021-01-14T15:34:10.242Z"
+ }
+},
+{
+ "model": "store.vote",
+ "pk": 3,
+ "fields": {
+  "voting_id": 8,
+  "voter_id": 13,
+  "data": {
+   "age": {
+    "a": "33935738720409976566301575681587466300898093594078304371643157106151258774728",
+    "b": "26131974381956823399492923091485591917364963082045815081849884865785155022112"
+   },
+   "sex": {
+    "a": "51211159420810499653404985121966049608611189812699715448518240471442832520152",
+    "b": "34806872242496806466570020222067105472519862589648680519802657959008787880358"
+   },
+   "year": {
+    "a": "38411422415874830964570047733842764050045348483515396880662440965144547131181",
+    "b": "2478478658095991730916222120949835831979936514978505501426708061754853353412"
+   },
+   "grade": {
+    "a": "8071863856238427032476704763211027691478391685721217476415806978458395548761",
+    "b": "41167981631777779527670219397435746806679673687344236813704029561317897359119"
+   },
+   "Votaci\u00f3n general 1: Elige al delegado al centro": {
+    "a": "34555424532491636406874433438911998989844888684449972742859388997191401798522",
+    "b": "4163948723974172533445141915394244952079488402656168497424354921340812351509"
+   },
+   "Votaci\u00f3n general 1: Elige al delegado de segundo": {
+    "a": "20941560546639636418677278390227950821230743934580685035882921573047899953263",
+    "b": "10221698302560123523769756575697593525132022304287481809001985917025105916273"
+   },
+   "<h2>Votaci\u00f3n general 1: Elige a los miembros de delegaci\u00f3n de alumnos</h2>": [
+    {
+     "a": "2102991658204729252562960087439616013917176752791343799655488397328846115520",
+     "b": "1349011190458390167825638321695877571629538292925777376141410166648758275725"
+    },
+    {
+     "a": "39247112343976459467884941573230747127736617605422606411441201338844258809135",
+     "b": "48027940769735531300117359603599078280613649953548751195800124540913748493168"
+    },
+    {
+     "a": "22232201136981882070791413863110263983312335689179942035039878414882920951524",
+     "b": "11895433899847618402899439609923493235938968149266101416164526098922483953061"
+    },
+    {
+     "a": "12555805809283816246613990910105127728323451603700586692117228120232653989506",
+     "b": "44707390053383459926284148645016245338428864846069901681742530334671668441218"
+    }
+   ]
+  },
+  "voted": "2021-01-14T15:35:01.339Z"
+ }
+},
+{
+ "model": "store.vote",
+ "pk": 4,
+ "fields": {
+  "voting_id": 9,
+  "voter_id": 1,
+  "data": {
+   "age": {
+    "a": "33091606036830188068518320802568309151131267726149162558415672928107432523500",
+    "b": "7492292738441271986852828395335166899597381991556449247491277548384041867576"
+   },
+   "sex": {
+    "a": "42573820201532230112460195866517422535924028181617975862856992317422852543405",
+    "b": "25425009067178194216368069032732419474500245106828407839620556339348196718282"
+   },
+   "year": {
+    "a": "20369315036671920005693495271561094552023305128683123339146351982345370601509",
+    "b": "53724160898849883484961139417531411147929459405582338810876444793586806277627"
+   },
+   "grade": {
+    "a": "27509557710659139126231050024621473473379299574114302614717256164860768404008",
+    "b": "51640132144090639467610659953788239685082843536287959329343360073113871991224"
+   },
+   "elige representante de primero de la candidatura \"Candidatura 2020/2021\"": {
+    "a": "18980964975522230507797111933412277390387046948196796129406411455557024972560",
+    "b": "33214490079124885868668731550633563691420676674137315930296499173889815172259"
+   },
+   "elige representante de delegado de centro de la candidatura \"Candidatura 2020/2021\"": {
+    "a": "52888968701193976903581329955830877861998406510294433725768902770951341639032",
+    "b": "55836708885254855943167086296412352923545805626788405286484735747424213524048"
+   }
+  },
+  "voted": "2021-01-14T15:36:47.832Z"
+ }
+},
+{
+ "model": "store.vote",
+ "pk": 5,
+ "fields": {
+  "voting_id": 9,
+  "voter_id": 13,
+  "data": {
+   "age": {
+    "a": "30421311910299101573138530768659276320216848007589657950818049251968886545562",
+    "b": "22390658758292430710887259679154042253541209517416580134203896871357531438753"
+   },
+   "sex": {
+    "a": "23318072922986424904601931345812059273587359705083842754374049284503937010353",
+    "b": "41583188827782716596655729911228473445199401863441051322731413927006208931602"
+   },
+   "year": {
+    "a": "39817649317479054916199048038338368499399232124363635299695479235651240635585",
+    "b": "61567082468842642466710870237004691354180961982796829265730136201271232199688"
+   },
+   "grade": {
+    "a": "17745795480947843253426696576253239189917403204868038799469990175421290352633",
+    "b": "24831773687197586540132804213762400413743816208043258191272842659303749302919"
+   },
+   "elige representante de segundo de la candidatura \"Candidatura 2020/2021\"": {
+    "a": "45038649894015147319910270216536474228861550671401762058775087006671085786237",
+    "b": "35056814737886298391320368399519995838424517319202915426442085071347353797384"
+   },
+   "elige representante de delegado de centro de la candidatura \"Candidatura 2020/2021\"": {
+    "a": "29225358903231961410981058277954060456177310341520012591602342286900795447524",
+    "b": "41667917955394590861770671044297418371226470885906352753271484279811156653248"
+   }
+  },
+  "voted": "2021-01-14T15:37:10.006Z"
+ }
+},
+{
+ "model": "voting.question",
+ "pk": 47,
+ "fields": {
+  "desc": "Votaci\u00f3n general 1: Elige al delegado de primero"
+ }
+},
+{
+ "model": "voting.question",
+ "pk": 48,
+ "fields": {
+  "desc": "Votaci\u00f3n general 1: Elige al delegado de segundo"
+ }
+},
+{
+ "model": "voting.question",
+ "pk": 49,
+ "fields": {
+  "desc": "Votaci\u00f3n general 1: Elige al delegado de tercero"
+ }
+},
+{
+ "model": "voting.question",
+ "pk": 50,
+ "fields": {
+  "desc": "Votaci\u00f3n general 1: Elige al delegado de cuarto"
+ }
+},
+{
+ "model": "voting.question",
+ "pk": 51,
+ "fields": {
+  "desc": "Votaci\u00f3n general 1: Elige al delegado del master"
+ }
+},
+{
+ "model": "voting.question",
+ "pk": 52,
+ "fields": {
+  "desc": "Votaci\u00f3n general 1: Elige al delegado al centro"
+ }
+},
+{
+ "model": "voting.question",
+ "pk": 53,
+ "fields": {
+  "desc": "Votaci\u00f3n general 1: Elige a los miembros de delegaci\u00f3n de alumnos"
+ }
+},
+{
+ "model": "voting.question",
+ "pk": 54,
+ "fields": {
+  "desc": "elige representante de primero de la candidatura \"Candidatura 2020/2021\""
+ }
+},
+{
+ "model": "voting.question",
+ "pk": 55,
+ "fields": {
+  "desc": "elige representante de segundo de la candidatura \"Candidatura 2020/2021\""
+ }
+},
+{
+ "model": "voting.question",
+ "pk": 56,
+ "fields": {
+  "desc": "elige representante de tercero de la candidatura \"Candidatura 2020/2021\""
+ }
+},
+{
+ "model": "voting.question",
+ "pk": 57,
+ "fields": {
+  "desc": "elige representante de cuarto de la candidatura \"Candidatura 2020/2021\""
+ }
+},
+{
+ "model": "voting.question",
+ "pk": 58,
+ "fields": {
+  "desc": "elige representante de m\u00e1ster de la candidatura \"Candidatura 2020/2021\""
+ }
+},
+{
+ "model": "voting.question",
+ "pk": 59,
+ "fields": {
+  "desc": "elige representante de delegado de centro de la candidatura \"Candidatura 2020/2021\""
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 75,
+ "fields": {
+  "question": 47,
+  "number": 1,
+  "option": "Maria Gutierrez / 11"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 76,
+ "fields": {
+  "question": 48,
+  "number": 1,
+  "option": "Marta Alvarez / 12"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 77,
+ "fields": {
+  "question": 49,
+  "number": 1,
+  "option": "Miguel Ponce / 4"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 78,
+ "fields": {
+  "question": 50,
+  "number": 1,
+  "option": "Reyes Blasco / 7"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 79,
+ "fields": {
+  "question": 51,
+  "number": 1,
+  "option": "Vanessa Pradas / 9"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 80,
+ "fields": {
+  "question": 52,
+  "number": 1,
+  "option": "Lucia Martinez / 10"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 81,
+ "fields": {
+  "question": 53,
+  "number": 1,
+  "option": "Jaime Blazquez / 14"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 82,
+ "fields": {
+  "question": 53,
+  "number": 2,
+  "option": "JuanPedro Gomis / 25"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 83,
+ "fields": {
+  "question": 53,
+  "number": 3,
+  "option": "Miriam Vilchez / 23"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 84,
+ "fields": {
+  "question": 53,
+  "number": 4,
+  "option": "Ruben Dominguez / 15"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 85,
+ "fields": {
+  "question": 47,
+  "number": 2,
+  "option": "Carlos Doblado / 3"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 86,
+ "fields": {
+  "question": 48,
+  "number": 2,
+  "option": "Enrique Reina / 13"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 87,
+ "fields": {
+  "question": 49,
+  "number": 2,
+  "option": "Estefania Ganfornina / 8"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 88,
+ "fields": {
+  "question": 50,
+  "number": 2,
+  "option": "Francisco Quintela / 6"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 89,
+ "fields": {
+  "question": 51,
+  "number": 2,
+  "option": "Jose Cobo / 2"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 90,
+ "fields": {
+  "question": 52,
+  "number": 2,
+  "option": "Alvaro Aguilar / 5"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 91,
+ "fields": {
+  "question": 53,
+  "number": 2,
+  "option": "Ariadna Barba / 19"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 92,
+ "fields": {
+  "question": 53,
+  "number": 3,
+  "option": "Delia Jerez / 22"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 93,
+ "fields": {
+  "question": 53,
+  "number": 4,
+  "option": "Esmeralda Valle / 21"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 94,
+ "fields": {
+  "question": 53,
+  "number": 5,
+  "option": "Feliciano Alamo / 16"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 95,
+ "fields": {
+  "question": 53,
+  "number": 6,
+  "option": "Ismail Mayoral / 17"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 96,
+ "fields": {
+  "question": 53,
+  "number": 7,
+  "option": "MariaAngela Moyano / 20"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 97,
+ "fields": {
+  "question": 53,
+  "number": 8,
+  "option": "Mariana Espin / 24"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 98,
+ "fields": {
+  "question": 53,
+  "number": 9,
+  "option": "Cristian Sancho / 18"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 99,
+ "fields": {
+  "question": 54,
+  "number": 1,
+  "option": "Carlos Doblado / 3"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 100,
+ "fields": {
+  "question": 54,
+  "number": 2,
+  "option": "Jose Cobo / 2"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 101,
+ "fields": {
+  "question": 54,
+  "number": 3,
+  "option": "Ariadna Barba / 19"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 102,
+ "fields": {
+  "question": 54,
+  "number": 4,
+  "option": "Ismail Mayoral / 17"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 103,
+ "fields": {
+  "question": 55,
+  "number": 1,
+  "option": "Enrique Reina / 13"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 104,
+ "fields": {
+  "question": 55,
+  "number": 2,
+  "option": "Mariana Espin / 24"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 105,
+ "fields": {
+  "question": 55,
+  "number": 3,
+  "option": "Cristian Sancho / 18"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 106,
+ "fields": {
+  "question": 56,
+  "number": 1,
+  "option": "Estefania Ganfornina / 8"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 107,
+ "fields": {
+  "question": 56,
+  "number": 2,
+  "option": "Delia Jerez / 22"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 108,
+ "fields": {
+  "question": 56,
+  "number": 3,
+  "option": "MariaAngela Moyano / 20"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 109,
+ "fields": {
+  "question": 57,
+  "number": 1,
+  "option": "Francisco Quintela / 6"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 110,
+ "fields": {
+  "question": 57,
+  "number": 2,
+  "option": "Esmeralda Valle / 21"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 111,
+ "fields": {
+  "question": 58,
+  "number": 1,
+  "option": "Alvaro Aguilar / 5"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 112,
+ "fields": {
+  "question": 58,
+  "number": 2,
+  "option": "Feliciano Alamo / 16"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 113,
+ "fields": {
+  "question": 59,
+  "number": 1,
+  "option": "Alvaro Aguilar / 5"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 114,
+ "fields": {
+  "question": 59,
+  "number": 2,
+  "option": "Carlos Doblado / 3"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 115,
+ "fields": {
+  "question": 59,
+  "number": 3,
+  "option": "Enrique Reina / 13"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 116,
+ "fields": {
+  "question": 59,
+  "number": 4,
+  "option": "Estefania Ganfornina / 8"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 117,
+ "fields": {
+  "question": 59,
+  "number": 5,
+  "option": "Francisco Quintela / 6"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 118,
+ "fields": {
+  "question": 59,
+  "number": 6,
+  "option": "Jose Cobo / 2"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 119,
+ "fields": {
+  "question": 59,
+  "number": 7,
+  "option": "Ariadna Barba / 19"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 120,
+ "fields": {
+  "question": 59,
+  "number": 8,
+  "option": "Delia Jerez / 22"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 121,
+ "fields": {
+  "question": 59,
+  "number": 9,
+  "option": "Esmeralda Valle / 21"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 122,
+ "fields": {
+  "question": 59,
+  "number": 10,
+  "option": "Feliciano Alamo / 16"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 123,
+ "fields": {
+  "question": 59,
+  "number": 11,
+  "option": "Ismail Mayoral / 17"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 124,
+ "fields": {
+  "question": 59,
+  "number": 12,
+  "option": "MariaAngela Moyano / 20"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 125,
+ "fields": {
+  "question": 59,
+  "number": 13,
+  "option": "Mariana Espin / 24"
+ }
+},
+{
+ "model": "voting.questionoption",
+ "pk": 126,
+ "fields": {
+  "question": 59,
+  "number": 14,
+  "option": "Cristian Sancho / 18"
+ }
+},
+{
+ "model": "voting.candidatura",
+ "pk": 2,
+ "fields": {
+  "nombre": "Candidatura 2020/2021",
+  "delegadoCentro": 5,
+  "representanteDelegadoPrimero": 3,
+  "representanteDelegadoSegundo": 13,
+  "representanteDelegadoTercero": 8,
+  "representanteDelegadoCuarto": 6,
+  "representanteDelegadoMaster": 2
+ }
+},
+{
+ "model": "voting.candidatura",
+ "pk": 3,
+ "fields": {
+  "nombre": "Candidatura Enrique Reina",
+  "delegadoCentro": 10,
+  "representanteDelegadoPrimero": 11,
+  "representanteDelegadoSegundo": 12,
+  "representanteDelegadoTercero": 4,
+  "representanteDelegadoCuarto": 7,
+  "representanteDelegadoMaster": 9
+ }
+},
+{
+ "model": "voting.voting",
+ "pk": 8,
+ "fields": {
+  "name": "Votaci\u00f3n general 1",
+  "desc": "Elige a los representantes de tu centro",
+  "start_date": "2021-01-14T15:32:36.465Z",
+  "end_date": null,
+  "tipo": "GV",
+  "candiancy": null,
+  "pub_key": 12,
+  "tally": null,
+  "postproc": null,
+  "question": [
+   47,
+   48,
+   49,
+   50,
+   51,
+   52,
+   53
+  ],
+  "auths": [
+   1
+  ]
+ }
+},
+{
+ "model": "voting.voting",
+ "pk": 9,
+ "fields": {
+  "name": "Votaciones de la candidatura \"Candidatura 2020/2021\"",
+  "desc": "Elige a los representantes de tu candidatura.",
+  "start_date": "2021-01-14T15:36:30.163Z",
+  "end_date": null,
+  "tipo": "PV",
+  "candiancy": 2,
+  "pub_key": 15,
+  "tally": null,
+  "postproc": null,
+  "question": [
+   54,
+   55,
+   56,
+   57,
+   58,
+   59
+  ],
+  "auths": [
+   1
+  ]
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 1,
+ "fields": {
+  "action_time": "2021-01-14T14:20:13.580Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "2",
+  "object_repr": "JoseManuelCoboGuerrero",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 2,
+ "fields": {
+  "action_time": "2021-01-14T14:20:23.963Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "2",
+  "object_repr": "JoseManuelCoboGuerrero",
+  "action_flag": 2,
+  "change_message": "[]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 3,
+ "fields": {
+  "action_time": "2021-01-14T14:20:38.930Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "3",
+  "object_repr": "CarlosDobladoHerrero",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 4,
+ "fields": {
+  "action_time": "2021-01-14T14:20:42.817Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "3",
+  "object_repr": "CarlosDobladoHerrero",
+  "action_flag": 2,
+  "change_message": "[]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 5,
+ "fields": {
+  "action_time": "2021-01-14T14:21:01.715Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "4",
+  "object_repr": "MiguelPonceMelero",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 6,
+ "fields": {
+  "action_time": "2021-01-14T14:21:17.973Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "5",
+  "object_repr": "AlvaroAguilarAlhama",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 7,
+ "fields": {
+  "action_time": "2021-01-14T14:21:32.835Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "6",
+  "object_repr": "FranciscoJoseQuintelaVela",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 8,
+ "fields": {
+  "action_time": "2021-01-14T14:21:52.098Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "7",
+  "object_repr": "EnriqueReinaGutierrez",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 9,
+ "fields": {
+  "action_time": "2021-01-14T14:24:24.819Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "7",
+  "object_repr": "ReyesBlascoCuadrado",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"username\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 10,
+ "fields": {
+  "action_time": "2021-01-14T14:24:54.322Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "8",
+  "object_repr": "EstefaniaGanforninaTriguero",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 11,
+ "fields": {
+  "action_time": "2021-01-14T14:25:16.549Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "9",
+  "object_repr": "VanessaPradasFernandez",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 12,
+ "fields": {
+  "action_time": "2021-01-14T14:25:44.196Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "10",
+  "object_repr": "MariaGutierrezFernandez",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 13,
+ "fields": {
+  "action_time": "2021-01-14T14:26:00.523Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "10",
+  "object_repr": "LuciaMartinezFernandez",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"username\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 14,
+ "fields": {
+  "action_time": "2021-01-14T14:26:23.020Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "11",
+  "object_repr": "MariaGutierrezFernandez",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 15,
+ "fields": {
+  "action_time": "2021-01-14T14:26:27.801Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "11",
+  "object_repr": "MariaGutierrezFernandez",
+  "action_flag": 2,
+  "change_message": "[]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 16,
+ "fields": {
+  "action_time": "2021-01-14T14:26:48.949Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "12",
+  "object_repr": "MartaAlvarezFernandez",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 17,
+ "fields": {
+  "action_time": "2021-01-14T14:26:52.249Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "12",
+  "object_repr": "MartaAlvarezFernandez",
+  "action_flag": 2,
+  "change_message": "[]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 18,
+ "fields": {
+  "action_time": "2021-01-14T14:27:36.061Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "13",
+  "object_repr": "EnriqueReinaGutierrez",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 19,
+ "fields": {
+  "action_time": "2021-01-14T14:27:39.712Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "13",
+  "object_repr": "EnriqueReinaGutierrez",
+  "action_flag": 2,
+  "change_message": "[]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 20,
+ "fields": {
+  "action_time": "2021-01-14T14:29:59.161Z",
+  "user": 1,
+  "content_type": 27,
+  "object_id": "1",
+  "object_repr": "Candidatura 2020/2021",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 21,
+ "fields": {
+  "action_time": "2021-01-14T14:30:57.564Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "1",
+  "object_repr": "AlvaroAguilarAlhama",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 22,
+ "fields": {
+  "action_time": "2021-01-14T14:31:25.863Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "2",
+  "object_repr": "CarlosDobladoHerrero",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 23,
+ "fields": {
+  "action_time": "2021-01-14T14:31:44.790Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "3",
+  "object_repr": "EnriqueReinaGutierrez",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 24,
+ "fields": {
+  "action_time": "2021-01-14T14:32:07.892Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "4",
+  "object_repr": "EstefaniaGanforninaTriguero",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 25,
+ "fields": {
+  "action_time": "2021-01-14T14:32:30.005Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "5",
+  "object_repr": "FranciscoJoseQuintelaVela",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 26,
+ "fields": {
+  "action_time": "2021-01-14T14:32:52.573Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "6",
+  "object_repr": "JoseManuelCoboGuerrero",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 27,
+ "fields": {
+  "action_time": "2021-01-14T14:35:04.650Z",
+  "user": 1,
+  "content_type": 27,
+  "object_id": "1",
+  "object_repr": "Candidatura 2020/2021",
+  "action_flag": 3,
+  "change_message": ""
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 28,
+ "fields": {
+  "action_time": "2021-01-14T14:35:24.332Z",
+  "user": 1,
+  "content_type": 28,
+  "object_id": "1",
+  "object_repr": "Votaci\u00f3n general 1",
+  "action_flag": 3,
+  "change_message": ""
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 29,
+ "fields": {
+  "action_time": "2021-01-14T14:50:27.742Z",
+  "user": 1,
+  "content_type": 27,
+  "object_id": "2",
+  "object_repr": "Candidatura 2020/2021",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 30,
+ "fields": {
+  "action_time": "2021-01-14T14:50:46.884Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "1",
+  "object_repr": "AlvaroAguilarAlhama",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"candidatura\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 31,
+ "fields": {
+  "action_time": "2021-01-14T14:50:50.485Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "2",
+  "object_repr": "CarlosDobladoHerrero",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"candidatura\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 32,
+ "fields": {
+  "action_time": "2021-01-14T14:50:53.853Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "3",
+  "object_repr": "EnriqueReinaGutierrez",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"candidatura\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 33,
+ "fields": {
+  "action_time": "2021-01-14T14:50:57.757Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "4",
+  "object_repr": "EstefaniaGanforninaTriguero",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"candidatura\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 34,
+ "fields": {
+  "action_time": "2021-01-14T14:51:00.740Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "5",
+  "object_repr": "FranciscoJoseQuintelaVela",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"candidatura\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 35,
+ "fields": {
+  "action_time": "2021-01-14T14:51:03.962Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "6",
+  "object_repr": "JoseManuelCoboGuerrero",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"candidatura\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 36,
+ "fields": {
+  "action_time": "2021-01-14T14:51:20.568Z",
+  "user": 1,
+  "content_type": 27,
+  "object_id": "2",
+  "object_repr": "Candidatura 2020/2021",
+  "action_flag": 2,
+  "change_message": "[]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 37,
+ "fields": {
+  "action_time": "2021-01-14T14:53:51.714Z",
+  "user": 1,
+  "content_type": 20,
+  "object_id": "1",
+  "object_repr": "http://127.0.0.1:8000",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 38,
+ "fields": {
+  "action_time": "2021-01-14T14:53:53.909Z",
+  "user": 1,
+  "content_type": 28,
+  "object_id": "3",
+  "object_repr": "Votaciones de la candidatura \"Candidatura 2020/2021\"",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"auths\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 39,
+ "fields": {
+  "action_time": "2021-01-14T14:54:40.274Z",
+  "user": 1,
+  "content_type": 22,
+  "object_id": "1",
+  "object_repr": "Census object (1)",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 40,
+ "fields": {
+  "action_time": "2021-01-14T14:54:58.645Z",
+  "user": 1,
+  "content_type": 22,
+  "object_id": "2",
+  "object_repr": "Census object (2)",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 41,
+ "fields": {
+  "action_time": "2021-01-14T14:59:06.508Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "5",
+  "object_repr": "AlvaroAguilarAlhama",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 42,
+ "fields": {
+  "action_time": "2021-01-14T14:59:16.606Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "3",
+  "object_repr": "CarlosDobladoHerrero",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 43,
+ "fields": {
+  "action_time": "2021-01-14T14:59:26.696Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "13",
+  "object_repr": "EnriqueReinaGutierrez",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 44,
+ "fields": {
+  "action_time": "2021-01-14T14:59:38.800Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "8",
+  "object_repr": "EstefaniaGanforninaTriguero",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 45,
+ "fields": {
+  "action_time": "2021-01-14T14:59:51.001Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "6",
+  "object_repr": "FranciscoJoseQuintelaVela",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 46,
+ "fields": {
+  "action_time": "2021-01-14T15:00:02.361Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "2",
+  "object_repr": "JoseManuelCoboGuerrero",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 47,
+ "fields": {
+  "action_time": "2021-01-14T15:00:20.566Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "10",
+  "object_repr": "LuciaMartinezFernandez",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 48,
+ "fields": {
+  "action_time": "2021-01-14T15:00:29.665Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "11",
+  "object_repr": "MariaGutierrezFernandez",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 49,
+ "fields": {
+  "action_time": "2021-01-14T15:00:39.792Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "12",
+  "object_repr": "MartaAlvarezFernandez",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 50,
+ "fields": {
+  "action_time": "2021-01-14T15:00:52.433Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "4",
+  "object_repr": "MiguelPonceMelero",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 51,
+ "fields": {
+  "action_time": "2021-01-14T15:01:05.486Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "7",
+  "object_repr": "ReyesBlascoCuadrado",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 52,
+ "fields": {
+  "action_time": "2021-01-14T15:01:22.590Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "9",
+  "object_repr": "VanessaPradasFernandez",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 53,
+ "fields": {
+  "action_time": "2021-01-14T15:02:19.002Z",
+  "user": 1,
+  "content_type": 28,
+  "object_id": "4",
+  "object_repr": "Votaciones de la candidatura \"Candidatura 2020/2021\"",
+  "action_flag": 2,
+  "change_message": "[]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 54,
+ "fields": {
+  "action_time": "2021-01-14T15:02:36.596Z",
+  "user": 1,
+  "content_type": 22,
+  "object_id": "2",
+  "object_repr": "Census object (2)",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"voting_id\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 55,
+ "fields": {
+  "action_time": "2021-01-14T15:02:40.273Z",
+  "user": 1,
+  "content_type": 22,
+  "object_id": "1",
+  "object_repr": "Census object (1)",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"voting_id\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 56,
+ "fields": {
+  "action_time": "2021-01-14T15:05:44.274Z",
+  "user": 1,
+  "content_type": 27,
+  "object_id": "2",
+  "object_repr": "Candidatura 2020/2021",
+  "action_flag": 2,
+  "change_message": "[]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 57,
+ "fields": {
+  "action_time": "2021-01-14T15:06:58.458Z",
+  "user": 1,
+  "content_type": 27,
+  "object_id": "3",
+  "object_repr": "Candidatura Enrique Reina",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 58,
+ "fields": {
+  "action_time": "2021-01-14T15:07:31.290Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "8",
+  "object_repr": "LuciaMartinezFernandez",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 59,
+ "fields": {
+  "action_time": "2021-01-14T15:07:48.125Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "9",
+  "object_repr": "MariaGutierrezFernandez",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 60,
+ "fields": {
+  "action_time": "2021-01-14T15:08:07.350Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "10",
+  "object_repr": "MartaAlvarezFernandez",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 61,
+ "fields": {
+  "action_time": "2021-01-14T15:08:30.087Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "11",
+  "object_repr": "MiguelPonceMelero",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 62,
+ "fields": {
+  "action_time": "2021-01-14T15:08:49.652Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "12",
+  "object_repr": "ReyesBlascoCuadrado",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 63,
+ "fields": {
+  "action_time": "2021-01-14T15:09:05.821Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "13",
+  "object_repr": "VanessaPradasFernandez",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 64,
+ "fields": {
+  "action_time": "2021-01-14T15:09:44.080Z",
+  "user": 1,
+  "content_type": 28,
+  "object_id": "5",
+  "object_repr": "Votaci\u00f3n general 1",
+  "action_flag": 3,
+  "change_message": ""
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 65,
+ "fields": {
+  "action_time": "2021-01-14T15:10:34.730Z",
+  "user": 1,
+  "content_type": 22,
+  "object_id": "3",
+  "object_repr": "Census object (3)",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 66,
+ "fields": {
+  "action_time": "2021-01-14T15:10:40.375Z",
+  "user": 1,
+  "content_type": 22,
+  "object_id": "4",
+  "object_repr": "Census object (4)",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 67,
+ "fields": {
+  "action_time": "2021-01-14T15:13:07.899Z",
+  "user": 1,
+  "content_type": 27,
+  "object_id": "2",
+  "object_repr": "Candidatura 2020/2021",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"representanteDelegadoMaster\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 68,
+ "fields": {
+  "action_time": "2021-01-14T15:17:31.198Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "14",
+  "object_repr": "JaimeBlazquez",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 69,
+ "fields": {
+  "action_time": "2021-01-14T15:18:02.432Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "15",
+  "object_repr": "RubenDominguez",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 70,
+ "fields": {
+  "action_time": "2021-01-14T15:18:14.790Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "16",
+  "object_repr": "FelicianoAlamo",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 71,
+ "fields": {
+  "action_time": "2021-01-14T15:18:18.806Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "16",
+  "object_repr": "FelicianoAlamo",
+  "action_flag": 2,
+  "change_message": "[]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 72,
+ "fields": {
+  "action_time": "2021-01-14T15:18:33.991Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "17",
+  "object_repr": "IsmailMayoral",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 73,
+ "fields": {
+  "action_time": "2021-01-14T15:18:47.013Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "18",
+  "object_repr": "CristianSancho",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 74,
+ "fields": {
+  "action_time": "2021-01-14T15:19:04.892Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "19",
+  "object_repr": "AriadnaBarba",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 75,
+ "fields": {
+  "action_time": "2021-01-14T15:19:20.091Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "20",
+  "object_repr": "MariaAngelaMoyano",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 76,
+ "fields": {
+  "action_time": "2021-01-14T15:19:41.984Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "21",
+  "object_repr": "EsmeraldaValle",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 77,
+ "fields": {
+  "action_time": "2021-01-14T15:20:02.624Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "22",
+  "object_repr": "DeliaJerez",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 78,
+ "fields": {
+  "action_time": "2021-01-14T15:20:51.942Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "23",
+  "object_repr": "MiriamVilchez",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 79,
+ "fields": {
+  "action_time": "2021-01-14T15:20:55.425Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "23",
+  "object_repr": "MiriamVilchez",
+  "action_flag": 2,
+  "change_message": "[]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 80,
+ "fields": {
+  "action_time": "2021-01-14T15:21:12.207Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "24",
+  "object_repr": "MarianaEspin",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 81,
+ "fields": {
+  "action_time": "2021-01-14T15:21:15.412Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "24",
+  "object_repr": "MarianaEspin",
+  "action_flag": 2,
+  "change_message": "[]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 82,
+ "fields": {
+  "action_time": "2021-01-14T15:21:37.844Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "25",
+  "object_repr": "JuanPedroGomis",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 83,
+ "fields": {
+  "action_time": "2021-01-14T15:23:42.838Z",
+  "user": 1,
+  "content_type": 28,
+  "object_id": "6",
+  "object_repr": "Votaci\u00f3n general 1",
+  "action_flag": 3,
+  "change_message": ""
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 84,
+ "fields": {
+  "action_time": "2021-01-14T15:23:46.159Z",
+  "user": 1,
+  "content_type": 28,
+  "object_id": "7",
+  "object_repr": "Votaci\u00f3n general 2",
+  "action_flag": 3,
+  "change_message": ""
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 85,
+ "fields": {
+  "action_time": "2021-01-14T15:24:06.660Z",
+  "user": 1,
+  "content_type": 22,
+  "object_id": "4",
+  "object_repr": "Census object (4)",
+  "action_flag": 3,
+  "change_message": ""
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 86,
+ "fields": {
+  "action_time": "2021-01-14T15:24:06.692Z",
+  "user": 1,
+  "content_type": 22,
+  "object_id": "3",
+  "object_repr": "Census object (3)",
+  "action_flag": 3,
+  "change_message": ""
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 87,
+ "fields": {
+  "action_time": "2021-01-14T15:24:06.741Z",
+  "user": 1,
+  "content_type": 22,
+  "object_id": "2",
+  "object_repr": "Census object (2)",
+  "action_flag": 3,
+  "change_message": ""
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 88,
+ "fields": {
+  "action_time": "2021-01-14T15:24:06.791Z",
+  "user": 1,
+  "content_type": 22,
+  "object_id": "1",
+  "object_repr": "Census object (1)",
+  "action_flag": 3,
+  "change_message": ""
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 89,
+ "fields": {
+  "action_time": "2021-01-14T15:25:15.331Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "14",
+  "object_repr": "AriadnaBarba",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 90,
+ "fields": {
+  "action_time": "2021-01-14T15:25:28.654Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "15",
+  "object_repr": "CristianSancho",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 91,
+ "fields": {
+  "action_time": "2021-01-14T15:25:50.341Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "16",
+  "object_repr": "DeliaJerez",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 92,
+ "fields": {
+  "action_time": "2021-01-14T15:26:05.518Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "17",
+  "object_repr": "EsmeraldaValle",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 93,
+ "fields": {
+  "action_time": "2021-01-14T15:26:25.587Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "18",
+  "object_repr": "FelicianoAlamo",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 94,
+ "fields": {
+  "action_time": "2021-01-14T15:26:42.627Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "19",
+  "object_repr": "IsmailMayoral",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 95,
+ "fields": {
+  "action_time": "2021-01-14T15:26:58.469Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "20",
+  "object_repr": "JaimeBlazquez",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 96,
+ "fields": {
+  "action_time": "2021-01-14T15:27:14.207Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "21",
+  "object_repr": "JuanPedroGomis",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 97,
+ "fields": {
+  "action_time": "2021-01-14T15:27:33.606Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "22",
+  "object_repr": "MariaAngelaMoyano",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 98,
+ "fields": {
+  "action_time": "2021-01-14T15:27:50.394Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "23",
+  "object_repr": "MarianaEspin",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 99,
+ "fields": {
+  "action_time": "2021-01-14T15:28:02.869Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "24",
+  "object_repr": "MiriamVilchez",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 100,
+ "fields": {
+  "action_time": "2021-01-14T15:28:18.674Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "25",
+  "object_repr": "RubenDominguez",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 101,
+ "fields": {
+  "action_time": "2021-01-14T15:28:37.903Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "19",
+  "object_repr": "AriadnaBarba",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 102,
+ "fields": {
+  "action_time": "2021-01-14T15:28:48.729Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "18",
+  "object_repr": "CristianSancho",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 103,
+ "fields": {
+  "action_time": "2021-01-14T15:28:58.444Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "22",
+  "object_repr": "DeliaJerez",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 104,
+ "fields": {
+  "action_time": "2021-01-14T15:29:08.171Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "21",
+  "object_repr": "EsmeraldaValle",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 105,
+ "fields": {
+  "action_time": "2021-01-14T15:29:16.362Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "16",
+  "object_repr": "FelicianoAlamo",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 106,
+ "fields": {
+  "action_time": "2021-01-14T15:29:25.087Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "17",
+  "object_repr": "IsmailMayoral",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 107,
+ "fields": {
+  "action_time": "2021-01-14T15:29:37.857Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "14",
+  "object_repr": "JaimeBlazquez",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 108,
+ "fields": {
+  "action_time": "2021-01-14T15:29:50.516Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "25",
+  "object_repr": "JuanPedroGomis",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 109,
+ "fields": {
+  "action_time": "2021-01-14T15:30:00.016Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "20",
+  "object_repr": "MariaAngelaMoyano",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 110,
+ "fields": {
+  "action_time": "2021-01-14T15:30:09.361Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "24",
+  "object_repr": "MarianaEspin",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 111,
+ "fields": {
+  "action_time": "2021-01-14T15:30:19.928Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "23",
+  "object_repr": "MiriamVilchez",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 112,
+ "fields": {
+  "action_time": "2021-01-14T15:30:29.356Z",
+  "user": 1,
+  "content_type": 4,
+  "object_id": "15",
+  "object_repr": "RubenDominguez",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 113,
+ "fields": {
+  "action_time": "2021-01-14T15:31:57.139Z",
+  "user": 1,
+  "content_type": 19,
+  "object_id": "15",
+  "object_repr": "CristianSancho",
+  "action_flag": 2,
+  "change_message": "[{\"changed\": {\"fields\": [\"sexo\"]}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 114,
+ "fields": {
+  "action_time": "2021-01-14T15:32:59.402Z",
+  "user": 1,
+  "content_type": 22,
+  "object_id": "5",
+  "object_repr": "Census object (5)",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 115,
+ "fields": {
+  "action_time": "2021-01-14T15:33:03.266Z",
+  "user": 1,
+  "content_type": 22,
+  "object_id": "6",
+  "object_repr": "Census object (6)",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 116,
+ "fields": {
+  "action_time": "2021-01-14T15:36:05.232Z",
+  "user": 1,
+  "content_type": 22,
+  "object_id": "7",
+  "object_repr": "Census object (7)",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+},
+{
+ "model": "admin.logentry",
+ "pk": 117,
+ "fields": {
+  "action_time": "2021-01-14T15:36:10.770Z",
+  "user": 1,
+  "content_type": 22,
+  "object_id": "8",
+  "object_repr": "Census object (8)",
+  "action_flag": 1,
+  "change_message": "[{\"added\": {}}]"
+ }
+}
+]

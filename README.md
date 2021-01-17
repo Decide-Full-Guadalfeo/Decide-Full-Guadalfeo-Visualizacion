@@ -1,5 +1,14 @@
-[![Build Status](https://travis-ci.com/Decide-Full-Guadalfeo/Decide-Full-Guadalfeo-Visualizacion.svg?branch=master)](https://travis-ci.com/Decide-Full-Guadalfeo/Decide-Full-Guadalfeo-Visualizacion) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/e820cf30a580418ca8938bcb8b9440f7)](https://www.codacy.com/gh/Decide-Full-Guadalfeo/Decide-Full-Guadalfeo-Visualizacion/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Decide-Full-Guadalfeo/Decide-Full-Guadalfeo-Visualizacion&amp;utm_campaign=Badge_Grade) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/e820cf30a580418ca8938bcb8b9440f7)](https://www.codacy.com/gh/Decide-Full-Guadalfeo/Decide-Full-Guadalfeo-Visualizacion/dashboard?utm_source=github.com&utm_medium=referral&utm_content=Decide-Full-Guadalfeo/Decide-Full-Guadalfeo-Visualizacion&utm_campaign=Badge_Coverage)
-editando texto
+[![Build Status](https://travis-ci.org/Decide-Full-Guadalfeo/Decide-Full-Guadalfeo-Visualizacion.svg?branch=master)](https://travis-ci.org/Decide-Full-Guadalfeo/Decide-Full-Guadalfeo-Visualizacion) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/e820cf30a580418ca8938bcb8b9440f7)](https://www.codacy.com/gh/Decide-Full-Guadalfeo/Decide-Full-Guadalfeo-Visualizacion/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Decide-Full-Guadalfeo/Decide-Full-Guadalfeo-Visualizacion&amp;utm_campaign=Badge_Grade) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/e820cf30a580418ca8938bcb8b9440f7)](https://www.codacy.com/gh/Decide-Full-Guadalfeo/Decide-Full-Guadalfeo-Visualizacion/dashboard?utm_source=github.com&utm_medium=referral&utm_content=Decide-Full-Guadalfeo/Decide-Full-Guadalfeo-Visualizacion&utm_campaign=Badge_Coverage)
+
+Indicaciones concretas para Decide-Full-Guadalfeo-Visualización
+=====================================
+Aconsejamos, para probar la nueva funcionalidad desarrollada por nuestro grupo en el módulo "Visualizer", ejecutar antes de lanzar el proyecto:
+
+    python manage.py loaddata test_data_visualizer.json
+    
+De esta forma, se cargan algunas votaciones y votos de ejemplo para poder ver sus resultados en "Visualizer".
+
+
 Plataforma voto electrónico educativa
 =====================================
 

@@ -1,6 +1,7 @@
-.oscuro{ 
-    background-color: #1f1f1f; 
-    color: #f1eded; 
+html.dark-mode {
+  background-color: #000000; 
+  filter: invert(100%);
+  transition: all 0.5s ease-in-out;
 }
 
 
@@ -16,7 +17,7 @@ CSS para el menú desplegable
 
 #header {
     margin:auto;
-    width:518px;
+    width:520px;
     font-family:Arial, Helvetica, sans-serif;
 }
 
@@ -25,11 +26,11 @@ ul, ol {
 }
 
 .nav > li {
-    float:left;
+    float:right;
 }
 
 .nav li a,label {
-    background-color:#000;
+    background-color: #00b894;
     color:#fff;
     text-decoration:none;
     padding:10px 12px;
@@ -37,7 +38,7 @@ ul, ol {
 }
 
 .nav li p {
-  background-color:#000;
+  background-color: #00b894;
   color:#fff;
   height: 44px;
   padding: 10px;
@@ -45,7 +46,7 @@ ul, ol {
 }
 
 .nav li s {
-    background-color:#000;
+    background-color: #00b894;
     color:#fff;
     text-decoration:none;
     height: 44px;
@@ -54,10 +55,11 @@ ul, ol {
 }
 
 .nav li a:hover {
-    background-color:#434343;
+    background-color: #00b894;
 }
 
 .nav li ul {
+    background-color: #00b894;
     display:none;
     position:absolute;
     min-width:140px;
@@ -105,7 +107,7 @@ checkbox
     -webkit-transition: .4s;
     transition: .4s;
   }
-  
+
   .slider:before {
     position: absolute;
     content: "";
@@ -131,6 +133,7 @@ checkbox
   /* Rounded sliders */
   .slider.round {
     border-radius: 34px;
+    background-color: #00b894;
   }
   
   .slider.round:before {
@@ -180,6 +183,17 @@ font-weight: bold;
 
 .container-body{
   display: flex;
+}
+
+.container2 {
+  max-width: 100%;
+  width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  position: absolute;
+  font-family:Arial;
 }
 
 .colum1{
@@ -262,26 +276,7 @@ font-weight: bold;
   background-color: #99ffff;
   color: black;
 }
-table {
-  border: 1px solid black;
-  border-collapse: collapse;
-  width: 25%;
-}
-.table {
-  margin-left: 240px;
-}
-th {
-  background-color:  #3366FF;
-  width: 10%;
 
-}
-td, tr {
-  background-color:  #0099FF;
-}
-tr, td, th {
-  padding: 10px;
-  border: 1px solid grey;
-}
 .correo {
   text-align: center;
 }
@@ -299,4 +294,40 @@ tr, td, th {
 
       margin-top: 40px;
   }
+}
+
+.abajito {
+  margin: 3%;
+  width: 40%;
+}
+
+.menuito {
+  margin: 3%;
+  width: 95%;
+  text-align: center;
+}
+
+/* footer */
+
+.foot {
+  float:right;
+  background-color: #00b894;
+  color:#fff;
+  text-decoration:none;
+  padding:10px 12px;
+  display:block;
+  width:100%;
+  margin-bottom: 0%;
+}
+
+.foot li a,label {
+  background-color:transparent;
+  color:#fff;
+  text-decoration:none;
+  padding:10px 12px;
+  float:right;
+}
+
+html, body {
+  height: 100%;
 }

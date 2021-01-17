@@ -9,4 +9,10 @@ django-rest-swagger==2.2.0
 coverage==4.5.2
 django-nose==1.4.6
 jsonnet==0.12.1
+django-allauth==0.44.0
+social-auth-app-django==4.0.0
+parameterized==0.8.1
+django-heroku
+gunicorn
+selenium
 python-telegram-bot

@@ -1,100 +1,30 @@
- {% extends "base.html" %}
+{% extends "base.html" %}
 {% load i18n static %}
 
 {% block extrahead %}
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="{% static 'booth/contactUs.css' %}" />
+    <link type="text/css" rel="stylesheet"
+         href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet"
+         href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
+    <link type="text/css" rel="stylesheet" href="{% static 'visualizer/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'index/menu.css' %}">
 {% endblock %}
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 {% block content %}
-<body>
- <div class="header1">
-        <div class="inner_header">
-            <div class="logotipo">
-                <h1>
-                     Decide Full Guadalfeo
-                </h1>
-            </div>
-        </div>
-    </div>
-   <button class=button onclick="window.history.go(-1);">Return</button>
+    <div class="container2">
+        {% include "index/menu.html" %}
+            
+        <div class="body" style="font-family:Arial;">
+        <h1> ¡Contáctanos!</h1>
 
- <div id="header">
-        <ul class="nav">
-            <script type="text/javascript"> 
-                function cambiarModo() { 
-                    var cuerpoweb = document.body; 
-                    cuerpoweb.classList.toggle("oscuro"); 
-                } 
-            </script>
-            <li><a href=""> ▼ Mostrar</a>
-                <ul>
-                    <li>
-                        <s>Resultados &nbsp
-                            <label class="switch">
-                                <input id="checkbox_resultados" type="checkbox" onclick="" checked>
-                                <span class="slider round"></span>
-                            </label>
-                        </s>
-                    </li>
-                    <li>
-                        <s>Estad&iacutesticas &nbsp
-                            <label class="switch">
-                                <input id="checkbox_estadisticas" type="checkbox" onclick="" checked>
-                                <span class="slider round"></span>
-                            </label>
-                        </s>
-                    </li>
-                    <li>
-                        <s>Gr&aacuteficas &nbsp
-                            <label class="switch">
-                                <input id="checkbox_graficas" type="checkbox" onclick="" checked>
-                                <span class="slider round"></span>
-                            </label>
-                        </s>
-                    </li>
-                </ul>
-            </li>
-            <li><a href=""> ▼ Compartir</a>
-                <ul>
-                    <li><a href="">Whatsapp</a></li>
-                    <li><a href="">Telegram</a></li>
-                    <li><a href="">Facebook</a></li>
-                </ul>
-            </li>
-            <li><a href=""> ▼ Exportar</a>
-                <ul>
-                    <li><a href="">PDF</a></li>
-                    <li><a href="">Excel</a></li>
-                </ul>
-            <li>
-                <p>Tema oscuro/claro &nbsp
-                    <label class="switch">
-                        <input id="checkbox_nocturno" type="checkbox" onclick="cambiarModo()" checked>
-                        <span class="slider round"></span>
-                    </label>
-                </p>
-            </li>
-            </li>
-        </ul>
-    </div>
-      <br/>
-   
-              
+        <br>
+        
+        <p> La plataforma de decida ha sido desarrollada por la compañia wadobo, y modificada por el equipo de decide-Full-Guadalfeo. <br>
+            Decide-Full-Guadalfeo tiene una serie de modulos de trabajo, como auth, booth, voting y visualizer <br>
+            Si desea ponerse en contacto con los miembros del modulo de visualización, los contactos por correo electronico están a continuación. </p>
 
-
-
-{% endblock %}
-
-{% block extrabody %}
-<body>
-    <div class="body">
-    <h1> ¡Contactanos!</h1>
-
-    <p> La plataforma de decida ha sido desarrollada por la compañia wadobo, y modificada por el equipo de decide-Full-Guadalfeo</p>
-    <p> Decide-Full-Guadalfeo tiene una serie de modulos de trabajo, como booth, voting, visualización...</p>
-    <p> Si desea ponerse enc ontacto con los miembros del modulo de visualización, los contactos por correo electronico están a continuación. </p>
     <div class=table>
     <table class=contact>
         <tr>
@@ -152,7 +82,7 @@
         </tr>
         <tr>
             <td>
-                Vanesa Pradas
+                Vanessa Pradas
             </td>
             <td class=correo>
             <button id=correoAle><a href=""><img onclick="window.open('mailto:vanprafer@alum.us.es?subject=Decide!&body=Querida Vanesa: Soy _______ y le escribo este correo con motivo:');"
@@ -161,11 +91,11 @@
         </tr>
     </table>
     </div>
-    <p> En caso de tener alguna duda, sugerencia o encontrar algun fallo no dude en contactar con nosotros </p>
-    <p> Intentaremos arreglarlo de la manera más eficaz posible, ¡Muchas gracias! </p>
+    <p> En caso de tener alguna duda, sugerencia o encontrar algun fallo no dude en contactar con nosotros. <br>
+     Intentaremos arreglarlo de la manera más eficaz posible, ¡Muchas gracias! </p>
     </div>
+</div>
 
-</body>
 <script>
 function enviarCorreo () {
     var thread = GmailApp.getInboxThreads(0,1)[0]; // get first thread in inbox
@@ -174,5 +104,5 @@ function enviarCorreo () {
 }
 
 </script>
-</body>
+
 {% endblock %}
