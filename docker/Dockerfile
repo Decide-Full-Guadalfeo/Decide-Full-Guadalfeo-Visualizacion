@@ -20,5 +20,5 @@ ADD docker-settings.py /app/decide/local_settings.py
 
 RUN ./manage.py collectstatic
 
-
-#CMD ["gunicorn", "-w 5", "decide.wsgi", "--timeout=500", "-b 0.0.0.0:5000"]
+#CMD ["python", "manage.py", "flush"]
+CMD ["python", "manage.py", "loaddata", "test_data_visualizer.json"]
