@@ -12,6 +12,10 @@
   <div class="container">
         <h1>{{candidatura.nombre}}</h1>
 
+      {% if candidatura.delegadoCentro == None %}
+        <p>Tally of votes is on course. Check Later!</p>
+      {% endif %}
+
         <ul class="participants">
             <li class="card">
                 <strong>Center delegate:</strong>

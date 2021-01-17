@@ -75,7 +75,7 @@ class IndexUserView(APIView):
             votinguser = None
 
         # Get all started candidatures
-        open_votings = Voting.objects.all().filter(end_date=None)
+        open_votings = Voting.objects.all().filter(end_date__isnull=False)
         candidaturas = [voting.candiancy for voting in open_votings if voting.candiancy]
 
         print(candidaturas)

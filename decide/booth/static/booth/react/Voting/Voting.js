@@ -6,6 +6,8 @@ let firstRender = true;
 let votingType = null;
 let alumList = null;
 
+
+
 const Voting = ({ utils }) => {
   /*#################################################################*/
   /*####################### UTILITY FUNCTIONS #######################*/
@@ -330,7 +332,7 @@ const Voting = ({ utils }) => {
         "#439192",
         "#E4A282"
       );
-
+     
       $(".question").each(function (index) {
 
         $(this).css({
@@ -477,7 +479,7 @@ const Voting = ({ utils }) => {
                                     <h4>{utils.lang["cand"]}</h4><br/>
                                     <h3>{p.option.split(" / ")[0]}</h3>
                                     <img className="responsive" src="https://www.uco.es/investigacion/proyectos/SEBASENet/images/Logo_US.png" alt="logo"></img>
-
+                                    
                                   </div>
 
                                   <div className="flip-card-back">
