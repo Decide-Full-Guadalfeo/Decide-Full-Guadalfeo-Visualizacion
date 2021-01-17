@@ -10,7 +10,7 @@ RUN pip install ipython
 
 WORKDIR /app
 
-RUN git clone https://github.com/Decide-Full-Guadalfeo/Decide-Full-Guadalfeo-Votaciones.git .
+RUN git clone --branch "develop" "https://github.com/Decide-Full-Guadalfeo/Decide-Full-Guadalfeo-Visualizacion.git" .
 RUN pip install -r requirements.txt
 
 WORKDIR /app/decide
@@ -19,5 +19,6 @@ WORKDIR /app/decide
 ADD docker-settings.py /app/decide/local_settings.py
 
 RUN ./manage.py collectstatic
+
 
 #CMD ["gunicorn", "-w 5", "decide.wsgi", "--timeout=500", "-b 0.0.0.0:5000"]
